@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WindowsFormsApplication1
+namespace Enerefsys
 {
    public class MachineEntity
     {

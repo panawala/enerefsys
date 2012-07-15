@@ -6,8 +6,11 @@ using System.Data.SQLite;
 using System.Data;
 using EnerefsysDAL;
 using EnerefsysDAL.Model;
+using EnerefsysBLL.Entity;
+using EnerefsysBLL.EntityData;
+using EnerefsysBLL.Utility;
 
-namespace BLL
+namespace EnerefsysBLL.Manager
 {
     public class EngineManager
     {
@@ -92,7 +95,7 @@ namespace BLL
             double c = b1 + b2 * load * load + b3 * load;
 
             //求得一元二次函数的最小值
-            double solute = Utility.GetMinSolute(a, b, c);
+            double solute = Utility.Utility.GetMinSolute(a, b, c);
             double result = b1 + b2 * load * load + b3 * load + b4 * solute * solute + b5 * solute + b6 * load * solute;
             SoluteResult sr = new SoluteResult(result, solute);
             return sr;
@@ -107,7 +110,7 @@ namespace BLL
             double c = engineFitResult.B1 + engineFitResult.B2 * load * load + engineFitResult.B3 * load;
 
             //求得一元二次函数的最小值
-            double solute = Utility.GetMinSolute(a, b, c);
+            double solute = Utility.Utility.GetMinSolute(a, b, c);
             double result = engineFitResult.B1 + engineFitResult.B2 * load * load + engineFitResult.B3 * load + engineFitResult.B4 * solute * solute + engineFitResult.B5 * solute + engineFitResult.B6 * load * solute;
             SoluteResult sr = new SoluteResult(result, solute);
             return sr;

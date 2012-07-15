@@ -5,7 +5,7 @@ using System.Text;
 using DataContext;
 using EnerefsysDAL.Model;
 
-namespace EnerefsysDAL
+namespace EnerefsysBLL.EntityData
 {
     public static class PumpFitResultData
     {

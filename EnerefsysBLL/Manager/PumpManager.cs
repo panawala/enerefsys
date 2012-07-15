@@ -6,8 +6,9 @@ using System.Data.SQLite;
 using System.Data;
 using EnerefsysDAL;
 using EnerefsysDAL.Model;
+using EnerefsysBLL.EntityData;
 
-namespace BLL
+namespace EnerefsysBLL.Manager
 {
     public class PumpManager
     {

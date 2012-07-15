@@ -8,10 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows;
 using System.Web.UI.WebControls;
+using EnerefsysBLL.EntityData;
 
 
 
-namespace WindowsFormsApplication1
+namespace Enerefsys
 {
     public partial class ElectricPriceTable : Form
     {
@@ -139,14 +140,14 @@ namespace WindowsFormsApplication1
             dataGridView1.Columns["EndTime"].DataPropertyName = "EndTime";
             dataGridView1.Columns["ElectronicPrice"].DataPropertyName = "ElectronicPrice";
             dataGridView1.Columns["Id"].Visible = false;
-            dataGridView1.DataSource = EnerefsysDAL.ElectronicData.GetAllElectroinc();
+            dataGridView1.DataSource = ElectronicData.GetAllElectroinc();
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             string strId = dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString();
             string price = dataGridView1.Rows[e.RowIndex].Cells["ElectronicPrice"].Value.ToString();
-            EnerefsysDAL.ElectronicData.update(Convert.ToInt32(strId), Convert.ToDouble(price));
+            ElectronicData.update(Convert.ToInt32(strId), Convert.ToDouble(price));
         }
      
     }

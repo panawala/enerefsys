@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
+using EnerefsysBLL.EntityData;
 
-namespace WindowsFormsApplication1
+namespace Enerefsys
 {
     public partial class ReportForm : Form
     {
@@ -48,8 +49,8 @@ namespace WindowsFormsApplication1
 
 
 
-            var resultSet = EnerefsysDAL.OptimizationResultData.GetAll();
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApplication1.Report1.rdlc";
+            var resultSet = OptimizationResultData.GetAll();
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Enerefsys.Report1.rdlc";
             //ReportParameter rp = new ReportParameter("content", this.textBox1.Text);
             //this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp });
             this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DS_Result", resultSet));

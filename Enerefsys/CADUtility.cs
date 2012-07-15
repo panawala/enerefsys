@@ -6,7 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace Enerefsys
 {
 
     struct BITMAPFILEHEADER

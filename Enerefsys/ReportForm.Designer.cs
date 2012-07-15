@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace Enerefsys
 {
     partial class ReportForm
     {
@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnTest = new System.Windows.Forms.Button();
+            this.OptimizationResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.OptimizationResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -38,7 +42,10 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApplication1.Report1.rdlc";
+            reportDataSource1.Name = "DS_Result";
+            reportDataSource1.Value = this.OptimizationResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Enerefsys.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(-1, 83);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(727, 339);
@@ -61,6 +68,10 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // OptimizationResultBindingSource
+            // 
+            this.OptimizationResultBindingSource.DataMember = "OptimizationResult";
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -72,6 +83,7 @@
             this.Name = "ReportForm";
             this.Text = "ReportForm";
             this.Load += new System.EventHandler(this.ReportForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.OptimizationResultBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +94,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.BindingSource OptimizationResultBindingSource;
     }
 }

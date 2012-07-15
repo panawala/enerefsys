@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Management;
 
-namespace BLL
+namespace EnerefsysBLL.Utility
 {
     public class MachineCode
     { ///   <summary> 
