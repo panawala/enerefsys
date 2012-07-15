@@ -1,0 +1,132 @@
+﻿<Page x:Class="ControlApp.EngineInputPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="490" d:DesignWidth="770" Loaded="Page_Loaded"
+	Title="EngineInputPage">
+    <Page.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Offset="0" Color="#293955"></GradientStop>
+            <GradientStop Offset="0.2" Color="#9CAAC1"></GradientStop>
+            <GradientStop Offset="1" Color="#293955"></GradientStop>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Margin="40 40 40 40">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="类型" FontSize="20" Grid.Row="0" Grid.Column="0"></TextBlock>
+            <TextBlock Text="类型" FontSize="20" Grid.Row="0" Grid.Column="1"></TextBlock>
+
+            <ComboBox Name="comBox1" Grid.Row="1" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox2" Grid.Row="2" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox3" Grid.Row="3" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox4" Grid.Row="4" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox5" Grid.Row="5" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox6" Grid.Row="6" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox7" Grid.Row="7" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox8" Grid.Row="8" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox9" Grid.Row="9" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comBox10" Grid.Row="10" Grid.Column="0">
+                <ComboBoxItem FontSize="20">CSD</ComboBoxItem>
+                <ComboBoxItem FontSize="20">VSD</ComboBoxItem>
+            </ComboBox>
+            <TextBox Name="textBox1" Grid.Row="1" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox2" Grid.Row="2" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox3" Grid.Row="3" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox4" Grid.Row="4" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox5" Grid.Row="5" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox6" Grid.Row="6" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox7" Grid.Row="7" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox8" Grid.Row="8" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox9" Grid.Row="9" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            <TextBox Name="textBox10" Grid.Row="10" Grid.Column="1" FontSize="20" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown"></TextBox>
+            
+        </Grid>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Height="50" HorizontalAlignment="Left" Name="stackPanel1" VerticalAlignment="Center" Width="600" Orientation="Horizontal">
+            <TextBlock Text="水泵类型" FontSize="20" VerticalAlignment="Center"/>
+            <ComboBox Name="PumpType" Width="100" VerticalAlignment="Center">
+            </ComboBox>
+            <TextBlock Text="温度" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox Name="Temperature" FontSize="20" VerticalAlignment="Center" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown" Width="100"></TextBox>
+            <TextBlock Text="负荷" FontSize="20" VerticalAlignment="Center"></TextBlock>
+            <TextBox Name="Load" FontSize="20" VerticalAlignment="Center" TextChanged="Temperature_TextChanged" KeyDown="Temperature_KeyDown" Width="100"></TextBox>
+            <Image Source="Resources/cal.png" Stretch="Fill" Width="50" Height="50" Cursor="Hand" VerticalAlignment="Center" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+            <Image Source="Resources/print.png" Stretch="Fill" Width="50" Height="50" Cursor="Hand" VerticalAlignment="Center" MouseLeftButtonDown="Image_MouseLeftButtonDown_1"/>
+        </StackPanel>
+        <RichTextBox IsReadOnly="True" Margin="20,0,20,10" Name="Result" Grid.Column="1" VerticalScrollBarVisibility="Auto" >
+            <RichTextBox.Resources>
+                <Style TargetType="{x:Type Paragraph}">
+                    <Setter Property="Margin" Value="0"/>
+                </Style>
+            </RichTextBox.Resources>
+            <RichTextBox.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#293955"></GradientStop>
+                    <GradientStop Offset="0.2" Color="#9CAAC1"></GradientStop>
+                    <GradientStop Offset="1" Color="#293955"></GradientStop>
+                </LinearGradientBrush>
+            </RichTextBox.Background>
+            <FlowDocument>
+                <!--<Paragraph>
+                    This is my first paragraph... see how there is...
+                </Paragraph>
+                <Paragraph FontSize="20">
+                    a no space anymore between it and the second paragraph?
+                </Paragraph>-->
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Page>

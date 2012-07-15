@@ -1,0 +1,10 @@
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\bin\Debug\BLL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\bin\Debug\BLL.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\bin\Debug\System.Data.SQLite.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\bin\Debug\System.Data.SQLite.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\bin\Debug\System.Data.SQLite.xml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\obj\Debug\BLL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\obj\Debug\BLL.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\bin\Debug\EnerefsysDAL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\BLL\bin\Debug\EnerefsysDAL.pdb

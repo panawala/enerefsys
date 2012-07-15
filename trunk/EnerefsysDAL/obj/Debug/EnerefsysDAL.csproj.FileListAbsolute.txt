@@ -1,0 +1,18 @@
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.dll.config
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\EnerefsysDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\EnerefsysDAL\obj\Debug\EnerefsysDAL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\EnerefsysDAL\obj\Debug\EnerefsysDAL.pdb
+C:\Users\chenyi\Desktop\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.dll.config
+C:\Users\chenyi\Desktop\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.dll
+C:\Users\chenyi\Desktop\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.pdb
+C:\Users\chenyi\Desktop\ControlApp\EnerefsysDAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\chenyi\Desktop\ControlApp\EnerefsysDAL\obj\Debug\EnerefsysDAL.dll
+C:\Users\chenyi\Desktop\ControlApp\EnerefsysDAL\obj\Debug\EnerefsysDAL.pdb
+D:\gy\js\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.dll.config
+D:\gy\js\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.dll
+D:\gy\js\ControlApp\EnerefsysDAL\bin\Debug\EnerefsysDAL.pdb
+D:\gy\js\ControlApp\EnerefsysDAL\obj\Debug\ResolveAssemblyReference.cache
+D:\gy\js\ControlApp\EnerefsysDAL\obj\Debug\EnerefsysDAL.dll
+D:\gy\js\ControlApp\EnerefsysDAL\obj\Debug\EnerefsysDAL.pdb

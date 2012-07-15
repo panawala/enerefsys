@@ -1,0 +1,9 @@
+﻿<NavigationWindow x:Class="ControlApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="512" Width="768"  Source="Index.xaml" 
+        WindowStartupLocation="CenterScreen" ShowsNavigationUI="False"
+        WindowStyle="None" Background="{x:Null}" AllowsTransparency="True"
+         Navigating="NavigationWindow_Navigating" MouseLeftButtonDown="NavigationWindow_MouseLeftButtonDown">
+
+</NavigationWindow>
