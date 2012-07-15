@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EnerefsysModelStoreContainer" CdmEntityContainer="EnerefsysEntities">
+    <EntitySetMapping Name="Person">
+      <EntityTypeMapping TypeName="EnerefsysModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EngineFitResult">
+      <EntityTypeMapping TypeName="EnerefsysModel.EngineFitResult">
+        <MappingFragment StoreEntitySet="EngineFitResult">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="B6" ColumnName="B6" />
+          <ScalarProperty Name="B5" ColumnName="B5" />
+          <ScalarProperty Name="B4" ColumnName="B4" />
+          <ScalarProperty Name="B3" ColumnName="B3" />
+          <ScalarProperty Name="B2" ColumnName="B2" />
+          <ScalarProperty Name="B1" ColumnName="B1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FitResult">
+      <EntityTypeMapping TypeName="EnerefsysModel.FitResult">
+        <MappingFragment StoreEntitySet="FitResult">
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="B6" ColumnName="B6" />
+          <ScalarProperty Name="B5" ColumnName="B5" />
+          <ScalarProperty Name="B4" ColumnName="B4" />
+          <ScalarProperty Name="B3" ColumnName="B3" />
+          <ScalarProperty Name="B2" ColumnName="B2" />
+          <ScalarProperty Name="B1" ColumnName="B1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PumpFitResult">
+      <EntityTypeMapping TypeName="EnerefsysModel.PumpFitResult">
+        <MappingFragment StoreEntitySet="PumpFitResult">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="B3" ColumnName="B3" />
+          <ScalarProperty Name="B2" ColumnName="B2" />
+          <ScalarProperty Name="B1" ColumnName="B1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PumpInfo">
+      <EntityTypeMapping TypeName="EnerefsysModel.PumpInfo">
+        <MappingFragment StoreEntitySet="PumpInfo">
+          <ScalarProperty Name="PumpDesignFlow" ColumnName="PumpDesignFlow" />
+          <ScalarProperty Name="PumpType" ColumnName="PumpType" />
+          <ScalarProperty Name="PumpCount" ColumnName="PumpCount" />
+          <ScalarProperty Name="PumpFlow" ColumnName="PumpFlow" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DayLoad">
+      <EntityTypeMapping TypeName="EnerefsysModel.DayLoad">
+        <MappingFragment StoreEntitySet="DayLoad">
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+          <ScalarProperty Name="Load" ColumnName="Load" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="BeginTime" ColumnName="BeginTime" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Electronic">
+      <EntityTypeMapping TypeName="EnerefsysModel.Electronic">
+        <MappingFragment StoreEntitySet="Electronic">
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+          <ScalarProperty Name="ElectronicPrice" ColumnName="ElectronicPrice" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OptimizationResult">
+      <EntityTypeMapping TypeName="EnerefsysModel.OptimizationResult">
+        <MappingFragment StoreEntitySet="OptimizationResult">
+          <ScalarProperty Name="CoolingPower" ColumnName="CoolingPower" />
+          <ScalarProperty Name="CoolingPumpPower" ColumnName="CoolingPumpPower" />
+          <ScalarProperty Name="FreezePumpPower" ColumnName="FreezePumpPower" />
+          <ScalarProperty Name="SystemMinPower" ColumnName="SystemMinPower" />
+          <ScalarProperty Name="Flow" ColumnName="Flow" />
+          <ScalarProperty Name="EnginePower" ColumnName="EnginePower" />
+          <ScalarProperty Name="EngineLoadRatio" ColumnName="EngineLoadRatio" />
+          <ScalarProperty Name="EngineValue" ColumnName="EngineValue" />
+          <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+          <ScalarProperty Name="Load" ColumnName="Load" />
+          <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

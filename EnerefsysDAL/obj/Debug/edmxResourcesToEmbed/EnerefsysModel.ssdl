@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnerefsysModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EnerefsysModelStoreContainer">
+    <EntitySet Name="DayLoad" EntityType="EnerefsysModel.Store.DayLoad" store:Type="Tables" />
+    <EntitySet Name="Electronic" EntityType="EnerefsysModel.Store.Electronic" store:Type="Tables" />
+    <EntitySet Name="EngineFitResult" EntityType="EnerefsysModel.Store.EngineFitResult" store:Type="Tables" />
+    <EntitySet Name="FitResult" EntityType="EnerefsysModel.Store.FitResult" store:Type="Tables" store:Name="FitResult">
+      <DefiningQuery>SELECT 
+      [FitResult].[Id] AS [Id], 
+      [FitResult].[B1] AS [B1], 
+      [FitResult].[B2] AS [B2], 
+      [FitResult].[B3] AS [B3], 
+      [FitResult].[B4] AS [B4], 
+      [FitResult].[B5] AS [B5], 
+      [FitResult].[B6] AS [B6], 
+      [FitResult].[Temperature] AS [Temperature]
+      FROM [FitResult] AS [FitResult]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OptimizationResult" EntityType="EnerefsysModel.Store.OptimizationResult" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="EnerefsysModel.Store.Person" store:Type="Tables" store:Name="Person">
+      <DefiningQuery>SELECT 
+      [Person].[Id] AS [Id], 
+      [Person].[Name] AS [Name], 
+      [Person].[Address] AS [Address]
+      FROM [Person] AS [Person]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PumpFitResult" EntityType="EnerefsysModel.Store.PumpFitResult" store:Type="Tables" />
+    <EntitySet Name="PumpInfo" EntityType="EnerefsysModel.Store.PumpInfo" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="DayLoad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="BeginTime" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EndTime" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Load" Type="float" Nullable="false" />
+    <Property Name="Ratio" Type="float" Nullable="false" />
+    <Property Name="BuildingType" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Electronic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="StartTime" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EndTime" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ElectronicPrice" Type="float" Nullable="false" />
+    <Property Name="DefaultValue" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EngineFitResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="B1" Type="real" Nullable="false" />
+    <Property Name="B2" Type="real" Nullable="false" />
+    <Property Name="B3" Type="real" Nullable="false" />
+    <Property Name="B4" Type="real" Nullable="false" />
+    <Property Name="B5" Type="real" Nullable="false" />
+    <Property Name="B6" Type="real" Nullable="false" />
+    <Property Name="Temperature" Type="float" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'main.FitResult' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="FitResult">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="B1" />
+      <PropertyRef Name="B2" />
+      <PropertyRef Name="B3" />
+      <PropertyRef Name="B4" />
+      <PropertyRef Name="B5" />
+      <PropertyRef Name="B6" />
+      <PropertyRef Name="Temperature" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="B1" Type="real" Nullable="false" />
+    <Property Name="B2" Type="real" Nullable="false" />
+    <Property Name="B3" Type="real" Nullable="false" />
+    <Property Name="B4" Type="real" Nullable="false" />
+    <Property Name="B5" Type="real" Nullable="false" />
+    <Property Name="B6" Type="real" Nullable="false" />
+    <Property Name="Temperature" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OptimizationResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Time" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Temperature" Type="float" Nullable="false" />
+    <Property Name="Load" Type="float" Nullable="false" />
+    <Property Name="EngineType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EngineValue" Type="float" Nullable="false" />
+    <Property Name="EngineLoadRatio" Type="float" Nullable="false" />
+    <Property Name="EnginePower" Type="float" Nullable="false" />
+    <Property Name="Flow" Type="float" Nullable="false" />
+    <Property Name="SystemMinPower" Type="float" Nullable="false" />
+    <Property Name="FreezePumpPower" Type="float" />
+    <Property Name="CoolingPumpPower" Type="float" />
+    <Property Name="CoolingPower" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'main.Person' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+    </Key>
+    <Property Name="Id" Type="int" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PumpFitResult">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="B1" Type="float" Nullable="false" />
+    <Property Name="B2" Type="float" Nullable="false" />
+    <Property Name="B3" Type="float" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PumpInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PumpFlow" Type="float" Nullable="false" />
+    <Property Name="PumpCount" Type="int" Nullable="false" />
+    <Property Name="PumpType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PumpDesignFlow" Type="float" Nullable="false" />
+  </EntityType>
+</Schema>

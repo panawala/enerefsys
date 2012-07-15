@@ -1,0 +1,149 @@
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\ControlApp.exe.config
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\ControlApp.exe
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\ControlApp.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\BLL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\Fit.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\EnerefsysDAL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\BLL.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.xml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\EnerefsysDAL.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\EngineInputPage.baml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\Index.baml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ImportPage.baml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\MainWindow.baml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\RegisterPage.baml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ShowPage.baml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\Window1.baml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\EngineInputPage.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\Index.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ImportPage.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\MainWindow.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\RegisterPage.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ShowPage.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\Window1.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\App.g.cs
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ControlApp_MarkupCompile.cache
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ControlApp.g.resources
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ControlApp.Properties.Resources.resources
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ControlApp.exe
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\obj\x86\Debug\ControlApp.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\DataContext.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\ControlApp\bin\Debug\DataContext.pdb
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\EngineInputPage.baml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\Index.baml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ImportPage.baml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\MainWindow.baml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\RegisterPage.baml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ShowPage.baml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\Window1.baml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\EngineInputPage.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\Index.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ImportPage.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\MainWindow.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\RegisterPage.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ShowPage.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\Window1.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\App.g.cs
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ControlApp_MarkupCompile.cache
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ControlApp.g.resources
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ControlApp.Properties.Resources.resources
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ControlApp.exe
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\ControlApp.exe.config
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\ControlApp.exe
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\ControlApp.pdb
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\BLL.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\DevExpress.Charts.v11.2.Core.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\DevExpress.Data.v11.2.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\DevExpress.Xpf.Charts.v11.2.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\DevExpress.Xpf.Core.v11.2.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\Fit.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\MWArray.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\WebFiguresService.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\EnerefsysDAL.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\DataContext.dll
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\BLL.pdb
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\EnerefsysDAL.pdb
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.pdb
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.xml
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\bin\Debug\DataContext.pdb
+C:\Users\chenyi\Desktop\ControlApp\ControlApp\obj\x86\Debug\ControlApp.pdb
+D:\gy\js\ControlApp\ControlApp\bin\Debug\ControlApp.exe.config
+D:\gy\js\ControlApp\ControlApp\bin\Debug\ControlApp.exe
+D:\gy\js\ControlApp\ControlApp\bin\Debug\ControlApp.pdb
+D:\gy\js\ControlApp\ControlApp\bin\Debug\BLL.dll
+D:\gy\js\ControlApp\ControlApp\bin\Debug\Fit.dll
+D:\gy\js\ControlApp\ControlApp\bin\Debug\EnerefsysDAL.dll
+D:\gy\js\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.dll
+D:\gy\js\ControlApp\ControlApp\bin\Debug\DataContext.dll
+D:\gy\js\ControlApp\ControlApp\bin\Debug\BLL.pdb
+D:\gy\js\ControlApp\ControlApp\bin\Debug\EnerefsysDAL.pdb
+D:\gy\js\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.pdb
+D:\gy\js\ControlApp\ControlApp\bin\Debug\System.Data.SQLite.xml
+D:\gy\js\ControlApp\ControlApp\bin\Debug\DataContext.pdb
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\EngineInputPage.baml
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\Index.baml
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ImportPage.baml
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\MainWindow.baml
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\RegisterPage.baml
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ShowPage.baml
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\Window1.baml
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\EngineInputPage.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\Index.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ImportPage.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\MainWindow.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\RegisterPage.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ShowPage.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\Window1.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\App.g.cs
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ControlApp_MarkupCompile.cache
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ControlApp.g.resources
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ControlApp.Properties.Resources.resources
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ControlApp.exe
+D:\gy\js\ControlApp\ControlApp\obj\x86\Debug\ControlApp.pdb
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\ControlApp.exe.config
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\ControlApp.exe
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\ControlApp.pdb
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\Fit.dll
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\EnerefsysDAL.dll
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\System.Data.SQLite.dll
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\DataContext.dll
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\BLL.pdb
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\EnerefsysDAL.pdb
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\System.Data.SQLite.pdb
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\System.Data.SQLite.xml
+D:\gy\js\ControlApp\EnerefsysUI\bin\Debug\DataContext.pdb
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\EngineInputPage.baml
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\Index.baml
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ImportPage.baml
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\MainWindow.baml
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\RegisterPage.baml
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ShowPage.baml
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\Window1.baml
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\EngineInputPage.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\Index.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ImportPage.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\MainWindow.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\RegisterPage.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ShowPage.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\Window1.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\App.g.cs
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ControlApp_MarkupCompile.cache
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ControlApp.g.resources
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ControlApp.Properties.Resources.resources
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ControlApp.exe
+D:\gy\js\ControlApp\EnerefsysUI\obj\x86\Debug\ControlApp.pdb

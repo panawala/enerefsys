@@ -1,0 +1,45 @@
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\TestProject1.dll.config
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\TestProject1.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\TestProject1.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\BLL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\DataContext.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\EnerefsysDAL.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\BLL.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\DataContext.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\EnerefsysDAL.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.pdb
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.xml
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\obj\Debug\TestProject1.dll
+C:\Users\GREEN\Documents\Visual Studio 2010\Projects\ControlApp\TestProject1\obj\Debug\TestProject1.pdb
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\TestProject1.dll.config
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\TestProject1.dll
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\TestProject1.pdb
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\BLL.dll
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\DataContext.dll
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\EnerefsysDAL.dll
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.dll
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\BLL.pdb
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\DataContext.pdb
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\EnerefsysDAL.pdb
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.pdb
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.xml
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\obj\Debug\TestProject1.dll
+C:\Users\chenyi\Desktop\ControlApp\TestProject1\obj\Debug\TestProject1.pdb
+D:\gy\js\ControlApp\TestProject1\bin\Debug\TestProject1.dll.config
+D:\gy\js\ControlApp\TestProject1\bin\Debug\TestProject1.dll
+D:\gy\js\ControlApp\TestProject1\bin\Debug\TestProject1.pdb
+D:\gy\js\ControlApp\TestProject1\bin\Debug\BLL.dll
+D:\gy\js\ControlApp\TestProject1\bin\Debug\DataContext.dll
+D:\gy\js\ControlApp\TestProject1\bin\Debug\EnerefsysDAL.dll
+D:\gy\js\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.dll
+D:\gy\js\ControlApp\TestProject1\bin\Debug\BLL.pdb
+D:\gy\js\ControlApp\TestProject1\bin\Debug\DataContext.pdb
+D:\gy\js\ControlApp\TestProject1\bin\Debug\EnerefsysDAL.pdb
+D:\gy\js\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.pdb
+D:\gy\js\ControlApp\TestProject1\bin\Debug\System.Data.SQLite.xml
+D:\gy\js\ControlApp\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+D:\gy\js\ControlApp\TestProject1\obj\Debug\TestProject1.dll
+D:\gy\js\ControlApp\TestProject1\obj\Debug\TestProject1.pdb
