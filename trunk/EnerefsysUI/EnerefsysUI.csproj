@@ -40,9 +40,6 @@
     <ApplicationIcon>home.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BLL">
-      <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.Charts.v11.2.Core">
       <HintPath>..\DbLib\DevExpress.Charts.v11.2.Core.dll</HintPath>
     </Reference>
@@ -220,7 +217,10 @@
     <Resource Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\EnerefsysBLL\EnerefsysBLL.csproj">
+      <Project>{37F131F7-1416-43C2-81D7-CB918812FCDC}</Project>
+      <Name>EnerefsysBLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

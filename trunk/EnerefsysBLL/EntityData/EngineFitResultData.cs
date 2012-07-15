@@ -5,7 +5,7 @@ using System.Text;
 using EnerefsysDAL.Model;
 using DataContext;
 
-namespace EnerefsysDAL
+namespace EnerefsysBLL.EntityData
 {
     public static class EngineFitResultData
     {

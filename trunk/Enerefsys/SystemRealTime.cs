@@ -6,9 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using BLL;
+using EnerefsysBLL;
+using EnerefsysBLL.Entity;
+using EnerefsysBLL.Utility;
+using EnerefsysBLL.Manager;
 
-namespace WindowsFormsApplication1
+namespace Enerefsys
 {
     public partial class SystemRealTime : Form
     {

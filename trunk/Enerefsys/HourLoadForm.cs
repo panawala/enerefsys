@@ -8,10 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows;
 using System.Web.UI.WebControls;
+using EnerefsysBLL.EntityData;
 
 
 
-namespace WindowsFormsApplication1
+namespace Enerefsys
 {
     public partial class HourLoadForm : Form
     {
@@ -113,7 +114,7 @@ namespace WindowsFormsApplication1
             dataGridView1.Columns["Load"].DataPropertyName = "Load";
             dataGridView1.Columns["Ratio"].DataPropertyName = "Ratio";
             dataGridView1.Columns["Id"].Visible = false;
-            dataGridView1.DataSource = EnerefsysDAL.DayLoadData.GetAllDayloads();
+            dataGridView1.DataSource = DayLoadData.GetAllDayloads();
         }
 
         void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -145,7 +146,7 @@ namespace WindowsFormsApplication1
             string strId = dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString();
             string load = dataGridView1.Rows[e.RowIndex].Cells["Load"].Value.ToString();
             string ratio = dataGridView1.Rows[e.RowIndex].Cells["Ratio"].Value.ToString();
-            EnerefsysDAL.DayLoadData.Update(Convert.ToInt32(strId), Convert.ToDouble(load), Convert.ToDouble(ratio));
+            DayLoadData.Update(Convert.ToInt32(strId), Convert.ToDouble(load), Convert.ToDouble(ratio));
         }
         
      

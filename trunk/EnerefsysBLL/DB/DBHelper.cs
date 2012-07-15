@@ -6,7 +6,7 @@ using System.Data.SQLite;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace BLL
+namespace EnerefsysBLL.DB
 {
     public class DBHelper
     {

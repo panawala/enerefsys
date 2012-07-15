@@ -13,7 +13,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using System.IO;
-using BLL;
+using EnerefsysBLL;
+using EnerefsysBLL.Utility;
 
 namespace ControlApp
 {

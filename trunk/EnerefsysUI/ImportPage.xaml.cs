@@ -12,12 +12,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
-using BLL;
+using EnerefsysBLL;
 using System.Net;
 using System.Management;
 using System.Windows.Threading;
 using System.Windows.Media.Animation;
 using System.ComponentModel;
+using EnerefsysBLL.Manager;
+using EnerefsysBLL.Utility;
 
 namespace ControlApp
 {

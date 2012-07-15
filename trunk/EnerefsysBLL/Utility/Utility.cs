@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices;
 
-namespace BLL
+namespace EnerefsysBLL.Utility
 {
     public class Utility
     {

@@ -6,8 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EnerefsysBLL.EntityData;
 
-namespace WindowsFormsApplication1
+namespace Enerefsys
 {
     public partial class SystemOptimizeResult : Form
     {
@@ -21,7 +22,7 @@ namespace WindowsFormsApplication1
             try
             {
                 rowUnitView1.AutoGenerateColumns = false;
-                rowUnitView1.DataSource = EnerefsysDAL.OptimizationResultData.GetAll();
+                rowUnitView1.DataSource = OptimizationResultData.GetAll();
                 rowUnitView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 //rowUnitView1.RowsDefaultCellStyle.SelectionBackColor = Color.Red;
                 
