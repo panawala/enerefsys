@@ -85,14 +85,7 @@ namespace TestProject1
             {
                 try
                 {
-                    context.PumpInfoes.Add(new PumpInfo
-                    {
-                        PumpCount = 3,
-                        PumpDesignFlow = 23,
-                        PumpFlow = 3,
-                        PumpInfoID = 1,
-                        PumpType = "tupe"
-                    });
+                    var rt = context.EngineFitResults;
                 }
                 catch (Exception e)
                 { 

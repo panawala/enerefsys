@@ -85,10 +85,40 @@ namespace EnerefsysBLL.EntityData
             using (EnerefsysContext db = new EnerefsysContext())
             {
                 // get record that is to be selected
-                EngineFitResult engineFitResult = (from c in db.EngineFitResults
-                                                   where c.Temperature == temperature && c.Type == type
-                                                   select c).First();
-                return engineFitResult;
+                var engineFitResults = (from c in db.EngineFitResults
+                                        where c.Temperature == temperature && c.Type == type
+                                        select c);
+                if (engineFitResults != null && engineFitResults.Count() > 0)
+                {
+                    return engineFitResults.First(); 
+                }
+                //如果不存在对应的温度，使用加权平均，
+                else
+                {
+                    int Min_Temp = EngineFitResultData.GetBoundTemperature(Convert.ToDouble(temperature), true,type);
+                    int Max_Temp = EngineFitResultData.GetBoundTemperature(Convert.ToDouble(temperature), false,type);
+
+                    EngineFitResult minEngineFitResult = (from c in db.EngineFitResults
+                                                          where c.Temperature == Min_Temp && c.Type == type
+                                                          select c).First();
+                    EngineFitResult maxEngineFitResult = (from c in db.EngineFitResults
+                                                          where c.Temperature == Max_Temp && c.Type == type
+                                                          select c).First();
+
+                    EngineFitResult engineFitResult = new EngineFitResult()
+                    {
+                        B1=(minEngineFitResult.B1+maxEngineFitResult.B1)/2,
+                        B2 = (minEngineFitResult.B2 + maxEngineFitResult.B2) / 2,
+                        B3 = (minEngineFitResult.B3 + maxEngineFitResult.B3) / 2,
+                        B4 = (minEngineFitResult.B4 + maxEngineFitResult.B4) / 2,
+                        B5 = (minEngineFitResult.B5 + maxEngineFitResult.B5) / 2,
+                        B6 = (minEngineFitResult.B6 + maxEngineFitResult.B6) / 2,
+                        Temperature=temperature,
+                        Type=type
+                    };
+                    return engineFitResult;
+                }
+                
             }
         }
 
@@ -116,6 +146,32 @@ namespace EnerefsysBLL.EntityData
                     return Convert.ToInt32(Temperature);
                 }
                
+            }
+        }
+
+
+        //根据温度和类型输出EngineFitResult
+        public static int GetBoundTemperature(double temperature, bool bound,string type)
+        {
+            using (EnerefsysContext db = new EnerefsysContext())
+            {
+                if (bound)
+                {
+                    // 得到大于指定温度的最低温度
+                    double Temperature = (from c in db.EngineFitResults
+                                          where c.Temperature > temperature && c.Type == type
+                                          select c.Temperature).Min();
+                    return Convert.ToInt32(Temperature);
+                }
+                else
+                {
+                    // 得到小于指定温度的最高温度
+                    double Temperature = (from c in db.EngineFitResults
+                                          where c.Temperature < temperature && c.Type == type
+                                          select c.Temperature).Max();
+                    return Convert.ToInt32(Temperature);
+                }
+
             }
         }
 

@@ -16,6 +16,7 @@ namespace Enerefsys
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Enerefsys());
+           
             //Application.Run(new ReportForm());
             //Application.Run(new SystemRealTime());
         }
