@@ -101,18 +101,12 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.btnLoadEngineData = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
-            this.is_Frequency_Conversion_Label = new System.Windows.Forms.Label();
+            this.amount_Label = new System.Windows.Forms.Label();
             this.freezer_Panel = new System.Windows.Forms.Panel();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.model_Label = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.brand_Label = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
             this.cooling_Capacity_Label = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.type_Label = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label30 = new System.Windows.Forms.Label();
             this.freezerNum = new System.Windows.Forms.TextBox();
@@ -160,6 +154,16 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label42 = new System.Windows.Forms.Label();
+            this.rowUnitView1 = new MultiHeaderDataGridView.RowUnitView();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnClear = new System.Windows.Forms.Button();
             this.textBox_CoolingPower = new System.Windows.Forms.TextBox();
@@ -190,16 +194,10 @@
             this.openExistingProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.rowUnitView1 = new MultiHeaderDataGridView.RowUnitView();
-            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boarderMachine_Label = new System.Windows.Forms.Label();
+            this.boarderNum = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.boarder_Panel = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -229,6 +227,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -239,7 +238,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -867,24 +865,22 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.boarder_Panel);
+            this.tabPage2.Controls.Add(this.label29);
+            this.tabPage2.Controls.Add(this.boarderNum);
+            this.tabPage2.Controls.Add(this.boarderMachine_Label);
             this.tabPage2.Controls.Add(this.completed);
             this.tabPage2.Controls.Add(this.comboBox_EngineType);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.progressBar);
             this.tabPage2.Controls.Add(this.btnLoadEngineData);
             this.tabPage2.Controls.Add(this.btn_ok);
-            this.tabPage2.Controls.Add(this.is_Frequency_Conversion_Label);
+            this.tabPage2.Controls.Add(this.amount_Label);
             this.tabPage2.Controls.Add(this.freezer_Panel);
-            this.tabPage2.Controls.Add(this.comboBox12);
             this.tabPage2.Controls.Add(this.model_Label);
-            this.tabPage2.Controls.Add(this.label28);
             this.tabPage2.Controls.Add(this.brand_Label);
-            this.tabPage2.Controls.Add(this.comboBox11);
             this.tabPage2.Controls.Add(this.cooling_Capacity_Label);
-            this.tabPage2.Controls.Add(this.label29);
             this.tabPage2.Controls.Add(this.type_Label);
-            this.tabPage2.Controls.Add(this.checkBox4);
-            this.tabPage2.Controls.Add(this.comboBox10);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.freezerNum);
@@ -914,7 +910,7 @@
             this.comboBox_EngineType.Items.AddRange(new object[] {
             "CSD",
             "VSD"});
-            this.comboBox_EngineType.Location = new System.Drawing.Point(429, 22);
+            this.comboBox_EngineType.Location = new System.Drawing.Point(743, 10);
             this.comboBox_EngineType.Name = "comboBox_EngineType";
             this.comboBox_EngineType.Size = new System.Drawing.Size(121, 20);
             this.comboBox_EngineType.TabIndex = 73;
@@ -925,9 +921,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Location = new System.Drawing.Point(938, 81);
+            this.panel2.Location = new System.Drawing.Point(938, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 451);
+            this.panel2.Size = new System.Drawing.Size(279, 586);
             this.panel2.TabIndex = 72;
             // 
             // pictureBox4
@@ -937,7 +933,7 @@
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(12, 220);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(255, 220);
+            this.pictureBox4.Size = new System.Drawing.Size(255, 355);
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
@@ -948,20 +944,20 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(12, 14);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(255, 200);
+            this.pictureBox3.Size = new System.Drawing.Size(255, 335);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(584, 22);
+            this.progressBar.Location = new System.Drawing.Point(870, 7);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(347, 23);
             this.progressBar.TabIndex = 71;
             // 
             // btnLoadEngineData
             // 
-            this.btnLoadEngineData.Location = new System.Drawing.Point(307, 21);
+            this.btnLoadEngineData.Location = new System.Drawing.Point(638, 8);
             this.btnLoadEngineData.Name = "btnLoadEngineData";
             this.btnLoadEngineData.Size = new System.Drawing.Size(99, 23);
             this.btnLoadEngineData.TabIndex = 70;
@@ -971,7 +967,7 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(1015, 22);
+            this.btn_ok.Location = new System.Drawing.Point(857, 318);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(75, 23);
             this.btn_ok.TabIndex = 69;
@@ -979,124 +975,72 @@
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
-            // is_Frequency_Conversion_Label
+            // amount_Label
             // 
-            this.is_Frequency_Conversion_Label.AutoSize = true;
-            this.is_Frequency_Conversion_Label.Location = new System.Drawing.Point(645, 66);
-            this.is_Frequency_Conversion_Label.Name = "is_Frequency_Conversion_Label";
-            this.is_Frequency_Conversion_Label.Size = new System.Drawing.Size(41, 12);
-            this.is_Frequency_Conversion_Label.TabIndex = 68;
-            this.is_Frequency_Conversion_Label.Text = "变频否";
+            this.amount_Label.AutoSize = true;
+            this.amount_Label.Location = new System.Drawing.Point(673, 36);
+            this.amount_Label.Name = "amount_Label";
+            this.amount_Label.Size = new System.Drawing.Size(29, 12);
+            this.amount_Label.TabIndex = 68;
+            this.amount_Label.Text = "数量";
             // 
             // freezer_Panel
             // 
             this.freezer_Panel.AutoScroll = true;
-            this.freezer_Panel.Location = new System.Drawing.Point(-5, 81);
+            this.freezer_Panel.Location = new System.Drawing.Point(7, 51);
             this.freezer_Panel.Name = "freezer_Panel";
-            this.freezer_Panel.Size = new System.Drawing.Size(936, 129);
+            this.freezer_Panel.Size = new System.Drawing.Size(925, 129);
             this.freezer_Panel.TabIndex = 62;
-            // 
-            // comboBox12
-            // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(429, 538);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(186, 20);
-            this.comboBox12.TabIndex = 61;
             // 
             // model_Label
             // 
             this.model_Label.AutoSize = true;
-            this.model_Label.Location = new System.Drawing.Point(529, 66);
+            this.model_Label.Location = new System.Drawing.Point(526, 36);
             this.model_Label.Name = "model_Label";
             this.model_Label.Size = new System.Drawing.Size(29, 12);
             this.model_Label.TabIndex = 66;
             this.model_Label.Text = "型号";
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(329, 541);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(77, 12);
-            this.label28.TabIndex = 60;
-            this.label28.Text = "板换投运条件";
-            // 
             // brand_Label
             // 
             this.brand_Label.AutoSize = true;
-            this.brand_Label.Location = new System.Drawing.Point(392, 66);
+            this.brand_Label.Location = new System.Drawing.Point(393, 36);
             this.brand_Label.Name = "brand_Label";
             this.brand_Label.Size = new System.Drawing.Size(29, 12);
             this.brand_Label.TabIndex = 65;
             this.brand_Label.Text = "品牌";
             // 
-            // comboBox11
-            // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(131, 583);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(121, 20);
-            this.comboBox11.TabIndex = 59;
-            // 
             // cooling_Capacity_Label
             // 
             this.cooling_Capacity_Label.AutoSize = true;
-            this.cooling_Capacity_Label.Location = new System.Drawing.Point(267, 66);
+            this.cooling_Capacity_Label.Location = new System.Drawing.Point(267, 36);
             this.cooling_Capacity_Label.Name = "cooling_Capacity_Label";
             this.cooling_Capacity_Label.Size = new System.Drawing.Size(29, 12);
             this.cooling_Capacity_Label.TabIndex = 64;
             this.cooling_Capacity_Label.Text = "冷量";
             // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(59, 586);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(35, 12);
-            this.label29.TabIndex = 58;
-            this.label29.Text = "板换1";
-            // 
             // type_Label
             // 
             this.type_Label.AutoSize = true;
-            this.type_Label.Location = new System.Drawing.Point(154, 66);
+            this.type_Label.Location = new System.Drawing.Point(146, 36);
             this.type_Label.Name = "type_Label";
             this.type_Label.Size = new System.Drawing.Size(29, 12);
             this.type_Label.TabIndex = 63;
             this.type_Label.Text = "类型";
             // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(33, 540);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(72, 16);
-            this.checkBox4.TabIndex = 57;
-            this.checkBox4.Text = "免费板换";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(131, 538);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 20);
-            this.comboBox10.TabIndex = 56;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-5, 216);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 347);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(936, 316);
+            this.dataGridView1.Size = new System.Drawing.Size(936, 275);
             this.dataGridView1.TabIndex = 55;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(240, 33);
+            this.label30.Location = new System.Drawing.Point(170, 12);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(17, 12);
             this.label30.TabIndex = 54;
@@ -1104,7 +1048,7 @@
             // 
             // freezerNum
             // 
-            this.freezerNum.Location = new System.Drawing.Point(125, 30);
+            this.freezerNum.Location = new System.Drawing.Point(64, 9);
             this.freezerNum.Name = "freezerNum";
             this.freezerNum.Size = new System.Drawing.Size(100, 21);
             this.freezerNum.TabIndex = 53;
@@ -1113,7 +1057,7 @@
             // freezerMachine_Label
             // 
             this.freezerMachine_Label.AutoSize = true;
-            this.freezerMachine_Label.Location = new System.Drawing.Point(31, 33);
+            this.freezerMachine_Label.Location = new System.Drawing.Point(17, 12);
             this.freezerMachine_Label.Name = "freezerMachine_Label";
             this.freezerMachine_Label.Size = new System.Drawing.Size(41, 12);
             this.freezerMachine_Label.TabIndex = 52;
@@ -1545,6 +1489,96 @@
             this.label42.TabIndex = 2;
             this.label42.Text = "Enerefsys系统全年逐时优化结果";
             // 
+            // rowUnitView1
+            // 
+            this.rowUnitView1.AllowUserToAddRows = false;
+            this.rowUnitView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rowUnitView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rowUnitView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Day,
+            this.Time,
+            this.Temperature,
+            this.EngineType,
+            this.EngineValue,
+            this.EngineLoadRatio,
+            this.Flow,
+            this.SystemMinPower,
+            this.Id});
+            this.rowUnitView1.Location = new System.Drawing.Point(1, 69);
+            this.rowUnitView1.Name = "rowUnitView1";
+            this.rowUnitView1.ReadOnly = true;
+            this.rowUnitView1.RowHeadersVisible = false;
+            this.rowUnitView1.RowTemplate.Height = 23;
+            this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.rowUnitView1.Size = new System.Drawing.Size(924, 548);
+            this.rowUnitView1.TabIndex = 3;
+            // 
+            // Day
+            // 
+            this.Day.DataPropertyName = "Day";
+            this.Day.HeaderText = "日期";
+            this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
+            // 
+            // Time
+            // 
+            this.Time.DataPropertyName = "Time";
+            this.Time.HeaderText = "时间";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            // 
+            // Temperature
+            // 
+            this.Temperature.DataPropertyName = "Temperature";
+            this.Temperature.HeaderText = "温度";
+            this.Temperature.Name = "Temperature";
+            this.Temperature.ReadOnly = true;
+            // 
+            // EngineType
+            // 
+            this.EngineType.DataPropertyName = "EngineType";
+            this.EngineType.HeaderText = "冷冻机类型";
+            this.EngineType.Name = "EngineType";
+            this.EngineType.ReadOnly = true;
+            // 
+            // EngineValue
+            // 
+            this.EngineValue.DataPropertyName = "EngineValue";
+            this.EngineValue.HeaderText = "冷量";
+            this.EngineValue.Name = "EngineValue";
+            this.EngineValue.ReadOnly = true;
+            // 
+            // EngineLoadRatio
+            // 
+            this.EngineLoadRatio.DataPropertyName = "EngineLoadRatio";
+            this.EngineLoadRatio.HeaderText = "负荷率";
+            this.EngineLoadRatio.Name = "EngineLoadRatio";
+            this.EngineLoadRatio.ReadOnly = true;
+            // 
+            // Flow
+            // 
+            this.Flow.DataPropertyName = "Flow";
+            this.Flow.HeaderText = "流量";
+            this.Flow.Name = "Flow";
+            this.Flow.ReadOnly = true;
+            // 
+            // SystemMinPower
+            // 
+            this.SystemMinPower.DataPropertyName = "SystemMinPower";
+            this.SystemMinPower.HeaderText = "系统最低功率";
+            this.SystemMinPower.Name = "SystemMinPower";
+            this.SystemMinPower.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.btnClear);
@@ -1834,95 +1868,39 @@
             this.saveToolStripMenuItem.Text = "保存当前项目";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
-            // rowUnitView1
+            // boarderMachine_Label
             // 
-            this.rowUnitView1.AllowUserToAddRows = false;
-            this.rowUnitView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rowUnitView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rowUnitView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Day,
-            this.Time,
-            this.Temperature,
-            this.EngineType,
-            this.EngineValue,
-            this.EngineLoadRatio,
-            this.Flow,
-            this.SystemMinPower,
-            this.Id});
-            this.rowUnitView1.Location = new System.Drawing.Point(1, 69);
-            this.rowUnitView1.Name = "rowUnitView1";
-            this.rowUnitView1.ReadOnly = true;
-            this.rowUnitView1.RowHeadersVisible = false;
-            this.rowUnitView1.RowTemplate.Height = 23;
-            this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView1.Size = new System.Drawing.Size(924, 548);
-            this.rowUnitView1.TabIndex = 3;
+            this.boarderMachine_Label.AutoSize = true;
+            this.boarderMachine_Label.Location = new System.Drawing.Point(213, 13);
+            this.boarderMachine_Label.Name = "boarderMachine_Label";
+            this.boarderMachine_Label.Size = new System.Drawing.Size(41, 12);
+            this.boarderMachine_Label.TabIndex = 75;
+            this.boarderMachine_Label.Text = "样板机";
             // 
-            // Day
+            // boarderNum
             // 
-            this.Day.DataPropertyName = "Day";
-            this.Day.HeaderText = "日期";
-            this.Day.Name = "Day";
-            this.Day.ReadOnly = true;
+            this.boarderNum.Location = new System.Drawing.Point(260, 10);
+            this.boarderNum.Name = "boarderNum";
+            this.boarderNum.Size = new System.Drawing.Size(100, 21);
+            this.boarderNum.TabIndex = 76;
+            this.boarderNum.TextChanged += new System.EventHandler(this.boarderNum_TextChanged);
             // 
-            // Time
+            // label29
             // 
-            this.Time.DataPropertyName = "Time";
-            this.Time.HeaderText = "时间";
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(366, 13);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(17, 12);
+            this.label29.TabIndex = 77;
+            this.label29.Text = "台";
             // 
-            // Temperature
+            // boarder_Panel
             // 
-            this.Temperature.DataPropertyName = "Temperature";
-            this.Temperature.HeaderText = "温度";
-            this.Temperature.Name = "Temperature";
-            this.Temperature.ReadOnly = true;
-            // 
-            // EngineType
-            // 
-            this.EngineType.DataPropertyName = "EngineType";
-            this.EngineType.HeaderText = "冷冻机类型";
-            this.EngineType.Name = "EngineType";
-            this.EngineType.ReadOnly = true;
-            // 
-            // EngineValue
-            // 
-            this.EngineValue.DataPropertyName = "EngineValue";
-            this.EngineValue.HeaderText = "冷量";
-            this.EngineValue.Name = "EngineValue";
-            this.EngineValue.ReadOnly = true;
-            // 
-            // EngineLoadRatio
-            // 
-            this.EngineLoadRatio.DataPropertyName = "EngineLoadRatio";
-            this.EngineLoadRatio.HeaderText = "负荷率";
-            this.EngineLoadRatio.Name = "EngineLoadRatio";
-            this.EngineLoadRatio.ReadOnly = true;
-            // 
-            // Flow
-            // 
-            this.Flow.DataPropertyName = "Flow";
-            this.Flow.HeaderText = "流量";
-            this.Flow.Name = "Flow";
-            this.Flow.ReadOnly = true;
-            // 
-            // SystemMinPower
-            // 
-            this.SystemMinPower.DataPropertyName = "SystemMinPower";
-            this.SystemMinPower.HeaderText = "系统最低功率";
-            this.SystemMinPower.Name = "SystemMinPower";
-            this.SystemMinPower.ReadOnly = true;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
+            this.boarder_Panel.AutoScroll = true;
+            this.boarder_Panel.Location = new System.Drawing.Point(7, 186);
+            this.boarder_Panel.Name = "boarder_Panel";
+            this.boarder_Panel.Size = new System.Drawing.Size(925, 129);
+            this.boarder_Panel.TabIndex = 78;
             // 
             // Enerefsys
             // 
@@ -1975,6 +1953,7 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -1987,7 +1966,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2061,18 +2039,12 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button btnLoadEngineData;
         private System.Windows.Forms.Button btn_ok;
-        private System.Windows.Forms.Label is_Frequency_Conversion_Label;
+        private System.Windows.Forms.Label amount_Label;
         private System.Windows.Forms.Panel freezer_Panel;
-        private System.Windows.Forms.ComboBox comboBox12;
         private System.Windows.Forms.Label model_Label;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label brand_Label;
-        private System.Windows.Forms.ComboBox comboBox11;
         private System.Windows.Forms.Label cooling_Capacity_Label;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label type_Label;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.ComboBox comboBox10;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox freezerNum;
@@ -2165,5 +2137,9 @@
         private System.Windows.Forms.TextBox textBox_CoolingPower;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox boarderNum;
+        private System.Windows.Forms.Label boarderMachine_Label;
+        private System.Windows.Forms.Panel boarder_Panel;
     }
 }
