@@ -11,6 +11,7 @@ namespace EnerefsysDAL.Model
         public double B1 { get; set; }
         public double B2 { get; set; }
         public double B3 { get; set; }
+        public double B4 { get; set; }
         public string Type { get; set; }
     }
 }

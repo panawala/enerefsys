@@ -636,7 +636,7 @@ namespace Enerefsys
         //    /***********************************************************************************/
         //    if (CoolingType.Equals("并联"))
         //    {
-        //        double constantNumber = 240 * engineCount;
+        //        double constantNumber = fullFlow * engineCount;
         //        double constantNumber2 = constantNumber * constantNumber;
         //        //从数据库得到二次项系数
         //        List<double> doubleParams = PumpManager.GetParamsByType("1");
@@ -650,8 +650,8 @@ namespace Enerefsys
         //        //从数据库得到二次项系数
         //        List<double> doubleParams = PumpManager.GetParamsByType("1");
         //        //对水泵公式中的自变量进行变换，影响到二次方程的a,b,c
-        //        a += doubleParams[0] * 240 * 240 * engineCount;
-        //        b += doubleParams[1] * 240 * engineCount;
+        //        a += doubleParams[0] * fullFlow * fullFlow * engineCount;
+        //        b += doubleParams[1] * fullFlow * engineCount;
         //        c += doubleParams[2] * engineCount;
         //    }
 
@@ -824,8 +824,8 @@ namespace Enerefsys
         //        int engineCount = machineEntities.Count;
         //        //冷却水泵,按照并联处理
         //        List<double> doubleParamsCool = PumpManager.GetParamsByType("1");
-        //        minResult += doubleParamsCool[0] * 240 * 240 * engineCount * engineCount
-        //            + doubleParamsCool[1] * 240 * engineCount
+        //        minResult += doubleParamsCool[0] * fullFlow * fullFlow * engineCount * engineCount
+        //            + doubleParamsCool[1] * fullFlow * engineCount
         //            + doubleParamsCool[2] * engineCount;
         //        //冷冻水泵
         //        List<double> doubleParamsFreeze = PumpManager.GetParamsByType("2");
@@ -999,11 +999,21 @@ namespace Enerefsys
             IsNormal = false;
             IsSwap = false;
             FreezeType = "一对一";
-            CoolingType = "并联";
-            TemperRange = 7;
-            coolingPower = 26;
+            CoolingType = "一对一";
+            //温差设置为5度
+            TemperRange = 5;
+            if (!string.IsNullOrEmpty(textBox_TemperRange.Text))
+                TemperRange = Convert.ToInt32(textBox_TemperRange.Text);
+            coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
             GetOptimizationResult(meList, Convert.ToDouble(textBox_Load.Text), Convert.ToDouble(textBox_Temperature.Text));
 
+            //如果是板换，则散热塔的功率等于板换数量
+            if (IsBoard)
+                coolingPower = coolingPower * BoardCount;
+            else
+            {
+                coolingPower = coolingPower * meMin.Count;
+            }
             showMessage();
 
 
@@ -1039,8 +1049,8 @@ namespace Enerefsys
             addStrToBox("此时流量为：" + String.Format("{0:F}", minSolute * 100) + "%.", textBox_Message);
             addStrToBox("各主机负荷率为：" + String.Format("{0:F}", percentValue * 100) + "%.", textBox_Message);
             addStrToBox("主机能耗为：" + String.Format("{0:F}", enginePower) + "KW.", textBox_Message);
-            addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", freezePumpPower) + "KW.", textBox_Message);
-            addStrToBox("冷冻水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
+            addStrToBox("冷冻水泵能耗为：" + String.Format("{0:F}", freezePumpPower) + "KW.", textBox_Message);
+            addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
             addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
         }
         private void addStrToBox(string str, TextBox rtbox)
@@ -1066,9 +1076,10 @@ namespace Enerefsys
         /// <summary>
         /// 冷却塔功率
         /// </summary>
-        public double coolingPower = 0;
+        public double coolingPower = 94.0d;
 
-     
+
+        public int fullFlow = 320;
 
         //得到一定温度下，一台主机的能耗的函数
         private List<double> getFormulaByEntity(string type, double load, double temperature)
@@ -1130,7 +1141,14 @@ namespace Enerefsys
                     return false;
             }
         }
-
+        /// <summary>
+        /// 是否为板换
+        /// </summary>
+        private bool IsBoard = false;
+        /// <summary>
+        /// 板换数量
+        /// </summary>
+        private int BoardCount = 0;
         //在一定温度下得到一个主机组合的最低能耗，及对应的流量
         private SoluteResult getMinByConsist(List<MachineEntity> mes, double temperature, double load)
         {
@@ -1164,22 +1182,35 @@ namespace Enerefsys
             //string pumpType = PumpType.Text;
             int engineCount = mes.Count;
 
+            //如果使用板换，去除主机,主机数量当成板换数量
+            if (IsBoard)
+            {
+                tempa = 0d;
+                tempb = 0d;
+                tempc = 0d;
+                engineCount = BoardCount;
+            }
+
+            double threeOption = 0d;
             /***********************************************************************************/
             //冷却水泵的计算公式
             /***********************************************************************************/
             if (CoolingType.Equals("并联"))
             {
-                double constantNumber = 240 * engineCount;
+                double constantNumber = fullFlow * engineCount;
                 double constantNumber2 = constantNumber * constantNumber;
+                double constantNumber3 = constantNumber2 * constantNumber;
                 //从数据库得到二次项系数
                 List<double> doubleParams = PumpManager.GetParamsByType("1");
+
                 //对水泵公式中的自变量进行变换，影响到二次方程的a,b,c
-                a += doubleParams[0] * constantNumber2;
-                b += doubleParams[1] * constantNumber;
-                c += doubleParams[2];
-                tempa = doubleParams[0] * constantNumber2;
-                tempb = doubleParams[1] * constantNumber;
-                tempc = doubleParams[2];
+                threeOption += doubleParams[0] * constantNumber3;
+                a += doubleParams[1] * constantNumber2;
+                b += doubleParams[2] * constantNumber;
+                c += doubleParams[3];
+                //tempa = doubleParams[0] * constantNumber2;
+                //tempb = doubleParams[1] * constantNumber;
+                //tempc = doubleParams[2];
             }
 
             if (CoolingType.Equals("一对一"))
@@ -1187,17 +1218,20 @@ namespace Enerefsys
                 //从数据库得到二次项系数
                 List<double> doubleParams = PumpManager.GetParamsByType("1");
                 //对水泵公式中的自变量进行变换，影响到二次方程的a,b,c
-                a += doubleParams[0] * 240 * 240 * engineCount;
-                b += doubleParams[1] * 240 * engineCount;
-                c += doubleParams[2] * engineCount;
+                threeOption += doubleParams[0] * fullFlow * fullFlow * fullFlow * engineCount;
+                a += doubleParams[1] * fullFlow * fullFlow * engineCount;
+                b += doubleParams[2] * fullFlow * engineCount;
+                c += doubleParams[3] * engineCount;
             }
 
 
             //求出使得能耗最低的解，即流量的百分比
-            double solute = Utility.GetMinSolute(a, b, c);
+            double solute = Utility.GetMinSolute(threeOption,a, b, c);
+            //if (solute < 0.45)
+               // solute = 0.45;
             double result = a * solute * solute + b * solute + c;
 
-            enginePower = tempa * solute * solute + b * solute + c;
+            enginePower = tempa * solute * solute + tempb * solute + tempc;
 
             return new SoluteResult(result, solute);
         }
@@ -1250,8 +1284,8 @@ namespace Enerefsys
                 int engineCount = machineEntities.Count;
                 //冷却水泵,按照并联处理
                 List<double> doubleParamsCool = PumpManager.GetParamsByType("1");
-                minResult += doubleParamsCool[0] * 240 * 240 * engineCount * engineCount
-                    + doubleParamsCool[1] * 240 * engineCount
+                minResult += doubleParamsCool[0] * fullFlow * fullFlow * engineCount * engineCount
+                    + doubleParamsCool[1] * fullFlow * engineCount
                     + doubleParamsCool[2] * engineCount;
                 //冷冻水泵
                 List<double> doubleParamsFreeze = PumpManager.GetParamsByType("2");
@@ -1318,13 +1352,33 @@ namespace Enerefsys
                     }
 
                     //从数据库得到二次项系数
+                    //一对一：一台水泵对应一台主机
                     List<double> doubleParams = PumpManager.GetParamsByType("2");
-                    foreach (var me in machineResult)
+                    //如果是满足板换条件
+                    if (IsBoard)
                     {
-                        double curflow = me.Value / (4.187 * TemperRange);
-                        double curPower = doubleParams[0] * curflow * curflow + doubleParams[1] * curflow + doubleParams[2];
+                        double curflow = load * 3.6 / (4.187 * TemperRange);
+                        if (curflow < fullFlow * 0.3)
+                            curflow = fullFlow * 0.3;
+                        double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
+                        curPower = curPower * BoardCount;
                         freezePumpPower += curPower;
                     }
+                    else
+                    {
+                        //此处相当于功率乘以主机数量
+                        foreach (var me in machineResult)
+                        {
+                            //此处公式修改
+                            //double curflow = me.Value / (4.187 * TemperRange);
+                            double curflow = load * 3.6 / (4.187 * TemperRange);
+                            if (curflow < fullFlow * 0.3)
+                                curflow = fullFlow * 0.3;
+                            double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
+                            freezePumpPower += curPower;
+                        }
+                    }
+                   
                 }
                 if (FreezeType.Equals("并联"))
                 {
@@ -1337,7 +1391,7 @@ namespace Enerefsys
                     //从数据库得到二次项系数
                     List<double> doubleParams = PumpManager.GetParamsByType("2");
                     double curflow = load / (4.187 * TemperRange * machineResult.Count);
-                    double curPower = doubleParams[0] * curflow * curflow + doubleParams[1] * curflow + doubleParams[2];
+                    double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
                     freezePumpPower += curPower;
                 }
                 //得到最终结果,并且加上冷却塔功率
@@ -2088,43 +2142,53 @@ namespace Enerefsys
 
         void mWorker_DoWorkPump(object sender, DoWorkEventArgs e)
         {
-            BackgroundWorker worker = (BackgroundWorker)sender;
-            EngineParam ep = (EngineParam)e.Argument;
-            string fileName = ep.FileName;
-
-            //得到excel中的所有sheet名字，然后循环得到数据模拟表达式,sheet名代表水泵类型
-            List<string> sheets = Utility.GetSheetNames(fileName);
-            PumpManager.DeletePump();
-
-            int iStep = 0;
-            foreach (var sheet in sheets)
+            try
             {
-                Fit.Test test = new Fit.Test();
+                BackgroundWorker worker = (BackgroundWorker)sender;
+                EngineParam ep = (EngineParam)e.Argument;
+                string fileName = ep.FileName;
 
-                //根据dll得到excel中的数据，并插入数据库
-                MathWorks.MATLAB.NET.Arrays.MWArray mwArray = test.GetFND(fileName, sheet);
-                MathWorks.MATLAB.NET.Arrays.MWNumericArray mmwArray = mwArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
-                Array warray = mmwArray.ToArray();
-                double[,] cc = (double[,])warray;
+                //得到excel中的所有sheet名字，然后循环得到数据模拟表达式,sheet名代表水泵类型
+                List<string> sheets = Utility.GetSheetNames(fileName);
+                PumpManager.DeletePump();
 
-                int j_count = warray.Length / 3;
-
-                for (int j = 0; j < j_count; j++)
+                int iStep = 0;
+                foreach (var sheet in sheets)
                 {
-                    PumpManager.InsertPumpInfo(warray.GetValue(j, 0), warray.GetValue(j, 1), sheet, warray.GetValue(j, 2));
-                }
+                    Fit.Test test = new Fit.Test();
 
-                //根据dll得到拟合出来的二次项系数
-                MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.SingleDimensionPolyFit(fileName, sheet);
-                MathWorks.MATLAB.NET.Arrays.MWNumericArray mmArray = mArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
-                Array array = mmArray.ToArray();
-                int ret = PumpManager.Insert((array.GetValue(0, 0)), array.GetValue(0, 1), array.GetValue(0, 2), sheet);
-                if (ret == 1)
-                {
-                    iStep++;
-                    worker.ReportProgress(iStep);
+                    //根据dll得到excel中的数据，并插入数据库
+                    MathWorks.MATLAB.NET.Arrays.MWArray mwArray = test.GetFND(fileName, sheet);
+                    MathWorks.MATLAB.NET.Arrays.MWNumericArray mmwArray = mwArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
+                    Array warray = mmwArray.ToArray();
+                    double[,] cc = (double[,])warray;
+
+                    int j_count = warray.Length / 3;
+
+                    for (int j = 0; j < j_count; j++)
+                    {
+                        PumpManager.InsertPumpInfo(warray.GetValue(j, 0), warray.GetValue(j, 1), sheet, warray.GetValue(j, 2));
+                        //如果是2，得到满载流量
+                        if (sheet.Equals("2"))
+                            fullFlow = Convert.ToInt32(warray.GetValue(j, 2).ToString());
+                    }
+                    SVPF.SVPF svpf = new SVPF.SVPF();
+                    //根据dll得到拟合出来的二次项系数
+                    MathWorks.MATLAB.NET.Arrays.MWArray mArray = svpf.SingleVariablePolyFit(fileName, sheet);
+                    MathWorks.MATLAB.NET.Arrays.MWNumericArray mmArray = mArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
+                    Array array = mmArray.ToArray();
+                    int ret = PumpManager.Insert((array.GetValue(0, 0)), array.GetValue(0, 1), array.GetValue(0, 2), array.GetValue(0, 3), sheet);
+                    if (ret == 1)
+                    {
+                        iStep++;
+                        worker.ReportProgress(iStep);
+                    }
                 }
             }
+            catch (Exception ee)
+            { 
+            }
+            
         }
 
 
@@ -2229,6 +2293,31 @@ namespace Enerefsys
                     count++;
                     break;
             }
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox7.Text.Equals("大系统"))
+            {
+                fullFlow = 1332;
+                //coolingPower = 94.0d;
+            }
+            else if (comboBox7.Text.Equals("小系统"))
+            {
+                fullFlow = 320;
+                //coolingPower = 15.5d;
+            }
+                
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            textBox_Message.Text = "";
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

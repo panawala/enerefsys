@@ -161,6 +161,13 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.label42 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.textBox_CoolingPower = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.textBox_TemperRange = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -813,6 +820,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(160, 21);
             this.textBox5.TabIndex = 5;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label11
             // 
@@ -1539,6 +1547,13 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.btnClear);
+            this.tabPage6.Controls.Add(this.textBox_CoolingPower);
+            this.tabPage6.Controls.Add(this.label46);
+            this.tabPage6.Controls.Add(this.label45);
+            this.tabPage6.Controls.Add(this.comboBox7);
+            this.tabPage6.Controls.Add(this.textBox_TemperRange);
+            this.tabPage6.Controls.Add(this.label34);
             this.tabPage6.Controls.Add(this.panel6);
             this.tabPage6.Controls.Add(this.textBox_Message);
             this.tabPage6.Controls.Add(this.btnShow);
@@ -1553,6 +1568,73 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "计算结果";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(749, 30);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 112;
+            this.btnClear.Text = "清空";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // textBox_CoolingPower
+            // 
+            this.textBox_CoolingPower.Location = new System.Drawing.Point(470, 34);
+            this.textBox_CoolingPower.Name = "textBox_CoolingPower";
+            this.textBox_CoolingPower.Size = new System.Drawing.Size(100, 21);
+            this.textBox_CoolingPower.TabIndex = 111;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(422, 36);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(41, 12);
+            this.label46.TabIndex = 110;
+            this.label46.Text = "冷却塔";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(721, 73);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(29, 12);
+            this.label45.TabIndex = 109;
+            this.label45.Text = "类型";
+            this.label45.Visible = false;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "大系统",
+            "小系统"});
+            this.comboBox7.Location = new System.Drawing.Point(749, 68);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(76, 20);
+            this.comboBox7.TabIndex = 108;
+            this.comboBox7.Visible = false;
+            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
+            // 
+            // textBox_TemperRange
+            // 
+            this.textBox_TemperRange.Location = new System.Drawing.Point(629, 69);
+            this.textBox_TemperRange.Name = "textBox_TemperRange";
+            this.textBox_TemperRange.Size = new System.Drawing.Size(76, 21);
+            this.textBox_TemperRange.TabIndex = 107;
+            this.textBox_TemperRange.Visible = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(601, 73);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(29, 12);
+            this.label34.TabIndex = 106;
+            this.label34.Text = "温差";
+            this.label34.Visible = false;
             // 
             // panel6
             // 
@@ -1589,15 +1671,16 @@
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
-            this.textBox_Message.Location = new System.Drawing.Point(105, 137);
+            this.textBox_Message.Location = new System.Drawing.Point(105, 96);
             this.textBox_Message.Multiline = true;
             this.textBox_Message.Name = "textBox_Message";
-            this.textBox_Message.Size = new System.Drawing.Size(720, 186);
+            this.textBox_Message.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox_Message.Size = new System.Drawing.Size(720, 293);
             this.textBox_Message.TabIndex = 17;
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(750, 85);
+            this.btnShow.Location = new System.Drawing.Point(629, 31);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 23);
             this.btnShow.TabIndex = 16;
@@ -1607,23 +1690,24 @@
             // 
             // pictureBox_Result
             // 
-            this.pictureBox_Result.Location = new System.Drawing.Point(104, 345);
+            this.pictureBox_Result.Location = new System.Drawing.Point(104, 416);
             this.pictureBox_Result.Name = "pictureBox_Result";
             this.pictureBox_Result.Size = new System.Drawing.Size(721, 194);
+            this.pictureBox_Result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Result.TabIndex = 15;
             this.pictureBox_Result.TabStop = false;
             // 
             // textBox_Load
             // 
-            this.textBox_Load.Location = new System.Drawing.Point(351, 86);
+            this.textBox_Load.Location = new System.Drawing.Point(299, 32);
             this.textBox_Load.Name = "textBox_Load";
-            this.textBox_Load.Size = new System.Drawing.Size(131, 21);
+            this.textBox_Load.Size = new System.Drawing.Size(86, 21);
             this.textBox_Load.TabIndex = 14;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(282, 89);
+            this.label43.Location = new System.Drawing.Point(240, 36);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(53, 12);
             this.label43.TabIndex = 13;
@@ -1631,19 +1715,19 @@
             // 
             // textBox_Temperature
             // 
-            this.textBox_Temperature.Location = new System.Drawing.Point(161, 85);
+            this.textBox_Temperature.Location = new System.Drawing.Point(170, 33);
             this.textBox_Temperature.Name = "textBox_Temperature";
-            this.textBox_Temperature.Size = new System.Drawing.Size(115, 21);
+            this.textBox_Temperature.Size = new System.Drawing.Size(53, 21);
             this.textBox_Temperature.TabIndex = 12;
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(102, 89);
+            this.label44.Location = new System.Drawing.Point(99, 37);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(53, 12);
+            this.label44.Size = new System.Drawing.Size(65, 12);
             this.label44.TabIndex = 11;
-            this.label44.Text = "室外温度";
+            this.label44.Text = "冷却水温度";
             // 
             // tabPage7
             // 
@@ -2074,5 +2158,12 @@
         private System.Windows.Forms.ComboBox comboBox_EngineType;
         private System.Windows.Forms.Label completed;
         private System.Windows.Forms.Label completedPump;
+        private System.Windows.Forms.TextBox textBox_TemperRange;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.TextBox textBox_CoolingPower;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Button btnClear;
     }
 }

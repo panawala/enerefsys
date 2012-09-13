@@ -46,6 +46,10 @@
     <Reference Include="MWArray">
       <HintPath>..\DbLib\MWArray.dll</HintPath>
     </Reference>
+    <Reference Include="SVPF, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DbLib\SVPF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
@@ -65,7 +69,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebFiguresService">
+    <Reference Include="WebFiguresService, Version=2.10.1.0, Culture=neutral, PublicKeyToken=e1d84a0da19db86f, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DbLib\WebFiguresService.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -165,6 +170,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enerefsys.resx">
       <DependentUpon>Enerefsys.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -250,7 +256,9 @@
     <Content Include="image\3.jpg" />
     <Content Include="image\4.jpg" />
     <Content Include="image\5.jpg" />
+    <Content Include="Resources\enerefsys.ico" />
     <Content Include="Resources\result.jpg" />
+    <Content Include="Resources\uninstall.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

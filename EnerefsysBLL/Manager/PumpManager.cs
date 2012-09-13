@@ -46,6 +46,12 @@ namespace EnerefsysBLL.Manager
             return PumpFitResultData.InsertPumpFitResult(Convert.ToDouble(b1), Convert.ToDouble(b2), Convert.ToDouble(b3), type.ToString());
         }
 
+        //在水泵的数值模拟系数表中插入数据
+        public static int Insert(object b1, object b2, object b3, object b4,object type)
+        {
+            return PumpFitResultData.InsertPumpFitResult(Convert.ToDouble(b1), Convert.ToDouble(b2), Convert.ToDouble(b3),Convert.ToDouble(b4), type.ToString());
+        }
+
         public static int DeletePump()
         {
             /*string sql = "DELETE FROM PumpFitResult";

@@ -34,6 +34,34 @@ namespace EnerefsysBLL.EntityData
                 }
             }
         }
+
+        //插入PumpFitResult表
+        public static int InsertPumpFitResult(double b1, double b2, double b3, double b4,string type)
+        {
+            using (EnerefsysContext db = new EnerefsysContext())
+            {
+                PumpFitResult pumpFitResult = new PumpFitResult();
+                pumpFitResult.B1 = b1;
+                pumpFitResult.B2 = b2;
+                pumpFitResult.B3 = b3;
+                pumpFitResult.B4 = b4;
+                pumpFitResult.Type = type;
+
+                // add entity object to the collection
+                db.PumpFitResults.Add(pumpFitResult);
+
+                try
+                {
+                    // save changes to the database
+                    return db.SaveChanges();
+                }
+                catch
+                {
+                    throw new Exception("Could not save changes");
+                }
+            }
+        }
+
         public static int DeleteAll()
         {
             using (EnerefsysContext db = new EnerefsysContext())
@@ -89,6 +117,7 @@ namespace EnerefsysBLL.EntityData
                 results.Add(pumpFitResult.B1);
                 results.Add(pumpFitResult.B2);
                 results.Add(pumpFitResult.B3);
+                results.Add(pumpFitResult.B4);
                 return results;
 
               
