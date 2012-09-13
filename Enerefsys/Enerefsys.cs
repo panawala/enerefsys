@@ -272,7 +272,6 @@ namespace Enerefsys
             if (null != freezerNum.Text.ToString().Trim() && "" != freezerNum.Text.ToString().Trim() && 0 < subFreezer_list.Count)
             {
                 tempFreezerNum = Int32.Parse(freezerNum.Text.ToString().Trim());
-                int iamount = 0;
                 for (int i = 1; i <= tempFreezerNum; i++)
                 {
                     SubFreezer sub_Freezer = (SubFreezer)subFreezer_list.ElementAt(i - 1);
@@ -283,8 +282,7 @@ namespace Enerefsys
                             int icount = Convert.ToInt32(sub_Freezer.amount_textBox.Text.ToString().Trim());
                             for (int ix = 0; ix < icount; ix++)
                             {
-                                iamount++;
-                                MachineEntity me = new MachineEntity("冷冻机" + iamount, sub_Freezer.type_box.Text.ToString(), Convert.ToDouble(sub_Freezer.cooling_comboBox.Text.ToString().Trim()));
+                                MachineEntity me = new MachineEntity("冷冻机" + i, sub_Freezer.type_box.Text.ToString(), Convert.ToDouble(sub_Freezer.cooling_comboBox.Text.ToString().Trim()));
                                 machineList.Add(me);
                             }
                         }
@@ -384,7 +382,6 @@ namespace Enerefsys
             if (null != boarderNum.Text.ToString().Trim() && "" != boarderNum.Text.ToString().Trim() && 0 < subBoarder_list.Count)
             {
                 tempBoarderNum = Int32.Parse(boarderNum.Text.ToString().Trim());
-                int iamount = 0;
                 for (int i = 1; i <= tempBoarderNum; i++)
                 {
                     SubBoarder sub_Boarder = (SubBoarder)subBoarder_list.ElementAt(i - 1);
@@ -395,8 +392,7 @@ namespace Enerefsys
                             int icount = Convert.ToInt32(sub_Boarder.amount_textBox.Text.ToString().Trim());
                             for (int ix = 0; ix < icount; ix++)
                             {
-                                iamount++;
-                                MachineEntity me = new MachineEntity("板换" + iamount, sub_Boarder.addition.Text.ToString() + sub_Boarder.type_box.Text.ToString(), Convert.ToDouble(sub_Boarder.cooling_comboBox.Text.ToString().Trim()));
+                                MachineEntity me = new MachineEntity("板换" + i, sub_Boarder.addition.Text.ToString() + sub_Boarder.type_box.Text.ToString(), Convert.ToDouble(sub_Boarder.cooling_comboBox.Text.ToString().Trim()));
                                 machineList.Add(me);
                             }
                         }
