@@ -48,13 +48,14 @@ namespace Enerefsys
         //添加一个PassDataBetweenFormHandler类型的事件
         public event PassDataBetweenFormHandler PassDataBetweenForm;
         //定义一个Trimer
-        private Timer time1=new Timer();
+        private Timer time1 = new Timer();
 
 
         private List<Label> label_list;
         private List<SubFreezer> subFreezer_list;
         private List<SubBoarder> subBoarder_list;
         public List<MachineEntity> meList { get; set; }//获得冷冻值列表（类型和冷量）
+        public List<MachineEntity> bhList { get; set; }//获得版换值列表（类型和冷量）
         private int labelFlag = 0;//判断是否要显示labe用
         private int reponseCount
         {
@@ -79,12 +80,12 @@ namespace Enerefsys
 
             for (int j = 0; j < this.dataGridView1.ColumnCount; j++)
             {
-                this.dataGridView1.Columns[j].Width = 130;
+                this.dataGridView1.Columns[j].Width = 150;
             }
 
             this.dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 
-            this.dataGridView1.ColumnHeadersHeight = this.dataGridView1.ColumnHeadersHeight * 2;
+            this.dataGridView1.ColumnHeadersHeight = this.dataGridView1.ColumnHeadersHeight * 1;
 
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
 
@@ -95,51 +96,50 @@ namespace Enerefsys
         }
         void dataGridView1_Paint(object sender, PaintEventArgs e)
         {
+            //string[] monthes = { "单台制冷量", "蒸发器", "冷凝器" };
 
-            string[] monthes = { "单台制冷量", "蒸发器", "冷凝器" };
+            //for (int j = 3; j < 6; )
+            //{
+            //    Rectangle r1 = this.dataGridView1.GetCellDisplayRectangle(j, -1, true); //get the column header cell
+            //    r1.X += 1;
 
-            for (int j = 3; j < 6; )
-            {
-                Rectangle r1 = this.dataGridView1.GetCellDisplayRectangle(j, -1, true); //get the column header cell
-                r1.X += 1;
+            //    r1.Y += 1;
+            //    if (j == 3)
+            //    {
+            //        r1.Width = r1.Width - 2;
+            //    }
+            //    else if (j == 4)
+            //    {
+            //        r1.Width = r1.Width * 4 - 2;
+            //    }
+            //    else if (j == 5)
+            //    {
+            //        r1.X += 270;
+            //        r1.Width = r1.Width * 4;
+            //    }
 
-                r1.Y += 1;
-                if (j == 3)
-                {
-                    r1.Width = r1.Width - 2;
-                }
-                else if (j == 4)
-                {
-                    r1.Width = r1.Width * 4 - 2;
-                }
-                else if (j == 5)
-                {
-                    r1.X += 270;
-                    r1.Width = r1.Width * 4;
-                }
+            //    r1.Height = r1.Height / 2 - 2;
 
-                r1.Height = r1.Height / 2 - 2;
+            //    e.Graphics.FillRectangle(new SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
 
-                e.Graphics.FillRectangle(new SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
+            //    StringFormat format = new StringFormat();
 
-                StringFormat format = new StringFormat();
+            //    format.Alignment = StringAlignment.Center;
 
-                format.Alignment = StringAlignment.Center;
+            //    format.LineAlignment = StringAlignment.Center;
 
-                format.LineAlignment = StringAlignment.Center;
+            //    e.Graphics.DrawString(monthes[j - 3],
 
-                e.Graphics.DrawString(monthes[j - 3],
+            //        this.dataGridView1.ColumnHeadersDefaultCellStyle.Font,
 
-                    this.dataGridView1.ColumnHeadersDefaultCellStyle.Font,
+            //        new SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor),
 
-                    new SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor),
+            //        r1,
 
-                    r1,
+            //        format);
 
-                    format);
-
-                j += 1;
-            }
+            //    j += 1;
+            //}
 
         }
 
@@ -272,7 +272,7 @@ namespace Enerefsys
             if (null != freezerNum.Text.ToString().Trim() && "" != freezerNum.Text.ToString().Trim() && 0 < subFreezer_list.Count)
             {
                 tempFreezerNum = Int32.Parse(freezerNum.Text.ToString().Trim());
-
+                int iamount = 0;
                 for (int i = 1; i <= tempFreezerNum; i++)
                 {
                     SubFreezer sub_Freezer = (SubFreezer)subFreezer_list.ElementAt(i - 1);
@@ -280,18 +280,22 @@ namespace Enerefsys
                     {
                         try
                         {
-                            MachineEntity me = new MachineEntity("冷冻机" + i, sub_Freezer.type_box.Text.ToString(), Convert.ToDouble(sub_Freezer.cooling_comboBox.Text.ToString().Trim()));
                             int icount = Convert.ToInt32(sub_Freezer.amount_textBox.Text.ToString().Trim());
                             for (int ix = 0; ix < icount; ix++)
                             {
+                                iamount++;
+                                MachineEntity me = new MachineEntity("冷冻机" + iamount, sub_Freezer.type_box.Text.ToString(), Convert.ToDouble(sub_Freezer.cooling_comboBox.Text.ToString().Trim()));
                                 machineList.Add(me);
                             }
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message);
+                            return null;
                         }
                     }
+                    else
+                        return null;
                 }
                 return machineList;
             }
@@ -304,7 +308,7 @@ namespace Enerefsys
 
 
         /// <summary>
-        /// //版换机///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// //板换///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -345,9 +349,9 @@ namespace Enerefsys
             boarder_Panel.Controls.Clear();
         }
 
-        
-        
-        //产生版换机数量
+
+
+        //产生板换数量
         private void create_Boarder_Num(int boarderCount)
         {
             subBoarder_list = new List<SubBoarder>();
@@ -356,7 +360,7 @@ namespace Enerefsys
                 subBoarder_list.Add(new SubBoarder(i));
             }
         }
-        //动态显示版换机
+        //动态显示板换
         private void set_Boarder_Panel(List<SubBoarder> subBoarder_list)
         {
             foreach (SubBoarder sub_boarder in subBoarder_list)
@@ -372,6 +376,47 @@ namespace Enerefsys
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
             }
         }
+
+        private List<MachineEntity> getBoarderTypeAndCooling(List<SubBoarder> subBoarder_list)
+        {
+            int tempBoarderNum;
+            List<MachineEntity> machineList = new List<MachineEntity>();
+            if (null != boarderNum.Text.ToString().Trim() && "" != boarderNum.Text.ToString().Trim() && 0 < subBoarder_list.Count)
+            {
+                tempBoarderNum = Int32.Parse(boarderNum.Text.ToString().Trim());
+                int iamount = 0;
+                for (int i = 1; i <= tempBoarderNum; i++)
+                {
+                    SubBoarder sub_Boarder = (SubBoarder)subBoarder_list.ElementAt(i - 1);
+                    if (null != sub_Boarder.cooling_comboBox.Text.ToString().Trim() && "" != sub_Boarder.cooling_comboBox.Text.ToString().Trim())
+                    {
+                        try
+                        {
+                            int icount = Convert.ToInt32(sub_Boarder.amount_textBox.Text.ToString().Trim());
+                            for (int ix = 0; ix < icount; ix++)
+                            {
+                                iamount++;
+                                MachineEntity me = new MachineEntity("板换" + iamount, sub_Boarder.addition.Text.ToString() + sub_Boarder.type_box.Text.ToString(), Convert.ToDouble(sub_Boarder.cooling_comboBox.Text.ToString().Trim()));
+                                machineList.Add(me);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            return null;
+                        }
+                    }
+                    else
+                        return null;
+                }
+                return machineList;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         //////////////////////////////////////////////////////////////////////////////////////////
         private void btnLoadData_Click(object sender, EventArgs e)
         {
@@ -383,17 +428,58 @@ namespace Enerefsys
             if (null != subFreezer_list && 0 < subFreezer_list.Count)
             {
                 meList = getFreezerTypeAndCooling(subFreezer_list);
+                bhList = getBoarderTypeAndCooling(subBoarder_list);
                 //EngineWinFormEventArgs ewfe = new EngineWinFormEventArgs(meList);
                 //PassDataBetweenForm(this, ewfe);
                 //this.Close();
                 //this.Visible = false;
+                if (meList == null)
+                    return;
+                dataGridView1.Rows.Clear();
+                try
+                {
+                    for (int ix = 0; ix < subFreezer_list.Count; ix++)
+                    {
+                        for (int iy = 0; iy < Convert.ToInt32(subFreezer_list[ix].amount_textBox.Text); iy++)
+                        {
+                            int index = this.dataGridView1.Rows.Add();
+                            this.dataGridView1.Rows[index].Cells[0].Value = index + 1;
+                            this.dataGridView1.Rows[index].Cells[1].Value = subFreezer_list[ix].freazer.Text;
+                            this.dataGridView1.Rows[index].Cells[2].Value = subFreezer_list[ix].type_box.Text;
+                            this.dataGridView1.Rows[index].Cells[3].Value = subFreezer_list[ix].cooling_comboBox.Text;
+                            this.dataGridView1.Rows[index].Cells[4].Value = subFreezer_list[ix].brand_comboBox.Text;
+                            this.dataGridView1.Rows[index].Cells[5].Value = subFreezer_list[ix].model_box.Text;
+                        }
+                    }
+                    if (null != subBoarder_list && 0 < subBoarder_list.Count)
+                    {
+                        for (int ix = 0; ix < subBoarder_list.Count; ix++)
+                        {
+                            for (int iy = 0; iy < Convert.ToInt32(subBoarder_list[ix].amount_textBox.Text); iy++)
+                            {
+                                int index = this.dataGridView1.Rows.Add();
+                                this.dataGridView1.Rows[index].Cells[0].Value = index + 1;
+                                this.dataGridView1.Rows[index].Cells[1].Value = subBoarder_list[ix].boarder.Text;
+                                this.dataGridView1.Rows[index].Cells[2].Value = subBoarder_list[ix].addition.Text + subBoarder_list[ix].type_box.Text;
+                                this.dataGridView1.Rows[index].Cells[3].Value = subBoarder_list[ix].cooling_comboBox.Text;
+                                this.dataGridView1.Rows[index].Cells[4].Value = subBoarder_list[ix].brand_comboBox.Text;
+                                this.dataGridView1.Rows[index].Cells[5].Value = subBoarder_list[ix].model_box.Text;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    dataGridView1.Rows.Clear();
+                }
             }
             else
                 MessageBox.Show("请输入数据");
         }
 
 
-/******************************************************************************************************************/
+        /******************************************************************************************************************/
         //水泵配置WaterPump.cs
         private List<Label> waterPump_label_list;
         private List<WaterFreezer> waterPump_subFreezer_list;
@@ -403,7 +489,7 @@ namespace Enerefsys
             get;
             set;
         }
-      
+
 
 
         //隐藏标签
@@ -452,9 +538,9 @@ namespace Enerefsys
             }
         }
         //动态显示冷冻机
-        private void set_Freezer_Panel(List<WaterFreezer> subFreezer_list,Panel tempPanel)
+        private void set_Freezer_Panel(List<WaterFreezer> subFreezer_list, Panel tempPanel)
         {
-            int j= 0;
+            int j = 0;
             foreach (WaterFreezer sub_freezer in subFreezer_list)
             {
                 j++;
@@ -463,7 +549,7 @@ namespace Enerefsys
                     waterPump_SubFreezer.freazerAndcooler.Text = "冷冻水泵" + j;
                 else
                 {
-                    waterPump_SubFreezer.freazerAndcooler.Text = "冷却水泵" +j;
+                    waterPump_SubFreezer.freazerAndcooler.Text = "冷却水泵" + j;
                 }
                 tempPanel.Controls.Add(waterPump_SubFreezer.freazerAndcooler);
                 tempPanel.Controls.Add(waterPump_SubFreezer.brand_comboBox);
@@ -473,10 +559,10 @@ namespace Enerefsys
                 tempPanel.Controls.Add(waterPump_SubFreezer.model_comboBox);
                 tempPanel.Controls.Add(waterPump_SubFreezer.type_comboBox);
                 tempPanel.Controls.Add(waterPump_SubFreezer.is_Frequency_Conversion_checkBox);
-               
+
                 //if(j<4&&tempPanel.Name.Equals("freezingPanel"))
                 //tempPanel.Controls.Add(waterPump_SubFreezer.performance_data_button);
-                
+
             }
         }
         //清楚panel中冷冻水泵和冷却水泵组件
@@ -514,7 +600,7 @@ namespace Enerefsys
 
             }
         }
-        
+
 
         private void freezingNum_TextChanged(object sender, EventArgs e)
         {
@@ -582,17 +668,17 @@ namespace Enerefsys
 
 
         //添加一个委托
-      //  public delegate void PassDataBetweenFormHandler(object sender, PumpWinFormEventArgs e);
+        //  public delegate void PassDataBetweenFormHandler(object sender, PumpWinFormEventArgs e);
         //添加一个PassDataBetweenFormHandler类型的事件
-      //  public event PassDataBetweenFormHandler PassDataBetweenForm;
+        //  public event PassDataBetweenFormHandler PassDataBetweenForm;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //传递给父窗口选择类型
-          //  PumpWinFormEventArgs pwfa = new PumpWinFormEventArgs(comboBox_PumpType.Text);
-          //  PassDataBetweenForm(this, pwfa);
+            //  PumpWinFormEventArgs pwfa = new PumpWinFormEventArgs(comboBox_PumpType.Text);
+            //  PassDataBetweenForm(this, pwfa);
             this.Dispose();
         }
-/***********************************************************************************************************/
+        /***********************************************************************************************************/
         //Form1.cs界面
         private Freezer freezer { get; set; }
         private void button1_Click(object sender, EventArgs e)
@@ -644,7 +730,7 @@ namespace Enerefsys
 
             }
         }
-/**********************************************************************************************************/
+        /**********************************************************************************************************/
         public List<MachineEntity> caculate_meList = new List<MachineEntity>();//获得冷冻值列表（类型和冷量）
 
         //事件
@@ -1290,9 +1376,9 @@ namespace Enerefsys
 
 
             //求出使得能耗最低的解，即流量的百分比
-            double solute = Utility.GetMinSolute(threeOption,a, b, c);
+            double solute = Utility.GetMinSolute(threeOption, a, b, c);
             //if (solute < 0.45)
-               // solute = 0.45;
+            // solute = 0.45;
             double result = a * solute * solute + b * solute + c;
 
             enginePower = tempa * solute * solute + tempb * solute + tempc;
@@ -1442,7 +1528,7 @@ namespace Enerefsys
                             freezePumpPower += curPower;
                         }
                     }
-                   
+
                 }
                 if (FreezeType.Equals("并联"))
                 {
@@ -1487,7 +1573,7 @@ namespace Enerefsys
             percentValue = load / sumLoad1;
 
         }
-       
+
 
         private void createNewProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1512,7 +1598,7 @@ namespace Enerefsys
             }
         }
 
-/**********************************************************************************************************/
+        /**********************************************************************************************************/
         //窗口实体类部分
 
         //产生冷冻机类
@@ -1602,7 +1688,7 @@ namespace Enerefsys
             }
         }
 
-        //产生版换机类
+        //产生板换类
         class SubBoarder
         {
             public Label boarder
@@ -1689,7 +1775,7 @@ namespace Enerefsys
             public void setComponetLocation(int i)
             {
                 boarder.Location = new Point(19, 20 + (i - 1) * 39);
-                boarder.Text = "版换机" + i;
+                boarder.Text = "板换" + i;
                 addition.Location = new Point(90, 20 + (i - 1) * 39);
                 addition.Text = "温度低于:";
                 type_box.Location = new Point(158, 17 + (i - 1) * 39);
@@ -1950,7 +2036,7 @@ namespace Enerefsys
                 string strflow_comboBox = "flow_comboBox" + (i + 1);
                 ComboBox temp_flow_comboBox = (ComboBox)GetControl(strflow_comboBox, freezingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Flow", "", temp_flow_comboBox.Text);
-                
+
                 string strlift_comboBox = "lift_comboBox" + (i + 1);
                 ComboBox temp_lift_comboBox = (ComboBox)GetControl(strlift_comboBox, freezingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Distance", "", temp_lift_comboBox.Text);
@@ -1971,7 +2057,7 @@ namespace Enerefsys
 
                 string stris_Frequency_Conversion_checkBox = "is_Frequency_Conversion_checkBox" + (i + 1);
                 CheckBox temp_is_Frequency_Conversion_checkBox = (CheckBox)GetControl(stris_Frequency_Conversion_checkBox, freezingPanel);
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Frequency", "",temp_brand_comboBox.Text);
+                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Frequency", "", temp_brand_comboBox.Text);
             }
 
             for (int i = 0; i < Convert.ToInt32(coolingNum.Text); i++)
@@ -2109,7 +2195,7 @@ namespace Enerefsys
             /**********************************************************************************************/
             //得到冷冻机变量
             /**********************************************************************************************/
-            freezerNum.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezerCount","");
+            freezerNum.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezerCount", "");
             freezerNum_TextChanged(null, null);
 
             for (int i = 0; i < Convert.ToInt32(freezerNum.Text); i++)
@@ -2134,9 +2220,9 @@ namespace Enerefsys
             }
 
 
-            
+
             freezingNum.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePumpCount", "");
-            coolingNum.Text=XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPumpCount",  ""); 
+            coolingNum.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPumpCount", "");
             freezingNum_TextChanged(null, null);
             coolingNum_TextChanged(null, null);
             for (int i = 0; i < Convert.ToInt32(freezingNum.Text); i++)
@@ -2156,7 +2242,7 @@ namespace Enerefsys
 
                 string strpower_comboBox = "power_comboBox" + (i + 1);
                 ComboBox temp_power_comboBox = (ComboBox)GetControl(strpower_comboBox, freezingPanel);
-                temp_power_comboBox.Text=XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Power", "");
+                temp_power_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Power", "");
 
                 string strmodel_comboBox = "model_comboBox" + (i + 1);
                 ComboBox temp_model_comboBox = (ComboBox)GetControl(strmodel_comboBox, freezingPanel);
@@ -2359,9 +2445,9 @@ namespace Enerefsys
                 }
             }
             catch (Exception ee)
-            { 
+            {
             }
-            
+
         }
 
 
@@ -2427,7 +2513,7 @@ namespace Enerefsys
             }
         }
 
-        String s1 =@"../../image/1.jpg";
+        String s1 = @"../../image/1.jpg";
         String s2 = @"../../image/2.jpg";
         String s3 = @"../../image/1.jpg";
         String s4 = @"../../image/4.jpg";
@@ -2480,7 +2566,7 @@ namespace Enerefsys
                 fullFlow = 320;
                 //coolingPower = 15.5d;
             }
-                
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -2507,7 +2593,7 @@ namespace Enerefsys
         }
     }
 
-  }
+}
 
 
 

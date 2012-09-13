@@ -93,6 +93,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.boarder_Panel = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.boarderNum = new System.Windows.Forms.TextBox();
+            this.boarderMachine_Label = new System.Windows.Forms.Label();
             this.completed = new System.Windows.Forms.Label();
             this.comboBox_EngineType = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -194,10 +198,6 @@
             this.openExistingProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.boarderMachine_Label = new System.Windows.Forms.Label();
-            this.boarderNum = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.boarder_Panel = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -893,6 +893,40 @@
             this.tabPage2.Text = "冷冻机配置";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // boarder_Panel
+            // 
+            this.boarder_Panel.AutoScroll = true;
+            this.boarder_Panel.Location = new System.Drawing.Point(7, 186);
+            this.boarder_Panel.Name = "boarder_Panel";
+            this.boarder_Panel.Size = new System.Drawing.Size(925, 129);
+            this.boarder_Panel.TabIndex = 78;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(366, 13);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(17, 12);
+            this.label29.TabIndex = 77;
+            this.label29.Text = "种";
+            // 
+            // boarderNum
+            // 
+            this.boarderNum.Location = new System.Drawing.Point(260, 10);
+            this.boarderNum.Name = "boarderNum";
+            this.boarderNum.Size = new System.Drawing.Size(100, 21);
+            this.boarderNum.TabIndex = 76;
+            this.boarderNum.TextChanged += new System.EventHandler(this.boarderNum_TextChanged);
+            // 
+            // boarderMachine_Label
+            // 
+            this.boarderMachine_Label.AutoSize = true;
+            this.boarderMachine_Label.Location = new System.Drawing.Point(213, 13);
+            this.boarderMachine_Label.Name = "boarderMachine_Label";
+            this.boarderMachine_Label.Size = new System.Drawing.Size(29, 12);
+            this.boarderMachine_Label.TabIndex = 75;
+            this.boarderMachine_Label.Text = "板换";
+            // 
             // completed
             // 
             this.completed.AutoSize = true;
@@ -1044,7 +1078,7 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(17, 12);
             this.label30.TabIndex = 54;
-            this.label30.Text = "台";
+            this.label30.Text = "种";
             // 
             // freezerNum
             // 
@@ -1867,40 +1901,6 @@
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.saveToolStripMenuItem.Text = "保存当前项目";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // boarderMachine_Label
-            // 
-            this.boarderMachine_Label.AutoSize = true;
-            this.boarderMachine_Label.Location = new System.Drawing.Point(213, 13);
-            this.boarderMachine_Label.Name = "boarderMachine_Label";
-            this.boarderMachine_Label.Size = new System.Drawing.Size(41, 12);
-            this.boarderMachine_Label.TabIndex = 75;
-            this.boarderMachine_Label.Text = "样板机";
-            // 
-            // boarderNum
-            // 
-            this.boarderNum.Location = new System.Drawing.Point(260, 10);
-            this.boarderNum.Name = "boarderNum";
-            this.boarderNum.Size = new System.Drawing.Size(100, 21);
-            this.boarderNum.TabIndex = 76;
-            this.boarderNum.TextChanged += new System.EventHandler(this.boarderNum_TextChanged);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(366, 13);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(17, 12);
-            this.label29.TabIndex = 77;
-            this.label29.Text = "台";
-            // 
-            // boarder_Panel
-            // 
-            this.boarder_Panel.AutoScroll = true;
-            this.boarder_Panel.Location = new System.Drawing.Point(7, 186);
-            this.boarder_Panel.Name = "boarder_Panel";
-            this.boarder_Panel.Size = new System.Drawing.Size(925, 129);
-            this.boarder_Panel.TabIndex = 78;
             // 
             // Enerefsys
             // 
