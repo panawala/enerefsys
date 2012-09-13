@@ -293,7 +293,10 @@ namespace Enerefsys
                         }
                     }
                     else
+                    {
+                        MessageBox.Show("请输入冷量");
                         return null;
+                    }
                 }
                 return machineList;
             }
@@ -403,7 +406,10 @@ namespace Enerefsys
                         }
                     }
                     else
+                    {
+                        MessageBox.Show("请输入冷量");
                         return null;
+                    }
                 }
                 return machineList;
             }
@@ -1656,6 +1662,7 @@ namespace Enerefsys
                 type_box.Name = "freezer_type_box" + i;
                 type_box.Items.Add("CSD");
                 type_box.Items.Add("VSD");
+                type_box.DropDownStyle = ComboBoxStyle.DropDownList;
                 cooling_comboBox.Name = "freezer_cooling_comboBox" + i;
                 brand_comboBox.Name = "freezer_brand_comboBox" + i;
                 model_box.Name = "freezer_model_box" + i;
@@ -1761,6 +1768,7 @@ namespace Enerefsys
                 type_box.Items.Add("13°");
                 type_box.Items.Add("14°");
                 type_box.Items.Add("15°");
+                type_box.DropDownStyle = ComboBoxStyle.DropDownList;
                 cooling_comboBox.Name = "boarder_cooling_comboBox" + i;
                 brand_comboBox.Name = "boarder_brand_comboBox" + i;
                 model_box.Name = "boarder_model_box" + i;
