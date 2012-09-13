@@ -53,6 +53,7 @@ namespace Enerefsys
 
         private List<Label> label_list;
         private List<SubFreezer> subFreezer_list;
+        private List<SubBoarder> subBoarder_list;
         public List<MachineEntity> meList { get; set; }//获得冷冻值列表（类型和冷量）
         private int labelFlag = 0;//判断是否要显示labe用
         private int reponseCount
@@ -64,37 +65,21 @@ namespace Enerefsys
         private void Freezer_Load(object sender, EventArgs e)
         {
 
-            this.dataGridView1.Columns.Add("JanWin", "编号");
+            this.dataGridView1.Columns.Add("No", "编号");
 
-            this.dataGridView1.Columns.Add("JanLoss", "机器名称和型号");
+            this.dataGridView1.Columns.Add("Name", "机器名");
 
-            this.dataGridView1.Columns.Add("FebWin", "数量");
+            this.dataGridView1.Columns.Add("FebWin", "类型");
 
-            this.dataGridView1.Columns.Add("FebLoss", "TR");
+            this.dataGridView1.Columns.Add("FebLoss", "冷量");
 
-            this.dataGridView1.Columns.Add("MarWin", "流量V3");
+            this.dataGridView1.Columns.Add("MarWin", "品牌");
 
-            this.dataGridView1.Columns.Add("MarLoss1", "回水温度℃");
-
-            this.dataGridView1.Columns.Add("MarLoss", "供水温度℃");
-
-            this.dataGridView1.Columns.Add("pk1", "压降kpa");
-
-            this.dataGridView1.Columns.Add("pk2", "流量V3");
-
-            this.dataGridView1.Columns.Add("pk3", "进口温度℃");
-
-            this.dataGridView1.Columns.Add("pk4", "出口温度℃");
-
-            this.dataGridView1.Columns.Add("pk5", "压降kpa");
+            this.dataGridView1.Columns.Add("MarLoss1", "型号");
 
             for (int j = 0; j < this.dataGridView1.ColumnCount; j++)
             {
-                if (j == 1)
-                    this.dataGridView1.Columns[j].Width = 130;
-                else
-                    this.dataGridView1.Columns[j].Width = 90;
-
+                this.dataGridView1.Columns[j].Width = 130;
             }
 
             this.dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
@@ -197,9 +182,8 @@ namespace Enerefsys
                 if (null != freezerNum.Text.ToString().Trim() && "" != freezerNum.Text.ToString().Trim())
                 {
                     freezerCount = Int32.Parse(freezerNum.Text.ToString());
-
                 }
-                else
+                else if (null == boarderNum.Text.ToString().Trim() || "" == boarderNum.Text.ToString().Trim())
                 {
                     labelFlag += 1;
                     conceal_Label(label_list);
@@ -211,7 +195,6 @@ namespace Enerefsys
                 Console.Write("" + e1.Message);
                 MessageBox.Show("请输入正确的数据类型！");
                 return;
-
             }
             create_Freezer_Num(freezerCount);
             set_Freezer_Panel(subFreezer_list);
@@ -234,21 +217,21 @@ namespace Enerefsys
         }
         //向列表中添加标签
         //private List<Label> add_Label_List(Label type_Label, Label cooling_Capacity_Label, Label brand_Label, Label model_Label, Label is_Frequency_Conversion_Label, Label performance_Data_Label)
-        private List<Label> add_Label_List(Label type_Label, Label cooling_Capacity_Label, Label brand_Label, Label model_Label, Label is_Frequency_Conversion_Label)
+        private List<Label> add_Label_List(Label type_Label, Label cooling_Capacity_Label, Label brand_Label, Label model_Label, Label amount_Label)
         {
             List<Label> temp_label_list = new List<Label>();
             temp_label_list.Add(type_Label);
             temp_label_list.Add(cooling_Capacity_Label);
             temp_label_list.Add(brand_Label);
             temp_label_list.Add(model_Label);
-            temp_label_list.Add(is_Frequency_Conversion_Label);
+            temp_label_list.Add(amount_Label);
             //temp_label_list.Add(performance_Data_Label);
             return temp_label_list;
         }
         //初始化标签列表
         private void init_label_list()
         {
-            label_list = add_Label_List(type_Label, cooling_Capacity_Label, brand_Label, model_Label, is_Frequency_Conversion_Label);
+            label_list = add_Label_List(type_Label, cooling_Capacity_Label, brand_Label, model_Label, amount_Label);
 
         }
         //产生冷冻机数量
@@ -271,11 +254,11 @@ namespace Enerefsys
                 freezer_Panel.Controls.Add(temp_SubFreezer.cooling_comboBox);
                 freezer_Panel.Controls.Add(temp_SubFreezer.brand_comboBox);
                 freezer_Panel.Controls.Add(temp_SubFreezer.model_box);
-                freezer_Panel.Controls.Add(temp_SubFreezer.is_Frequency_Conversion_checkBox);
+                freezer_Panel.Controls.Add(temp_SubFreezer.amount_textBox);
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
             }
         }
-        //清楚panel中冷冻机组件
+        //清除panel中冷冻机组件
         private void clear_Panel()
         {
             freezer_Panel.Controls.Clear();
@@ -295,8 +278,19 @@ namespace Enerefsys
                     SubFreezer sub_Freezer = (SubFreezer)subFreezer_list.ElementAt(i - 1);
                     if (null != sub_Freezer.cooling_comboBox.Text.ToString().Trim() && "" != sub_Freezer.cooling_comboBox.Text.ToString().Trim())
                     {
-                        MachineEntity me = new MachineEntity("冷冻机" + i, sub_Freezer.type_box.Text.ToString(), Convert.ToDouble(sub_Freezer.cooling_comboBox.Text.ToString().Trim()));
-                        machineList.Add(me);
+                        try
+                        {
+                            MachineEntity me = new MachineEntity("冷冻机" + i, sub_Freezer.type_box.Text.ToString(), Convert.ToDouble(sub_Freezer.cooling_comboBox.Text.ToString().Trim()));
+                            int icount = Convert.ToInt32(sub_Freezer.amount_textBox.Text.ToString().Trim());
+                            for (int ix = 0; ix < icount; ix++)
+                            {
+                                machineList.Add(me);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                 }
                 return machineList;
@@ -308,6 +302,82 @@ namespace Enerefsys
             }
         }
 
+
+        /// <summary>
+        /// //版换机///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void boarderNum_TextChanged(object sender, EventArgs e)
+        {
+            int boarderCount = 0;
+            reponseCount += 1;
+            if (reponseCount == 1 || labelFlag == 1)
+                appear_Label(label_list);
+            labelFlag = 0;
+            clear_Panel2();
+            try
+            {
+                if (null != boarderNum.Text.ToString().Trim() && "" != boarderNum.Text.ToString().Trim())
+                {
+                    boarderCount = Int32.Parse(boarderNum.Text.ToString());
+                }
+                else if (null == freezerNum.Text.ToString().Trim() || "" == freezerNum.Text.ToString().Trim())
+                {
+                    labelFlag += 1;
+                    conceal_Label(label_list);
+                    return;
+                }
+            }
+            catch (Exception e1)
+            {
+                Console.Write("" + e1.Message);
+                MessageBox.Show("请输入正确的数据类型！");
+                return;
+
+            }
+            create_Boarder_Num(boarderCount);
+            set_Boarder_Panel(subBoarder_list);
+        }
+
+        private void clear_Panel2()
+        {
+            boarder_Panel.Controls.Clear();
+        }
+
+        
+        
+        //产生版换机数量
+        private void create_Boarder_Num(int boarderCount)
+        {
+            subBoarder_list = new List<SubBoarder>();
+            for (int i = 1; i <= boarderCount; i++)
+            {
+                subBoarder_list.Add(new SubBoarder(i));
+            }
+        }
+        //动态显示版换机
+        private void set_Boarder_Panel(List<SubBoarder> subBoarder_list)
+        {
+            foreach (SubBoarder sub_boarder in subBoarder_list)
+            {
+                SubBoarder temp_SubBoarder = (SubBoarder)sub_boarder;
+                boarder_Panel.Controls.Add(temp_SubBoarder.boarder);
+                boarder_Panel.Controls.Add(temp_SubBoarder.addition);
+                boarder_Panel.Controls.Add(temp_SubBoarder.type_box);
+                boarder_Panel.Controls.Add(temp_SubBoarder.cooling_comboBox);
+                boarder_Panel.Controls.Add(temp_SubBoarder.brand_comboBox);
+                boarder_Panel.Controls.Add(temp_SubBoarder.model_box);
+                boarder_Panel.Controls.Add(temp_SubBoarder.amount_textBox);
+                //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
+            }
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////
+        private void btnLoadData_Click(object sender, EventArgs e)
+        {
+
+
+        }
         private void btn_ok_Click(object sender, EventArgs e)
         {
             if (null != subFreezer_list && 0 < subFreezer_list.Count)
@@ -320,12 +390,6 @@ namespace Enerefsys
             }
             else
                 MessageBox.Show("请输入数据");
-        }
-
-        private void btnLoadData_Click(object sender, EventArgs e)
-        {
-
-
         }
 
 
@@ -375,7 +439,7 @@ namespace Enerefsys
         //初始化标签列表
         private void init_waterpump_label_list()
         {
-            waterPump_label_list = add_Label_List1(brand_Label, flow_Label, lift_Label, power_Label, model_Label, is_Frequency_Conversion_Label);
+            waterPump_label_list = add_Label_List1(brand_Label, flow_Label, lift_Label, power_Label, model_Label, amount_Label);
 
         }
         //产生冷冻或冷却水泵数量
@@ -1479,7 +1543,7 @@ namespace Enerefsys
                 get;
                 set;
             }
-            public CheckBox is_Frequency_Conversion_checkBox
+            public TextBox amount_textBox
             {
                 get;
                 set;
@@ -1496,7 +1560,9 @@ namespace Enerefsys
                 cooling_comboBox = new TextBox();
                 brand_comboBox = new ComboBox();
                 model_box = new TextBox();
-                is_Frequency_Conversion_checkBox = new CheckBox();
+                amount_textBox = new TextBox();
+                amount_textBox.Width = 20;
+                amount_textBox.MaxLength = 2;
                 //performance_data_box = new ComboBox();
                 setComponentAttribute(i);
                 setComponetLocation(i);
@@ -1505,13 +1571,13 @@ namespace Enerefsys
             public void setComponentAttribute(int i)
             {
                 freazer.Name = "freezer_label" + i;
-                type_box.Name = "type_box" + i;
+                type_box.Name = "freezer_type_box" + i;
                 type_box.Items.Add("CSD");
                 type_box.Items.Add("VSD");
-                cooling_comboBox.Name = "cooling_comboBox" + i;
-                brand_comboBox.Name = "brand_comboBox" + i;
-                model_box.Name = "model_box" + i;
-                is_Frequency_Conversion_checkBox.Name = "is_Frequency_Conversion_checkBox" + i;
+                cooling_comboBox.Name = "freezer_cooling_comboBox" + i;
+                brand_comboBox.Name = "freezer_brand_comboBox" + i;
+                model_box.Name = "freezer_model_box" + i;
+                amount_textBox.Name = "freezer_amount_checkBox" + i;
                 //performance_data_box.Name = "performance_data_box" + i;
             }
 
@@ -1531,7 +1597,114 @@ namespace Enerefsys
                 model_box.Location = new Point(502, 17 + (i - 1) * 39);
                 model_box.Width = 100;
                 model_box.Height = 21;
-                is_Frequency_Conversion_checkBox.Location = new Point(669, 20 + (i - 1) * 39);
+                amount_textBox.Location = new Point(669, 17 + (i - 1) * 39);
+                //performance_data_box.Location = new Point(773, 17 + (i - 1) * 39);
+            }
+        }
+
+        //产生版换机类
+        class SubBoarder
+        {
+            public Label boarder
+            {
+                get;
+                set;
+            }
+            public Label addition
+            {
+                get;
+                set;
+            }
+            public ComboBox type_box
+            {
+                get;
+                set;
+            }
+            public TextBox cooling_comboBox
+            {
+                get;
+                set;
+            }
+            public ComboBox brand_comboBox
+            {
+                get;
+                set;
+            }
+            public TextBox model_box
+            {
+                get;
+                set;
+            }
+            public TextBox amount_textBox
+            {
+                get;
+                set;
+            }
+            //public ComboBox performance_data_box
+            //{
+            //    get;
+            //    set;
+            //}
+            public SubBoarder(int i)
+            {
+                boarder = new Label();
+                boarder.Width = 50;
+                addition = new Label();
+                addition.Width = 60;
+                type_box = new ComboBox();
+                cooling_comboBox = new TextBox();
+                brand_comboBox = new ComboBox();
+                model_box = new TextBox();
+                amount_textBox = new TextBox();
+                amount_textBox.Width = 20;
+                amount_textBox.MaxLength = 2;
+                //performance_data_box = new ComboBox();
+                setComponentAttribute(i);
+                setComponetLocation(i);
+            }
+
+            public void setComponentAttribute(int i)
+            {
+                boarder.Name = "boarder_label" + i;
+                addition.Name = "boarder_addition_label" + i;
+                type_box.Name = "boarder_type_box" + i;
+                type_box.Items.Add("5°");
+                type_box.Items.Add("6°");
+                type_box.Items.Add("7°");
+                type_box.Items.Add("8°");
+                type_box.Items.Add("9°");
+                type_box.Items.Add("10°");
+                type_box.Items.Add("11°");
+                type_box.Items.Add("12°");
+                type_box.Items.Add("13°");
+                type_box.Items.Add("14°");
+                type_box.Items.Add("15°");
+                cooling_comboBox.Name = "boarder_cooling_comboBox" + i;
+                brand_comboBox.Name = "boarder_brand_comboBox" + i;
+                model_box.Name = "boarder_model_box" + i;
+                amount_textBox.Name = "boarder_amount_textBox" + i;
+                //performance_data_box.Name = "performance_data_box" + i;
+            }
+
+            public void setComponetLocation(int i)
+            {
+                boarder.Location = new Point(19, 20 + (i - 1) * 39);
+                boarder.Text = "版换机" + i;
+                addition.Location = new Point(90, 20 + (i - 1) * 39);
+                addition.Text = "温度低于:";
+                type_box.Location = new Point(158, 17 + (i - 1) * 39);
+                type_box.Width = 50;
+                type_box.Height = 21;
+                cooling_comboBox.Location = new Point(235, 17 + (i - 1) * 39);
+                cooling_comboBox.Width = 100;
+                cooling_comboBox.Height = 21;
+                brand_comboBox.Location = new Point(363, 17 + (i - 1) * 39);
+                brand_comboBox.Width = 100;
+                brand_comboBox.Height = 21;
+                model_box.Location = new Point(502, 17 + (i - 1) * 39);
+                model_box.Width = 100;
+                model_box.Height = 21;
+                amount_textBox.Location = new Point(669, 17 + (i - 1) * 39);
                 //performance_data_box.Location = new Point(773, 17 + (i - 1) * 39);
             }
         }
