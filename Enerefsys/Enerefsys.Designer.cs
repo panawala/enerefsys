@@ -896,6 +896,7 @@
             // boarder_Panel
             // 
             this.boarder_Panel.AutoScroll = true;
+            this.boarder_Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.boarder_Panel.Location = new System.Drawing.Point(7, 186);
             this.boarder_Panel.Name = "boarder_Panel";
             this.boarder_Panel.Size = new System.Drawing.Size(925, 129);
@@ -1021,6 +1022,7 @@
             // freezer_Panel
             // 
             this.freezer_Panel.AutoScroll = true;
+            this.freezer_Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.freezer_Panel.Location = new System.Drawing.Point(7, 51);
             this.freezer_Panel.Name = "freezer_Panel";
             this.freezer_Panel.Size = new System.Drawing.Size(925, 129);
@@ -1515,7 +1517,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label42.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
             this.label42.Location = new System.Drawing.Point(180, 22);
             this.label42.Name = "label42";
@@ -1737,7 +1739,7 @@
             // textBox_Message
             // 
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_Message.Font = new System.Drawing.Font("幼圆", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
             this.textBox_Message.Location = new System.Drawing.Point(105, 96);
             this.textBox_Message.Multiline = true;
@@ -1876,7 +1878,7 @@
             this.createNewProjectToolStripMenuItem,
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
