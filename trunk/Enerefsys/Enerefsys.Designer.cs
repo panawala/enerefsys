@@ -195,6 +195,7 @@
             this.openExistingProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -235,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1098,6 +1100,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.completedPump);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Controls.Add(this.progressBarPump);
@@ -1187,12 +1190,13 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(789, 358);
+            this.btnSubmit.Location = new System.Drawing.Point(763, 336);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 100;
             this.btnSubmit.Text = "确定";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
             // label31
             // 
@@ -1248,7 +1252,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(616, 64);
+            this.label35.Location = new System.Drawing.Point(605, 45);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(29, 12);
             this.label35.TabIndex = 89;
@@ -1257,7 +1261,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(537, 64);
+            this.label36.Location = new System.Drawing.Point(520, 45);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(29, 12);
             this.label36.TabIndex = 88;
@@ -1266,7 +1270,7 @@
             // power_Label
             // 
             this.power_Label.AutoSize = true;
-            this.power_Label.Location = new System.Drawing.Point(436, 64);
+            this.power_Label.Location = new System.Drawing.Point(423, 45);
             this.power_Label.Name = "power_Label";
             this.power_Label.Size = new System.Drawing.Size(29, 12);
             this.power_Label.TabIndex = 87;
@@ -1275,7 +1279,7 @@
             // lift_Label
             // 
             this.lift_Label.AutoSize = true;
-            this.lift_Label.Location = new System.Drawing.Point(347, 64);
+            this.lift_Label.Location = new System.Drawing.Point(336, 45);
             this.lift_Label.Name = "lift_Label";
             this.lift_Label.Size = new System.Drawing.Size(29, 12);
             this.lift_Label.TabIndex = 86;
@@ -1284,7 +1288,7 @@
             // flow_Label
             // 
             this.flow_Label.AutoSize = true;
-            this.flow_Label.Location = new System.Drawing.Point(259, 64);
+            this.flow_Label.Location = new System.Drawing.Point(246, 45);
             this.flow_Label.Name = "flow_Label";
             this.flow_Label.Size = new System.Drawing.Size(29, 12);
             this.flow_Label.TabIndex = 85;
@@ -1293,7 +1297,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(165, 64);
+            this.label37.Location = new System.Drawing.Point(141, 45);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(29, 12);
             this.label37.TabIndex = 84;
@@ -1321,7 +1325,7 @@
             // 
             this.coolingPanel.AutoScroll = true;
             this.coolingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.coolingPanel.Location = new System.Drawing.Point(63, 223);
+            this.coolingPanel.Location = new System.Drawing.Point(37, 201);
             this.coolingPanel.Name = "coolingPanel";
             this.coolingPanel.Size = new System.Drawing.Size(801, 129);
             this.coolingPanel.TabIndex = 95;
@@ -1330,7 +1334,7 @@
             // 
             this.freezingPanel.AutoScroll = true;
             this.freezingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.freezingPanel.Location = new System.Drawing.Point(63, 88);
+            this.freezingPanel.Location = new System.Drawing.Point(37, 60);
             this.freezingPanel.Name = "freezingPanel";
             this.freezingPanel.Size = new System.Drawing.Size(801, 129);
             this.freezingPanel.TabIndex = 96;
@@ -1874,6 +1878,15 @@
             this.saveToolStripMenuItem.Text = "保存当前项目";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(37, 365);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(801, 238);
+            this.dataGridView2.TabIndex = 105;
+            // 
             // Enerefsys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1938,6 +1951,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2110,5 +2124,6 @@
         private System.Windows.Forms.Label boarderMachine_Label;
         private System.Windows.Forms.Panel boarder_Panel;
         private System.Windows.Forms.Label completedPump;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
