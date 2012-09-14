@@ -2650,6 +2650,20 @@ namespace Enerefsys
         {
 
         }
+
+        private void 出品介绍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Description desp = new Description();
+            desp.ShowDialog();
+            desp.Dispose();
+        }
+
+        private void 帮助文档ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.ShowDialog();
+            help.Dispose();
+        }
     }
 
     class EngineParam
