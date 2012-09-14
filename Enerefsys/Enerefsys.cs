@@ -138,6 +138,8 @@ namespace Enerefsys
                 {
                     labelFlag += 1;
                     conceal_Label(label_list);
+                    create_Freezer_Num(freezerCount);
+                    set_Freezer_Panel(subFreezer_list);
                     return;
                 }
             }
@@ -282,6 +284,8 @@ namespace Enerefsys
                 {
                     labelFlag += 1;
                     conceal_Label(label_list);
+                    create_Boarder_Num(boarderCount);
+                    set_Boarder_Panel(subBoarder_list);
                     return;
                 }
             }
@@ -627,10 +631,12 @@ namespace Enerefsys
                 {
                     freezerCount = Int32.Parse(freezingNum.Text.ToString());
                 }
-                else
+                else if (null == coolingNum.Text.ToString().Trim() && "" == coolingNum.Text.ToString().Trim())
                 {
                     waterPump_labelFlag += 1;
                     waterPump_conceal_Label(label_list);
+                    waterPump_create_Freezer_Num(freezerCount);
+                    set_WaterPumpFreezer_Panel(waterPump_subFreezer_list, freezingPanel);
                     return;
                 }
             }
@@ -659,10 +665,12 @@ namespace Enerefsys
                 {
                     coolerCount = Int32.Parse(coolingNum.Text.ToString());
                 }
-                else
+                else if (null == freezerNum.Text.ToString().Trim() && "" == freezerNum.Text.ToString().Trim())
                 {
                     waterPump_labelFlag += 1;
                     waterPump_conceal_Label(label_list);
+                    waterPump_create_Cooler_Num(coolerCount);
+                    set_WaterPumpFreezer_Panel(waterPump_subCooler_list, coolingPanel);
                     return;
                 }
             }
