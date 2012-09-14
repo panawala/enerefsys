@@ -688,7 +688,7 @@ namespace Enerefsys
                 dataGridView2.Rows.Clear();
                 try
                 {
-                    if (null != waterPump_subCooler_list && 0 < waterPump_subCooler_list.Count)
+                    if (null != waterPump_subFreezer_list && 0 < waterPump_subFreezer_list.Count)
                     {
                         for (int ix = 0; ix < waterPump_subFreezer_list.Count; ix++)
                         {
@@ -707,9 +707,9 @@ namespace Enerefsys
                     }
                     if (null != waterPump_subCooler_list && 0 < waterPump_subCooler_list.Count)
                     {
-                        for (int ix = 0; ix < subBoarder_list.Count; ix++)
+                        for (int ix = 0; ix < waterPump_subCooler_list.Count; ix++)
                         {
-                            for (int iy = 0; iy < Convert.ToInt32(subBoarder_list[ix].amount_textBox.Text); iy++)
+                            for (int iy = 0; iy < Convert.ToInt32(waterPump_subCooler_list[ix].amount_textBox.Text); iy++)
                             {
                                 int index = this.dataGridView2.Rows.Add();
                                 this.dataGridView2.Rows[index].Cells[0].Value = index + 1;
