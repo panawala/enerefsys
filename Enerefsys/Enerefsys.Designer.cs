@@ -125,7 +125,6 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.comboBox_PumpType = new System.Windows.Forms.ComboBox();
-            this.type_comboBox = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.coolingNum = new System.Windows.Forms.TextBox();
@@ -136,8 +135,6 @@
             this.lift_Label = new System.Windows.Forms.Label();
             this.flow_Label = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.coolingPanel = new System.Windows.Forms.Panel();
@@ -1108,7 +1105,6 @@
             this.tabPage3.Controls.Add(this.btnSubmit);
             this.tabPage3.Controls.Add(this.label31);
             this.tabPage3.Controls.Add(this.comboBox_PumpType);
-            this.tabPage3.Controls.Add(this.type_comboBox);
             this.tabPage3.Controls.Add(this.label32);
             this.tabPage3.Controls.Add(this.label33);
             this.tabPage3.Controls.Add(this.coolingNum);
@@ -1119,8 +1115,6 @@
             this.tabPage3.Controls.Add(this.lift_Label);
             this.tabPage3.Controls.Add(this.flow_Label);
             this.tabPage3.Controls.Add(this.label37);
-            this.tabPage3.Controls.Add(this.comboBox5);
-            this.tabPage3.Controls.Add(this.comboBox6);
             this.tabPage3.Controls.Add(this.label38);
             this.tabPage3.Controls.Add(this.label39);
             this.tabPage3.Controls.Add(this.coolingPanel);
@@ -1135,7 +1129,7 @@
             // completedPump
             // 
             this.completedPump.AutoSize = true;
-            this.completedPump.Location = new System.Drawing.Point(543, 55);
+            this.completedPump.Location = new System.Drawing.Point(1136, 8);
             this.completedPump.Name = "completedPump";
             this.completedPump.Size = new System.Drawing.Size(0, 12);
             this.completedPump.TabIndex = 104;
@@ -1146,9 +1140,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.pictureBox6);
             this.panel3.Controls.Add(this.pictureBox5);
-            this.panel3.Location = new System.Drawing.Point(870, 78);
+            this.panel3.Location = new System.Drawing.Point(870, 35);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(279, 525);
+            this.panel3.Size = new System.Drawing.Size(348, 568);
             this.panel3.TabIndex = 103;
             // 
             // pictureBox6
@@ -1156,9 +1150,10 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(13, 271);
+            this.pictureBox6.Location = new System.Drawing.Point(23, 301);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(254, 223);
+            this.pictureBox6.Size = new System.Drawing.Size(313, 254);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
             // 
@@ -1167,22 +1162,22 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(13, 10);
+            this.pictureBox5.Location = new System.Drawing.Point(23, 10);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(254, 242);
+            this.pictureBox5.Size = new System.Drawing.Size(313, 285);
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
             // progressBarPump
             // 
-            this.progressBarPump.Location = new System.Drawing.Point(198, 50);
+            this.progressBarPump.Location = new System.Drawing.Point(791, 3);
             this.progressBarPump.Name = "progressBarPump";
             this.progressBarPump.Size = new System.Drawing.Size(339, 23);
             this.progressBarPump.TabIndex = 102;
             // 
             // btnLoadDataPump
             // 
-            this.btnLoadDataPump.Location = new System.Drawing.Point(88, 50);
+            this.btnLoadDataPump.Location = new System.Drawing.Point(693, 3);
             this.btnLoadDataPump.Name = "btnLoadDataPump";
             this.btnLoadDataPump.Size = new System.Drawing.Size(92, 23);
             this.btnLoadDataPump.TabIndex = 101;
@@ -1192,7 +1187,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(853, 53);
+            this.btnSubmit.Location = new System.Drawing.Point(789, 358);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 100;
@@ -1202,7 +1197,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(642, 58);
+            this.label31.Location = new System.Drawing.Point(468, 9);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(65, 12);
             this.label31.TabIndex = 99;
@@ -1211,67 +1206,58 @@
             // comboBox_PumpType
             // 
             this.comboBox_PumpType.FormattingEnabled = true;
-            this.comboBox_PumpType.Location = new System.Drawing.Point(713, 55);
+            this.comboBox_PumpType.Location = new System.Drawing.Point(539, 6);
             this.comboBox_PumpType.Name = "comboBox_PumpType";
             this.comboBox_PumpType.Size = new System.Drawing.Size(121, 20);
             this.comboBox_PumpType.TabIndex = 98;
             // 
-            // type_comboBox
-            // 
-            this.type_comboBox.AutoSize = true;
-            this.type_comboBox.Location = new System.Drawing.Point(633, 157);
-            this.type_comboBox.Name = "type_comboBox";
-            this.type_comboBox.Size = new System.Drawing.Size(29, 12);
-            this.type_comboBox.TabIndex = 97;
-            this.type_comboBox.Text = "类型";
-            // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(361, 125);
+            this.label32.Location = new System.Drawing.Point(382, 8);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(17, 12);
             this.label32.TabIndex = 94;
-            this.label32.Text = "台";
+            this.label32.Text = "种";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(361, 91);
+            this.label33.Location = new System.Drawing.Point(177, 8);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(17, 12);
             this.label33.TabIndex = 93;
-            this.label33.Text = "台";
+            this.label33.Text = "种";
             // 
             // coolingNum
             // 
-            this.coolingNum.Location = new System.Drawing.Point(198, 122);
+            this.coolingNum.Location = new System.Drawing.Point(259, 6);
             this.coolingNum.Name = "coolingNum";
-            this.coolingNum.Size = new System.Drawing.Size(157, 21);
+            this.coolingNum.Size = new System.Drawing.Size(117, 21);
             this.coolingNum.TabIndex = 92;
             this.coolingNum.TextChanged += new System.EventHandler(this.coolingNum_TextChanged);
             // 
             // freezingNum
             // 
-            this.freezingNum.Location = new System.Drawing.Point(198, 88);
+            this.freezingNum.Location = new System.Drawing.Point(62, 5);
             this.freezingNum.Name = "freezingNum";
-            this.freezingNum.Size = new System.Drawing.Size(157, 21);
+            this.freezingNum.Size = new System.Drawing.Size(108, 21);
             this.freezingNum.TabIndex = 91;
             this.freezingNum.TextChanged += new System.EventHandler(this.freezingNum_TextChanged);
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(711, 157);
+            this.label35.Location = new System.Drawing.Point(616, 64);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(41, 12);
+            this.label35.Size = new System.Drawing.Size(29, 12);
             this.label35.TabIndex = 89;
-            this.label35.Text = "变频否";
+            this.label35.Text = "数量";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(537, 158);
+            this.label36.Location = new System.Drawing.Point(537, 64);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(29, 12);
             this.label36.TabIndex = 88;
@@ -1280,7 +1266,7 @@
             // power_Label
             // 
             this.power_Label.AutoSize = true;
-            this.power_Label.Location = new System.Drawing.Point(443, 158);
+            this.power_Label.Location = new System.Drawing.Point(436, 64);
             this.power_Label.Name = "power_Label";
             this.power_Label.Size = new System.Drawing.Size(29, 12);
             this.power_Label.TabIndex = 87;
@@ -1289,7 +1275,7 @@
             // lift_Label
             // 
             this.lift_Label.AutoSize = true;
-            this.lift_Label.Location = new System.Drawing.Point(349, 158);
+            this.lift_Label.Location = new System.Drawing.Point(347, 64);
             this.lift_Label.Name = "lift_Label";
             this.lift_Label.Size = new System.Drawing.Size(29, 12);
             this.lift_Label.TabIndex = 86;
@@ -1298,7 +1284,7 @@
             // flow_Label
             // 
             this.flow_Label.AutoSize = true;
-            this.flow_Label.Location = new System.Drawing.Point(255, 157);
+            this.flow_Label.Location = new System.Drawing.Point(259, 64);
             this.flow_Label.Name = "flow_Label";
             this.flow_Label.Size = new System.Drawing.Size(29, 12);
             this.flow_Label.TabIndex = 85;
@@ -1307,32 +1293,16 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(164, 157);
+            this.label37.Location = new System.Drawing.Point(165, 64);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(29, 12);
             this.label37.TabIndex = 84;
             this.label37.Text = "品牌";
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(406, 122);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(173, 20);
-            this.comboBox5.TabIndex = 83;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(406, 88);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(173, 20);
-            this.comboBox6.TabIndex = 82;
-            // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(95, 122);
+            this.label38.Location = new System.Drawing.Point(200, 9);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(53, 12);
             this.label38.TabIndex = 81;
@@ -1341,7 +1311,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(95, 91);
+            this.label39.Location = new System.Drawing.Point(3, 8);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(53, 12);
             this.label39.TabIndex = 80;
@@ -1351,18 +1321,18 @@
             // 
             this.coolingPanel.AutoScroll = true;
             this.coolingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.coolingPanel.Location = new System.Drawing.Point(63, 341);
+            this.coolingPanel.Location = new System.Drawing.Point(63, 223);
             this.coolingPanel.Name = "coolingPanel";
-            this.coolingPanel.Size = new System.Drawing.Size(801, 166);
+            this.coolingPanel.Size = new System.Drawing.Size(801, 129);
             this.coolingPanel.TabIndex = 95;
             // 
             // freezingPanel
             // 
             this.freezingPanel.AutoScroll = true;
             this.freezingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.freezingPanel.Location = new System.Drawing.Point(63, 173);
+            this.freezingPanel.Location = new System.Drawing.Point(63, 88);
             this.freezingPanel.Name = "freezingPanel";
-            this.freezingPanel.Size = new System.Drawing.Size(801, 162);
+            this.freezingPanel.Size = new System.Drawing.Size(801, 129);
             this.freezingPanel.TabIndex = 96;
             // 
             // tabPage4
@@ -1517,7 +1487,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label42.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
             this.label42.Location = new System.Drawing.Point(180, 22);
             this.label42.Name = "label42";
@@ -1739,7 +1709,7 @@
             // textBox_Message
             // 
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_Message.Font = new System.Drawing.Font("幼圆", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
             this.textBox_Message.Location = new System.Drawing.Point(105, 96);
             this.textBox_Message.Multiline = true;
@@ -1878,7 +1848,7 @@
             this.createNewProjectToolStripMenuItem,
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
@@ -2056,7 +2026,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.ComboBox comboBox_PumpType;
-        private System.Windows.Forms.Label type_comboBox;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox coolingNum;
@@ -2067,8 +2036,6 @@
         private System.Windows.Forms.Label lift_Label;
         private System.Windows.Forms.Label flow_Label;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel coolingPanel;
@@ -2131,7 +2098,6 @@
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.ComboBox comboBox_EngineType;
         private System.Windows.Forms.Label completed;
-        private System.Windows.Forms.Label completedPump;
         private System.Windows.Forms.TextBox textBox_TemperRange;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label45;
@@ -2143,5 +2109,6 @@
         private System.Windows.Forms.TextBox boarderNum;
         private System.Windows.Forms.Label boarderMachine_Label;
         private System.Windows.Forms.Panel boarder_Panel;
+        private System.Windows.Forms.Label completedPump;
     }
 }

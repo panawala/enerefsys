@@ -555,12 +555,11 @@ namespace Enerefsys
                 }
                 tempPanel.Controls.Add(waterPump_SubFreezer.freazerAndcooler);
                 tempPanel.Controls.Add(waterPump_SubFreezer.brand_comboBox);
-                tempPanel.Controls.Add(waterPump_SubFreezer.flow_comboBox);
-                tempPanel.Controls.Add(waterPump_SubFreezer.lift_comboBox);
-                tempPanel.Controls.Add(waterPump_SubFreezer.power_comboBox);
-                tempPanel.Controls.Add(waterPump_SubFreezer.model_comboBox);
-                tempPanel.Controls.Add(waterPump_SubFreezer.type_comboBox);
-                tempPanel.Controls.Add(waterPump_SubFreezer.is_Frequency_Conversion_checkBox);
+                tempPanel.Controls.Add(waterPump_SubFreezer.flow_textBox);
+                tempPanel.Controls.Add(waterPump_SubFreezer.lift_textBox);
+                tempPanel.Controls.Add(waterPump_SubFreezer.power_textBox);
+                tempPanel.Controls.Add(waterPump_SubFreezer.model_textBox);
+                tempPanel.Controls.Add(waterPump_SubFreezer.amount_textBox);
 
                 //if(j<4&&tempPanel.Name.Equals("freezingPanel"))
                 //tempPanel.Controls.Add(waterPump_SubFreezer.performance_data_button);
@@ -590,12 +589,11 @@ namespace Enerefsys
                 }
                 tempPanel.Controls.Add(temp_SubFreezer.freazerAndcooler);
                 tempPanel.Controls.Add(temp_SubFreezer.brand_comboBox);
-                tempPanel.Controls.Add(temp_SubFreezer.flow_comboBox);
-                tempPanel.Controls.Add(temp_SubFreezer.lift_comboBox);
-                tempPanel.Controls.Add(temp_SubFreezer.power_comboBox);
-                tempPanel.Controls.Add(temp_SubFreezer.model_comboBox);
-                tempPanel.Controls.Add(temp_SubFreezer.type_comboBox);
-                tempPanel.Controls.Add(temp_SubFreezer.is_Frequency_Conversion_checkBox);
+                tempPanel.Controls.Add(temp_SubFreezer.flow_textBox);
+                tempPanel.Controls.Add(temp_SubFreezer.lift_textBox);
+                tempPanel.Controls.Add(temp_SubFreezer.power_textBox);
+                tempPanel.Controls.Add(temp_SubFreezer.model_textBox);
+                tempPanel.Controls.Add(temp_SubFreezer.amount_textBox);
 
                 //if (j < 4 && tempPanel.Name.Equals("freezingPanel"))
                 //    tempPanel.Controls.Add(temp_SubFreezer.performance_data_button);
@@ -1813,32 +1811,27 @@ namespace Enerefsys
                 get;
                 set;
             }
-            public ComboBox model_comboBox
+            public TextBox model_textBox
             {
                 get;
                 set;
             }
-            public ComboBox flow_comboBox
+            public TextBox flow_textBox
             {
                 get;
                 set;
             }
-            public ComboBox lift_comboBox
+            public TextBox lift_textBox
             {
                 get;
                 set;
             }
-            public ComboBox power_comboBox
+            public TextBox power_textBox
             {
                 get;
                 set;
             }
-            public ComboBox type_comboBox
-            {
-                get;
-                set;
-            }
-            public CheckBox is_Frequency_Conversion_checkBox
+            public TextBox amount_textBox
             {
                 get;
                 set;
@@ -1852,13 +1845,12 @@ namespace Enerefsys
             {
                 freazerAndcooler = new Label();
                 brand_comboBox = new ComboBox();
-                model_comboBox = new ComboBox();
-                is_Frequency_Conversion_checkBox = new CheckBox();
+                model_textBox = new TextBox();
+                amount_textBox = new TextBox();
                 //performance_data_button = new Button();
-                flow_comboBox = new ComboBox();
-                lift_comboBox = new ComboBox();
-                power_comboBox = new ComboBox();
-                type_comboBox = new ComboBox();
+                flow_textBox = new TextBox();
+                lift_textBox = new TextBox();
+                power_textBox = new TextBox();
                 setComponentAttribute(i);
                 setComponetLocation(i);
             }
@@ -1867,15 +1859,12 @@ namespace Enerefsys
             {
                 freazerAndcooler.Name = "freazerAndcooler" + i;
                 brand_comboBox.Name = "brand_comboBox" + i;
-                model_comboBox.Name = "model_comboBox" + i;
-                is_Frequency_Conversion_checkBox.Name = "is_Frequency_Conversion_checkBox" + i;
+                model_textBox.Name = "model_textBox" + i;
+                amount_textBox.Name = "amount_textBox" + i;
                 //performance_data_button.Name = "performance_data_button" + i;
-                flow_comboBox.Name = "flow_comboBox" + i;
-                lift_comboBox.Name = "lift_comboBox" + i;
-                power_comboBox.Name = "power_comboBox" + i;
-                type_comboBox.Name = "type_comboBox" + i;
-                type_comboBox.Items.Add("VSD");
-                type_comboBox.Items.Add("CSD");
+                flow_textBox.Name = "flow_textBox" + i;
+                lift_textBox.Name = "lift_textBox" + i;
+                power_textBox.Name = "power_textBox" + i;
             }
 
             public void setComponetLocation(int i)
@@ -1886,24 +1875,21 @@ namespace Enerefsys
                 brand_comboBox.Location = new Point(82, 15 + (i - 1) * 35);
                 brand_comboBox.Width = 76;
                 brand_comboBox.Height = 20;
-                flow_comboBox.Location = new Point(174, 15 + (i - 1) * 35);
-                flow_comboBox.Width = 76;
-                flow_comboBox.Height = 20;
-                lift_comboBox.Location = new Point(269, 15 + (i - 1) * 35);
-                lift_comboBox.Width = 76;
-                lift_comboBox.Height = 20;
-                power_comboBox.Location = new Point(363, 15 + (i - 1) * 35);
-                power_comboBox.Width = 76;
-                power_comboBox.Height = 20;
-                model_comboBox.Location = new Point(458, 15 + (i - 1) * 35);
-                model_comboBox.Width = 76;
-                model_comboBox.Height = 20;
-                type_comboBox.Location = new Point(552, 15 + (i - 1) * 35);
-                type_comboBox.Width = 76;
-                type_comboBox.Height = 20;
-                is_Frequency_Conversion_checkBox.Location = new Point(660, 17 + (i - 1) * 35);
-                is_Frequency_Conversion_checkBox.Width = 15;
-                is_Frequency_Conversion_checkBox.Height = 14;
+                flow_textBox.Location = new Point(174, 15 + (i - 1) * 35);
+                flow_textBox.Width = 76;
+                flow_textBox.Height = 20;
+                lift_textBox.Location = new Point(269, 15 + (i - 1) * 35);
+                lift_textBox.Width = 76;
+                lift_textBox.Height = 20;
+                power_textBox.Location = new Point(363, 15 + (i - 1) * 35);
+                power_textBox.Width = 76;
+                power_textBox.Height = 20;
+                model_textBox.Location = new Point(458, 15 + (i - 1) * 35);
+                model_textBox.Width = 76;
+                model_textBox.Height = 20;
+                amount_textBox.Location = new Point(553, 15 + (i - 1) * 35);
+                amount_textBox.Width = 20;
+                amount_textBox.Height = 20;
                 //performance_data_button.Location = new Point(700, 15 + (i - 1) * 35);
                 //performance_data_button.Width = 60;
                 //performance_data_button.Height = 23;
