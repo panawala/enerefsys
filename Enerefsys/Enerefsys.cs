@@ -688,32 +688,37 @@ namespace Enerefsys
                 dataGridView2.Rows.Clear();
                 try
                 {
-                    for (int ix = 0; ix < waterPump_subFreezer_list.Count; ix++)
+                    if (null != waterPump_subCooler_list && 0 < waterPump_subCooler_list.Count)
                     {
-                        for (int iy = 0; iy < Convert.ToInt32(waterPump_subFreezer_list[ix].amount_textBox.Text); iy++)
+                        for (int ix = 0; ix < waterPump_subFreezer_list.Count; ix++)
                         {
-                            int index = this.dataGridView1.Rows.Add();
-                            this.dataGridView1.Rows[index].Cells[0].Value = index + 1;
-                            this.dataGridView1.Rows[index].Cells[1].Value = subFreezer_list[ix].freazer.Text;
-                            this.dataGridView1.Rows[index].Cells[2].Value = subFreezer_list[ix].type_box.Text;
-                            this.dataGridView1.Rows[index].Cells[3].Value = subFreezer_list[ix].cooling_comboBox.Text;
-                            this.dataGridView1.Rows[index].Cells[4].Value = subFreezer_list[ix].brand_comboBox.Text;
-                            this.dataGridView1.Rows[index].Cells[5].Value = subFreezer_list[ix].model_box.Text;
+                            for (int iy = 0; iy < Convert.ToInt32(waterPump_subFreezer_list[ix].amount_textBox.Text); iy++)
+                            {
+                                int index = this.dataGridView2.Rows.Add();
+                                this.dataGridView2.Rows[index].Cells[0].Value = index + 1;
+                                this.dataGridView2.Rows[index].Cells[1].Value = waterPump_subFreezer_list[ix].freazerAndcooler.Text;
+                                this.dataGridView2.Rows[index].Cells[2].Value = waterPump_subFreezer_list[ix].brand_comboBox.Text;
+                                this.dataGridView2.Rows[index].Cells[3].Value = waterPump_subFreezer_list[ix].flow_textBox.Text;
+                                this.dataGridView2.Rows[index].Cells[4].Value = waterPump_subFreezer_list[ix].lift_textBox.Text;
+                                this.dataGridView2.Rows[index].Cells[5].Value = waterPump_subFreezer_list[ix].power_textBox.Text;
+                                this.dataGridView2.Rows[index].Cells[6].Value = waterPump_subFreezer_list[ix].model_textBox.Text;
+                            }
                         }
                     }
-                    if (null != subBoarder_list && 0 < subBoarder_list.Count)
+                    if (null != waterPump_subCooler_list && 0 < waterPump_subCooler_list.Count)
                     {
                         for (int ix = 0; ix < subBoarder_list.Count; ix++)
                         {
                             for (int iy = 0; iy < Convert.ToInt32(subBoarder_list[ix].amount_textBox.Text); iy++)
                             {
-                                int index = this.dataGridView1.Rows.Add();
-                                this.dataGridView1.Rows[index].Cells[0].Value = index + 1;
-                                this.dataGridView1.Rows[index].Cells[1].Value = subBoarder_list[ix].boarder.Text;
-                                this.dataGridView1.Rows[index].Cells[2].Value = subBoarder_list[ix].addition.Text + subBoarder_list[ix].type_box.Text;
-                                this.dataGridView1.Rows[index].Cells[3].Value = subBoarder_list[ix].cooling_comboBox.Text;
-                                this.dataGridView1.Rows[index].Cells[4].Value = subBoarder_list[ix].brand_comboBox.Text;
-                                this.dataGridView1.Rows[index].Cells[5].Value = subBoarder_list[ix].model_box.Text;
+                                int index = this.dataGridView2.Rows.Add();
+                                this.dataGridView2.Rows[index].Cells[0].Value = index + 1;
+                                this.dataGridView2.Rows[index].Cells[1].Value = waterPump_subCooler_list[ix].freazerAndcooler.Text;
+                                this.dataGridView2.Rows[index].Cells[2].Value = waterPump_subCooler_list[ix].brand_comboBox.Text;
+                                this.dataGridView2.Rows[index].Cells[3].Value = waterPump_subCooler_list[ix].flow_textBox.Text;
+                                this.dataGridView2.Rows[index].Cells[4].Value = waterPump_subCooler_list[ix].lift_textBox.Text;
+                                this.dataGridView2.Rows[index].Cells[5].Value = waterPump_subCooler_list[ix].power_textBox.Text;
+                                this.dataGridView2.Rows[index].Cells[6].Value = waterPump_subCooler_list[ix].model_textBox.Text;
                             }
                         }
                     }
