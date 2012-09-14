@@ -32,6 +32,7 @@ namespace Enerefsys
             init_waterpump_label_list();
             waterPump_conceal_Label(label_list);
             waterPump_reponseCount = 0;
+            WaterPump_Load(null, null);
 
             List<string> results = PumpManager.GetPumpTypes();
             foreach (var result in results)
@@ -90,56 +91,6 @@ namespace Enerefsys
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
 
             this.dataGridView1.CellPainting += new DataGridViewCellPaintingEventHandler(dataGridView1_CellPainting);
-
-            this.dataGridView1.Paint += new PaintEventHandler(dataGridView1_Paint);
-
-        }
-        void dataGridView1_Paint(object sender, PaintEventArgs e)
-        {
-            //string[] monthes = { "单台制冷量", "蒸发器", "冷凝器" };
-
-            //for (int j = 3; j < 6; )
-            //{
-            //    Rectangle r1 = this.dataGridView1.GetCellDisplayRectangle(j, -1, true); //get the column header cell
-            //    r1.X += 1;
-
-            //    r1.Y += 1;
-            //    if (j == 3)
-            //    {
-            //        r1.Width = r1.Width - 2;
-            //    }
-            //    else if (j == 4)
-            //    {
-            //        r1.Width = r1.Width * 4 - 2;
-            //    }
-            //    else if (j == 5)
-            //    {
-            //        r1.X += 270;
-            //        r1.Width = r1.Width * 4;
-            //    }
-
-            //    r1.Height = r1.Height / 2 - 2;
-
-            //    e.Graphics.FillRectangle(new SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor), r1);
-
-            //    StringFormat format = new StringFormat();
-
-            //    format.Alignment = StringAlignment.Center;
-
-            //    format.LineAlignment = StringAlignment.Center;
-
-            //    e.Graphics.DrawString(monthes[j - 3],
-
-            //        this.dataGridView1.ColumnHeadersDefaultCellStyle.Font,
-
-            //        new SolidBrush(this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor),
-
-            //        r1,
-
-            //        format);
-
-            //    j += 1;
-            //}
 
         }
 
@@ -493,7 +444,58 @@ namespace Enerefsys
             set;
         }
 
+        private void WaterPump_Load(object sender, EventArgs e)
+        {
+            this.dataGridView2.Columns.Add("No", "编号");
 
+            this.dataGridView2.Columns.Add("Name", "机器名");
+
+            this.dataGridView2.Columns.Add("FebWin", "品牌");
+
+            this.dataGridView2.Columns.Add("FebLoss", "流量");
+
+            this.dataGridView2.Columns.Add("MarWin", "扬程");
+
+            this.dataGridView2.Columns.Add("MarLoss1", "功率");
+
+            this.dataGridView2.Columns.Add("mode", "型号");
+
+            for (int j = 0; j < this.dataGridView2.ColumnCount; j++)
+            {
+                this.dataGridView2.Columns[j].Width = 110;
+            }
+
+            this.dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            this.dataGridView2.ColumnHeadersHeight = this.dataGridView2.ColumnHeadersHeight * 1;
+
+            this.dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
+
+            this.dataGridView2.CellPainting += new DataGridViewCellPaintingEventHandler(dataGridView2_CellPainting);
+        }
+        void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+
+                e.PaintBackground(e.CellBounds, false);
+
+
+
+                Rectangle r2 = e.CellBounds;
+
+                r2.Y += e.CellBounds.Height / 2;
+
+                r2.Height = e.CellBounds.Height / 2;
+
+                e.PaintContent(r2);
+
+                e.Handled = true;
+
+            }
+
+        }
 
         //隐藏标签
         private void waterPump_conceal_Label(List<Label> label_list)
