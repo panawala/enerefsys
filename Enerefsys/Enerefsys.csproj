@@ -94,6 +94,12 @@
     <Compile Include="Description.Designer.cs">
       <DependentUpon>Description.cs</DependentUpon>
     </Compile>
+    <Compile Include="Description_ACPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Description_ACPE.Designer.cs">
+      <DependentUpon>Description_ACPE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enerefsys.cs">
       <SubType>Form</SubType>
     </Compile>
