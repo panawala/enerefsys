@@ -140,9 +140,35 @@
             this.label39 = new System.Windows.Forms.Label();
             this.coolingPanel = new System.Windows.Forms.Panel();
             this.freezingPanel = new System.Windows.Forms.Panel();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.rowUnitView2 = new MultiHeaderDataGridView.RowUnitView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label28 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
             this.rowUnitView1 = new MultiHeaderDataGridView.RowUnitView();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnClear = new System.Windows.Forms.Button();
             this.textBox_CoolingPower = new System.Windows.Forms.TextBox();
@@ -187,32 +213,6 @@
             this.出品介绍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.label28 = new System.Windows.Forms.Label();
-            this.rowUnitView2 = new MultiHeaderDataGridView.RowUnitView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -235,7 +235,10 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -251,9 +254,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -479,6 +479,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "居民楼",
+            "写字楼",
+            "工厂厂房",
+            "其他"});
             this.comboBox1.Location = new System.Drawing.Point(124, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(152, 20);
@@ -1366,6 +1371,147 @@
             this.freezingPanel.Size = new System.Drawing.Size(801, 129);
             this.freezingPanel.TabIndex = 96;
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.button7);
+            this.tabPage8.Controls.Add(this.button6);
+            this.tabPage8.Controls.Add(this.rowUnitView2);
+            this.tabPage8.Controls.Add(this.label28);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "常规运行结果";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1124, 501);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(94, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "关于ACPE介绍";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(3, 501);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "打印输出";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // rowUnitView2
+            // 
+            this.rowUnitView2.AllowUserToAddRows = false;
+            this.rowUnitView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rowUnitView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rowUnitView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            this.rowUnitView2.Location = new System.Drawing.Point(3, 81);
+            this.rowUnitView2.Name = "rowUnitView2";
+            this.rowUnitView2.ReadOnly = true;
+            this.rowUnitView2.RowHeadersVisible = false;
+            this.rowUnitView2.RowTemplate.Height = 23;
+            this.rowUnitView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.rowUnitView2.Size = new System.Drawing.Size(1215, 414);
+            this.rowUnitView2.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Day";
+            this.dataGridViewTextBoxColumn1.HeaderText = "日期";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Time";
+            this.dataGridViewTextBoxColumn2.HeaderText = "时间";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Temperature";
+            this.dataGridViewTextBoxColumn3.HeaderText = "温度";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "EngineType";
+            this.dataGridViewTextBoxColumn4.HeaderText = "冷冻机类型";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "EngineValue";
+            this.dataGridViewTextBoxColumn5.HeaderText = "冷量";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "EngineLoadRatio";
+            this.dataGridViewTextBoxColumn6.HeaderText = "负荷率";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Flow";
+            this.dataGridViewTextBoxColumn7.HeaderText = "流量";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "SystemMinPower";
+            this.dataGridViewTextBoxColumn8.HeaderText = "系统最低功率";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.ForeColor = System.Drawing.Color.Blue;
+            this.label28.Location = new System.Drawing.Point(319, 23);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(467, 29);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Enerefsys系统全年逐时优化结果";
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.pictureBox9);
@@ -1380,10 +1526,38 @@
             this.tabPage5.Text = "优化结果";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(969, 468);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(249, 152);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(860, 468);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(103, 23);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Enerconsys输出";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(3, 468);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "输出文档 Excel";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label42.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
             this.label42.Location = new System.Drawing.Point(180, 22);
             this.label42.Name = "label42";
@@ -1416,6 +1590,78 @@
             this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.rowUnitView1.Size = new System.Drawing.Size(1217, 393);
             this.rowUnitView1.TabIndex = 3;
+            // 
+            // Day
+            // 
+            this.Day.DataPropertyName = "Day";
+            this.Day.HeaderText = "日期";
+            this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
+            this.Day.Width = 150;
+            // 
+            // Time
+            // 
+            this.Time.DataPropertyName = "Time";
+            this.Time.HeaderText = "时间";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            this.Time.Width = 150;
+            // 
+            // Temperature
+            // 
+            this.Temperature.DataPropertyName = "Temperature";
+            this.Temperature.HeaderText = "温度";
+            this.Temperature.Name = "Temperature";
+            this.Temperature.ReadOnly = true;
+            this.Temperature.Width = 150;
+            // 
+            // EngineType
+            // 
+            this.EngineType.DataPropertyName = "EngineType";
+            this.EngineType.HeaderText = "冷冻机类型";
+            this.EngineType.Name = "EngineType";
+            this.EngineType.ReadOnly = true;
+            this.EngineType.Width = 150;
+            // 
+            // EngineValue
+            // 
+            this.EngineValue.DataPropertyName = "EngineValue";
+            this.EngineValue.HeaderText = "冷量";
+            this.EngineValue.Name = "EngineValue";
+            this.EngineValue.ReadOnly = true;
+            this.EngineValue.Width = 150;
+            // 
+            // EngineLoadRatio
+            // 
+            this.EngineLoadRatio.DataPropertyName = "EngineLoadRatio";
+            this.EngineLoadRatio.HeaderText = "负荷率";
+            this.EngineLoadRatio.Name = "EngineLoadRatio";
+            this.EngineLoadRatio.ReadOnly = true;
+            this.EngineLoadRatio.Width = 150;
+            // 
+            // Flow
+            // 
+            this.Flow.DataPropertyName = "Flow";
+            this.Flow.HeaderText = "流量";
+            this.Flow.Name = "Flow";
+            this.Flow.ReadOnly = true;
+            this.Flow.Width = 150;
+            // 
+            // SystemMinPower
+            // 
+            this.SystemMinPower.DataPropertyName = "SystemMinPower";
+            this.SystemMinPower.HeaderText = "系统最低功率";
+            this.SystemMinPower.Name = "SystemMinPower";
+            this.SystemMinPower.ReadOnly = true;
+            this.SystemMinPower.Width = 150;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // tabPage6
             // 
@@ -1541,7 +1787,7 @@
             // textBox_Message
             // 
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_Message.Font = new System.Drawing.Font("幼圆", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
             this.textBox_Message.Location = new System.Drawing.Point(105, 96);
             this.textBox_Message.Multiline = true;
@@ -1788,7 +2034,7 @@
             this.createNewProjectToolStripMenuItem,
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
@@ -1820,263 +2066,22 @@
             this.出品介绍ToolStripMenuItem,
             this.帮助文档ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 出品介绍ToolStripMenuItem
             // 
             this.出品介绍ToolStripMenuItem.Name = "出品介绍ToolStripMenuItem";
-            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.出品介绍ToolStripMenuItem.Text = "出品介绍";
             this.出品介绍ToolStripMenuItem.Click += new System.EventHandler(this.出品介绍ToolStripMenuItem_Click);
             // 
             // 帮助文档ToolStripMenuItem
             // 
             this.帮助文档ToolStripMenuItem.Name = "帮助文档ToolStripMenuItem";
-            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.button7);
-            this.tabPage8.Controls.Add(this.button6);
-            this.tabPage8.Controls.Add(this.rowUnitView2);
-            this.tabPage8.Controls.Add(this.label28);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1223, 625);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "常规运行结果";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.ForeColor = System.Drawing.Color.Blue;
-            this.label28.Location = new System.Drawing.Point(319, 23);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(467, 29);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Enerefsys系统全年逐时优化结果";
-            // 
-            // rowUnitView2
-            // 
-            this.rowUnitView2.AllowUserToAddRows = false;
-            this.rowUnitView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rowUnitView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rowUnitView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.rowUnitView2.Location = new System.Drawing.Point(3, 81);
-            this.rowUnitView2.Name = "rowUnitView2";
-            this.rowUnitView2.ReadOnly = true;
-            this.rowUnitView2.RowHeadersVisible = false;
-            this.rowUnitView2.RowTemplate.Height = 23;
-            this.rowUnitView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView2.Size = new System.Drawing.Size(1215, 414);
-            this.rowUnitView2.TabIndex = 4;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(3, 468);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "输出文档 Excel";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(860, 468);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(103, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Enerconsys输出";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(969, 468);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(249, 152);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(3, 501);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "打印输出";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(1124, 501);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "关于ACPE介绍";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // Day
-            // 
-            this.Day.DataPropertyName = "Day";
-            this.Day.HeaderText = "日期";
-            this.Day.Name = "Day";
-            this.Day.ReadOnly = true;
-            this.Day.Width = 150;
-            // 
-            // Time
-            // 
-            this.Time.DataPropertyName = "Time";
-            this.Time.HeaderText = "时间";
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            this.Time.Width = 150;
-            // 
-            // Temperature
-            // 
-            this.Temperature.DataPropertyName = "Temperature";
-            this.Temperature.HeaderText = "温度";
-            this.Temperature.Name = "Temperature";
-            this.Temperature.ReadOnly = true;
-            this.Temperature.Width = 150;
-            // 
-            // EngineType
-            // 
-            this.EngineType.DataPropertyName = "EngineType";
-            this.EngineType.HeaderText = "冷冻机类型";
-            this.EngineType.Name = "EngineType";
-            this.EngineType.ReadOnly = true;
-            this.EngineType.Width = 150;
-            // 
-            // EngineValue
-            // 
-            this.EngineValue.DataPropertyName = "EngineValue";
-            this.EngineValue.HeaderText = "冷量";
-            this.EngineValue.Name = "EngineValue";
-            this.EngineValue.ReadOnly = true;
-            this.EngineValue.Width = 150;
-            // 
-            // EngineLoadRatio
-            // 
-            this.EngineLoadRatio.DataPropertyName = "EngineLoadRatio";
-            this.EngineLoadRatio.HeaderText = "负荷率";
-            this.EngineLoadRatio.Name = "EngineLoadRatio";
-            this.EngineLoadRatio.ReadOnly = true;
-            this.EngineLoadRatio.Width = 150;
-            // 
-            // Flow
-            // 
-            this.Flow.DataPropertyName = "Flow";
-            this.Flow.HeaderText = "流量";
-            this.Flow.Name = "Flow";
-            this.Flow.ReadOnly = true;
-            this.Flow.Width = 150;
-            // 
-            // SystemMinPower
-            // 
-            this.SystemMinPower.DataPropertyName = "SystemMinPower";
-            this.SystemMinPower.HeaderText = "系统最低功率";
-            this.SystemMinPower.Name = "SystemMinPower";
-            this.SystemMinPower.ReadOnly = true;
-            this.SystemMinPower.Width = 150;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Day";
-            this.dataGridViewTextBoxColumn1.HeaderText = "日期";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Time";
-            this.dataGridViewTextBoxColumn2.HeaderText = "时间";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Temperature";
-            this.dataGridViewTextBoxColumn3.HeaderText = "温度";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "EngineType";
-            this.dataGridViewTextBoxColumn4.HeaderText = "冷冻机类型";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "EngineValue";
-            this.dataGridViewTextBoxColumn5.HeaderText = "冷量";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "EngineLoadRatio";
-            this.dataGridViewTextBoxColumn6.HeaderText = "负荷率";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Flow";
-            this.dataGridViewTextBoxColumn7.HeaderText = "流量";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "SystemMinPower";
-            this.dataGridViewTextBoxColumn8.HeaderText = "系统最低功率";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Visible = false;
             // 
             // Enerefsys
             // 
@@ -2120,8 +2125,12 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
@@ -2140,10 +2149,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
