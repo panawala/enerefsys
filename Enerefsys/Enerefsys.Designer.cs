@@ -1252,7 +1252,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(591, 45);
+            this.label35.Location = new System.Drawing.Point(770, 45);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(29, 12);
             this.label35.TabIndex = 89;
@@ -1261,7 +1261,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(520, 45);
+            this.label36.Location = new System.Drawing.Point(663, 45);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(29, 12);
             this.label36.TabIndex = 88;
@@ -1270,7 +1270,7 @@
             // power_Label
             // 
             this.power_Label.AutoSize = true;
-            this.power_Label.Location = new System.Drawing.Point(423, 45);
+            this.power_Label.Location = new System.Drawing.Point(537, 45);
             this.power_Label.Name = "power_Label";
             this.power_Label.Size = new System.Drawing.Size(29, 12);
             this.power_Label.TabIndex = 87;
@@ -1279,7 +1279,7 @@
             // lift_Label
             // 
             this.lift_Label.AutoSize = true;
-            this.lift_Label.Location = new System.Drawing.Point(336, 45);
+            this.lift_Label.Location = new System.Drawing.Point(412, 45);
             this.lift_Label.Name = "lift_Label";
             this.lift_Label.Size = new System.Drawing.Size(29, 12);
             this.lift_Label.TabIndex = 86;
@@ -1288,7 +1288,7 @@
             // flow_Label
             // 
             this.flow_Label.AutoSize = true;
-            this.flow_Label.Location = new System.Drawing.Point(246, 45);
+            this.flow_Label.Location = new System.Drawing.Point(285, 45);
             this.flow_Label.Name = "flow_Label";
             this.flow_Label.Size = new System.Drawing.Size(29, 12);
             this.flow_Label.TabIndex = 85;
@@ -1297,7 +1297,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(141, 45);
+            this.label37.Location = new System.Drawing.Point(165, 45);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(29, 12);
             this.label37.TabIndex = 84;
