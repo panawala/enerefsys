@@ -702,7 +702,11 @@ namespace Enerefsys
                                 this.dataGridView2.Rows[index].Cells[4].Value = waterPump_subFreezer_list[ix].lift_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[5].Value = waterPump_subFreezer_list[ix].power_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[6].Value = waterPump_subFreezer_list[ix].model_textBox.Text;
+                                Convert.ToInt32(waterPump_subFreezer_list[ix].flow_textBox.Text);
+                                Convert.ToInt32(waterPump_subFreezer_list[ix].lift_textBox.Text);
+                                Convert.ToInt32(waterPump_subFreezer_list[ix].power_textBox.Text);
                             }
+                            
                         }
                     }
                     if (null != waterPump_subCooler_list && 0 < waterPump_subCooler_list.Count)
@@ -719,6 +723,9 @@ namespace Enerefsys
                                 this.dataGridView2.Rows[index].Cells[4].Value = waterPump_subCooler_list[ix].lift_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[5].Value = waterPump_subCooler_list[ix].power_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[6].Value = waterPump_subCooler_list[ix].model_textBox.Text;
+                                Convert.ToInt32(waterPump_subCooler_list[ix].flow_textBox.Text);
+                                Convert.ToInt32(waterPump_subCooler_list[ix].lift_textBox.Text);
+                                Convert.ToInt32(waterPump_subCooler_list[ix].power_textBox.Text);
                             }
                         }
                     }
@@ -726,7 +733,7 @@ namespace Enerefsys
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    dataGridView1.Rows.Clear();
+                    dataGridView2.Rows.Clear();
                 }
             }
             else
