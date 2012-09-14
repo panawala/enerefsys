@@ -2664,6 +2664,13 @@ namespace Enerefsys
             help.ShowDialog();
             help.Dispose();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Description_ACPE m_window = new Description_ACPE();
+            m_window.ShowDialog();
+            m_window.Dispose();
+        }
     }
 
     class EngineParam
