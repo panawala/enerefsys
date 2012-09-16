@@ -109,15 +109,19 @@ namespace EnerefsysBLL.Utility
         //求得一元二次方程的最小值的解,解的范围默认0-1
         public static double GetMinSolute(double threeOption,double a, double b, double c)
         {
-            double rtResut = 0.3;
-            for (int i = 30; i < 101; i++)
+            double rtii = 0.3d;
+            double rtResut = double.MaxValue;
+            for (int i = 300; i < 1001; i++)
             {
-                double ii = i * 0.01;
+                double ii = i * 0.001;
                 double iresult = threeOption * ii * ii * ii + a * ii * ii + b * ii + c;
-                if (iresult < rtResut && iresult >= 0.3 && iresult <= 1)
+                if (iresult < rtResut)
+                {
                     rtResut = iresult;
+                    rtii = ii;
+                } 
             }
-            return rtResut;
+            return rtii;
         }
 
         //base64加密

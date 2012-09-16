@@ -40,6 +40,53 @@ namespace EnerefsysBLL.EntityData
 
         }
 
+        /// <summary>
+        /// 7个参数版本
+        /// </summary>
+        /// <param name="b1"></param>
+        /// <param name="b2"></param>
+        /// <param name="b3"></param>
+        /// <param name="b4"></param>
+        /// <param name="b5"></param>
+        /// <param name="b6"></param>
+        /// <param name="b7"></param>
+        /// <param name="temperature"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static int Insert(float b1, float b2, float b3, float b4, float b5, float b6,float b7, double temperature, string type)
+        {
+            using (EnerefsysContext db = new EnerefsysContext())
+            {
+                EngineFitResult engineFitResult = new EngineFitResult();
+                engineFitResult.B1 = b1;
+                engineFitResult.B2 = b2;
+                engineFitResult.B3 = b3;
+                engineFitResult.B4 = b4;
+                engineFitResult.B5 = b5;
+                engineFitResult.B6 = b6;
+                engineFitResult.B7 = b7;
+                engineFitResult.Temperature = temperature;
+                engineFitResult.Type = type;
+
+                // add entity object to the collection
+                db.EngineFitResults.Add(engineFitResult);
+
+                try
+                {
+                    // save changes to the database
+                    return db.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Could not save changes");
+                }
+
+            }
+
+        }
+
+
+
         //根据类型删除数据库中所有数据
         public static int DeleteByType(string type)
         {
