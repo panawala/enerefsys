@@ -19,6 +19,12 @@ namespace EnerefsysBLL.Manager
         {
             return EngineFitResultData.Insert(ObjectToFloat(b1), ObjectToFloat(b2), ObjectToFloat(b3), ObjectToFloat(b4), ObjectToFloat(b5), ObjectToFloat(b6), Convert.ToDouble(temperature), type.ToString());
         }
+        //在主机的数值模拟系数表中插入数据
+        public static int Insert(object b1, object b2, object b3, object b4, object b5, object b6, object b7,object temperature, object type)
+        {
+            return EngineFitResultData.Insert(ObjectToFloat(b1), ObjectToFloat(b2), ObjectToFloat(b3), ObjectToFloat(b4), ObjectToFloat(b5), ObjectToFloat(b6), ObjectToFloat(b7), Convert.ToDouble(temperature), type.ToString());
+        }
+
         private static float ObjectToFloat(object objValue)
         {
             float fValue = 0.0f;
@@ -45,9 +51,24 @@ namespace EnerefsysBLL.Manager
         {
            
             EngineFitResult engineFitResult = EngineFitResultData.GetEntityByTemperature(Convert.ToDouble(temperature), type);
-            double a = engineFitResult.B4;
-            double b = engineFitResult.B5 + engineFitResult.B6 * load;
-            double c = engineFitResult.B1 + engineFitResult.B2 * load * load + engineFitResult.B3 * load;
+            //double a = engineFitResult.B4;
+            //double b = engineFitResult.B5 + engineFitResult.B6 * load;
+            //double c = engineFitResult.B1 + engineFitResult.B2 * load * load + engineFitResult.B3 * load;
+
+            double a = engineFitResult.B2;
+            double b = engineFitResult.B4 + engineFitResult.B6 * load;
+            double c = engineFitResult.B1 + engineFitResult.B3 * load * load + engineFitResult.B5 * load;
+
+            //double b1 = engineFitResult.B1;
+            //double b2 = engineFitResult.B2;
+            //double b3 = engineFitResult.B3;
+            //double b4 = engineFitResult.B4 * load * load * load + engineFitResult.B5 * load * load + engineFitResult.B6 * load + engineFitResult.B7;
+
+            //List<double> result = new List<double>();
+            //result.Add(b1);
+            //result.Add(b2);
+            //result.Add(b3);
+            //result.Add(b4);
 
             List<double> result = new List<double>();
             result.Add(a);

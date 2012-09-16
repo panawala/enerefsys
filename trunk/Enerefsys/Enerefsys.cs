@@ -1239,6 +1239,7 @@ namespace Enerefsys
             coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
             GetOptimizationResult(meList, Convert.ToDouble(textBox_Load.Text), Convert.ToDouble(textBox_Temperature.Text));
 
+
             //如果是板换，则散热塔的功率等于板换数量
             if (IsBoard)
                 coolingPower = coolingPower * BoardCount;
@@ -1246,6 +1247,9 @@ namespace Enerefsys
             {
                 coolingPower = coolingPower * meMin.Count;
             }
+
+            minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
+
             showMessage();
 
 
@@ -1282,7 +1286,9 @@ namespace Enerefsys
             addStrToBox("各主机负荷率为：" + String.Format("{0:F}", percentValue * 100) + "%.", textBox_Message);
             addStrToBox("主机能耗为：" + String.Format("{0:F}", enginePower) + "KW.", textBox_Message);
             addStrToBox("冷冻水泵能耗为：" + String.Format("{0:F}", freezePumpPower) + "KW.", textBox_Message);
-            addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
+            //addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
+            addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
+            
             addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
         }
         private void addStrToBox(string str, TextBox rtbox)
@@ -1387,9 +1393,10 @@ namespace Enerefsys
             /***********************************************************************************/
             //主机功率的计算公式
             /***********************************************************************************/
-            double a = 0;
-            double b = 0;
-            double c = 0;
+            double threeOption = 0d;
+            double a = 0d;
+            double b = 0d;
+            double c = 0d;
             double sumLoad2 = 0;
             foreach (var me in mes)
             {
@@ -1402,11 +1409,15 @@ namespace Enerefsys
             {
                 //得到每台特定类型的主机在一定温度，一定负荷下的关于流量的二次项系数
                 List<double> results = getFormulaByEntity(me.Type, me.Value * percentValue1, temperature);
+                //threeOption += results[0];
+                //a += results[1];
+                //b += results[2];
+                //c += results[3];
                 a += results[0];
                 b += results[1];
                 c += results[2];
             }
-
+            double tempthreeoption = threeOption;
             double tempa = a;
             double tempb = b;
             double tempc = c;
@@ -1417,13 +1428,14 @@ namespace Enerefsys
             //如果使用板换，去除主机,主机数量当成板换数量
             if (IsBoard)
             {
+                tempthreeoption = 0d;
                 tempa = 0d;
                 tempb = 0d;
                 tempc = 0d;
                 engineCount = BoardCount;
             }
 
-            double threeOption = 0d;
+            
             /***********************************************************************************/
             //冷却水泵的计算公式
             /***********************************************************************************/
@@ -1447,6 +1459,7 @@ namespace Enerefsys
 
             if (CoolingType.Equals("一对一"))
             {
+                fullFlow = Convert.ToInt32(PumpInfoData.getFlow("1"));
                 //从数据库得到二次项系数
                 List<double> doubleParams = PumpManager.GetParamsByType("1");
                 //对水泵公式中的自变量进行变换，影响到二次方程的a,b,c
@@ -1454,19 +1467,30 @@ namespace Enerefsys
                 a += doubleParams[1] * fullFlow * fullFlow * engineCount;
                 b += doubleParams[2] * fullFlow * engineCount;
                 c += doubleParams[3] * engineCount;
+                
             }
 
 
             //求出使得能耗最低的解，即流量的百分比
             double solute = Utility.GetMinSolute(threeOption, a, b, c);
+
+            List<double> doubleParamss = PumpManager.GetParamsByType("1");
+            lengquePower = doubleParamss[0] * fullFlow * fullFlow * fullFlow * engineCount * solute * solute * solute +
+                doubleParamss[1] * fullFlow * fullFlow * engineCount * solute * solute +
+                doubleParamss[2] * fullFlow * engineCount * solute +
+                 doubleParamss[3] * engineCount;
+            
             //if (solute < 0.45)
             // solute = 0.45;
-            double result = a * solute * solute + b * solute + c;
+            double result = threeOption * solute * solute * solute + a * solute * solute + b * solute + c;
 
+            //enginePower = tempthreeoption * solute * solute * solute + tempa * solute * solute + tempb * solute + tempc;
             enginePower = tempa * solute * solute + tempb * solute + tempc;
 
             return new SoluteResult(result, solute);
         }
+
+        private double lengquePower = 0d;
         /// <summary>
         /// 主体方法
         /// </summary>
@@ -1586,6 +1610,7 @@ namespace Enerefsys
                     //从数据库得到二次项系数
                     //一对一：一台水泵对应一台主机
                     List<double> doubleParams = PumpManager.GetParamsByType("2");
+                    fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
                     //如果是满足板换条件
                     if (IsBoard)
                     {
@@ -2396,6 +2421,7 @@ namespace Enerefsys
         private void Enerefsys_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
+            fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
         }
 
         private void btnViewReport_Click(object sender, EventArgs e)
@@ -2551,11 +2577,16 @@ namespace Enerefsys
             int iStep = 0;
             foreach (var sheet in sheets)
             {
-                Fit.Test test = new Fit.Test();
-                MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.MultiPolyfit(fileName, sheet);
+                //Fit.Test test = new Fit.Test();
+                //BVPF.BVPF test = new BVPF.BVPF();
+                BVQF.BVQF test = new BVQF.BVQF();
+                //MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.MultiPolyfit(fileName, sheet);
+                //MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.BiVariablePolyFit(fileName, sheet);
+                MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.BiVariableQuandricsFit(fileName, sheet);
                 MathWorks.MATLAB.NET.Arrays.MWNumericArray mmArray = mArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
                 Array array = mmArray.ToArray();
-                int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(1, 0), array.GetValue(2, 0), array.GetValue(3, 0), array.GetValue(4, 0), array.GetValue(5, 0), sheet, engineType);
+                //int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(0, 1), array.GetValue(0, 2), array.GetValue(0, 3), array.GetValue(0, 4), array.GetValue(0, 5), array.GetValue(0, 6), sheet, engineType);
+                int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(1, 0), array.GetValue(2, 0), array.GetValue(3, 0), array.GetValue(4, 0), array.GetValue( 5,0), sheet, engineType);
                 if (ret == 1)
                 {
                     iStep++;
@@ -2630,12 +2661,12 @@ namespace Enerefsys
         {
             if (comboBox7.Text.Equals("大系统"))
             {
-                fullFlow = 1332;
+                //fullFlow = 1332;
                 //coolingPower = 94.0d;
             }
             else if (comboBox7.Text.Equals("小系统"))
             {
-                fullFlow = 320;
+                //fullFlow = 320;
                 //coolingPower = 15.5d;
             }
 

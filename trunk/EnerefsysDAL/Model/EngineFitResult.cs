@@ -14,6 +14,7 @@ namespace EnerefsysDAL.Model
         public float B4 { get; set; }
         public float B5 { get; set; }
         public float B6 { get; set; }
+        public float B7 { get; set; }
         public double Temperature { get; set; }
         public string Type { set; get; }
     }

@@ -34,6 +34,32 @@ namespace EnerefsysBLL.EntityData
             }
         }
 
+        /// <summary>
+        /// 得到流量
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static double getFlow(string type)
+        {
+            using (EnerefsysContext db = new EnerefsysContext())
+            {
+                try
+                {
+                    var flow = db.PumpInfoes
+                        .Where(s => s.PumpType == type)
+                        .First()
+                        .PumpDesignFlow;
+                    return flow;
+                }
+                catch
+                {
+                    return 0d;
+                    throw new Exception("Could not save changes");
+                }
+            }
+        }
+
+
         public static int DeleteAll()
         {
             using (EnerefsysContext db = new EnerefsysContext())

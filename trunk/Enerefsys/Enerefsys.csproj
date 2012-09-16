@@ -38,6 +38,12 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BVPF">
+      <HintPath>..\DbLib\BVPF.dll</HintPath>
+    </Reference>
+    <Reference Include="BVQF">
+      <HintPath>..\DbLib\BVQF.dll</HintPath>
+    </Reference>
     <Reference Include="Fit">
       <HintPath>..\DbLib\Fit.dll</HintPath>
     </Reference>
