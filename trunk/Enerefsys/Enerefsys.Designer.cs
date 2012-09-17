@@ -349,7 +349,7 @@
             this.groupBox1.Size = new System.Drawing.Size(357, 358);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "建筑物供冷页面";
+            this.groupBox1.Text = "建筑物供冷概况";
             // 
             // label7
             // 
@@ -367,7 +367,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(17, 12);
             this.label6.TabIndex = 14;
-            this.label6.Text = "TR";
+            this.label6.Text = "kw";
             // 
             // label5
             // 
@@ -376,7 +376,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 12);
             this.label5.TabIndex = 13;
-            this.label5.Text = "n2";
+            this.label5.Text = "㎡";
             // 
             // button1
             // 
@@ -633,7 +633,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(247, 39);
             this.button3.TabIndex = 6;
-            this.button3.Text = "查看/编辑水泵原理";
+            this.button3.Text = "查看/编辑水泵扬程";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // textBox12
@@ -1504,7 +1504,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label28.ForeColor = System.Drawing.Color.Blue;
             this.label28.Location = new System.Drawing.Point(319, 23);
             this.label28.Name = "label28";
@@ -1529,16 +1529,16 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(969, 468);
+            this.pictureBox9.Location = new System.Drawing.Point(1019, 513);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(249, 152);
+            this.pictureBox9.Size = new System.Drawing.Size(199, 107);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 6;
             this.pictureBox9.TabStop = false;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(860, 468);
+            this.button5.Location = new System.Drawing.Point(1115, 484);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(103, 23);
             this.button5.TabIndex = 5;
@@ -1547,7 +1547,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 468);
+            this.button4.Location = new System.Drawing.Point(3, 484);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 23);
             this.button4.TabIndex = 4;
@@ -1557,7 +1557,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label42.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
             this.label42.Location = new System.Drawing.Point(180, 22);
             this.label42.Name = "label42";
@@ -1787,7 +1787,7 @@
             // textBox_Message
             // 
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_Message.Font = new System.Drawing.Font("幼圆", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
             this.textBox_Message.Location = new System.Drawing.Point(105, 96);
             this.textBox_Message.Multiline = true;
@@ -2034,7 +2034,7 @@
             this.createNewProjectToolStripMenuItem,
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
@@ -2066,20 +2066,20 @@
             this.出品介绍ToolStripMenuItem,
             this.帮助文档ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 出品介绍ToolStripMenuItem
             // 
             this.出品介绍ToolStripMenuItem.Name = "出品介绍ToolStripMenuItem";
-            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.出品介绍ToolStripMenuItem.Text = "出品介绍";
             this.出品介绍ToolStripMenuItem.Click += new System.EventHandler(this.出品介绍ToolStripMenuItem_Click);
             // 
             // 帮助文档ToolStripMenuItem
             // 
             this.帮助文档ToolStripMenuItem.Name = "帮助文档ToolStripMenuItem";
-            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
             // 
