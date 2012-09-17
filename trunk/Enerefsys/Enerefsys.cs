@@ -746,9 +746,9 @@ namespace Enerefsys
                                 this.dataGridView2.Rows[index].Cells[4].Value = waterPump_subFreezer_list[ix].lift_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[5].Value = waterPump_subFreezer_list[ix].power_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[6].Value = waterPump_subFreezer_list[ix].model_textBox.Text;
-                                Convert.ToInt32(waterPump_subFreezer_list[ix].flow_textBox.Text);
-                                Convert.ToInt32(waterPump_subFreezer_list[ix].lift_textBox.Text);
-                                Convert.ToInt32(waterPump_subFreezer_list[ix].power_textBox.Text);
+                                //Convert.ToInt32(waterPump_subFreezer_list[ix].flow_textBox.Text);
+                                //Convert.ToInt32(waterPump_subFreezer_list[ix].lift_textBox.Text);
+                                //Convert.ToInt32(waterPump_subFreezer_list[ix].power_textBox.Text);
                             }
 
                         }
@@ -767,9 +767,9 @@ namespace Enerefsys
                                 this.dataGridView2.Rows[index].Cells[4].Value = waterPump_subCooler_list[ix].lift_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[5].Value = waterPump_subCooler_list[ix].power_textBox.Text;
                                 this.dataGridView2.Rows[index].Cells[6].Value = waterPump_subCooler_list[ix].model_textBox.Text;
-                                Convert.ToInt32(waterPump_subCooler_list[ix].flow_textBox.Text);
-                                Convert.ToInt32(waterPump_subCooler_list[ix].lift_textBox.Text);
-                                Convert.ToInt32(waterPump_subCooler_list[ix].power_textBox.Text);
+                                //Convert.ToInt32(waterPump_subCooler_list[ix].flow_textBox.Text);
+                                //Convert.ToInt32(waterPump_subCooler_list[ix].lift_textBox.Text);
+                                //Convert.ToInt32(waterPump_subCooler_list[ix].power_textBox.Text);
                             }
                         }
                     }
@@ -2983,7 +2983,7 @@ namespace Enerefsys
 
             for (int j = 0; j < this.dataGridView3.ColumnCount; j++)
             {
-                this.dataGridView3.Columns[j].Width = 150;
+                this.dataGridView3.Columns[j].Width = 107;
             }
 
             this.dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
