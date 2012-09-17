@@ -215,6 +215,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1882,6 +1883,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.label50);
             this.tabPage4.Controls.Add(this.label49);
             this.tabPage4.Controls.Add(this.label48);
@@ -2104,6 +2106,15 @@
             this.label50.Size = new System.Drawing.Size(29, 12);
             this.label50.TabIndex = 111;
             this.label50.Text = "数量";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(732, 216);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 112;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // Enerefsys
             // 
@@ -2363,5 +2374,6 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button button8;
     }
 }
