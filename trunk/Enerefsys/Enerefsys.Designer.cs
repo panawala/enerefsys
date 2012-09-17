@@ -216,6 +216,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -257,6 +258,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1883,6 +1885,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.label50);
             this.tabPage4.Controls.Add(this.label49);
@@ -2109,12 +2112,20 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(732, 216);
+            this.button8.Location = new System.Drawing.Point(731, 216);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 112;
-            this.button8.Text = "button8";
+            this.button8.Text = "确认";
             this.button8.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(60, 296);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView3.TabIndex = 113;
             // 
             // Enerefsys
             // 
@@ -2182,6 +2193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2375,5 +2387,6 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
