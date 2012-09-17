@@ -1906,7 +1906,7 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "冷却塔配置";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter_1);
+            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
             // 
             // coolingtowerpanel
             // 
