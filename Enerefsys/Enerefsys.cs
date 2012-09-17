@@ -55,6 +55,8 @@ namespace Enerefsys
         private List<Label> label_list;
         private List<SubFreezer> subFreezer_list;
         private List<SubBoarder> subBoarder_list;
+        private List<CoolingTower> CoolingTower_list;
+        //private List<CoolingTower> CoolingTower_list;
         public List<MachineEntity> meList { get; set; }//获得冷冻值列表（类型和冷量）
         public List<MachineEntity> bhList { get; set; }//获得版换值列表（类型和冷量）
         private int labelFlag = 0;//判断是否要显示labe用
@@ -746,7 +748,7 @@ namespace Enerefsys
                                 Convert.ToInt32(waterPump_subFreezer_list[ix].lift_textBox.Text);
                                 Convert.ToInt32(waterPump_subFreezer_list[ix].power_textBox.Text);
                             }
-                            
+
                         }
                     }
                     if (null != waterPump_subCooler_list && 0 < waterPump_subCooler_list.Count)
@@ -1320,7 +1322,7 @@ namespace Enerefsys
             addStrToBox("冷冻水泵能耗为：" + String.Format("{0:F}", freezePumpPower) + "KW.", textBox_Message);
             //addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
             addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
-            
+
             addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
         }
         private void addStrToBox(string str, TextBox rtbox)
@@ -1467,7 +1469,7 @@ namespace Enerefsys
                 engineCount = BoardCount;
             }
 
-            
+
             /***********************************************************************************/
             //冷却水泵的计算公式
             /***********************************************************************************/
@@ -1499,7 +1501,7 @@ namespace Enerefsys
                 a += doubleParams[1] * fullFlow * fullFlow * engineCount;
                 b += doubleParams[2] * fullFlow * engineCount;
                 c += doubleParams[3] * engineCount;
-                
+
             }
 
 
@@ -1511,7 +1513,7 @@ namespace Enerefsys
                 doubleParamss[1] * fullFlow * fullFlow * engineCount * solute * solute +
                 doubleParamss[2] * fullFlow * engineCount * solute +
                  doubleParamss[3] * engineCount;
-            
+
             //if (solute < 0.45)
             // solute = 0.45;
             double result = threeOption * solute * solute * solute + a * solute * solute + b * solute + c;
@@ -2141,16 +2143,13 @@ namespace Enerefsys
                 throughput_textBox.Location = new Point(359, 17 + (i - 1) * 35);
                 throughput_textBox.Width = 76;
                 throughput_textBox.Height = 20;
-                power_textBox.Location = new Point(483, 17 + (i - 1) * 35);
+                power_textBox.Location = new Point(560, 17 + (i - 1) * 35);
                 power_textBox.Width = 76;
                 power_textBox.Height = 20;
-                temperature_textBox.Location = new Point(608, 17 + (i - 1) * 35);
+                temperature_textBox.Location = new Point(474, 17 + (i - 1) * 35);
                 temperature_textBox.Width = 36;
                 temperature_textBox.Height = 20;
-                power_textBox.Location = new Point(650, 17 + (i - 1) * 35);
-                power_textBox.Width = 50;
-                power_textBox.Height = 20;
-                amount_textBox.Location = new Point(733, 17 + (i - 1) * 35);
+                amount_textBox.Location = new Point(683, 17 + (i - 1) * 35);
                 amount_textBox.Width = 20;
                 amount_textBox.Height = 20;
             }
@@ -2167,8 +2166,6 @@ namespace Enerefsys
                 saveProject(saveFileDialog.FileName);
             }
         }
-
-
 
         private void saveProject(string xml)
         {
@@ -2738,7 +2735,7 @@ namespace Enerefsys
                 MathWorks.MATLAB.NET.Arrays.MWNumericArray mmArray = mArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
                 Array array = mmArray.ToArray();
                 //int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(0, 1), array.GetValue(0, 2), array.GetValue(0, 3), array.GetValue(0, 4), array.GetValue(0, 5), array.GetValue(0, 6), sheet, engineType);
-                int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(1, 0), array.GetValue(2, 0), array.GetValue(3, 0), array.GetValue(4, 0), array.GetValue( 5,0), sheet, engineType);
+                int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(1, 0), array.GetValue(2, 0), array.GetValue(3, 0), array.GetValue(4, 0), array.GetValue(5, 0), sheet, engineType);
                 if (ret == 1)
                 {
                     iStep++;
@@ -2854,21 +2851,77 @@ namespace Enerefsys
             m_window.ShowDialog();
             m_window.Dispose();
         }
-    }
 
-    class EngineParam
-    {
-        public string EngineType { get; set; }
-        public string FileName { get; set; }
-        public ProgressBar ProgressBar { get; set; }
-        public EngineParam(ProgressBar progressbar, string engineType, string fileName)
+        private void tabPage4_Enter(object sender, EventArgs e)
         {
-            ProgressBar = progressbar;
-            EngineType = engineType;
-            FileName = fileName;
+        }
+
+        class EngineParam
+        {
+            public string EngineType { get; set; }
+            public string FileName { get; set; }
+            public ProgressBar ProgressBar { get; set; }
+            public EngineParam(ProgressBar progressbar, string engineType, string fileName)
+            {
+                ProgressBar = progressbar;
+                EngineType = engineType;
+                FileName = fileName;
+            }
+        }
+
+        private void tabPage4_Enter_1(object sender, EventArgs e)
+        {
+            int coolingtowerCount = 0;
+            reponseCount += 1;
+            if (reponseCount == 1 || labelFlag == 1)
+                appear_Label(label_list);
+            labelFlag = 0;
+            clear_CoolingTowerPanel();
+            try
+            {
+                coolingtowerCount = 1;
+                    labelFlag += 1;
+                    conceal_Label(label_list);
+                    create_CoolingTower_Num(coolingtowerCount);
+                    set_CoolingTower_Panel(CoolingTower_list);
+            }
+            catch (Exception ex)
+            {
+                Console.Write("" + ex.Message);
+                MessageBox.Show("请输入正确的数据类型！");
+                return;
+            }
+        }
+        private void clear_CoolingTowerPanel()
+        {
+            coolingtowerpanel.Controls.Clear();
+        }
+        //产生冷却塔数量
+        private void create_CoolingTower_Num(int coolingtowerCount)
+        {
+            CoolingTower_list = new List<CoolingTower>();
+            for (int i = 1; i <= coolingtowerCount; i++)
+            {
+                CoolingTower_list.Add(new CoolingTower(i));
+            }
+        }
+        //动态显示冷却塔
+        private void set_CoolingTower_Panel(List<CoolingTower> CoolingTower_list)
+        {
+            foreach (CoolingTower myCoolingTower in CoolingTower_list)
+            {
+                CoolingTower temp_CoolingTower = (CoolingTower)myCoolingTower;
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.amount_textBox);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.brand_comboBox);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.LBCoolingTower);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.power_textBox);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.temperature_textBox);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.throughput_textBox);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.type_comboBox);
+                //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
+            }
         }
     }
-
 }
 
 

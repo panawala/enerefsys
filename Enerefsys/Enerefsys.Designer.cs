@@ -191,12 +191,11 @@
             this.btnViewReport = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.coolingtowerpanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label40 = new System.Windows.Forms.Label();
             this.coolTower_tb1 = new System.Windows.Forms.TextBox();
-            this.coolTower_tb = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.coolTower_cb = new System.Windows.Forms.ComboBox();
             this.coolTower_l1 = new System.Windows.Forms.Label();
@@ -210,6 +209,12 @@
             this.出品介绍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label29 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -1469,7 +1474,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label28.ForeColor = System.Drawing.Color.Blue;
             this.label28.Location = new System.Drawing.Point(319, 23);
             this.label28.Name = "label28";
@@ -1522,7 +1527,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label42.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
             this.label42.Location = new System.Drawing.Point(180, 22);
             this.label42.Name = "label42";
@@ -1752,7 +1757,7 @@
             // textBox_Message
             // 
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_Message.Font = new System.Drawing.Font("幼圆", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
             this.textBox_Message.Location = new System.Drawing.Point(105, 96);
             this.textBox_Message.Multiline = true;
@@ -1877,10 +1882,15 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.panel4);
+            this.tabPage4.Controls.Add(this.label50);
+            this.tabPage4.Controls.Add(this.label49);
+            this.tabPage4.Controls.Add(this.label48);
+            this.tabPage4.Controls.Add(this.label47);
             this.tabPage4.Controls.Add(this.label40);
+            this.tabPage4.Controls.Add(this.label29);
+            this.tabPage4.Controls.Add(this.coolingtowerpanel);
+            this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Controls.Add(this.coolTower_tb1);
-            this.tabPage4.Controls.Add(this.coolTower_tb);
             this.tabPage4.Controls.Add(this.label41);
             this.tabPage4.Controls.Add(this.coolTower_cb);
             this.tabPage4.Controls.Add(this.coolTower_l1);
@@ -1891,6 +1901,15 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "冷却塔配置";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter_1);
+            // 
+            // coolingtowerpanel
+            // 
+            this.coolingtowerpanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.coolingtowerpanel.Location = new System.Drawing.Point(60, 157);
+            this.coolingtowerpanel.Name = "coolingtowerpanel";
+            this.coolingtowerpanel.Size = new System.Drawing.Size(792, 53);
+            this.coolingtowerpanel.TabIndex = 105;
             // 
             // panel4
             // 
@@ -1923,15 +1942,6 @@
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(214, 52);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(17, 12);
-            this.label40.TabIndex = 19;
-            this.label40.Text = "台";
-            // 
             // coolTower_tb1
             // 
             this.coolTower_tb1.Location = new System.Drawing.Point(108, 89);
@@ -1939,13 +1949,6 @@
             this.coolTower_tb1.Size = new System.Drawing.Size(100, 21);
             this.coolTower_tb1.TabIndex = 18;
             this.coolTower_tb1.Text = "流量";
-            // 
-            // coolTower_tb
-            // 
-            this.coolTower_tb.Location = new System.Drawing.Point(108, 49);
-            this.coolTower_tb.Name = "coolTower_tb";
-            this.coolTower_tb.Size = new System.Drawing.Size(100, 21);
-            this.coolTower_tb.TabIndex = 17;
             // 
             // label41
             // 
@@ -1999,7 +2002,7 @@
             this.createNewProjectToolStripMenuItem,
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
@@ -2031,22 +2034,76 @@
             this.出品介绍ToolStripMenuItem,
             this.帮助文档ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 出品介绍ToolStripMenuItem
             // 
             this.出品介绍ToolStripMenuItem.Name = "出品介绍ToolStripMenuItem";
-            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.出品介绍ToolStripMenuItem.Text = "出品介绍";
             this.出品介绍ToolStripMenuItem.Click += new System.EventHandler(this.出品介绍ToolStripMenuItem_Click);
             // 
             // 帮助文档ToolStripMenuItem
             // 
             this.帮助文档ToolStripMenuItem.Name = "帮助文档ToolStripMenuItem";
-            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(175, 133);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(29, 12);
+            this.label29.TabIndex = 106;
+            this.label29.Text = "品牌";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(327, 133);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(29, 12);
+            this.label40.TabIndex = 107;
+            this.label40.Text = "类型";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(431, 133);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(29, 12);
+            this.label47.TabIndex = 108;
+            this.label47.Text = "流量";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(539, 133);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(29, 12);
+            this.label48.TabIndex = 109;
+            this.label48.Text = "温度";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(640, 133);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(29, 12);
+            this.label49.TabIndex = 110;
+            this.label49.Text = "功率";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(750, 133);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(29, 12);
+            this.label50.TabIndex = 111;
+            this.label50.Text = "数量";
             // 
             // Enerefsys
             // 
@@ -2216,9 +2273,7 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel coolingPanel;
         private System.Windows.Forms.Panel freezingPanel;
-        private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox coolTower_tb1;
-        private System.Windows.Forms.TextBox coolTower_tb;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox coolTower_cb;
         private System.Windows.Forms.Label coolTower_l1;
@@ -2301,5 +2356,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SystemMinPower;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.CheckBox checkBoxBoard;
+        private System.Windows.Forms.Panel coolingtowerpanel;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
     }
 }
