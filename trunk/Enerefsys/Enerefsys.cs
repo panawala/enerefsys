@@ -2852,10 +2852,6 @@ namespace Enerefsys
             m_window.Dispose();
         }
 
-        private void tabPage4_Enter(object sender, EventArgs e)
-        {
-        }
-
         class EngineParam
         {
             public string EngineType { get; set; }
@@ -2869,7 +2865,7 @@ namespace Enerefsys
             }
         }
 
-        private void tabPage4_Enter_1(object sender, EventArgs e)
+        private void tabPage4_Enter(object sender, EventArgs e)
         {
             int coolingtowerCount = 0;
             reponseCount += 1;
