@@ -2118,6 +2118,14 @@ namespace Enerefsys
                 LBCoolingTower.Text = "冷却塔";
                 brand_comboBox.Name = "brand_comboBox" + i;
                 brand_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                brand_comboBox.Items.Add("马利");
+                brand_comboBox.Items.Add("良机");
+                brand_comboBox.Items.Add("金日");
+                brand_comboBox.Items.Add("联丰");
+                brand_comboBox.Items.Add("上风");
+                brand_comboBox.Items.Add("大洋");
+                brand_comboBox.Items.Add("海鸥");
+                brand_comboBox.Items.Add("中奥");
                 type_comboBox.Name = "type_comboBox" + i;
                 type_comboBox.Items.Add("常规");
                 type_comboBox.Items.Add("高低频");
