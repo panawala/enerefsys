@@ -595,7 +595,7 @@
             this.groupBox7.Size = new System.Drawing.Size(344, 170);
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "置外环境";
+            this.groupBox7.Text = "室外环境";
             // 
             // label27
             // 

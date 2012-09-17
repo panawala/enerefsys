@@ -2050,6 +2050,112 @@ namespace Enerefsys
             }
         }
 
+        class CoolingTower
+        {
+            public Label LBCoolingTower
+            {
+                get;
+                set;
+            }
+            public ComboBox brand_comboBox
+            {
+                get;
+                set;
+            }
+            public ComboBox type_comboBox
+            {
+                get;
+                set;
+            }
+            public TextBox throughput_textBox
+            {
+                get;
+                set;
+            }
+            public TextBox temperature_textBox
+            {
+                get;
+                set;
+            }
+            public TextBox power_textBox
+            {
+                get;
+                set;
+            }
+            public TextBox amount_textBox
+            {
+                get;
+                set;
+            }
+            //public ComboBox performance_data_box
+            //{
+            //    get;
+            //    set;
+            //}
+            public CoolingTower(int i)
+            {
+                LBCoolingTower = new Label();
+                LBCoolingTower.Width = 50;
+                brand_comboBox = new ComboBox();
+                type_comboBox = new ComboBox();
+                throughput_textBox = new TextBox();
+                temperature_textBox = new TextBox();
+                power_textBox = new TextBox();
+                amount_textBox = new TextBox();
+                amount_textBox.Width = 20;
+                amount_textBox.MaxLength = 2;
+
+                //performance_data_box = new ComboBox();
+                setComponentAttribute(i);
+                setComponetLocation(i);
+            }
+
+            public void setComponentAttribute(int i)
+            {
+                LBCoolingTower.Name = "CoolingTower" + i;
+                LBCoolingTower.Text = "冷却塔";
+                brand_comboBox.Name = "brand_comboBox" + i;
+                brand_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                type_comboBox.Name = "type_comboBox" + i;
+                type_comboBox.Items.Add("常规");
+                type_comboBox.Items.Add("高低频");
+                type_comboBox.Items.Add("变频");
+                throughput_textBox.Name = "throughput_textBox" + i;
+                temperature_textBox.Name = "temperature_textBox" + i;
+                power_textBox.Name = "power_textBox" + i;
+                amount_textBox.Name = "boarder_amount_textBox" + i;
+                //performance_data_box.Name = "performance_data_box" + i;
+            }
+
+            public void setComponetLocation(int i)
+            {
+                LBCoolingTower.Location = new Point(15, 20 + (i - 1) * 35);
+                LBCoolingTower.Width = 68;
+                LBCoolingTower.Height = 12;
+                brand_comboBox.Location = new Point(112, 17 + (i - 1) * 35);
+                brand_comboBox.Width = 76;
+                brand_comboBox.Height = 20;
+                type_comboBox.Location = new Point(234, 17 + (i - 1) * 35);
+                type_comboBox.Width = 76;
+                type_comboBox.Height = 20;
+                throughput_textBox.Location = new Point(359, 17 + (i - 1) * 35);
+                throughput_textBox.Width = 76;
+                throughput_textBox.Height = 20;
+                power_textBox.Location = new Point(483, 17 + (i - 1) * 35);
+                power_textBox.Width = 76;
+                power_textBox.Height = 20;
+                temperature_textBox.Location = new Point(608, 17 + (i - 1) * 35);
+                temperature_textBox.Width = 36;
+                temperature_textBox.Height = 20;
+                power_textBox.Location = new Point(650, 17 + (i - 1) * 35);
+                power_textBox.Width = 50;
+                power_textBox.Height = 20;
+                amount_textBox.Location = new Point(733, 17 + (i - 1) * 35);
+                amount_textBox.Width = 20;
+                amount_textBox.Height = 20;
+            }
+        }
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
