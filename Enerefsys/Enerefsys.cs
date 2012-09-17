@@ -134,7 +134,7 @@ namespace Enerefsys
                 {
                     freezerCount = Int32.Parse(freezerNum.Text.ToString());
                 }
-                else if (null == boarderNum.Text.ToString().Trim() || "" == boarderNum.Text.ToString().Trim())
+                else if (!checkBoxBoard.Checked)
                 {
                     labelFlag += 1;
                     conceal_Label(label_list);
@@ -266,7 +266,7 @@ namespace Enerefsys
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void boarderNum_TextChanged(object sender, EventArgs e)
+        private void checkBoxBoard_CheckedChanged(object sender, EventArgs e)
         {
             int boarderCount = 0;
             reponseCount += 1;
@@ -276,9 +276,9 @@ namespace Enerefsys
             clear_Panel2();
             try
             {
-                if (null != boarderNum.Text.ToString().Trim() && "" != boarderNum.Text.ToString().Trim())
+                if (checkBoxBoard.Checked)
                 {
-                    boarderCount = Int32.Parse(boarderNum.Text.ToString());
+                    boarderCount = 1;
                 }
                 else if (null == freezerNum.Text.ToString().Trim() || "" == freezerNum.Text.ToString().Trim())
                 {
@@ -289,16 +289,48 @@ namespace Enerefsys
                     return;
                 }
             }
-            catch (Exception e1)
+            catch (Exception ex)
             {
-                Console.Write("" + e1.Message);
+                Console.Write("" + ex.Message);
                 MessageBox.Show("请输入正确的数据类型！");
                 return;
-
             }
             create_Boarder_Num(boarderCount);
             set_Boarder_Panel(subBoarder_list);
         }
+        //private void boarderNum_TextChanged(object sender, EventArgs e)
+        //{
+        //    int boarderCount = 0;
+        //    reponseCount += 1;
+        //    if (reponseCount == 1 || labelFlag == 1)
+        //        appear_Label(label_list);
+        //    labelFlag = 0;
+        //    clear_Panel2();
+        //    try
+        //    {
+        //        if (null != boarderNum.Text.ToString().Trim() && "" != boarderNum.Text.ToString().Trim())
+        //        {
+        //            boarderCount = Int32.Parse(boarderNum.Text.ToString());
+        //        }
+        //        else if (null == freezerNum.Text.ToString().Trim() || "" == freezerNum.Text.ToString().Trim())
+        //        {
+        //            labelFlag += 1;
+        //            conceal_Label(label_list);
+        //            create_Boarder_Num(boarderCount);
+        //            set_Boarder_Panel(subBoarder_list);
+        //            return;
+        //        }
+        //    }
+        //    catch (Exception e1)
+        //    {
+        //        Console.Write("" + e1.Message);
+        //        MessageBox.Show("请输入正确的数据类型！");
+        //        return;
+
+        //    }
+        //    create_Boarder_Num(boarderCount);
+        //    set_Boarder_Panel(subBoarder_list);
+        //}
 
         private void clear_Panel2()
         {
@@ -337,9 +369,9 @@ namespace Enerefsys
         {
             int tempBoarderNum;
             List<MachineEntity> machineList = new List<MachineEntity>();
-            if (null != boarderNum.Text.ToString().Trim() && "" != boarderNum.Text.ToString().Trim() && 0 < subBoarder_list.Count)
+            if (checkBoxBoard.Checked && 0 < subBoarder_list.Count)
             {
-                tempBoarderNum = Int32.Parse(boarderNum.Text.ToString().Trim());
+                tempBoarderNum = 1;
                 for (int i = 1; i <= tempBoarderNum; i++)
                 {
                     SubBoarder sub_Boarder = (SubBoarder)subBoarder_list.ElementAt(i - 1);
@@ -350,7 +382,7 @@ namespace Enerefsys
                             int icount = Convert.ToInt32(sub_Boarder.amount_textBox.Text.ToString().Trim());
                             for (int ix = 0; ix < icount; ix++)
                             {
-                                MachineEntity me = new MachineEntity("板换" + i, sub_Boarder.addition.Text.ToString() + sub_Boarder.type_box.Text.ToString(), Convert.ToDouble(sub_Boarder.cooling_comboBox.Text.ToString().Trim()));
+                                MachineEntity me = new MachineEntity("板换", sub_Boarder.addition.Text.ToString() + sub_Boarder.type_box.Text.ToString(), Convert.ToDouble(sub_Boarder.cooling_comboBox.Text.ToString().Trim()));
                                 machineList.Add(me);
                             }
                         }
@@ -1770,6 +1802,11 @@ namespace Enerefsys
                 type_box.DropDownStyle = ComboBoxStyle.DropDownList;
                 cooling_comboBox.Name = "freezer_cooling_comboBox" + i;
                 brand_comboBox.Name = "freezer_brand_comboBox" + i;
+                brand_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                brand_comboBox.Items.Add("York");
+                brand_comboBox.Items.Add("Carrier");
+                brand_comboBox.Items.Add("McQuay");
+                brand_comboBox.Items.Add("TRANE");
                 model_box.Name = "freezer_model_box" + i;
                 amount_textBox.Name = "freezer_amount_checkBox" + i;
                 //performance_data_box.Name = "performance_data_box" + i;
@@ -1884,7 +1921,7 @@ namespace Enerefsys
             public void setComponetLocation(int i)
             {
                 boarder.Location = new Point(19, 20 + (i - 1) * 39);
-                boarder.Text = "板换" + i;
+                boarder.Text = "板换";
                 addition.Location = new Point(90, 20 + (i - 1) * 39);
                 addition.Text = "温度低于:";
                 type_box.Location = new Point(158, 17 + (i - 1) * 39);
@@ -1966,6 +2003,15 @@ namespace Enerefsys
             {
                 freazerAndcooler.Name = "freazerAndcooler" + i;
                 brand_comboBox.Name = "brand_comboBox" + i;
+                brand_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                brand_comboBox.Items.Add("格兰富");
+                brand_comboBox.Items.Add("ITT LOWARA");
+                brand_comboBox.Items.Add("威乐");
+                brand_comboBox.Items.Add("凯士比KSB");
+                brand_comboBox.Items.Add("东方EAST");
+                brand_comboBox.Items.Add("博山");
+                brand_comboBox.Items.Add("肯富来KENFLO");
+                brand_comboBox.Text = brand_comboBox.Items[0].ToString();
                 model_textBox.Name = "model_textBox" + i;
                 amount_textBox.Name = "amount_textBox" + i;
                 //performance_data_button.Name = "performance_data_button" + i;
@@ -2452,7 +2498,7 @@ namespace Enerefsys
                 progressBar.Maximum = sheetsCount;
                 progressBar.Value = 0;
 
-                EngineParam ep = new EngineParam(progressBar, comboBox_EngineType.Text, openFileDialog.FileName);
+                EngineParam ep = new EngineParam(progressBar, "vsd", openFileDialog.FileName);
 
                 DealData(ep);
             }

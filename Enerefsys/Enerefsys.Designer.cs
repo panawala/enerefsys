@@ -93,12 +93,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBoxBoard = new System.Windows.Forms.CheckBox();
             this.boarder_Panel = new System.Windows.Forms.Panel();
-            this.label29 = new System.Windows.Forms.Label();
-            this.boarderNum = new System.Windows.Forms.TextBox();
-            this.boarderMachine_Label = new System.Windows.Forms.Label();
             this.completed = new System.Windows.Forms.Label();
-            this.comboBox_EngineType = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -887,12 +884,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.checkBoxBoard);
             this.tabPage2.Controls.Add(this.boarder_Panel);
-            this.tabPage2.Controls.Add(this.label29);
-            this.tabPage2.Controls.Add(this.boarderNum);
-            this.tabPage2.Controls.Add(this.boarderMachine_Label);
             this.tabPage2.Controls.Add(this.completed);
-            this.tabPage2.Controls.Add(this.comboBox_EngineType);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.progressBar);
             this.tabPage2.Controls.Add(this.btnLoadEngineData);
@@ -915,40 +909,25 @@
             this.tabPage2.Text = "冷冻机配置";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // checkBoxBoard
+            // 
+            this.checkBoxBoard.AutoSize = true;
+            this.checkBoxBoard.Location = new System.Drawing.Point(249, 13);
+            this.checkBoxBoard.Name = "checkBoxBoard";
+            this.checkBoxBoard.Size = new System.Drawing.Size(48, 16);
+            this.checkBoxBoard.TabIndex = 79;
+            this.checkBoxBoard.Text = "版换";
+            this.checkBoxBoard.UseVisualStyleBackColor = true;
+            this.checkBoxBoard.CheckedChanged += new System.EventHandler(this.checkBoxBoard_CheckedChanged);
+            // 
             // boarder_Panel
             // 
             this.boarder_Panel.AutoScroll = true;
             this.boarder_Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.boarder_Panel.Location = new System.Drawing.Point(7, 186);
+            this.boarder_Panel.Location = new System.Drawing.Point(7, 268);
             this.boarder_Panel.Name = "boarder_Panel";
-            this.boarder_Panel.Size = new System.Drawing.Size(925, 129);
+            this.boarder_Panel.Size = new System.Drawing.Size(925, 47);
             this.boarder_Panel.TabIndex = 78;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(366, 13);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(17, 12);
-            this.label29.TabIndex = 77;
-            this.label29.Text = "种";
-            // 
-            // boarderNum
-            // 
-            this.boarderNum.Location = new System.Drawing.Point(260, 10);
-            this.boarderNum.Name = "boarderNum";
-            this.boarderNum.Size = new System.Drawing.Size(100, 21);
-            this.boarderNum.TabIndex = 76;
-            this.boarderNum.TextChanged += new System.EventHandler(this.boarderNum_TextChanged);
-            // 
-            // boarderMachine_Label
-            // 
-            this.boarderMachine_Label.AutoSize = true;
-            this.boarderMachine_Label.Location = new System.Drawing.Point(213, 13);
-            this.boarderMachine_Label.Name = "boarderMachine_Label";
-            this.boarderMachine_Label.Size = new System.Drawing.Size(29, 12);
-            this.boarderMachine_Label.TabIndex = 75;
-            this.boarderMachine_Label.Text = "板换";
             // 
             // completed
             // 
@@ -957,20 +936,6 @@
             this.completed.Name = "completed";
             this.completed.Size = new System.Drawing.Size(0, 12);
             this.completed.TabIndex = 74;
-            // 
-            // comboBox_EngineType
-            // 
-            this.comboBox_EngineType.AutoCompleteCustomSource.AddRange(new string[] {
-            "CSD",
-            "VSD"});
-            this.comboBox_EngineType.FormattingEnabled = true;
-            this.comboBox_EngineType.Items.AddRange(new object[] {
-            "CSD",
-            "VSD"});
-            this.comboBox_EngineType.Location = new System.Drawing.Point(743, 10);
-            this.comboBox_EngineType.Name = "comboBox_EngineType";
-            this.comboBox_EngineType.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_EngineType.TabIndex = 73;
             // 
             // panel2
             // 
@@ -1007,9 +972,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(870, 7);
+            this.progressBar.Location = new System.Drawing.Point(743, 7);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(347, 23);
+            this.progressBar.Size = new System.Drawing.Size(474, 23);
             this.progressBar.TabIndex = 71;
             // 
             // btnLoadEngineData
@@ -1018,7 +983,7 @@
             this.btnLoadEngineData.Name = "btnLoadEngineData";
             this.btnLoadEngineData.Size = new System.Drawing.Size(99, 23);
             this.btnLoadEngineData.TabIndex = 70;
-            this.btnLoadEngineData.Text = "载入新的数据";
+            this.btnLoadEngineData.Text = "载入数据";
             this.btnLoadEngineData.UseVisualStyleBackColor = true;
             this.btnLoadEngineData.Click += new System.EventHandler(this.btnLoadEngineData_Click);
             // 
@@ -1047,7 +1012,7 @@
             this.freezer_Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.freezer_Panel.Location = new System.Drawing.Point(7, 51);
             this.freezer_Panel.Name = "freezer_Panel";
-            this.freezer_Panel.Size = new System.Drawing.Size(925, 129);
+            this.freezer_Panel.Size = new System.Drawing.Size(925, 211);
             this.freezer_Panel.TabIndex = 62;
             // 
             // model_Label
@@ -2295,7 +2260,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.ComboBox comboBox_EngineType;
         private System.Windows.Forms.Label completed;
         private System.Windows.Forms.TextBox textBox_TemperRange;
         private System.Windows.Forms.Label label34;
@@ -2304,9 +2268,6 @@
         private System.Windows.Forms.TextBox textBox_CoolingPower;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox boarderNum;
-        private System.Windows.Forms.Label boarderMachine_Label;
         private System.Windows.Forms.Panel boarder_Panel;
         private System.Windows.Forms.Label completedPump;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -2339,5 +2300,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Flow;
         private System.Windows.Forms.DataGridViewTextBoxColumn SystemMinPower;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.CheckBox checkBoxBoard;
     }
 }
