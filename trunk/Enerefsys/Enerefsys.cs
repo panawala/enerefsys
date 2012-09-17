@@ -33,6 +33,7 @@ namespace Enerefsys
             waterPump_conceal_Label(label_list);
             waterPump_reponseCount = 0;
             WaterPump_Load(null, null);
+            CoolingTower_Load(null, null);
 
             List<string> results = PumpManager.GetPumpTypes();
             foreach (var result in results)
@@ -59,6 +60,7 @@ namespace Enerefsys
         //private List<CoolingTower> CoolingTower_list;
         public List<MachineEntity> meList { get; set; }//获得冷冻值列表（类型和冷量）
         public List<MachineEntity> bhList { get; set; }//获得版换值列表（类型和冷量）
+        public List<MachineEntity> ctList { get; set; }//获得冷却塔值列表
         private int labelFlag = 0;//判断是否要显示labe用
         private int reponseCount
         {
@@ -2924,6 +2926,72 @@ namespace Enerefsys
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.type_comboBox);
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (null != CoolingTower_list && 0 < CoolingTower_list.Count)
+            {
+                //ctList = getCoolingTowerTypeAndCooling(CoolingTower_list);
+                //EngineWinFormEventArgs ewfe = new EngineWinFormEventArgs(meList);
+                //PassDataBetweenForm(this, ewfe);
+                //this.Close();
+                //this.Visible = false;
+                dataGridView3.Rows.Clear();
+                try
+                {
+                    for (int ix = 0; ix < CoolingTower_list.Count; ix++)
+                    {
+                        for (int iy = 0; iy < Convert.ToInt32(CoolingTower_list[ix].amount_textBox.Text); iy++)
+                        {
+                            int index = this.dataGridView3.Rows.Add();
+                            this.dataGridView3.Rows[index].Cells[0].Value = index + 1;
+                            this.dataGridView3.Rows[index].Cells[1].Value = CoolingTower_list[ix].LBCoolingTower.Text;
+                            this.dataGridView3.Rows[index].Cells[2].Value = CoolingTower_list[ix].brand_comboBox.Text;
+                            this.dataGridView3.Rows[index].Cells[3].Value = CoolingTower_list[ix].type_comboBox.Text;
+                            this.dataGridView3.Rows[index].Cells[4].Value = CoolingTower_list[ix].throughput_textBox.Text;
+                            this.dataGridView3.Rows[index].Cells[5].Value = CoolingTower_list[ix].temperature_textBox.Text;
+                            this.dataGridView3.Rows[index].Cells[6].Value = CoolingTower_list[ix].power_textBox.Text;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    dataGridView1.Rows.Clear();
+                }
+            }
+            else
+                MessageBox.Show("请输入数据");
+        }
+        private void CoolingTower_Load(object sender, EventArgs e)
+        {
+
+            this.dataGridView3.Columns.Add("No", "编号");
+
+            this.dataGridView3.Columns.Add("Name", "机器名");
+
+            this.dataGridView3.Columns.Add("FebWin", "品牌");
+
+            this.dataGridView3.Columns.Add("FebLoss", "类型");
+
+            this.dataGridView3.Columns.Add("MarWin", "流量");
+
+            this.dataGridView3.Columns.Add("MarLoss1", "温度");
+
+            this.dataGridView3.Columns.Add("MarLoss2", "功率");
+
+            for (int j = 0; j < this.dataGridView3.ColumnCount; j++)
+            {
+                this.dataGridView3.Columns[j].Width = 150;
+            }
+
+            this.dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+
+            this.dataGridView3.ColumnHeadersHeight = this.dataGridView3.ColumnHeadersHeight * 1;
+
+            this.dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
+
         }
     }
 }
