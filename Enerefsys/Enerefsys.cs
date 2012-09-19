@@ -2061,7 +2061,7 @@ namespace Enerefsys
                 get;
                 set;
             }
-            public ComboBox brand_comboBox
+            public TextBox brand_textBox
             {
                 get;
                 set;
@@ -2100,7 +2100,7 @@ namespace Enerefsys
             {
                 LBCoolingTower = new Label();
                 LBCoolingTower.Width = 50;
-                brand_comboBox = new ComboBox();
+                brand_textBox = new TextBox();
                 type_comboBox = new ComboBox();
                 throughput_textBox = new TextBox();
                 temperature_textBox = new TextBox();
@@ -2118,16 +2118,7 @@ namespace Enerefsys
             {
                 LBCoolingTower.Name = "CoolingTower" + i;
                 LBCoolingTower.Text = "冷却塔";
-                brand_comboBox.Name = "brand_comboBox" + i;
-                brand_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-                brand_comboBox.Items.Add("马利");
-                brand_comboBox.Items.Add("良机");
-                brand_comboBox.Items.Add("金日");
-                brand_comboBox.Items.Add("联丰");
-                brand_comboBox.Items.Add("上风");
-                brand_comboBox.Items.Add("大洋");
-                brand_comboBox.Items.Add("海鸥");
-                brand_comboBox.Items.Add("中奥");
+                brand_textBox.Name = "brand_comboBox" + i;
                 type_comboBox.Name = "type_comboBox" + i;
                 type_comboBox.Items.Add("常规");
                 type_comboBox.Items.Add("高低频");
@@ -2144,9 +2135,9 @@ namespace Enerefsys
                 LBCoolingTower.Location = new Point(15, 20 + (i - 1) * 35);
                 LBCoolingTower.Width = 68;
                 LBCoolingTower.Height = 12;
-                brand_comboBox.Location = new Point(112, 17 + (i - 1) * 35);
-                brand_comboBox.Width = 76;
-                brand_comboBox.Height = 20;
+                brand_textBox.Location = new Point(112, 17 + (i - 1) * 35);
+                brand_textBox.Width = 76;
+                brand_textBox.Height = 20;
                 type_comboBox.Location = new Point(234, 17 + (i - 1) * 35);
                 type_comboBox.Width = 76;
                 type_comboBox.Height = 20;
@@ -2382,8 +2373,8 @@ namespace Enerefsys
             /**********************************************************************************************/
             XmlHelper.Insert(xml, "/Project", "CoolingConfiguration", "", "");
             XmlHelper.Insert(xml, "/Project/CoolingConfiguration", "CoolingTower", "", "");
-            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Flow", "", coolTower_tb1.Text);
-            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Frequency", "", coolTower_cb.Text);
+            //XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Flow", "", coolTower_tb1.Text);
+            //XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Frequency", "", coolTower_cb.Text);
 
             /**********************************************************************************************/
             //插入结果配置
@@ -2552,8 +2543,8 @@ namespace Enerefsys
             /**********************************************************************************************/
             //插入冷却配置
             /**********************************************************************************************/
-            coolTower_tb1.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Flow", "");
-            coolTower_cb.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Frequency", "");
+            //coolTower_tb1.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Flow", "");
+            //coolTower_cb.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Frequency", "");
 
             /**********************************************************************************************/
             //插入结果配置
@@ -2918,7 +2909,7 @@ namespace Enerefsys
             {
                 CoolingTower temp_CoolingTower = (CoolingTower)myCoolingTower;
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.amount_textBox);
-                coolingtowerpanel.Controls.Add(temp_CoolingTower.brand_comboBox);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.brand_textBox);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.LBCoolingTower);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.power_textBox);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.temperature_textBox);
@@ -2947,7 +2938,7 @@ namespace Enerefsys
                             int index = this.dataGridView3.Rows.Add();
                             this.dataGridView3.Rows[index].Cells[0].Value = index + 1;
                             this.dataGridView3.Rows[index].Cells[1].Value = CoolingTower_list[ix].LBCoolingTower.Text;
-                            this.dataGridView3.Rows[index].Cells[2].Value = CoolingTower_list[ix].brand_comboBox.Text;
+                            this.dataGridView3.Rows[index].Cells[2].Value = CoolingTower_list[ix].brand_textBox.Text;
                             this.dataGridView3.Rows[index].Cells[3].Value = CoolingTower_list[ix].type_comboBox.Text;
                             this.dataGridView3.Rows[index].Cells[4].Value = CoolingTower_list[ix].throughput_textBox.Text;
                             this.dataGridView3.Rows[index].Cells[5].Value = CoolingTower_list[ix].temperature_textBox.Text;
