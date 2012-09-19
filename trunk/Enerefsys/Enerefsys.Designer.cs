@@ -137,6 +137,19 @@
             this.label39 = new System.Windows.Forms.Label();
             this.coolingPanel = new System.Windows.Forms.Panel();
             this.freezingPanel = new System.Windows.Forms.Panel();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.coolingtowerpanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -190,24 +203,6 @@
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.btnViewReport = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.coolingtowerpanel = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.coolTower_tb1 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.coolTower_cb = new System.Windows.Forms.ComboBox();
-            this.coolTower_l1 = new System.Windows.Forms.Label();
-            this.coolTower_l = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -239,6 +234,11 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -253,11 +253,6 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -269,11 +264,11 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(5, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -282,9 +277,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox6);
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -336,7 +333,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.domainUpDown2);
             this.groupBox1.Controls.Add(this.radioButton2);
@@ -351,7 +347,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(111, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(357, 358);
+            this.groupBox1.Size = new System.Drawing.Size(357, 247);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "建筑物供冷概况";
@@ -387,11 +383,11 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(16, 255);
+            this.button1.Location = new System.Drawing.Point(127, 414);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(260, 36);
             this.button1.TabIndex = 12;
-            this.button1.Text = "查看/编辑设计日逐时负荷";
+            this.button1.Text = "查看/编辑设计日逐时负荷及适用电价";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -507,16 +503,15 @@
             // 
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox6.Controls.Add(this.button2);
             this.groupBox6.Controls.Add(this.comboBox4);
             this.groupBox6.Controls.Add(this.comboBox3);
             this.groupBox6.Controls.Add(this.comboBox2);
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label19);
-            this.groupBox6.Location = new System.Drawing.Point(111, 390);
+            this.groupBox6.Location = new System.Drawing.Point(111, 289);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(357, 170);
+            this.groupBox6.Size = new System.Drawing.Size(357, 114);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "适用电价";
@@ -525,7 +520,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(16, 120);
+            this.button2.Location = new System.Drawing.Point(127, 462);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(260, 39);
             this.button2.TabIndex = 6;
@@ -1343,6 +1338,138 @@
             this.freezingPanel.Size = new System.Drawing.Size(801, 129);
             this.freezingPanel.TabIndex = 96;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.Controls.Add(this.button8);
+            this.tabPage4.Controls.Add(this.label50);
+            this.tabPage4.Controls.Add(this.label49);
+            this.tabPage4.Controls.Add(this.label48);
+            this.tabPage4.Controls.Add(this.label47);
+            this.tabPage4.Controls.Add(this.label40);
+            this.tabPage4.Controls.Add(this.label29);
+            this.tabPage4.Controls.Add(this.coolingtowerpanel);
+            this.tabPage4.Controls.Add(this.panel4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "冷却塔配置";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(62, 203);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.Size = new System.Drawing.Size(792, 275);
+            this.dataGridView3.TabIndex = 113;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(733, 133);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 112;
+            this.button8.Text = "确认";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(752, 50);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(29, 12);
+            this.label50.TabIndex = 111;
+            this.label50.Text = "数量";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(642, 50);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(29, 12);
+            this.label49.TabIndex = 110;
+            this.label49.Text = "功率";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(541, 50);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(29, 12);
+            this.label48.TabIndex = 109;
+            this.label48.Text = "温度";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(433, 50);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(29, 12);
+            this.label47.TabIndex = 108;
+            this.label47.Text = "流量";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(329, 50);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(29, 12);
+            this.label40.TabIndex = 107;
+            this.label40.Text = "类型";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(177, 50);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(29, 12);
+            this.label29.TabIndex = 106;
+            this.label29.Text = "品牌";
+            // 
+            // coolingtowerpanel
+            // 
+            this.coolingtowerpanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.coolingtowerpanel.Location = new System.Drawing.Point(62, 74);
+            this.coolingtowerpanel.Name = "coolingtowerpanel";
+            this.coolingtowerpanel.Size = new System.Drawing.Size(792, 53);
+            this.coolingtowerpanel.TabIndex = 105;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.pictureBox7);
+            this.panel4.Controls.Add(this.pictureBox8);
+            this.panel4.Location = new System.Drawing.Point(883, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(279, 525);
+            this.panel4.TabIndex = 104;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(13, 271);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(254, 223);
+            this.pictureBox7.TabIndex = 1;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(13, 10);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(254, 242);
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
+            // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.button7);
@@ -1476,7 +1603,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label28.ForeColor = System.Drawing.Color.Blue;
             this.label28.Location = new System.Drawing.Point(319, 23);
             this.label28.Name = "label28";
@@ -1529,7 +1656,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label42.Font = new System.Drawing.Font("幼圆", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
             this.label42.Location = new System.Drawing.Point(180, 22);
             this.label42.Name = "label42";
@@ -1759,7 +1886,7 @@
             // textBox_Message
             // 
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox_Message.Font = new System.Drawing.Font("幼圆", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
             this.textBox_Message.Location = new System.Drawing.Point(105, 96);
             this.textBox_Message.Multiline = true;
@@ -1882,186 +2009,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(920, 560);
             this.reportViewer1.TabIndex = 0;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dataGridView3);
-            this.tabPage4.Controls.Add(this.button8);
-            this.tabPage4.Controls.Add(this.label50);
-            this.tabPage4.Controls.Add(this.label49);
-            this.tabPage4.Controls.Add(this.label48);
-            this.tabPage4.Controls.Add(this.label47);
-            this.tabPage4.Controls.Add(this.label40);
-            this.tabPage4.Controls.Add(this.label29);
-            this.tabPage4.Controls.Add(this.coolingtowerpanel);
-            this.tabPage4.Controls.Add(this.panel4);
-            this.tabPage4.Controls.Add(this.coolTower_tb1);
-            this.tabPage4.Controls.Add(this.label41);
-            this.tabPage4.Controls.Add(this.coolTower_cb);
-            this.tabPage4.Controls.Add(this.coolTower_l1);
-            this.tabPage4.Controls.Add(this.coolTower_l);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1223, 625);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "冷却塔配置";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(60, 286);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(792, 275);
-            this.dataGridView3.TabIndex = 113;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(731, 216);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 112;
-            this.button8.Text = "确认";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(750, 133);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(29, 12);
-            this.label50.TabIndex = 111;
-            this.label50.Text = "数量";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(640, 133);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(29, 12);
-            this.label49.TabIndex = 110;
-            this.label49.Text = "功率";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(539, 133);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(29, 12);
-            this.label48.TabIndex = 109;
-            this.label48.Text = "温度";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(431, 133);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(29, 12);
-            this.label47.TabIndex = 108;
-            this.label47.Text = "流量";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(327, 133);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(29, 12);
-            this.label40.TabIndex = 107;
-            this.label40.Text = "类型";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(175, 133);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(29, 12);
-            this.label29.TabIndex = 106;
-            this.label29.Text = "品牌";
-            // 
-            // coolingtowerpanel
-            // 
-            this.coolingtowerpanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.coolingtowerpanel.Location = new System.Drawing.Point(60, 157);
-            this.coolingtowerpanel.Name = "coolingtowerpanel";
-            this.coolingtowerpanel.Size = new System.Drawing.Size(792, 53);
-            this.coolingtowerpanel.TabIndex = 105;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.pictureBox7);
-            this.panel4.Controls.Add(this.pictureBox8);
-            this.panel4.Location = new System.Drawing.Point(883, 50);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(279, 525);
-            this.panel4.TabIndex = 104;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(13, 271);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(254, 223);
-            this.pictureBox7.TabIndex = 1;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(254, 242);
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            // 
-            // coolTower_tb1
-            // 
-            this.coolTower_tb1.Location = new System.Drawing.Point(108, 89);
-            this.coolTower_tb1.Name = "coolTower_tb1";
-            this.coolTower_tb1.Size = new System.Drawing.Size(100, 21);
-            this.coolTower_tb1.TabIndex = 18;
-            this.coolTower_tb1.Text = "流量";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(277, 70);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(41, 12);
-            this.label41.TabIndex = 16;
-            this.label41.Text = "变频否";
-            // 
-            // coolTower_cb
-            // 
-            this.coolTower_cb.FormattingEnabled = true;
-            this.coolTower_cb.Location = new System.Drawing.Point(245, 90);
-            this.coolTower_cb.Name = "coolTower_cb";
-            this.coolTower_cb.Size = new System.Drawing.Size(102, 20);
-            this.coolTower_cb.TabIndex = 15;
-            // 
-            // coolTower_l1
-            // 
-            this.coolTower_l1.AutoSize = true;
-            this.coolTower_l1.Location = new System.Drawing.Point(61, 93);
-            this.coolTower_l1.Name = "coolTower_l1";
-            this.coolTower_l1.Size = new System.Drawing.Size(47, 12);
-            this.coolTower_l1.TabIndex = 14;
-            this.coolTower_l1.Text = "冷却塔1";
-            // 
-            // coolTower_l
-            // 
-            this.coolTower_l.AutoSize = true;
-            this.coolTower_l.Location = new System.Drawing.Point(61, 52);
-            this.coolTower_l.Name = "coolTower_l";
-            this.coolTower_l.Size = new System.Drawing.Size(41, 12);
-            this.coolTower_l.TabIndex = 13;
-            this.coolTower_l.Text = "冷却塔";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2079,7 +2026,7 @@
             this.createNewProjectToolStripMenuItem,
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
@@ -2111,20 +2058,20 @@
             this.出品介绍ToolStripMenuItem,
             this.帮助文档ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 出品介绍ToolStripMenuItem
             // 
             this.出品介绍ToolStripMenuItem.Name = "出品介绍ToolStripMenuItem";
-            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.出品介绍ToolStripMenuItem.Text = "出品介绍";
             this.出品介绍ToolStripMenuItem.Click += new System.EventHandler(this.出品介绍ToolStripMenuItem_Click);
             // 
             // 帮助文档ToolStripMenuItem
             // 
             this.帮助文档ToolStripMenuItem.Name = "帮助文档ToolStripMenuItem";
-            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
             // 
@@ -2170,6 +2117,12 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).EndInit();
@@ -2187,12 +2140,6 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -2297,11 +2244,6 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Panel coolingPanel;
         private System.Windows.Forms.Panel freezingPanel;
-        private System.Windows.Forms.TextBox coolTower_tb1;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.ComboBox coolTower_cb;
-        private System.Windows.Forms.Label coolTower_l1;
-        private System.Windows.Forms.Label coolTower_l;
         private System.Windows.Forms.Label label42;
         private MultiHeaderDataGridView.RowUnitView rowUnitView1;
         private System.Windows.Forms.TabPage tabPage6;
