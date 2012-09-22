@@ -1689,6 +1689,96 @@ namespace Enerefsys
                 get;
                 set;
             }
+            public Label lb1
+            {
+                get;
+                set;
+            }
+            public Label lb2
+            {
+                get;
+                set;
+            }
+            public Label lb3
+            {
+                get;
+                set;
+            }
+            public Label lb4
+            {
+                get;
+                set;
+            }
+            public Label lb5
+            {
+                get;
+                set;
+            }
+            public Label lb_Unit_HZ_B
+            {
+                get;
+                set;
+            }
+            public Label lb_Unit_HZ_C
+            {
+                get;
+                set;
+            }
+            public Label lb_Unit_KW_A
+            {
+                get;
+                set;
+            }
+            public Label lb_Unit_KW_B
+            {
+                get;
+                set;
+            }
+            public Label lb_Unit_KW_C
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_HZ_A
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_HZ_B
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_HZ_C
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_KW_A
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_KW_B
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_KW_C
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_T1
+            {
+                get;
+                set;
+            }
+            public TextBox tbx_T2
+            {
+                get;
+                set;
+            }
             //public ComboBox performance_data_box
             //{
             //    get;
@@ -1706,6 +1796,24 @@ namespace Enerefsys
                 amount_textBox = new TextBox();
                 amount_textBox.Width = 20;
                 amount_textBox.MaxLength = 2;
+                lb1 = new Label();
+                lb2 = new Label();
+                lb3 = new Label();
+                lb4 = new Label();
+                lb5 = new Label();
+                lb_Unit_HZ_B = new Label();
+                lb_Unit_HZ_C = new Label();
+                lb_Unit_KW_A = new Label();
+                lb_Unit_KW_B = new Label();
+                lb_Unit_KW_C = new Label();
+                tbx_HZ_A = new TextBox();
+                tbx_HZ_B = new TextBox();
+                tbx_HZ_C = new TextBox();
+                tbx_KW_A = new TextBox();
+                tbx_KW_B = new TextBox();
+                tbx_KW_C = new TextBox();
+                tbx_T1 = new TextBox();
+                tbx_T2 = new TextBox();
 
                 //performance_data_box = new ComboBox();
                 setComponentAttribute(i);
@@ -1721,11 +1829,162 @@ namespace Enerefsys
                 type_comboBox.Items.Add("常规");
                 type_comboBox.Items.Add("高低频");
                 type_comboBox.Items.Add("变频");
+                type_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                type_comboBox.SelectedIndex = 0;
+                type_comboBox.SelectedIndexChanged += new EventHandler(type_comboBox_SelectedIndexChanged);
                 throughput_textBox.Name = "throughput_textBox" + i;
                 temperature_textBox.Name = "temperature_textBox" + i;
                 power_textBox.Name = "power_textBox" + i;
                 amount_textBox.Name = "boarder_amount_textBox" + i;
                 //performance_data_box.Name = "performance_data_box" + i;
+                lb1.Text = "根据温度 T1：";
+                lb1.Width = 85;
+                lb2.Text = "℃, T2：";
+                lb2.Width = 55;
+                lb3.Text = "℃ 选择能耗，当t < T1时";
+                lb3.Width = 150;
+                tbx_HZ_A.Text = "不开冷却塔";
+                tbx_HZ_A.Width = 70;
+                tbx_HZ_A.Enabled = false;
+                tbx_KW_A.Text = "0";
+                tbx_KW_A.Width = 30;
+                tbx_KW_A.Enabled = false;
+
+                lb4.Text = "当T1 < t < T2时";
+                lb4.Width = 100;
+                tbx_HZ_B.Text = "开低速";
+                tbx_HZ_B.Width = 45;
+                tbx_KW_B.Width = 30;
+
+                lb5.Text = "当t > T2时";
+                lb5.Width = 80;
+                tbx_HZ_C.Text = "开高速";
+                tbx_HZ_C.Width = 45;
+                tbx_KW_C.Width = 30;
+
+                lb_Unit_HZ_B.Text = "HZ";
+                lb_Unit_HZ_B.Width = 20;
+                lb_Unit_HZ_C.Text = "HZ";
+                lb_Unit_HZ_C.Width = 20;
+                lb_Unit_KW_A.Text = "KW";
+                lb_Unit_KW_A.Width = 20;
+                lb_Unit_KW_B.Text = "KW";
+                lb_Unit_KW_B.Width = 20;
+                lb_Unit_KW_C.Text = "KW";
+                lb_Unit_KW_C.Width = 20;
+                tbx_T1.Width = 20;
+                tbx_T1.MaxLength = 2;
+                tbx_T2.Width = 20;
+                tbx_T2.MaxLength = 2;
+
+                power_textBox.Enabled = true;
+                lb1.Visible = false;
+                lb2.Visible = false;
+                lb3.Visible = false;
+                lb4.Visible = false;
+                lb5.Visible = false;
+                lb_Unit_HZ_B.Visible = false;
+                lb_Unit_HZ_C.Visible = false;
+                lb_Unit_KW_A.Visible = false;
+                lb_Unit_KW_B.Visible = false;
+                lb_Unit_KW_C.Visible = false;
+                tbx_HZ_A.Visible = false;
+                tbx_HZ_B.Visible = false;
+                tbx_HZ_C.Visible = false;
+                tbx_KW_A.Visible = false;
+                tbx_KW_B.Visible = false;
+                tbx_KW_C.Visible = false;
+                tbx_T1.Visible = false;
+                tbx_T2.Visible = false;
+            }
+
+            void type_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                if (type_comboBox.SelectedIndex == 0)
+                {
+                    power_textBox.Enabled = true;
+                    lb1.Visible = false;
+                    lb2.Visible = false;
+                    lb3.Visible = false;
+                    lb4.Visible = false;
+                    lb5.Visible = false;
+                    lb_Unit_HZ_B.Visible = false;
+                    lb_Unit_HZ_C.Visible = false;
+                    lb_Unit_KW_A.Visible = false;
+                    lb_Unit_KW_B.Visible = false;
+                    lb_Unit_KW_C.Visible = false;
+                    tbx_HZ_A.Visible = false;
+                    tbx_HZ_B.Visible = false;
+                    tbx_HZ_C.Visible = false;
+                    tbx_KW_A.Visible = false;
+                    tbx_KW_B.Visible = false;
+                    tbx_KW_C.Visible = false;
+                    tbx_T1.Visible = false;
+                    tbx_T2.Visible = false;
+                }
+                else if (type_comboBox.SelectedIndex == 1)
+                {
+                    power_textBox.Text = "";
+                    power_textBox.Enabled = false;
+                    lb1.Visible = true;
+                    lb2.Visible = true;
+                    lb3.Visible = true;
+                    lb3.Text = "选择能耗，当t < T1时";
+                    lb4.Visible = true;
+                    lb5.Visible = true;
+                    lb_Unit_HZ_B.Visible = false;
+                    lb_Unit_HZ_C.Visible = false;
+                    lb_Unit_KW_A.Visible = true;
+                    lb_Unit_KW_B.Visible = true;
+                    lb_Unit_KW_B.Text = "KW";
+                    lb_Unit_KW_B.Width = 20;
+                    lb_Unit_KW_C.Visible = true;
+                    tbx_HZ_A.Visible = true;
+                    tbx_HZ_B.Visible = true;
+                    tbx_HZ_B.Text = "开低速";
+                    tbx_HZ_B.Enabled = false;
+                    tbx_HZ_C.Visible = true;
+                    tbx_HZ_C.Text = "开高速";
+                    tbx_HZ_C.Enabled = false;
+                    tbx_KW_A.Visible = true;
+                    tbx_KW_B.Visible = true;
+                    tbx_KW_B.Text = "";
+                    tbx_KW_B.Enabled = true;
+                    tbx_KW_C.Visible = true;
+                    tbx_T1.Visible = true;
+                    tbx_T2.Visible = true;
+                }
+                else
+                {
+                    power_textBox.Text = "";
+                    power_textBox.Enabled = false;
+                    lb1.Visible = true;
+                    lb2.Visible = true;
+                    lb3.Visible = true;
+                    lb3.Text = "判断能耗，当t < T1时";
+                    lb4.Visible = true;
+                    lb5.Visible = true;
+                    lb_Unit_HZ_B.Visible = true;
+                    lb_Unit_HZ_C.Visible = true;
+                    lb_Unit_KW_A.Visible = true;
+                    lb_Unit_KW_B.Visible = true;
+                    lb_Unit_KW_B.Text = "KW (*该结果由计算获得)";
+                    lb_Unit_KW_B.Width = 200;
+                    lb_Unit_KW_C.Visible = true;
+                    tbx_HZ_A.Visible = true;
+                    tbx_HZ_B.Visible = true;
+                    tbx_HZ_B.Text = "30";
+                    tbx_HZ_B.Enabled = true;
+                    tbx_HZ_C.Text = "50";
+                    tbx_HZ_C.Enabled = false;
+                    tbx_HZ_C.Visible = true;
+                    tbx_KW_A.Visible = true;
+                    tbx_KW_B.Visible = true;
+                    tbx_KW_B.Enabled = false;
+                    tbx_KW_C.Visible = true;
+                    tbx_T1.Visible = true;
+                    tbx_T2.Visible = true;
+                }
             }
 
             public void setComponetLocation(int i)
@@ -1751,6 +2010,26 @@ namespace Enerefsys
                 amount_textBox.Location = new Point(683, 17 + (i - 1) * 35);
                 amount_textBox.Width = 20;
                 amount_textBox.Height = 20;
+                lb1.Location = new Point(15, 60 + (i - 1) * 35);
+                tbx_T1.Location = new Point(100, 57 + (i - 1) * 35);
+                lb2.Location = new Point(125, 60 + (i - 1) * 35);
+                tbx_T2.Location = new Point(180, 57 + (i - 1) * 35);
+                lb3.Location = new Point(205, 60 + (i - 1) * 35);
+                tbx_HZ_A.Location = new Point(400, 57 + (i - 1) * 35);
+                tbx_KW_A.Location = new Point(550, 57 + (i - 1) * 35);
+                lb_Unit_KW_A.Location = new Point(580, 60 + (i - 1) * 35);
+
+                lb4.Location = new Point(265, 100 + (i - 1) * 35);
+                tbx_HZ_B.Location = new Point(400,97 + (i - 1) * 35);
+                lb_Unit_HZ_B.Location = new Point(450, 100 + (i - 1) * 35);
+                tbx_KW_B.Location = new Point(550, 97 + (i - 1) * 35);
+                lb_Unit_KW_B.Location = new Point(580, 100 + (i - 1) * 35);
+
+                lb5.Location = new Point(265, 140 + (i - 1) * 35);
+                tbx_HZ_C.Location = new Point(400, 137 + (i - 1) * 35);
+                lb_Unit_HZ_C.Location = new Point(450, 140 + (i - 1) * 35);
+                tbx_KW_C.Location = new Point(550, 137 + (i - 1) * 35);
+                lb_Unit_KW_C.Location = new Point(580, 140 + (i - 1) * 35);
             }
         }
 
@@ -2478,10 +2757,10 @@ namespace Enerefsys
             try
             {
                 coolingtowerCount = 1;
-                    labelFlag += 1;
-                    conceal_Label(label_list);
-                    create_CoolingTower_Num(coolingtowerCount);
-                    set_CoolingTower_Panel(CoolingTower_list);
+                labelFlag += 1;
+                conceal_Label(label_list);
+                create_CoolingTower_Num(coolingtowerCount);
+                set_CoolingTower_Panel(CoolingTower_list);
             }
             catch (Exception ex)
             {
@@ -2516,6 +2795,24 @@ namespace Enerefsys
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.temperature_textBox);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.throughput_textBox);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.type_comboBox);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb1);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb2);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb3);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb4);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb5);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb_Unit_HZ_B);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb_Unit_HZ_C);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb_Unit_KW_A);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb_Unit_KW_B);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.lb_Unit_KW_C);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_HZ_A);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_HZ_B);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_HZ_C);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_KW_A);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_KW_B);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_KW_C);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_T1);
+                coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_T2);
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
             }
         }
