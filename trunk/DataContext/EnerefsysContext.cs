@@ -25,5 +25,7 @@ namespace DataContext
         public DbSet<OptimizationResult> OptimizationResults { get; set; }
         public DbSet<PumpFitResult> PumpFitResults { get; set; }
         public DbSet<PumpInfo> PumpInfoes { get; set; }
+        public DbSet<StandardLoad> StandardLoads { get; set; }
+        public DbSet<RunResult> RunResults { get; set; }
     }
 }

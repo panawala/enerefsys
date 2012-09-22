@@ -85,7 +85,27 @@ namespace EnerefsysBLL.EntityData
 
         }
 
-
+        /// <summary>
+        /// 得到最低温度
+        /// </summary>
+        /// <returns></returns>
+        public static double getMinTemperature()
+        {
+            using (var context = new EnerefsysContext())
+            {
+                try
+                {
+                    var engineFitResult = context.EngineFitResults
+                        .Select(s => s.Temperature)
+                        .Min();
+                    return engineFitResult;
+                }
+                catch (Exception e)
+                {
+                    return 0d;
+                }
+            }
+        }
 
         //根据类型删除数据库中所有数据
         public static int DeleteByType(string type)
@@ -131,6 +151,8 @@ namespace EnerefsysBLL.EntityData
         {
             using (EnerefsysContext db = new EnerefsysContext())
             {
+                if (temperature < EngineFitResultData.getMinTemperature())
+                    temperature = EngineFitResultData.getMinTemperature();
                 // get record that is to be selected
                 var engineFitResults = (from c in db.EngineFitResults
                                         where c.Temperature == temperature && c.Type == type
@@ -215,7 +237,8 @@ namespace EnerefsysBLL.EntityData
                     // 得到小于指定温度的最高温度
                     double Temperature = (from c in db.EngineFitResults
                                           where c.Temperature < temperature && c.Type == type
-                                          select c.Temperature).Max();
+                                          select c.Temperature)
+                                          .Max();
                     return Convert.ToInt32(Temperature);
                 }
 
