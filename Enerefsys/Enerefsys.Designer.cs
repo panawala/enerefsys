@@ -57,10 +57,10 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -284,11 +284,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -526,7 +526,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(16, 199);
+            this.button2.Location = new System.Drawing.Point(25, 210);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(260, 39);
             this.button2.TabIndex = 6;
@@ -558,6 +558,19 @@
             this.comboBox2.Size = new System.Drawing.Size(152, 20);
             this.comboBox2.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(405, 566);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "查看/编辑设计日逐时负荷及适用电价";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -584,19 +597,6 @@
             this.label19.Size = new System.Drawing.Size(77, 12);
             this.label19.TabIndex = 0;
             this.label19.Text = "项目所在地区";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(472, 583);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 36);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "查看/编辑设计日逐时负荷及适用电价";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox7
             // 
@@ -1370,7 +1370,7 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(62, 203);
+            this.dataGridView3.Location = new System.Drawing.Point(62, 300);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
             this.dataGridView3.Size = new System.Drawing.Size(792, 275);
@@ -1378,7 +1378,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(733, 133);
+            this.button8.Location = new System.Drawing.Point(779, 271);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 112;
@@ -1445,7 +1445,7 @@
             this.coolingtowerpanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.coolingtowerpanel.Location = new System.Drawing.Point(62, 74);
             this.coolingtowerpanel.Name = "coolingtowerpanel";
-            this.coolingtowerpanel.Size = new System.Drawing.Size(792, 53);
+            this.coolingtowerpanel.Size = new System.Drawing.Size(792, 191);
             this.coolingtowerpanel.TabIndex = 105;
             // 
             // panel4
@@ -1518,9 +1518,9 @@
             this.label28.ForeColor = System.Drawing.Color.Blue;
             this.label28.Location = new System.Drawing.Point(319, 23);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(467, 29);
+            this.label28.Size = new System.Drawing.Size(405, 29);
             this.label28.TabIndex = 3;
-            this.label28.Text = "Enerefsys系统全年逐时优化结果";
+            this.label28.Text = "Enerefsys系统逐时优化结果";
             // 
             // rowUnitView2
             // 
@@ -2049,37 +2049,37 @@
             // 文件ToolStripMenuItem
             // 
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.文件ToolStripMenuItem.Text = "文件";
             // 
             // 编辑ToolStripMenuItem
             // 
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
-            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.编辑ToolStripMenuItem.Text = "编辑";
             // 
             // 视图ToolStripMenuItem
             // 
             this.视图ToolStripMenuItem.Name = "视图ToolStripMenuItem";
-            this.视图ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.视图ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.视图ToolStripMenuItem.Text = "视图";
             // 
             // 表单ToolStripMenuItem
             // 
             this.表单ToolStripMenuItem.Name = "表单ToolStripMenuItem";
-            this.表单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.表单ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.表单ToolStripMenuItem.Text = "表单";
             // 
             // 工具ToolStripMenuItem
             // 
             this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
-            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.工具ToolStripMenuItem.Text = "工具";
             // 
             // 窗口ToolStripMenuItem
             // 
             this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
-            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.窗口ToolStripMenuItem.Text = "窗口";
             // 
             // projectToolStripMenuItem
@@ -2120,20 +2120,20 @@
             this.出品介绍ToolStripMenuItem,
             this.帮助文档ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 出品介绍ToolStripMenuItem
             // 
             this.出品介绍ToolStripMenuItem.Name = "出品介绍ToolStripMenuItem";
-            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.出品介绍ToolStripMenuItem.Text = "出品介绍";
             this.出品介绍ToolStripMenuItem.Click += new System.EventHandler(this.出品介绍ToolStripMenuItem_Click);
             // 
             // 帮助文档ToolStripMenuItem
             // 
             this.帮助文档ToolStripMenuItem.Name = "帮助文档ToolStripMenuItem";
-            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
             // 
