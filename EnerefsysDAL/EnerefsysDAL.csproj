@@ -51,6 +51,8 @@
     <Compile Include="Model\OptimizationResult.cs" />
     <Compile Include="Model\PumpFitResult.cs" />
     <Compile Include="Model\PumpInfo.cs" />
+    <Compile Include="Model\RunResult.cs" />
+    <Compile Include="Model\StandardLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -59,6 +59,7 @@
     <Compile Include="Entity\MachineEntity.cs" />
     <Compile Include="Entity\SoluteResult.cs" />
     <Compile Include="Manager\EngineManager.cs" />
+    <Compile Include="Manager\RunManager.cs" />
     <Compile Include="Utility\MachineCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Manager\PumpManager.cs" />

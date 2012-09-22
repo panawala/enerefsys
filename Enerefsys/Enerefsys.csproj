@@ -255,6 +255,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\EnerefsysDAL.Model.RunResult.datasource" />
     <None Include="Properties\DataSources\EnerefsysDAL.OptimizationResult.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -287,6 +288,7 @@
     <Content Include="image\4.jpg" />
     <Content Include="image\5.jpg" />
     <Content Include="Resources\enerefsys.ico" />
+    <Content Include="Resources\logo.jpg" />
     <Content Include="Resources\result.jpg" />
     <Content Include="Resources\uninstall.ico" />
   </ItemGroup>
