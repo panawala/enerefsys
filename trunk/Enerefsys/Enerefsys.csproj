@@ -270,6 +270,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Calmness.ssk" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EnerefsysBLL\EnerefsysBLL.csproj">

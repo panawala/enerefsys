@@ -21,7 +21,10 @@ namespace Enerefsys
         public Enerefsys()
         {
             InitializeComponent();
-            this.skinEngine1.SkinFile = Application.StartupPath + "\\Calmness.ssk";
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            this.skinEngine1.SkinFile = root.FullName + "/Resources/Calmness.ssk";
             //冷冻机;
             init_label_list();
             conceal_Label(label_list);
