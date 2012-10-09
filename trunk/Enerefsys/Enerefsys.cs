@@ -278,11 +278,13 @@ namespace Enerefsys
                 appear_Label(label_list);
             labelFlag = 0;
             clear_Panel2();
+            IsBoard = false;
             try
             {
                 if (checkBoxBoard.Checked)
                 {
                     boarderCount = 1;
+                    IsBoard = true;
                 }
                 else if (null == freezerNum.Text.ToString().Trim() || "" == freezerNum.Text.ToString().Trim())
                 {
@@ -384,12 +386,21 @@ namespace Enerefsys
 
 
         }
+        public double boardValue = 0d;
+        public int downTemperature = 0;
         private void btn_ok_Click(object sender, EventArgs e)
         {
             if (null != subFreezer_list && 0 < subFreezer_list.Count)
             {
                 meList = getFreezerTypeAndCooling(subFreezer_list);
                 bhList = getBoarderTypeAndCooling(subBoarder_list);
+                BoardCount = bhList.Count;
+                boardValue = bhList.First().Value;
+                string tempStr = bhList.First().Type;
+                tempStr = tempStr.Split(':')[1];
+                downTemperature = Convert.ToInt32(tempStr.Split('°')[0]);
+
+
                 //EngineWinFormEventArgs ewfe = new EngineWinFormEventArgs(meList);
                 //PassDataBetweenForm(this, ewfe);
                 //this.Close();
@@ -868,9 +879,45 @@ namespace Enerefsys
             CoolingType = "一对一";
             //温差设置为5度
             TemperRange = 5;
+
+            double temperature = Convert.ToDouble(textBox_Temperature.Text);
+            if (temperature < downTemperature)
+                IsBoard = true;
+            else
+                IsBoard = false;
+
             if (!string.IsNullOrEmpty(textBox_TemperRange.Text))
                 TemperRange = Convert.ToInt32(textBox_TemperRange.Text);
-            coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
+
+
+            string type = strCoolingTowerStyle;
+            if (type.Equals("常规"))
+            {
+                coolingPower = iCoolingTowerKW;
+            }
+            else if (type.Equals("高低频"))
+            {
+                coolingPower = iCoolingTowerKW2;
+                if (iCoolingTowerT1 > temperature)
+                    coolingPower = 0;
+                if (iCoolingTowerT2 < temperature)
+                    coolingPower = iCoolingTowerKW3;
+            }
+            else if (type.Equals("变频"))
+            {
+                coolingPower = iCoolingTowerKW2;
+                if (iCoolingTowerT1 > temperature)
+                    coolingPower = 0;
+                if (iCoolingTowerT2 < temperature)
+                    coolingPower = iCoolingTowerKW3;
+            }
+
+
+
+
+
+
+            //coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
             GetOptimizationResult(meList, Convert.ToDouble(textBox_Load.Text), Convert.ToDouble(textBox_Temperature.Text));
 
 
@@ -904,26 +951,50 @@ namespace Enerefsys
 
         private void showMessage()
         {
-            addStrToBox("主机组合如下：", textBox_Message);
-            addStrToBox("--------", textBox_Message);
-            foreach (var me in meMin)
+            if (!IsBoard)
             {
-                string machineResult = "类型：" + me.Type + ";";
-                addStrToBox(machineResult, textBox_Message);
-                machineResult = me.Value + "KW * " + String.Format("{0:F}", percentValue * 100) + "%=" + String.Format("{0:F}", me.Value * percentValue) + "KW.";
-                addStrToBox(machineResult, textBox_Message);
-            }
-            addStrToBox("--------", textBox_Message);
-            string minPowerStr = "系统最低功率为：" + String.Format("{0:F}", minResult) + "KW.";
-            addStrToBox(minPowerStr, textBox_Message);
-            addStrToBox("此时流量为：" + String.Format("{0:F}", minSolute * 100) + "%.", textBox_Message);
-            addStrToBox("各主机负荷率为：" + String.Format("{0:F}", percentValue * 100) + "%.", textBox_Message);
-            addStrToBox("主机能耗为：" + String.Format("{0:F}", enginePower) + "KW.", textBox_Message);
-            addStrToBox("冷冻水泵能耗为：" + String.Format("{0:F}", freezePumpPower) + "KW.", textBox_Message);
-            //addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
-            addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
+                addStrToBox("主机组合如下：", textBox_Message);
+                addStrToBox("--------", textBox_Message);
+                foreach (var me in meMin)
+                {
+                    string machineResult = "类型：" + me.Type + ";";
+                    addStrToBox(machineResult, textBox_Message);
+                    machineResult = me.Value + "KW * " + String.Format("{0:F}", percentValue * 100) + "%=" + String.Format("{0:F}", me.Value * percentValue) + "KW.";
+                    addStrToBox(machineResult, textBox_Message);
+                }
+                addStrToBox("--------", textBox_Message);
+                string minPowerStr = "系统最低功率为：" + String.Format("{0:F}", minResult) + "KW.";
+                addStrToBox(minPowerStr, textBox_Message);
+                addStrToBox("此时流量为：" + String.Format("{0:F}", minSolute * 100) + "%.", textBox_Message);
+                addStrToBox("各主机负荷率为：" + String.Format("{0:F}", percentValue * 100) + "%.", textBox_Message);
+                addStrToBox("主机能耗为：" + String.Format("{0:F}", enginePower) + "KW.", textBox_Message);
+                addStrToBox("冷冻水泵能耗为：" + String.Format("{0:F}", freezePumpPower) + "KW.", textBox_Message);
+                //addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
+                addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
-            addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
+                addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
+            }
+            else
+            {
+                addStrToBox("板换组合如下：", textBox_Message);
+                addStrToBox("--------", textBox_Message);
+                int load = Convert.ToInt32(textBox_Load.Text);
+                percentValue = load / (BoardCount * boardValue);
+                addStrToBox("共需要" + BoardCount + "种板换，每种板换为"+boardValue+"KW * " + String.Format("{0:F}", percentValue * 100) + "%", textBox_Message);
+                
+                addStrToBox("--------", textBox_Message);
+                string minPowerStr = "系统最低功率为：" + String.Format("{0:F}", minResult) + "KW.";
+                addStrToBox(minPowerStr, textBox_Message);
+                addStrToBox("此时流量为：" + String.Format("{0:F}", minSolute * 100) + "%.", textBox_Message);
+                //addStrToBox("各主机负荷率为：" + String.Format("{0:F}", percentValue * 100) + "%.", textBox_Message);
+                //addStrToBox("主机能耗为：" + String.Format("{0:F}", enginePower) + "KW.", textBox_Message);
+                addStrToBox("冷冻水泵能耗为：" + String.Format("{0:F}", freezePumpPower) + "KW.", textBox_Message);
+                //addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", minResult - freezePumpPower - enginePower - coolingPower) + "KW.", textBox_Message);
+                addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
+
+                addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
+            }
+            
         }
         private void addStrToBox(string str, TextBox rtbox)
         {
@@ -1027,45 +1098,64 @@ namespace Enerefsys
             /***********************************************************************************/
             //主机功率的计算公式
             /***********************************************************************************/
-            double threeOption = 0d;
-            double a = 0d;
-            double b = 0d;
-            double c = 0d;
-            double sumLoad2 = 0;
-            foreach (var me in mes)
-            {
-                sumLoad2 += me.Value;
-            }
-            //求得每台主机的负荷率，每台主机运行的负荷除以总负荷相等
-            double percentValue1 = load / sumLoad2;
+           
+                double threeOption = 0d;
+                double a = 0d;
+                double b = 0d;
+                double c = 0d;
+                int engineCount = 0;
 
-            foreach (var me in mes)
-            {
-                //得到每台特定类型的主机在一定温度，一定负荷下的关于流量的二次项系数
-                List<double> results = getFormulaByEntity(me.Type, me.Value * percentValue1, temperature);
-                //threeOption += results[0];
-                //a += results[1];
-                //b += results[2];
-                //c += results[3];
-                a += results[0];
-                b += results[1];
-                c += results[2];
-            }
-            double tempthreeoption = threeOption;
-            double tempa = a;
-            double tempb = b;
-            double tempc = c;
+                double tempthreeoption = 0d;
+                double tempa = 0d;
+                double tempb = 0d;
+                double tempc = 0d;
 
-            //string pumpType = PumpType.Text;
-            int engineCount = mes.Count;
+                if (!IsBoard)
+                {
+                    double sumLoad2 = 0;
+                    foreach (var me in mes)
+                    {
+                        sumLoad2 += me.Value;
+                    }
+                    //求得每台主机的负荷率，每台主机运行的负荷除以总负荷相等
+                    double percentValue1 = load / sumLoad2;
+
+                    foreach (var me in mes)
+                    {
+                        //得到每台特定类型的主机在一定温度，一定负荷下的关于流量的二次项系数
+                        List<double> results = getFormulaByEntity(me.Type, me.Value * percentValue1, temperature);
+                        //threeOption += results[0];
+                        //a += results[1];
+                        //b += results[2];
+                        //c += results[3];
+                        a += results[0];
+                        b += results[1];
+                        c += results[2];
+                    }
+                    tempthreeoption = threeOption;
+                    tempa = a;
+                    tempb = b;
+                    tempc = c;
+
+                    //string pumpType = PumpType.Text;
+                    engineCount = mes.Count;
+                }
+            
 
             //如果使用板换，去除主机,主机数量当成板换数量
+            
             if (IsBoard)
             {
                 tempthreeoption = 0d;
                 tempa = 0d;
                 tempb = 0d;
                 tempc = 0d;
+                //主机数量即为板换数量
+                int countmodel = Convert.ToInt32(load) % Convert.ToInt32(boardValue);
+                if (countmodel == 0)
+                    BoardCount = Convert.ToInt32(load) / Convert.ToInt32(boardValue);
+                else
+                    BoardCount = Convert.ToInt32(load) / Convert.ToInt32(boardValue) + 1;
                 engineCount = BoardCount;
             }
 
@@ -1119,6 +1209,7 @@ namespace Enerefsys
             double result = threeOption * solute * solute * solute + a * solute * solute + b * solute + c;
 
             //enginePower = tempthreeoption * solute * solute * solute + tempa * solute * solute + tempb * solute + tempc;
+
             enginePower = tempa * solute * solute + tempb * solute + tempc;
 
             return new SoluteResult(result, solute);
@@ -1190,129 +1281,194 @@ namespace Enerefsys
             /*****************************************************************************/
             //如果是优化算法。根据主机的选择和冷却水泵和冷却水泵的并联和一对一进行
             /*****************************************************************************/
-            List<double> doubleList = new List<double>();
-            for (int i = 0; i < machineEntities.Count; i++)
+            if (!IsBoard)
             {
-                doubleList.Add(machineEntities[i].Value);
-            }
-
-            //判断总负荷是否成立
-            double sumLoad = 0;
-            foreach (var me in machineEntities)
-            {
-                sumLoad += me.Value;
-            }
-            if (sumLoad < load)
-            {
-                MessageBox.Show("总负荷过大，所提供主机不足");
-                return;
-            }
-
-            //根据数量得到最终组合
-            List<List<int>> consist = Utility.GetConsist(doubleList, load);
-            foreach (var con in consist)
-            {
-                //申请一个组合的列表
-                List<MachineEntity> machineResult = new List<MachineEntity>();
-
-                //对一个组合中的数字进行轮询
-                foreach (var val in con)
+                List<double> doubleList = new List<double>();
+                for (int i = 0; i < machineEntities.Count; i++)
                 {
-                    //将每一个脚码添加到结果里面
-                    machineResult.Add(machineEntities[val]);
+                    doubleList.Add(machineEntities[i].Value);
                 }
-                //以上得到一个组合，接下来对其求最小值
-                SoluteResult sr = getMinByConsist(machineResult, temperature, load);
-                /***********************************************************************************/
-                //冷冻水泵的计算公式
-                /***********************************************************************************/
-                freezePumpPower = 0;
-                if (FreezeType.Equals("一对一"))
-                {
-                    double minValue = double.MaxValue;
-                    foreach (var me in machineResult)
-                    {
-                        if (minValue > me.Value)
-                            minValue = me.Value;
-                    }
-                    if (4.187 * TemperRange * 125 < minValue)
-                    {
-                        MessageBox.Show("总负荷过大，所提供冷冻水泵不足");
-                        return;
-                    }
 
-                    //从数据库得到二次项系数
-                    //一对一：一台水泵对应一台主机
-                    List<double> doubleParams = PumpManager.GetParamsByType("2");
-                    fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
-                    //如果是满足板换条件
-                    if (IsBoard)
+                //判断总负荷是否成立
+                double sumLoad = 0;
+                foreach (var me in machineEntities)
+                {
+                    sumLoad += me.Value;
+                }
+
+                if (sumLoad < load)
+                {
+                    MessageBox.Show("总负荷过大，所提供主机不足");
+                    return;
+                }
+
+                //根据数量得到最终组合
+                List<List<int>> consist = Utility.GetConsist(doubleList, load);
+                foreach (var con in consist)
+                {
+                    //申请一个组合的列表
+                    List<MachineEntity> machineResult = new List<MachineEntity>();
+
+                    //对一个组合中的数字进行轮询
+                    foreach (var val in con)
                     {
-                        double curflow = load * 3.6 / (4.187 * TemperRange);
-                        if (curflow < fullFlow * 0.3)
-                            curflow = fullFlow * 0.3;
-                        double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
-                        curPower = curPower * BoardCount;
-                        freezePumpPower += curPower;
+                        //将每一个脚码添加到结果里面
+                        machineResult.Add(machineEntities[val]);
                     }
-                    else
+                    //以上得到一个组合，接下来对其求最小值
+                    SoluteResult sr = getMinByConsist(machineResult, temperature, load);
+                    /***********************************************************************************/
+                    //冷冻水泵的计算公式
+                    /***********************************************************************************/
+                    freezePumpPower = 0;
+                    if (FreezeType.Equals("一对一"))
                     {
-                        //此处相当于功率乘以主机数量
+                        double minValue = double.MaxValue;
                         foreach (var me in machineResult)
                         {
-                            //此处公式修改
-                            //double curflow = me.Value / (4.187 * TemperRange);
+                            if (minValue > me.Value)
+                                minValue = me.Value;
+                        }
+                        if (4.187 * TemperRange * 125 < minValue)
+                        {
+                            MessageBox.Show("总负荷过大，所提供冷冻水泵不足");
+                            return;
+                        }
+
+                        //从数据库得到二次项系数
+                        //一对一：一台水泵对应一台主机
+                        List<double> doubleParams = PumpManager.GetParamsByType("2");
+                        fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
+                        //如果是满足板换条件
+                        if (IsBoard)
+                        {
                             double curflow = load * 3.6 / (4.187 * TemperRange);
                             if (curflow < fullFlow * 0.3)
                                 curflow = fullFlow * 0.3;
                             double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
+                            curPower = curPower * BoardCount;
+                            freezePumpPower += curPower;
+                        }
+                        else
+                        {
+                            //此处相当于功率乘以主机数量
+                            foreach (var me in machineResult)
+                            {
+                                //此处公式修改
+                                //double curflow = me.Value / (4.187 * TemperRange);
+                                double curflow = load * 3.6 / (4.187 * TemperRange);
+                                if (curflow < fullFlow * 0.3)
+                                    curflow = fullFlow * 0.3;
+                                double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
+                                freezePumpPower += curPower;
+                            }
+                        }
+
+                    }
+                    if (FreezeType.Equals("并联"))
+                    {
+                        if (4.187 * TemperRange * 125 * machineResult.Count < load)
+                        {
+                            MessageBox.Show("总负荷过大，所提供冷冻水泵不足");
+                            return;
+                        }
+
+                        //从数据库得到二次项系数
+                        List<double> doubleParams = PumpManager.GetParamsByType("2");
+                        double curflow = load / (4.187 * TemperRange * machineResult.Count);
+                        double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
+                        freezePumpPower += curPower;
+                    }
+                    //得到最终结果,并且加上冷却塔功率
+                    //double coolingPower = 0;
+                    sr = new SoluteResult(sr.Result + freezePumpPower + coolingPower, sr.Solute);
+
+                    /***********************************************************************************/
+                    //判断某个组合的的最小功率是不是在所有组合中最小
+                    /***********************************************************************************/
+                    if (sr.Result < minResult)
+                    {
+                        //如果是最小的，则将最小值赋值为当前组合的最小值
+                        minResult = sr.Result;
+                        //保存取得最小能耗时的流量
+                        minSolute = sr.Solute;
+                        //此处保存最小的主机组合
+                        meMin = machineResult;
+                    }
+                    //如果是板换不进行循环
+                    if (IsBoard)
+                        break;
+                }
+                //循环结束得到最小的主机组合，及最小值
+
+
+                double sumLoad1 = 0;
+                foreach (var me in meMin)
+                {
+                    sumLoad1 += me.Value;
+                }
+                //求得每台主机的负荷率，每台主机运行的负荷除以总负荷相等
+                percentValue = load / sumLoad1;
+            }
+            else
+            {
+                    //以上得到一个组合，接下来对其求最小值
+                    SoluteResult sr = getMinByConsist(null, temperature, load);
+                    /***********************************************************************************/
+                    //冷冻水泵的计算公式
+                    /***********************************************************************************/
+                    freezePumpPower = 0;
+                    if (FreezeType.Equals("一对一"))
+                    {
+                        //从数据库得到二次项系数
+                        //一对一：一台水泵对应一台主机
+                        List<double> doubleParams = PumpManager.GetParamsByType("2");
+                        fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
+                        //如果是满足板换条件
+                        if (IsBoard)
+                        {
+                            double curflow = load * 3.6 / (4.187 * TemperRange);
+                            if (curflow < fullFlow * 0.3)
+                                curflow = fullFlow * 0.3;
+                            double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
+                            curPower = curPower * BoardCount;
                             freezePumpPower += curPower;
                         }
                     }
+                    
+                    //得到最终结果,并且加上冷却塔功率
+                    //double coolingPower = 0;
+                    sr = new SoluteResult(sr.Result + freezePumpPower + coolingPower, sr.Solute);
 
-                }
-                if (FreezeType.Equals("并联"))
-                {
-                    if (4.187 * TemperRange * 125 * machineResult.Count < load)
+                    /***********************************************************************************/
+                    //判断某个组合的的最小功率是不是在所有组合中最小
+                    /***********************************************************************************/
+                    if (sr.Result < minResult)
                     {
-                        MessageBox.Show("总负荷过大，所提供冷冻水泵不足");
-                        return;
+                        //如果是最小的，则将最小值赋值为当前组合的最小值
+                        minResult = sr.Result;
+                        //保存取得最小能耗时的流量
+                        minSolute = sr.Solute;
+                        //此处保存最小的主机组合
+                        //meMin = machineResult;
                     }
+     
+          
+                //循环结束得到最小的主机组合，及最小值
 
-                    //从数据库得到二次项系数
-                    List<double> doubleParams = PumpManager.GetParamsByType("2");
-                    double curflow = load / (4.187 * TemperRange * machineResult.Count);
-                    double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
-                    freezePumpPower += curPower;
-                }
-                //得到最终结果,并且加上冷却塔功率
-                //double coolingPower = 0;
-                sr = new SoluteResult(sr.Result + freezePumpPower + coolingPower, sr.Solute);
 
-                /***********************************************************************************/
-                //判断某个组合的的最小功率是不是在所有组合中最小
-                /***********************************************************************************/
-                if (sr.Result < minResult)
-                {
-                    //如果是最小的，则将最小值赋值为当前组合的最小值
-                    minResult = sr.Result;
-                    //保存取得最小能耗时的流量
-                    minSolute = sr.Solute;
-                    //此处保存最小的主机组合
-                    meMin = machineResult;
-                }
+                //double sumLoad1 = 0;
+                //foreach (var me in meMin)
+                //{
+                //    sumLoad1 += me.Value;
+                //}
+                ////求得每台主机的负荷率，每台主机运行的负荷除以总负荷相等
+                //percentValue = load / sumLoad1;
+
+
+ 
             }
-            //循环结束得到最小的主机组合，及最小值
-
-
-            double sumLoad1 = 0;
-            foreach (var me in meMin)
-            {
-                sumLoad1 += me.Value;
-            }
-            //求得每台主机的负荷率，每台主机运行的负荷除以总负荷相等
-            percentValue = load / sumLoad1;
-
+            
         }
 
 
@@ -2816,7 +2972,16 @@ namespace Enerefsys
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
             }
         }
-
+        public string strCoolingTowerStyle;
+        public int iCoolingTowerT1=0;
+        public int iCoolingTowerT2=0;
+        public int iCoolingTowerKW=0;
+        public int iCoolingTowerHZ1=0;
+        public int iCoolingTowerHZ2 = 0;
+        public int iCoolingTowerHZ3 = 0;
+        public int iCoolingTowerKW1 = 0;
+        public int iCoolingTowerKW2 = 0;
+        public int iCoolingTowerKW3 = 0;
         private void button8_Click(object sender, EventArgs e)
         {
             if (null != CoolingTower_list && 0 < CoolingTower_list.Count)
@@ -2841,6 +3006,31 @@ namespace Enerefsys
                             this.dataGridView3.Rows[index].Cells[4].Value = CoolingTower_list[ix].throughput_textBox.Text;
                             this.dataGridView3.Rows[index].Cells[5].Value = CoolingTower_list[ix].temperature_textBox.Text;
                             this.dataGridView3.Rows[index].Cells[6].Value = CoolingTower_list[ix].power_textBox.Text;
+                        }
+                        if (CoolingTower_list[ix].type_comboBox.SelectedIndex == 0)
+                        {
+                            strCoolingTowerStyle = CoolingTower_list[ix].type_comboBox.Text;
+                            iCoolingTowerKW = Convert.ToInt32(CoolingTower_list[ix].power_textBox.Text);
+                        }
+                        else if (CoolingTower_list[ix].type_comboBox.SelectedIndex == 1)
+                        {
+                            strCoolingTowerStyle = CoolingTower_list[ix].type_comboBox.Text;
+                            iCoolingTowerT1 = Convert.ToInt32(CoolingTower_list[ix].tbx_T1.Text);
+                            iCoolingTowerT2 = Convert.ToInt32(CoolingTower_list[ix].tbx_T2.Text);
+                            iCoolingTowerKW2 = Convert.ToInt32(CoolingTower_list[ix].tbx_KW_B.Text);
+                            iCoolingTowerKW3 = Convert.ToInt32(CoolingTower_list[ix].tbx_KW_C.Text);
+
+                        }
+                        else if (CoolingTower_list[ix].type_comboBox.SelectedIndex == 2)
+                        {
+                            strCoolingTowerStyle = CoolingTower_list[ix].type_comboBox.Text;
+                            iCoolingTowerT1 = Convert.ToInt32(CoolingTower_list[ix].tbx_T1.Text);
+                            iCoolingTowerT2 = Convert.ToInt32(CoolingTower_list[ix].tbx_T2.Text);
+                            iCoolingTowerHZ2 = Convert.ToInt32(CoolingTower_list[ix].tbx_HZ_B.Text);
+                            iCoolingTowerHZ3 = Convert.ToInt32(CoolingTower_list[ix].tbx_HZ_C.Text);
+                            iCoolingTowerKW3 = Convert.ToInt32(CoolingTower_list[ix].tbx_KW_C.Text);
+                            double d = Convert.ToDouble(iCoolingTowerHZ2) / Convert.ToDouble(iCoolingTowerHZ3);
+                            iCoolingTowerKW2 = Convert.ToInt32(d * d * d * iCoolingTowerKW3);
                         }
                     }
                 }
