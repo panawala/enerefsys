@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enerefsys));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,7 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -97,6 +95,7 @@
             this.boarder_Panel = new System.Windows.Forms.Panel();
             this.completed = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -151,6 +150,8 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.btnNormalShow = new System.Windows.Forms.Button();
+            this.btnNormalCal = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
@@ -164,7 +165,9 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnShowOptim = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -179,6 +182,7 @@
             this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnClear = new System.Windows.Forms.Button();
             this.textBox_CoolingPower = new System.Windows.Forms.TextBox();
@@ -187,9 +191,6 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.textBox_TemperRange = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.textBox_Message = new System.Windows.Forms.TextBox();
             this.btnShow = new System.Windows.Forms.Button();
             this.textBox_Load = new System.Windows.Forms.TextBox();
@@ -198,6 +199,27 @@
             this.label44 = new System.Windows.Forms.Label();
             this.pictureBox_Result = new System.Windows.Forms.PictureBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.textBox_TotalPrice = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox_Price = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.textBox_Power = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.textBox_EnterTemper = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.textBox_CoolLoad = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.textBox_Wet = new System.Windows.Forms.TextBox();
+            this.textBox_Dry = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.comboBox_Hour = new System.Windows.Forms.ComboBox();
+            this.comboBox_Day = new System.Windows.Forms.ComboBox();
+            this.comboBox_Month = new System.Windows.Forms.ComboBox();
             this.btnCal = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -234,6 +256,7 @@
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -253,9 +276,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).BeginInit();
             this.tabPage6.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -285,10 +305,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -299,19 +317,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "环境变量";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(405, 566);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 36);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "查看/编辑设计日逐时负荷及适用电价";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -333,6 +338,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(64, 255);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(251, 251);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
@@ -344,13 +350,12 @@
             this.pictureBox1.Location = new System.Drawing.Point(64, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(251, 232);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -508,20 +513,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "建筑物类型";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(127, 566);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(247, 39);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "查看/编辑水泵扬程";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox6.Controls.Add(this.button2);
             this.groupBox6.Controls.Add(this.comboBox4);
             this.groupBox6.Controls.Add(this.comboBox3);
@@ -714,9 +708,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(306, 95);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(17, 12);
+            this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 7;
-            this.label12.Text = "V3";
+            this.label12.Text = "m³/h";
             // 
             // groupBox5
             // 
@@ -953,12 +947,23 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.pictureBox10);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Location = new System.Drawing.Point(938, 36);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(279, 586);
             this.panel2.TabIndex = 72;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(12, 413);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(255, 159);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 2;
+            this.pictureBox10.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -967,7 +972,8 @@
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(12, 220);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(255, 355);
+            this.pictureBox4.Size = new System.Drawing.Size(255, 187);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
@@ -978,7 +984,8 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(12, 14);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(255, 335);
+            this.pictureBox3.Size = new System.Drawing.Size(255, 200);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
@@ -1177,6 +1184,7 @@
             this.pictureBox5.Location = new System.Drawing.Point(23, 10);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(313, 285);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
@@ -1215,6 +1223,7 @@
             this.label31.Size = new System.Drawing.Size(65, 12);
             this.label31.TabIndex = 99;
             this.label31.Text = "水泵类型：";
+            this.label31.Visible = false;
             // 
             // comboBox_PumpType
             // 
@@ -1223,6 +1232,7 @@
             this.comboBox_PumpType.Name = "comboBox_PumpType";
             this.comboBox_PumpType.Size = new System.Drawing.Size(121, 20);
             this.comboBox_PumpType.TabIndex = 98;
+            this.comboBox_PumpType.Visible = false;
             // 
             // label32
             // 
@@ -1467,6 +1477,7 @@
             this.pictureBox7.Location = new System.Drawing.Point(13, 271);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(254, 223);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 1;
             this.pictureBox7.TabStop = false;
             // 
@@ -1477,11 +1488,14 @@
             this.pictureBox8.Location = new System.Drawing.Point(13, 10);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(254, 242);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.btnNormalShow);
+            this.tabPage8.Controls.Add(this.btnNormalCal);
             this.tabPage8.Controls.Add(this.button7);
             this.tabPage8.Controls.Add(this.button6);
             this.tabPage8.Controls.Add(this.label28);
@@ -1492,6 +1506,26 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "常规运行结果";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // btnNormalShow
+            // 
+            this.btnNormalShow.Location = new System.Drawing.Point(710, 29);
+            this.btnNormalShow.Name = "btnNormalShow";
+            this.btnNormalShow.Size = new System.Drawing.Size(75, 23);
+            this.btnNormalShow.TabIndex = 8;
+            this.btnNormalShow.Text = "显示";
+            this.btnNormalShow.UseVisualStyleBackColor = true;
+            this.btnNormalShow.Click += new System.EventHandler(this.btnNormalShow_Click);
+            // 
+            // btnNormalCal
+            // 
+            this.btnNormalCal.Location = new System.Drawing.Point(604, 29);
+            this.btnNormalCal.Name = "btnNormalCal";
+            this.btnNormalCal.Size = new System.Drawing.Size(75, 23);
+            this.btnNormalCal.TabIndex = 7;
+            this.btnNormalCal.Text = "计算";
+            this.btnNormalCal.UseVisualStyleBackColor = true;
+            this.btnNormalCal.Click += new System.EventHandler(this.btnNormalCal_Click);
             // 
             // button7
             // 
@@ -1511,13 +1545,14 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "打印输出";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label28.ForeColor = System.Drawing.Color.Blue;
-            this.label28.Location = new System.Drawing.Point(319, 23);
+            this.label28.Location = new System.Drawing.Point(157, 23);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(405, 29);
             this.label28.TabIndex = 3;
@@ -1539,7 +1574,8 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
+            this.dataGridViewTextBoxColumn9,
+            this.Column1});
             this.rowUnitView2.Location = new System.Drawing.Point(3, 81);
             this.rowUnitView2.Name = "rowUnitView2";
             this.rowUnitView2.ReadOnly = true;
@@ -1551,78 +1587,85 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Day";
-            this.dataGridViewTextBoxColumn1.HeaderText = "日期";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Month";
+            this.dataGridViewTextBoxColumn1.HeaderText = "月";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Time";
-            this.dataGridViewTextBoxColumn2.HeaderText = "时间";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Day";
+            this.dataGridViewTextBoxColumn2.HeaderText = "日";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.dataGridViewTextBoxColumn2.Width = 50;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Temperature";
-            this.dataGridViewTextBoxColumn3.HeaderText = "温度";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Hour";
+            this.dataGridViewTextBoxColumn3.HeaderText = "时";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 150;
+            this.dataGridViewTextBoxColumn3.Width = 50;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "EngineType";
-            this.dataGridViewTextBoxColumn4.HeaderText = "冷冻机类型";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DryTemperature";
+            this.dataGridViewTextBoxColumn4.HeaderText = "干球温度";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "EngineValue";
-            this.dataGridViewTextBoxColumn5.HeaderText = "冷量";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "WetTemperature";
+            this.dataGridViewTextBoxColumn5.HeaderText = "湿球温度";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 150;
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "EngineLoadRatio";
-            this.dataGridViewTextBoxColumn6.HeaderText = "负荷率";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Load";
+            this.dataGridViewTextBoxColumn6.HeaderText = "冷负荷";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 150;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Flow";
-            this.dataGridViewTextBoxColumn7.HeaderText = "流量";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "EnterTemperature";
+            this.dataGridViewTextBoxColumn7.HeaderText = "进口温度";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "SystemMinPower";
-            this.dataGridViewTextBoxColumn8.HeaderText = "系统最低功率";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ElectronicPrice";
+            this.dataGridViewTextBoxColumn8.HeaderText = "电价";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 150;
             // 
             // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Power";
+            this.dataGridViewTextBoxColumn9.HeaderText = "能耗";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TotalPrice";
+            this.Column1.HeaderText = "电费";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.btnShowOptim);
             this.tabPage5.Controls.Add(this.pictureBox9);
             this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.button4);
@@ -1634,6 +1677,16 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "优化结果";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btnShowOptim
+            // 
+            this.btnShowOptim.Location = new System.Drawing.Point(692, 22);
+            this.btnShowOptim.Name = "btnShowOptim";
+            this.btnShowOptim.Size = new System.Drawing.Size(75, 23);
+            this.btnShowOptim.TabIndex = 7;
+            this.btnShowOptim.Text = "显示";
+            this.btnShowOptim.UseVisualStyleBackColor = true;
+            this.btnShowOptim.Click += new System.EventHandler(this.btnShowOptim_Click);
             // 
             // pictureBox9
             // 
@@ -1662,6 +1715,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "输出文档 Excel";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label42
             // 
@@ -1690,7 +1744,8 @@
             this.EngineLoadRatio,
             this.Flow,
             this.SystemMinPower,
-            this.Id});
+            this.Id,
+            this.TotalPrice});
             this.rowUnitView1.Location = new System.Drawing.Point(1, 69);
             this.rowUnitView1.Name = "rowUnitView1";
             this.rowUnitView1.ReadOnly = true;
@@ -1702,75 +1757,80 @@
             // 
             // Day
             // 
-            this.Day.DataPropertyName = "Day";
-            this.Day.HeaderText = "日期";
+            this.Day.DataPropertyName = "Month";
+            this.Day.HeaderText = "月";
             this.Day.Name = "Day";
             this.Day.ReadOnly = true;
-            this.Day.Width = 150;
+            this.Day.Width = 50;
             // 
             // Time
             // 
-            this.Time.DataPropertyName = "Time";
-            this.Time.HeaderText = "时间";
+            this.Time.DataPropertyName = "Day";
+            this.Time.HeaderText = "日";
             this.Time.Name = "Time";
             this.Time.ReadOnly = true;
-            this.Time.Width = 150;
+            this.Time.Width = 50;
             // 
             // Temperature
             // 
-            this.Temperature.DataPropertyName = "Temperature";
-            this.Temperature.HeaderText = "温度";
+            this.Temperature.DataPropertyName = "Hour";
+            this.Temperature.HeaderText = "时";
             this.Temperature.Name = "Temperature";
             this.Temperature.ReadOnly = true;
-            this.Temperature.Width = 150;
+            this.Temperature.Width = 50;
             // 
             // EngineType
             // 
-            this.EngineType.DataPropertyName = "EngineType";
-            this.EngineType.HeaderText = "冷冻机类型";
+            this.EngineType.DataPropertyName = "DryTemperature";
+            this.EngineType.HeaderText = "干球温度";
             this.EngineType.Name = "EngineType";
             this.EngineType.ReadOnly = true;
             this.EngineType.Width = 150;
             // 
             // EngineValue
             // 
-            this.EngineValue.DataPropertyName = "EngineValue";
-            this.EngineValue.HeaderText = "冷量";
+            this.EngineValue.DataPropertyName = "WetTemperature";
+            this.EngineValue.HeaderText = "湿球温度";
             this.EngineValue.Name = "EngineValue";
             this.EngineValue.ReadOnly = true;
             this.EngineValue.Width = 150;
             // 
             // EngineLoadRatio
             // 
-            this.EngineLoadRatio.DataPropertyName = "EngineLoadRatio";
-            this.EngineLoadRatio.HeaderText = "负荷率";
+            this.EngineLoadRatio.DataPropertyName = "Load";
+            this.EngineLoadRatio.HeaderText = "冷负荷";
             this.EngineLoadRatio.Name = "EngineLoadRatio";
             this.EngineLoadRatio.ReadOnly = true;
             this.EngineLoadRatio.Width = 150;
             // 
             // Flow
             // 
-            this.Flow.DataPropertyName = "Flow";
-            this.Flow.HeaderText = "流量";
+            this.Flow.DataPropertyName = "EnterTemperature";
+            this.Flow.HeaderText = "冷却水进口温度";
             this.Flow.Name = "Flow";
             this.Flow.ReadOnly = true;
             this.Flow.Width = 150;
             // 
             // SystemMinPower
             // 
-            this.SystemMinPower.DataPropertyName = "SystemMinPower";
-            this.SystemMinPower.HeaderText = "系统最低功率";
+            this.SystemMinPower.DataPropertyName = "Power";
+            this.SystemMinPower.HeaderText = "能耗";
             this.SystemMinPower.Name = "SystemMinPower";
             this.SystemMinPower.ReadOnly = true;
-            this.SystemMinPower.Width = 150;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
+            this.Id.DataPropertyName = "ElectronicPrice";
+            this.Id.HeaderText = "电价";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Visible = false;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.HeaderText = "电费";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
             // 
             // tabPage6
             // 
@@ -1781,7 +1841,6 @@
             this.tabPage6.Controls.Add(this.comboBox7);
             this.tabPage6.Controls.Add(this.textBox_TemperRange);
             this.tabPage6.Controls.Add(this.label34);
-            this.tabPage6.Controls.Add(this.panel6);
             this.tabPage6.Controls.Add(this.textBox_Message);
             this.tabPage6.Controls.Add(this.btnShow);
             this.tabPage6.Controls.Add(this.textBox_Load);
@@ -1812,6 +1871,7 @@
             this.textBox_CoolingPower.Name = "textBox_CoolingPower";
             this.textBox_CoolingPower.Size = new System.Drawing.Size(100, 21);
             this.textBox_CoolingPower.TabIndex = 111;
+            this.textBox_CoolingPower.Visible = false;
             // 
             // label46
             // 
@@ -1821,6 +1881,7 @@
             this.label46.Size = new System.Drawing.Size(41, 12);
             this.label46.TabIndex = 110;
             this.label46.Text = "冷却塔";
+            this.label46.Visible = false;
             // 
             // label45
             // 
@@ -1863,46 +1924,16 @@
             this.label34.Text = "温差";
             this.label34.Visible = false;
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Controls.Add(this.pictureBox11);
-            this.panel6.Controls.Add(this.pictureBox12);
-            this.panel6.Location = new System.Drawing.Point(888, 85);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(279, 525);
-            this.panel6.TabIndex = 105;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(13, 271);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(254, 223);
-            this.pictureBox11.TabIndex = 1;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(254, 242);
-            this.pictureBox12.TabIndex = 0;
-            this.pictureBox12.TabStop = false;
-            // 
             // textBox_Message
             // 
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
-            this.textBox_Message.Location = new System.Drawing.Point(105, 96);
+            this.textBox_Message.Location = new System.Drawing.Point(42, 105);
             this.textBox_Message.Multiline = true;
             this.textBox_Message.Name = "textBox_Message";
             this.textBox_Message.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Message.Size = new System.Drawing.Size(720, 293);
+            this.textBox_Message.Size = new System.Drawing.Size(588, 488);
             this.textBox_Message.TabIndex = 17;
             // 
             // btnShow
@@ -1941,23 +1972,45 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(99, 37);
+            this.label44.Location = new System.Drawing.Point(87, 36);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(65, 12);
+            this.label44.Size = new System.Drawing.Size(77, 12);
             this.label44.TabIndex = 11;
-            this.label44.Text = "冷却水温度";
+            this.label44.Text = "室外湿球温度";
             // 
             // pictureBox_Result
             // 
-            this.pictureBox_Result.Location = new System.Drawing.Point(104, 416);
+            this.pictureBox_Result.Location = new System.Drawing.Point(656, 105);
             this.pictureBox_Result.Name = "pictureBox_Result";
-            this.pictureBox_Result.Size = new System.Drawing.Size(721, 194);
+            this.pictureBox_Result.Size = new System.Drawing.Size(546, 479);
             this.pictureBox_Result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Result.TabIndex = 15;
             this.pictureBox_Result.TabStop = false;
+            this.pictureBox_Result.Click += new System.EventHandler(this.pictureBox_Result_Click);
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.btnSearch);
+            this.tabPage7.Controls.Add(this.textBox_TotalPrice);
+            this.tabPage7.Controls.Add(this.label59);
+            this.tabPage7.Controls.Add(this.textBox_Price);
+            this.tabPage7.Controls.Add(this.label58);
+            this.tabPage7.Controls.Add(this.textBox_Power);
+            this.tabPage7.Controls.Add(this.label57);
+            this.tabPage7.Controls.Add(this.textBox_EnterTemper);
+            this.tabPage7.Controls.Add(this.label56);
+            this.tabPage7.Controls.Add(this.textBox_CoolLoad);
+            this.tabPage7.Controls.Add(this.label55);
+            this.tabPage7.Controls.Add(this.textBox_Wet);
+            this.tabPage7.Controls.Add(this.textBox_Dry);
+            this.tabPage7.Controls.Add(this.label54);
+            this.tabPage7.Controls.Add(this.label53);
+            this.tabPage7.Controls.Add(this.label52);
+            this.tabPage7.Controls.Add(this.label51);
+            this.tabPage7.Controls.Add(this.label41);
+            this.tabPage7.Controls.Add(this.comboBox_Hour);
+            this.tabPage7.Controls.Add(this.comboBox_Day);
+            this.tabPage7.Controls.Add(this.comboBox_Month);
             this.tabPage7.Controls.Add(this.btnCal);
             this.tabPage7.Controls.Add(this.panel7);
             this.tabPage7.Controls.Add(this.btnViewReport);
@@ -1968,10 +2021,257 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "报表";
             this.tabPage7.UseVisualStyleBackColor = true;
+            this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(917, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 127;
+            this.btnSearch.Text = "查询";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // textBox_TotalPrice
+            // 
+            this.textBox_TotalPrice.Location = new System.Drawing.Point(840, 17);
+            this.textBox_TotalPrice.Name = "textBox_TotalPrice";
+            this.textBox_TotalPrice.Size = new System.Drawing.Size(59, 21);
+            this.textBox_TotalPrice.TabIndex = 126;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(804, 23);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(29, 12);
+            this.label59.TabIndex = 125;
+            this.label59.Text = "电费";
+            // 
+            // textBox_Price
+            // 
+            this.textBox_Price.Location = new System.Drawing.Point(759, 18);
+            this.textBox_Price.Name = "textBox_Price";
+            this.textBox_Price.Size = new System.Drawing.Size(39, 21);
+            this.textBox_Price.TabIndex = 124;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(723, 25);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(29, 12);
+            this.label58.TabIndex = 123;
+            this.label58.Text = "电价";
+            // 
+            // textBox_Power
+            // 
+            this.textBox_Power.Location = new System.Drawing.Point(679, 18);
+            this.textBox_Power.Name = "textBox_Power";
+            this.textBox_Power.Size = new System.Drawing.Size(37, 21);
+            this.textBox_Power.TabIndex = 122;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(642, 22);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(29, 12);
+            this.label57.TabIndex = 121;
+            this.label57.Text = "能耗";
+            // 
+            // textBox_EnterTemper
+            // 
+            this.textBox_EnterTemper.Location = new System.Drawing.Point(600, 17);
+            this.textBox_EnterTemper.Name = "textBox_EnterTemper";
+            this.textBox_EnterTemper.Size = new System.Drawing.Size(36, 21);
+            this.textBox_EnterTemper.TabIndex = 120;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(553, 21);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(41, 12);
+            this.label56.TabIndex = 119;
+            this.label56.Text = "冷温度";
+            // 
+            // textBox_CoolLoad
+            // 
+            this.textBox_CoolLoad.Location = new System.Drawing.Point(506, 18);
+            this.textBox_CoolLoad.Name = "textBox_CoolLoad";
+            this.textBox_CoolLoad.Size = new System.Drawing.Size(41, 21);
+            this.textBox_CoolLoad.TabIndex = 118;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(459, 21);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(41, 12);
+            this.label55.TabIndex = 117;
+            this.label55.Text = "冷负荷";
+            // 
+            // textBox_Wet
+            // 
+            this.textBox_Wet.Location = new System.Drawing.Point(408, 18);
+            this.textBox_Wet.Name = "textBox_Wet";
+            this.textBox_Wet.Size = new System.Drawing.Size(44, 21);
+            this.textBox_Wet.TabIndex = 116;
+            // 
+            // textBox_Dry
+            // 
+            this.textBox_Dry.Location = new System.Drawing.Point(298, 17);
+            this.textBox_Dry.Name = "textBox_Dry";
+            this.textBox_Dry.Size = new System.Drawing.Size(44, 21);
+            this.textBox_Dry.TabIndex = 115;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(349, 23);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(53, 12);
+            this.label54.TabIndex = 114;
+            this.label54.Text = "湿球温度";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(239, 23);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(53, 12);
+            this.label53.TabIndex = 113;
+            this.label53.Text = "干球温度";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(161, 21);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(17, 12);
+            this.label52.TabIndex = 112;
+            this.label52.Text = "时";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(80, 22);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(17, 12);
+            this.label51.TabIndex = 111;
+            this.label51.Text = "日";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(18, 23);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(17, 12);
+            this.label41.TabIndex = 110;
+            this.label41.Text = "月";
+            // 
+            // comboBox_Hour
+            // 
+            this.comboBox_Hour.FormattingEnabled = true;
+            this.comboBox_Hour.Items.AddRange(new object[] {
+            "",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
+            this.comboBox_Hour.Location = new System.Drawing.Point(184, 18);
+            this.comboBox_Hour.Name = "comboBox_Hour";
+            this.comboBox_Hour.Size = new System.Drawing.Size(39, 20);
+            this.comboBox_Hour.TabIndex = 109;
+            // 
+            // comboBox_Day
+            // 
+            this.comboBox_Day.FormattingEnabled = true;
+            this.comboBox_Day.Items.AddRange(new object[] {
+            "",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
+            this.comboBox_Day.Location = new System.Drawing.Point(103, 18);
+            this.comboBox_Day.Name = "comboBox_Day";
+            this.comboBox_Day.Size = new System.Drawing.Size(42, 20);
+            this.comboBox_Day.TabIndex = 108;
+            // 
+            // comboBox_Month
+            // 
+            this.comboBox_Month.FormattingEnabled = true;
+            this.comboBox_Month.Items.AddRange(new object[] {
+            "",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBox_Month.Location = new System.Drawing.Point(41, 18);
+            this.comboBox_Month.Name = "comboBox_Month";
+            this.comboBox_Month.Size = new System.Drawing.Size(33, 20);
+            this.comboBox_Month.TabIndex = 107;
             // 
             // btnCal
             // 
-            this.btnCal.Location = new System.Drawing.Point(706, 18);
+            this.btnCal.Location = new System.Drawing.Point(1017, 15);
             this.btnCal.Name = "btnCal";
             this.btnCal.Size = new System.Drawing.Size(75, 23);
             this.btnCal.TabIndex = 106;
@@ -1997,6 +2297,7 @@
             this.pictureBox13.Location = new System.Drawing.Point(13, 271);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(254, 223);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 1;
             this.pictureBox13.TabStop = false;
             // 
@@ -2007,12 +2308,13 @@
             this.pictureBox14.Location = new System.Drawing.Point(13, 10);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(254, 242);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 0;
             this.pictureBox14.TabStop = false;
             // 
             // btnViewReport
             // 
-            this.btnViewReport.Location = new System.Drawing.Point(834, 18);
+            this.btnViewReport.Location = new System.Drawing.Point(1114, 15);
             this.btnViewReport.Name = "btnViewReport";
             this.btnViewReport.Size = new System.Drawing.Size(75, 23);
             this.btnViewReport.TabIndex = 1;
@@ -2050,37 +2352,37 @@
             // 文件ToolStripMenuItem
             // 
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.文件ToolStripMenuItem.Text = "文件";
             // 
             // 编辑ToolStripMenuItem
             // 
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
-            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.编辑ToolStripMenuItem.Text = "编辑";
             // 
             // 视图ToolStripMenuItem
             // 
             this.视图ToolStripMenuItem.Name = "视图ToolStripMenuItem";
-            this.视图ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.视图ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.视图ToolStripMenuItem.Text = "视图";
             // 
             // 表单ToolStripMenuItem
             // 
             this.表单ToolStripMenuItem.Name = "表单ToolStripMenuItem";
-            this.表单ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.表单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.表单ToolStripMenuItem.Text = "表单";
             // 
             // 工具ToolStripMenuItem
             // 
             this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
-            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.工具ToolStripMenuItem.Text = "工具";
             // 
             // 窗口ToolStripMenuItem
             // 
             this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
-            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.窗口ToolStripMenuItem.Text = "窗口";
             // 
             // projectToolStripMenuItem
@@ -2089,7 +2391,7 @@
             this.createNewProjectToolStripMenuItem,
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
@@ -2121,20 +2423,20 @@
             this.出品介绍ToolStripMenuItem,
             this.帮助文档ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(43, 21);
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 出品介绍ToolStripMenuItem
             // 
             this.出品介绍ToolStripMenuItem.Name = "出品介绍ToolStripMenuItem";
-            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.出品介绍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.出品介绍ToolStripMenuItem.Text = "出品介绍";
             this.出品介绍ToolStripMenuItem.Click += new System.EventHandler(this.出品介绍ToolStripMenuItem_Click);
             // 
             // 帮助文档ToolStripMenuItem
             // 
             this.帮助文档ToolStripMenuItem.Name = "帮助文档ToolStripMenuItem";
-            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
             // 
@@ -2180,6 +2482,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -2204,11 +2507,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).EndInit();
             this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
@@ -2230,7 +2531,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DomainUpDown domainUpDown2;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -2255,7 +2555,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
@@ -2346,9 +2645,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
@@ -2374,24 +2670,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Temperature;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EngineType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EngineValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EngineLoadRatio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Flow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SystemMinPower;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.CheckBox checkBoxBoard;
         private System.Windows.Forms.Panel coolingtowerpanel;
         private System.Windows.Forms.Label label40;
@@ -2409,6 +2687,51 @@
         private System.Windows.Forms.ToolStripMenuItem 工具ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 窗口ToolStripMenuItem;
         private System.Windows.Forms.Button btnCal;
+        private System.Windows.Forms.TextBox textBox_TotalPrice;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox textBox_Price;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox textBox_Power;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox textBox_EnterTemper;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox textBox_CoolLoad;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox textBox_Wet;
+        private System.Windows.Forms.TextBox textBox_Dry;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.ComboBox comboBox_Hour;
+        private System.Windows.Forms.ComboBox comboBox_Day;
+        private System.Windows.Forms.ComboBox comboBox_Month;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Temperature;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EngineType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EngineValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EngineLoadRatio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Flow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SystemMinPower;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.Button btnShowOptim;
+        private System.Windows.Forms.Button btnNormalShow;
+        private System.Windows.Forms.Button btnNormalCal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private Sunisoft.IrisSkin.SkinEngine skinEngine1;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }
