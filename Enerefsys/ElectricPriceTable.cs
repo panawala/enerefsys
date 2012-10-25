@@ -22,17 +22,16 @@ namespace Enerefsys
         {
             InitializeComponent();
         }
-
-
-     
-
-
       
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.Update();
         }
-
+        public Enerefsys enParent = null;
+        public void setParent(Enerefsys parent)
+        {
+            enParent = parent;
+        }
         
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -72,7 +71,6 @@ namespace Enerefsys
         {
             try
             {
-             
                 OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filepath + ";Extended Properties='Excel 8.0;HDR=YES;IMEX=1';");
                 con.Open();
                 string sql = "select * from [StandardLoad$]";//选择第一个数据SHEET
@@ -100,6 +98,12 @@ namespace Enerefsys
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public double kvalue = 3.8;
+        private void btnSub_Click(object sender, EventArgs e)
+        {
+            kvalue = Convert.ToDouble(textBoxKvalue.Text);
+            enParent.Kvalue = kvalue;
         }
 
 

@@ -48,6 +48,7 @@
     <Compile Include="Model\Electronic.cs" />
     <Compile Include="Model\EngineFitResult.cs" />
     <Compile Include="Model\FitResult.cs" />
+    <Compile Include="Model\NormalRunResult.cs" />
     <Compile Include="Model\OptimizationResult.cs" />
     <Compile Include="Model\PumpFitResult.cs" />
     <Compile Include="Model\PumpInfo.cs" />
