@@ -41,12 +41,18 @@
             this.EnterTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElectronicPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StandardLoadID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxKvalue = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSub = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSub);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBoxKvalue);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.btnImport);
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -169,6 +175,33 @@
             this.StandardLoadID.ReadOnly = true;
             this.StandardLoadID.Visible = false;
             // 
+            // textBoxKvalue
+            // 
+            this.textBoxKvalue.Location = new System.Drawing.Point(202, 22);
+            this.textBoxKvalue.Name = "textBoxKvalue";
+            this.textBoxKvalue.Size = new System.Drawing.Size(100, 21);
+            this.textBoxKvalue.TabIndex = 9;
+            this.textBoxKvalue.Text = "3.8";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(167, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "K值=";
+            // 
+            // btnSub
+            // 
+            this.btnSub.Location = new System.Drawing.Point(318, 20);
+            this.btnSub.Name = "btnSub";
+            this.btnSub.Size = new System.Drawing.Size(75, 23);
+            this.btnSub.TabIndex = 11;
+            this.btnSub.Text = "确定";
+            this.btnSub.UseVisualStyleBackColor = true;
+            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
+            // 
             // ElectricPriceTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -179,6 +212,7 @@
             this.Text = "逐时负荷";
             this.Load += new System.EventHandler(this.ElectricPriceTable_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -199,6 +233,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StandardLoadID;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxKvalue;
+        private System.Windows.Forms.Button btnSub;
 
     }
 }

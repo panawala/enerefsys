@@ -12,6 +12,9 @@ using EnerefsysBLL.Manager;
 using EnerefsysBLL.Utility;
 using EnerefsysBLL.Entity;
 using EnerefsysBLL.EntityData;
+using System.Reflection;
+
+using Excel = Microsoft.Office.Interop.Excel; 
 
 namespace Enerefsys
 {
@@ -43,6 +46,8 @@ namespace Enerefsys
             {
                 comboBox_PumpType.Items.Add(result);
             }
+            
+
             time1.Interval = 5000;
             time1.Enabled = true;
             time1.Tick += new EventHandler(timer1_Tick);
@@ -787,10 +792,11 @@ namespace Enerefsys
             hlf.Show();
 
         }
-
+        public double Kvalue = 3.8d;
         private void button2_Click(object sender, EventArgs e)
         {
             ElectricPriceTable ept = new ElectricPriceTable();
+            ept.setParent(this);
             ept.Show();
         }
 
@@ -847,9 +853,9 @@ namespace Enerefsys
 
         public double TemperRange { get; set; }
         //冷却类型
-        public string CoolingType { get; set; }
+        public string CoolingType= "一对一";
         //冷冻类型
-        public string FreezeType { get; set; }
+        public string FreezeType = "一对一";
         //分别保存当前最佳组合，当前最优结果，和当前每台主机的负荷率
         private List<MachineEntity> meMin = new List<MachineEntity>();
         private double minResult = double.MaxValue;
@@ -867,11 +873,6 @@ namespace Enerefsys
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
-            System.IO.DirectoryInfo root = directory.Parent.Parent;
-
-            pictureBox_Result.ImageLocation = root.FullName + "/Resources/result.jpg";
-
             meMin.Clear();
             minResult = double.MaxValue;
             minSolute = double.MaxValue;
@@ -933,6 +934,44 @@ namespace Enerefsys
             }
 
             minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
+
+
+            string picName = string.Empty;
+            //如果是板换
+            if (IsBoard)
+            {
+                //使用主机的数量
+                int enginetotalCount = meList.Count;
+                if (enginetotalCount < 6)
+                    picName += enginetotalCount.ToString();
+                else
+                    picName += "N";
+
+                if (BoardCount > 2)
+                    picName += "2.jpg";
+                else
+                    picName += BoardCount + ".jpg";
+            }
+            //如果不是板换
+            else
+            {
+                //使用主机的数量
+                int enginetotalCount = meMin.Count;
+                if (enginetotalCount < 6)
+                    picName += enginetotalCount.ToString();
+                else
+                    picName += "N";
+
+                picName += "0.jpg";
+            }
+
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            //pictureBox_Result.ImageLocation = root.FullName + "/Resources/result.jpg";
+            pictureBox_Result.ImageLocation = root.FullName + "/Resources/" +picName;
+
+
 
             showMessage();
 
@@ -1236,6 +1275,8 @@ namespace Enerefsys
             if (IsSwap)
                 load = load - swapCount * swapPower;
 
+ 
+
             /*****************************************************************************/
             //如果是常规算法。则机器按照从vsd到csd的顺序，按照从大到小的顺序选择主机
             /*****************************************************************************/
@@ -1263,19 +1304,28 @@ namespace Enerefsys
                     c += results[2];
                 }
                 percentValue = percentValue1;
-                minResult += a + b + c;
+                enginePower += a + b + c;
 
                 int engineCount = machineEntities.Count;
                 //冷却水泵,按照并联处理
                 List<double> doubleParamsCool = PumpManager.GetParamsByType("1");
-                minResult += doubleParamsCool[0] * fullFlow * fullFlow * engineCount * engineCount
-                    + doubleParamsCool[1] * fullFlow * engineCount
-                    + doubleParamsCool[2] * engineCount;
+                lengquePower += doubleParamsCool[0] * fullFlow * fullFlow * fullFlow * engineCount * engineCount * engineCount
+                    + doubleParamsCool[1] * fullFlow * fullFlow * engineCount * engineCount
+                    + doubleParamsCool[2] * fullFlow * engineCount
+                    + doubleParamsCool[3] * engineCount;
                 //冷冻水泵
                 List<double> doubleParamsFreeze = PumpManager.GetParamsByType("2");
-                minResult += doubleParamsFreeze[0] * 125 * 125 * engineCount * engineCount
-                    + doubleParamsFreeze[1] * 125 * engineCount
-                    + doubleParamsFreeze[2] * engineCount;
+                freezePumpPower += doubleParamsFreeze[0] * 125 * 125 * 125 * engineCount * engineCount * engineCount
+                    + doubleParamsFreeze[1] * 125 * 125 * engineCount*engineCount
+                    + doubleParamsFreeze[2] * 125 * engineCount
+                    + doubleParamsFreeze[3] * engineCount;
+
+                coolingPower += machineEntities.Count * coolingPower;
+
+                minResult += enginePower;
+                minResult += lengquePower;
+                minResult += freezePumpPower;
+                minResult += coolingPower;
 
                 minSolute = 1.0;
                 return;
@@ -1301,8 +1351,10 @@ namespace Enerefsys
 
                 if (sumLoad < load)
                 {
-                    MessageBox.Show("总负荷过大，所提供主机不足");
-                    return;
+                    //MessageBox.Show("总负荷过大，所提供主机不足");
+                    //将总负荷赋给所需负荷
+                    load = sumLoad;
+                    //return;
                 }
 
                 //根据数量得到最终组合
@@ -1334,7 +1386,7 @@ namespace Enerefsys
                         }
                         if (4.187 * TemperRange * 125 < minValue)
                         {
-                            MessageBox.Show("总负荷过大，所提供冷冻水泵不足");
+                            //MessageBox.Show("总负荷过大，所提供冷冻水泵不足");
                             return;
                         }
 
@@ -2612,10 +2664,8 @@ namespace Enerefsys
 
         private void btnViewReport_Click(object sender, EventArgs e)
         {
-            
-
-
             var resultSet = RunManager.getRunResults();
+            this.reportViewer1.Reset();
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Enerefsys.Report1.rdlc";
             //ReportParameter rp = new ReportParameter("content", this.textBox1.Text);
             //this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp });
@@ -2805,11 +2855,18 @@ namespace Enerefsys
             }
         }
 
-        String s1 = @"../../image/1.jpg";
-        String s2 = @"../../image/2.jpg";
-        String s3 = @"../../image/1.jpg";
-        String s4 = @"../../image/4.jpg";
-        String s5 = @"../../image/5.jpg";
+        String s1 = @"../../newImages/1/1.jpg";
+        String s2 = @"../../newImages/1/2.jpg";
+        String s3 = @"../../newImages/1/3.jpg";
+        String s4 = @"../../newImages/1/4.jpg";
+        String s5 = @"../../newImages/1/6.jpg";
+
+        String s31 = @"../../newImages/3/0.jpg";
+        String s32 = @"../../newImages/3/1.jpg";
+        String s33 = @"../../newImages/3/2.jpg";
+        String s34 = @"../../newImages/3/4.jpg";
+        String s35 = @"../../newImages/3/a.jpg";
+
         int count = 1;
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -2821,26 +2878,42 @@ namespace Enerefsys
                 case 1:
                     pictureBox1.Image = Image.FromFile(s1);
                     pictureBox2.Image = Image.FromFile(s2);
+
+                    pictureBox5.Image = Image.FromFile(s31);
+                    pictureBox6.Image = Image.FromFile(s32);
+
                     count++;
                     break;
                 case 2:
                     pictureBox1.Image = Image.FromFile(s3);
                     pictureBox2.Image = Image.FromFile(s4);
+
+                    pictureBox5.Image = Image.FromFile(s31);
+                    pictureBox6.Image = Image.FromFile(s32);
+
                     count++;
                     break;
                 case 3:
                     pictureBox1.Image = Image.FromFile(s1);
                     pictureBox2.Image = Image.FromFile(s5);
+
+                    pictureBox5.Image = Image.FromFile(s31);
+                    pictureBox6.Image = Image.FromFile(s35);
                     count++;
                     break;
                 case 4:
                     pictureBox1.Image = Image.FromFile(s2);
                     pictureBox2.Image = Image.FromFile(s1);
+
+                    pictureBox5.Image = Image.FromFile(s32);
+                    pictureBox6.Image = Image.FromFile(s31);
                     count++;
                     break;
                 case 5:
                     pictureBox1.Image = Image.FromFile(s4);
                     pictureBox1.Image = Image.FromFile(s5);
+                    pictureBox5.Image = Image.FromFile(s34);
+                    pictureBox6.Image = Image.FromFile(s35);
                     count++;
                     break;
             }
@@ -3079,12 +3152,372 @@ namespace Enerefsys
         private void btnCal_Click(object sender, EventArgs e)
         {
             var standardLoads = RunManager.getAllStandardLoads();
+            RunManager.deleteallRunResults();
             foreach (var standardLoad in standardLoads)
             {
-                GetOptimizationResult(meList, standardLoad.Load, standardLoad.EnterTemperature);
+
+                if (standardLoad.Load <= 0)
+                {
+                    RunManager.InsertIntoRunResult(standardLoad, 0, 0);
+                    continue;
+                }
+
+                meMin.Clear();
+                minResult = double.MaxValue;
+                minSolute = double.MaxValue;
+                percentValue = 0;
+                IsNormal = false;
+                IsSwap = false;
+                FreezeType = "一对一";
+                CoolingType = "一对一";
+                //温差设置为5度
+                TemperRange = 5;
+
+                double temperature = standardLoad.WetTemperature + Kvalue;
+                if (temperature < downTemperature)
+                    IsBoard = true;
+                else
+                    IsBoard = false;
+
+
+                string type = strCoolingTowerStyle;
+                if (type.Equals("常规"))
+                {
+                    coolingPower = iCoolingTowerKW;
+                }
+                else if (type.Equals("高低频"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+                else if (type.Equals("变频"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+
+                //coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
+                GetOptimizationResult(meList, standardLoad.Load, standardLoad.WetTemperature + Kvalue);
+
+
+                //如果是板换，则散热塔的功率等于板换数量
+                if (IsBoard)
+                    coolingPower = coolingPower * BoardCount;
+                else
+                {
+                    coolingPower = coolingPower * meMin.Count;
+                }
+
+                minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
+
+                //GetOptimizationResult(meList, standardLoad.Load, standardLoad.WetTemperature + Kvalue);
+
                 RunManager.InsertIntoRunResult(standardLoad, minResult, minResult * standardLoad.ElectronicPrice);
             }
         }
+
+        private void pictureBox_Result_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var resultSet = RunManager.getRunResultsByCon(comboBox_Month.Text,
+                comboBox_Day.Text,
+                comboBox_Hour.Text,
+                textBox_Dry.Text,
+                textBox_Wet.Text,
+                textBox_CoolLoad.Text,
+                textBox_Temperature.Text,
+                textBox_Power.Text,
+                textBox_Price.Text,
+                textBox_TotalPrice.Text);
+            this.reportViewer1.Reset();
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Enerefsys.Report1.rdlc";
+            //ReportParameter rp = new ReportParameter("content", this.textBox1.Text);
+            //this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp });
+            this.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DS_Result", resultSet));
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void btnShowOptim_Click(object sender, EventArgs e)
+        {
+            var resultSet = RunManager.getRunResults();
+            rowUnitView1.AutoGenerateColumns = false;
+            rowUnitView1.DataSource = resultSet;
+        }
+
+        private void btnNormalCal_Click(object sender, EventArgs e)
+        {
+            var standardLoads = RunManager.getAllStandardLoads();
+            RunManager.deleteallNormalRunResults();
+            foreach (var standardLoad in standardLoads)
+            {
+                if (standardLoad.Load <= 0)
+                {
+                    RunManager.InsertIntoNormalRunResult(standardLoad, 0, 0);
+                    continue;
+                }
+
+                meMin.Clear();
+                minResult = double.MaxValue;
+                minSolute = double.MaxValue;
+                percentValue = 0;
+                IsNormal = true;
+                IsSwap = false;
+                FreezeType = "一对一";
+                CoolingType = "一对一";
+                //温差设置为5度
+                TemperRange = 5;
+
+                double temperature = standardLoad.WetTemperature + Kvalue;
+                if (temperature < downTemperature)
+                    IsBoard = true;
+                else
+                    IsBoard = false;
+
+
+                string type = strCoolingTowerStyle;
+                if (type.Equals("常规"))
+                {
+                    coolingPower = iCoolingTowerKW;
+                }
+                else if (type.Equals("高低频"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+                else if (type.Equals("变频"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+
+                //coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
+                GetOptimizationResult(meList, standardLoad.Load, standardLoad.WetTemperature + Kvalue);
+
+
+                //如果是板换，则散热塔的功率等于板换数量
+                if (IsBoard)
+                    coolingPower = coolingPower * BoardCount;
+                else
+                {
+                    coolingPower = coolingPower * meMin.Count;
+                }
+
+                minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
+
+                RunManager.InsertIntoNormalRunResult(standardLoad, minResult, minResult * standardLoad.ElectronicPrice);
+            }
+        }
+
+        private void btnNormalShow_Click(object sender, EventArgs e)
+        {
+            var resultSet = RunManager.getNormalRunResults();
+            rowUnitView2.AutoGenerateColumns = false;
+            rowUnitView2.DataSource = resultSet;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataGridViewToExcel(rowUnitView1);
+        }
+
+
+
+
+        public void DataGridViewToExcel(DataGridView dgv)
+        {
+
+            //申明保存对话框   
+            SaveFileDialog dlg = new SaveFileDialog();
+            //默然文件后缀   
+            dlg.DefaultExt = "xls ";
+            //文件后缀列表   
+            dlg.Filter = "EXCEL文件(*.XLS)|*.xls ";
+            //默然路径是系统当前路径   
+            dlg.InitialDirectory = Directory.GetCurrentDirectory();
+            //打开保存对话框   
+            if (dlg.ShowDialog() == DialogResult.Cancel) return;
+            //返回文件路径   
+            string fileNameString = dlg.FileName;
+            //验证strFileName是否为空或值无效   
+            if (fileNameString.Trim() == " ")
+            { return; }
+            //定义表格内数据的行数和列数   
+            int rowscount = dgv.Rows.Count;
+            int colscount = dgv.Columns.Count;
+            //行数必须大于0   
+            if (rowscount <= 0)
+            {
+                MessageBox.Show("没有数据可供保存 ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //列数必须大于0   
+            if (colscount <= 0)
+            {
+                MessageBox.Show("没有数据可供保存 ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //行数不可以大于65536   
+            if (rowscount > 65536)
+            {
+                MessageBox.Show("数据记录数太多(最多不能超过65536条)，不能保存 ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //列数不可以大于255   
+            if (colscount > 255)
+            {
+                MessageBox.Show("数据记录行数太多，不能保存 ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //验证以fileNameString命名的文件是否存在，如果存在删除它   
+            FileInfo file = new FileInfo(fileNameString);
+            if (file.Exists)
+            {
+                try
+                {
+                    file.Delete();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message, "删除失败 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            Excel.Application objExcel = null;
+            Excel.Workbook objWorkbook = null;
+            Excel.Worksheet objsheet = null;
+            try
+            {
+                //申明对象   
+                objExcel = new Microsoft.Office.Interop.Excel.Application();
+                objWorkbook = objExcel.Workbooks.Add(Missing.Value);
+                objsheet = (Excel.Worksheet)objWorkbook.ActiveSheet;
+                //设置EXCEL不可见   
+                objExcel.Visible = false;
+
+                //向Excel中写入表格的表头   
+                int displayColumnsCount = 1;
+                for (int i = 0; i <= dgv.ColumnCount - 1; i++)
+                {
+                    if (dgv.Columns[i].Visible == true)
+                    {
+                        objExcel.Cells[1, displayColumnsCount] = dgv.Columns[i].HeaderText.Trim();
+                        displayColumnsCount++;
+                    }
+                }
+                //设置进度条   
+                //tempProgressBar.Refresh();   
+                //tempProgressBar.Visible   =   true;   
+                //tempProgressBar.Minimum=1;   
+                //tempProgressBar.Maximum=dgv.RowCount;   
+                //tempProgressBar.Step=1;   
+                //向Excel中逐行逐列写入表格中的数据   
+                for (int row = 0; row <= dgv.RowCount - 1; row++)
+                {
+                    //tempProgressBar.PerformStep();   
+
+                    displayColumnsCount = 1;
+                    for (int col = 0; col < colscount; col++)
+                    {
+                        if (dgv.Columns[col].Visible == true)
+                        {
+                            try
+                            {
+                                objExcel.Cells[row + 2, displayColumnsCount] = dgv.Rows[row].Cells[col].Value.ToString().Trim();
+                                displayColumnsCount++;
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+
+                        }
+                    }
+                }
+                //隐藏进度条   
+                //tempProgressBar.Visible   =   false;   
+                //保存文件   
+                objWorkbook.SaveAs(fileNameString, Missing.Value, Missing.Value, Missing.Value, Missing.Value,
+                        Missing.Value, Excel.XlSaveAsAccessMode.xlShared, Missing.Value, Missing.Value, Missing.Value,
+                        Missing.Value, Missing.Value);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "警告 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            finally
+            {
+                //关闭Excel应用   
+                if (objWorkbook != null) objWorkbook.Close(Missing.Value, Missing.Value, Missing.Value);
+                if (objExcel.Workbooks != null) objExcel.Workbooks.Close();
+                if (objExcel != null) objExcel.Quit();
+
+                objsheet = null;
+                objWorkbook = null;
+                objExcel = null;
+            }
+            MessageBox.Show(fileNameString + "\n\n导出完毕! ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DataGridViewToExcel(rowUnitView2);
+        }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
