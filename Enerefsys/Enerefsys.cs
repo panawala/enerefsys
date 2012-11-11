@@ -46,7 +46,9 @@ namespace Enerefsys
             {
                 comboBox_PumpType.Items.Add(result);
             }
-            
+
+            initialPath();
+
 
             time1.Interval = 5000;
             time1.Enabled = true;
@@ -402,11 +404,20 @@ namespace Enerefsys
             {
                 meList = getFreezerTypeAndCooling(subFreezer_list);
                 bhList = getBoarderTypeAndCooling(subBoarder_list);
-                BoardCount = bhList.Count;
-                boardValue = bhList.First().Value;
-                string tempStr = bhList.First().Type;
-                tempStr = tempStr.Split(':')[1];
-                downTemperature = Convert.ToInt32(tempStr.Split('°')[0]);
+                if (bhList != null)
+                {
+
+                    BoardCount = bhList.Count;
+                    boardValue = bhList.First().Value;
+                    string tempStr = bhList.First().Type;
+                    tempStr = tempStr.Split(':')[1];
+                    downTemperature = Convert.ToInt32(tempStr.Split('°')[0]);
+                }
+                else
+                {
+                    downTemperature = 0;
+                }
+
 
 
                 //EngineWinFormEventArgs ewfe = new EngineWinFormEventArgs(meList);
@@ -895,11 +906,16 @@ namespace Enerefsys
 
 
             string type = strCoolingTowerStyle;
+            if (string.IsNullOrEmpty(type))
+            {
+                MessageBox.Show("请配置冷却塔！");
+                return;
+            }
             if (type.Equals("常规"))
             {
                 coolingPower = iCoolingTowerKW;
             }
-            else if (type.Equals("高低频"))
+            else if (type.Equals("高低速"))
             {
                 coolingPower = iCoolingTowerKW2;
                 if (iCoolingTowerT1 > temperature)
@@ -1337,6 +1353,12 @@ namespace Enerefsys
             if (!IsBoard)
             {
                 List<double> doubleList = new List<double>();
+                if (machineEntities == null)
+                {
+                    MessageBox.Show("请配置冷冻机！");
+                    return;
+                }
+
                 for (int i = 0; i < machineEntities.Count; i++)
                 {
                     doubleList.Add(machineEntities[i].Value);
@@ -2038,7 +2060,7 @@ namespace Enerefsys
                 brand_textBox.Name = "brand_comboBox" + i;
                 type_comboBox.Name = "type_comboBox" + i;
                 type_comboBox.Items.Add("常规");
-                type_comboBox.Items.Add("高低频");
+                type_comboBox.Items.Add("高低速");
                 type_comboBox.Items.Add("变频");
                 type_comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
                 type_comboBox.SelectedIndex = 0;
@@ -2047,6 +2069,7 @@ namespace Enerefsys
                 temperature_textBox.Name = "temperature_textBox" + i;
                 power_textBox.Name = "power_textBox" + i;
                 amount_textBox.Name = "boarder_amount_textBox" + i;
+                amount_textBox.Text = "1";
                 //performance_data_box.Name = "performance_data_box" + i;
                 lb1.Text = "根据温度 T1：";
                 lb1.Width = 85;
@@ -2658,6 +2681,7 @@ namespace Enerefsys
 
         private void Enerefsys_Load(object sender, EventArgs e)
         {
+           
             this.reportViewer1.RefreshReport();
             fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
         }
@@ -2855,68 +2879,241 @@ namespace Enerefsys
             }
         }
 
-        String s1 = @"../../newImages/1/1.jpg";
-        String s2 = @"../../newImages/1/2.jpg";
-        String s3 = @"../../newImages/1/3.jpg";
-        String s4 = @"../../newImages/1/4.jpg";
-        String s5 = @"../../newImages/1/6.jpg";
+        //String s1 = @"../../newImages/1/1.jpg";
+        //String s2 = @"../../newImages/1/2.jpg";
+        //String s3 = @"../../newImages/1/3.jpg";
+        //String s4 = @"../../newImages/1/4.jpg";
+        //String s5 = @"../../newImages/1/6.jpg";
 
-        String s31 = @"../../newImages/3/0.jpg";
-        String s32 = @"../../newImages/3/1.jpg";
-        String s33 = @"../../newImages/3/2.jpg";
-        String s34 = @"../../newImages/3/4.jpg";
-        String s35 = @"../../newImages/3/a.jpg";
+        //String s31 = @"../../newImages/3/0.jpg";
+        //String s32 = @"../../newImages/3/1.jpg";
+        //String s33 = @"../../newImages/3/2.jpg";
+        //String s34 = @"../../newImages/3/4.jpg";
+        //String s35 = @"../../newImages/3/a.jpg";
 
+        //String s21 = @"../../newImages/2/1.jpg";
+        //String s22 = @"../../newImages/2/2.jpg";
+        //String s23 = @"../../newImages/2/3.jpg";
+        //String s24 = @"../../newImages/2/e_1.jpg";
+        //String s25 = @"../../newImages/2/2.jpg";
+
+        public void initialPath()
+        {
+            string exePath = System.IO.Directory.GetCurrentDirectory();
+            DirectoryInfo directory = new DirectoryInfo(exePath);
+            dir = directory.Parent.Parent.FullName;
+        }
+        String dir = String.Empty;
         int count = 1;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (count == 6)
-                count = 1;
-            switch (count)
+            //string exePath = System.IO.Directory.GetCurrentDirectory();
+            //DirectoryInfo directory = new DirectoryInfo(exePath);
+            //String dir= directory.Parent.Parent.FullName;
+
+
+            if (!string.IsNullOrEmpty(dir))
             {
-                case 1:
-                    pictureBox1.Image = Image.FromFile(s1);
-                    pictureBox2.Image = Image.FromFile(s2);
+                String s1 = dir + @"/newImages/1/1.jpg";
+                String s2 = dir + @"/newImages/1/2.jpg";
+                String s3 = dir + @"/newImages/1/3.jpg";
+                String s4 = dir + @"/newImages/1/4.jpg";
+                String s5 = dir + @"/newImages/1/6.jpg";
 
-                    pictureBox5.Image = Image.FromFile(s31);
-                    pictureBox6.Image = Image.FromFile(s32);
+                String s31 = dir + @"/newImages/3/0.jpg";
+                String s32 = dir + @"/newImages/3/1.jpg";
+                String s33 = dir + @"/newImages/3/2.jpg";
+                String s34 = dir + @"/newImages/3/4.jpg";
+                String s35 = dir + @"/newImages/3/a.jpg";
 
-                    count++;
-                    break;
-                case 2:
-                    pictureBox1.Image = Image.FromFile(s3);
-                    pictureBox2.Image = Image.FromFile(s4);
+                String s21 = dir + @"/newImages/2/1.jpg";
+                String s22 = dir + @"/newImages/2/2.jpg";
+                String s23 = dir + @"/newImages/2/3.jpg";
+                String s24 = dir + @"/newImages/2/e_1.jpg";
+                String s25 = dir + @"/newImages/2/2.jpg";
 
-                    pictureBox5.Image = Image.FromFile(s31);
-                    pictureBox6.Image = Image.FromFile(s32);
 
-                    count++;
-                    break;
-                case 3:
-                    pictureBox1.Image = Image.FromFile(s1);
-                    pictureBox2.Image = Image.FromFile(s5);
 
-                    pictureBox5.Image = Image.FromFile(s31);
-                    pictureBox6.Image = Image.FromFile(s35);
-                    count++;
-                    break;
-                case 4:
-                    pictureBox1.Image = Image.FromFile(s2);
-                    pictureBox2.Image = Image.FromFile(s1);
 
-                    pictureBox5.Image = Image.FromFile(s32);
-                    pictureBox6.Image = Image.FromFile(s31);
-                    count++;
-                    break;
-                case 5:
-                    pictureBox1.Image = Image.FromFile(s4);
-                    pictureBox1.Image = Image.FromFile(s5);
-                    pictureBox5.Image = Image.FromFile(s34);
-                    pictureBox6.Image = Image.FromFile(s35);
-                    count++;
-                    break;
+                if (count == 6)
+                    count = 1;
+                switch (count)
+                {
+                    case 1:
+                        {
+                            Stream stream1 = File.Open(s1, FileMode.Open);
+                            pictureBox1.Image = Image.FromStream(stream1);
+                            stream1.Close();
+                            Stream stream2 = File.Open(s2, FileMode.Open);
+                            pictureBox2.Image = Image.FromStream(stream2);
+                            stream2.Close();
+                            //pictureBox1.Image = Image.FromFile(s1);
+                            //pictureBox2.Image = Image.FromFile(s2);
+
+                            Stream stream3 = File.Open(s21, FileMode.Open);
+                            pictureBox3.Image = Image.FromStream(stream3);
+                            stream3.Close();
+                            Stream stream4 = File.Open(s22, FileMode.Open);
+                            pictureBox4.Image = Image.FromStream(stream4);
+                            stream4.Close();
+
+                            //pictureBox3.Image = Image.FromFile(s21);
+                            //pictureBox4.Image = Image.FromFile(s22);
+
+                            Stream stream5 = File.Open(s31, FileMode.Open);
+                            pictureBox5.Image = Image.FromStream(stream5);
+                            stream5.Close();
+                            Stream stream6 = File.Open(s32, FileMode.Open);
+                            pictureBox6.Image = Image.FromStream(stream6);
+                            stream6.Close();
+
+                            //pictureBox5.Image = Image.FromFile(s31);
+                            //pictureBox6.Image = Image.FromFile(s32);
+
+                            count++;
+                        }
+                        break;
+                    case 2:
+                        //pictureBox1.Image = Image.FromFile(s3);
+                        //pictureBox2.Image = Image.FromFile(s4);
+
+                        //pictureBox3.Image = Image.FromFile(s23);
+                        //pictureBox4.Image = Image.FromFile(s24);
+
+                        //pictureBox5.Image = Image.FromFile(s33);
+                        //pictureBox6.Image = Image.FromFile(s34);
+                        {
+
+                            Stream stream1 = File.Open(s3, FileMode.Open);
+                            pictureBox1.Image = Image.FromStream(stream1);
+                            stream1.Close();
+                            Stream stream2 = File.Open(s4, FileMode.Open);
+                            pictureBox2.Image = Image.FromStream(stream2);
+                            stream2.Close();
+
+                            Stream stream3 = File.Open(s23, FileMode.Open);
+                            pictureBox3.Image = Image.FromStream(stream3);
+                            stream3.Close();
+                            Stream stream4 = File.Open(s24, FileMode.Open);
+                            pictureBox4.Image = Image.FromStream(stream4);
+                            stream4.Close();
+
+
+                            Stream stream5 = File.Open(s33, FileMode.Open);
+                            pictureBox5.Image = Image.FromStream(stream5);
+                            stream5.Close();
+                            Stream stream6 = File.Open(s34, FileMode.Open);
+                            pictureBox6.Image = Image.FromStream(stream6);
+                            stream6.Close();
+
+                            count++;
+                        }
+                        break;
+                    case 3:
+                        //pictureBox1.Image = Image.FromFile(s1);
+                        //pictureBox2.Image = Image.FromFile(s5);
+
+                        //pictureBox3.Image = Image.FromFile(s21);
+                        //pictureBox4.Image = Image.FromFile(s25);
+
+                        //pictureBox5.Image = Image.FromFile(s31);
+                        //pictureBox6.Image = Image.FromFile(s35);
+                        {
+                            Stream stream1 = File.Open(s1, FileMode.Open);
+                            pictureBox1.Image = Image.FromStream(stream1);
+                            stream1.Close();
+                            Stream stream2 = File.Open(s5, FileMode.Open);
+                            pictureBox2.Image = Image.FromStream(stream2);
+                            stream2.Close();
+
+                            Stream stream3 = File.Open(s21, FileMode.Open);
+                            pictureBox3.Image = Image.FromStream(stream3);
+                            stream3.Close();
+                            Stream stream4 = File.Open(s25, FileMode.Open);
+                            pictureBox4.Image = Image.FromStream(stream4);
+                            stream4.Close();
+
+
+                            Stream stream5 = File.Open(s31, FileMode.Open);
+                            pictureBox5.Image = Image.FromStream(stream5);
+                            stream5.Close();
+                            Stream stream6 = File.Open(s35, FileMode.Open);
+                            pictureBox6.Image = Image.FromStream(stream6);
+                            stream6.Close();
+                            count++;
+                        }
+
+                        break;
+                    case 4:
+                        //pictureBox1.Image = Image.FromFile(s2);
+                        //pictureBox2.Image = Image.FromFile(s1);
+
+                        //pictureBox3.Image = Image.FromFile(s22);
+                        //pictureBox4.Image = Image.FromFile(s21);
+
+                        //pictureBox5.Image = Image.FromFile(s32);
+                        //pictureBox6.Image = Image.FromFile(s31);
+                        {
+                            Stream stream1 = File.Open(s2, FileMode.Open);
+                            pictureBox1.Image = Image.FromStream(stream1);
+                            stream1.Close();
+                            Stream stream2 = File.Open(s1, FileMode.Open);
+                            pictureBox2.Image = Image.FromStream(stream2);
+                            stream2.Close();
+
+                            Stream stream3 = File.Open(s22, FileMode.Open);
+                            pictureBox3.Image = Image.FromStream(stream3);
+                            stream3.Close();
+                            Stream stream4 = File.Open(s21, FileMode.Open);
+                            pictureBox4.Image = Image.FromStream(stream4);
+                            stream4.Close();
+
+                            Stream stream5 = File.Open(s32, FileMode.Open);
+                            pictureBox5.Image = Image.FromStream(stream5);
+                            stream5.Close();
+                            Stream stream6 = File.Open(s31, FileMode.Open);
+                            pictureBox6.Image = Image.FromStream(stream6);
+                            stream6.Close();
+                            count++;
+                        }
+                        break;
+                    case 5:
+                        //pictureBox1.Image = Image.FromFile(s4);
+                        //pictureBox1.Image = Image.FromFile(s5);
+
+                        //pictureBox3.Image = Image.FromFile(s24);
+                        //pictureBox4.Image = Image.FromFile(s25);
+
+                        //pictureBox5.Image = Image.FromFile(s34);
+                        //pictureBox6.Image = Image.FromFile(s35);
+                        {
+                            Stream stream1 = File.Open(s4, FileMode.Open);
+                            pictureBox1.Image = Image.FromStream(stream1);
+                            stream1.Close();
+                            Stream stream2 = File.Open(s5, FileMode.Open);
+                            pictureBox2.Image = Image.FromStream(stream2);
+                            stream2.Close();
+
+                            Stream stream3 = File.Open(s24, FileMode.Open);
+                            pictureBox3.Image = Image.FromStream(stream3);
+                            stream3.Close();
+                            Stream stream4 = File.Open(s25, FileMode.Open);
+                            pictureBox4.Image = Image.FromStream(stream4);
+                            stream4.Close();
+
+                            Stream stream5 = File.Open(s34, FileMode.Open);
+                            pictureBox5.Image = Image.FromStream(stream5);
+                            stream5.Close();
+                            Stream stream6 = File.Open(s35, FileMode.Open);
+                            pictureBox6.Image = Image.FromStream(stream6);
+                            stream6.Close();
+                            count++;
+                        }
+                        break;
+                }
             }
+            
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
@@ -3056,7 +3253,7 @@ namespace Enerefsys
         public int iCoolingTowerHZ2 = 0;
         public int iCoolingTowerHZ3 = 0;
         public int iCoolingTowerKW1 = 0;
-        public int iCoolingTowerKW2 = 0;
+        public double iCoolingTowerKW2 = 0;
         public int iCoolingTowerKW3 = 0;
         private void button8_Click(object sender, EventArgs e)
         {
@@ -3106,7 +3303,8 @@ namespace Enerefsys
                             iCoolingTowerHZ3 = Convert.ToInt32(CoolingTower_list[ix].tbx_HZ_C.Text);
                             iCoolingTowerKW3 = Convert.ToInt32(CoolingTower_list[ix].tbx_KW_C.Text);
                             double d = Convert.ToDouble(iCoolingTowerHZ2) / Convert.ToDouble(iCoolingTowerHZ3);
-                            iCoolingTowerKW2 = Convert.ToInt32(d * d * d * iCoolingTowerKW3);
+                            //iCoolingTowerKW2 = Convert.ToInt32(d * d * d * iCoolingTowerKW3);
+                            iCoolingTowerKW2 = d * d * d * iCoolingTowerKW3;
                         }
                     }
                 }
@@ -3185,7 +3383,7 @@ namespace Enerefsys
                 {
                     coolingPower = iCoolingTowerKW;
                 }
-                else if (type.Equals("高低频"))
+                else if (type.Equals("高低速"))
                 {
                     coolingPower = iCoolingTowerKW2;
                     if (iCoolingTowerT1 > temperature)
@@ -3294,7 +3492,7 @@ namespace Enerefsys
                 {
                     coolingPower = iCoolingTowerKW;
                 }
-                else if (type.Equals("高低频"))
+                else if (type.Equals("高低速"))
                 {
                     coolingPower = iCoolingTowerKW2;
                     if (iCoolingTowerT1 > temperature)

@@ -95,7 +95,6 @@
             this.boarder_Panel = new System.Windows.Forms.Panel();
             this.completed = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -155,34 +154,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
-            this.rowUnitView2 = new MultiHeaderDataGridView.RowUnitView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnShowOptim = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
-            this.rowUnitView1 = new MultiHeaderDataGridView.RowUnitView();
-            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnClear = new System.Windows.Forms.Button();
             this.textBox_CoolingPower = new System.Windows.Forms.TextBox();
@@ -221,9 +198,6 @@
             this.comboBox_Day = new System.Windows.Forms.ComboBox();
             this.comboBox_Month = new System.Windows.Forms.ComboBox();
             this.btnCal = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.btnViewReport = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -242,6 +216,28 @@
             this.帮助文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
+            this.rowUnitView2 = new MultiHeaderDataGridView.RowUnitView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rowUnitView1 = new MultiHeaderDataGridView.RowUnitView();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -256,7 +252,6 @@
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -271,17 +266,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).BeginInit();
             this.tabPage7.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -890,6 +882,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.checkBoxBoard);
             this.tabPage2.Controls.Add(this.boarder_Panel);
             this.tabPage2.Controls.Add(this.completed);
@@ -945,9 +938,9 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.pictureBox10);
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Location = new System.Drawing.Point(938, 36);
@@ -955,24 +948,14 @@
             this.panel2.Size = new System.Drawing.Size(279, 586);
             this.panel2.TabIndex = 72;
             // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(12, 413);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(255, 159);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 2;
-            this.pictureBox10.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 220);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 282);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(255, 187);
+            this.pictureBox4.Size = new System.Drawing.Size(264, 288);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
@@ -984,7 +967,7 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(12, 14);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(255, 200);
+            this.pictureBox3.Size = new System.Drawing.Size(264, 253);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -1107,6 +1090,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.AutoScroll = true;
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.completedPump);
             this.tabPage3.Controls.Add(this.panel3);
@@ -1138,6 +1122,8 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(37, 365);
             this.dataGridView2.Name = "dataGridView2";
@@ -1190,6 +1176,7 @@
             // 
             // progressBarPump
             // 
+            this.progressBarPump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarPump.Location = new System.Drawing.Point(791, 3);
             this.progressBarPump.Name = "progressBarPump";
             this.progressBarPump.Size = new System.Drawing.Size(339, 23);
@@ -1197,6 +1184,7 @@
             // 
             // btnLoadDataPump
             // 
+            this.btnLoadDataPump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoadDataPump.Location = new System.Drawing.Point(693, 3);
             this.btnLoadDataPump.Name = "btnLoadDataPump";
             this.btnLoadDataPump.Size = new System.Drawing.Size(92, 23);
@@ -1207,6 +1195,7 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSubmit.Location = new System.Drawing.Point(763, 336);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
@@ -1342,6 +1331,8 @@
             // 
             // coolingPanel
             // 
+            this.coolingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.coolingPanel.AutoScroll = true;
             this.coolingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.coolingPanel.Location = new System.Drawing.Point(37, 201);
@@ -1351,6 +1342,8 @@
             // 
             // freezingPanel
             // 
+            this.freezingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.freezingPanel.AutoScroll = true;
             this.freezingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.freezingPanel.Location = new System.Drawing.Point(37, 60);
@@ -1558,111 +1551,6 @@
             this.label28.TabIndex = 3;
             this.label28.Text = "Enerefsys系统逐时优化结果";
             // 
-            // rowUnitView2
-            // 
-            this.rowUnitView2.AllowUserToAddRows = false;
-            this.rowUnitView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rowUnitView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rowUnitView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.Column1});
-            this.rowUnitView2.Location = new System.Drawing.Point(3, 81);
-            this.rowUnitView2.Name = "rowUnitView2";
-            this.rowUnitView2.ReadOnly = true;
-            this.rowUnitView2.RowHeadersVisible = false;
-            this.rowUnitView2.RowTemplate.Height = 23;
-            this.rowUnitView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView2.Size = new System.Drawing.Size(1215, 414);
-            this.rowUnitView2.TabIndex = 4;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Month";
-            this.dataGridViewTextBoxColumn1.HeaderText = "月";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Day";
-            this.dataGridViewTextBoxColumn2.HeaderText = "日";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Hour";
-            this.dataGridViewTextBoxColumn3.HeaderText = "时";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DryTemperature";
-            this.dataGridViewTextBoxColumn4.HeaderText = "干球温度";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "WetTemperature";
-            this.dataGridViewTextBoxColumn5.HeaderText = "湿球温度";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Load";
-            this.dataGridViewTextBoxColumn6.HeaderText = "冷负荷";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "EnterTemperature";
-            this.dataGridViewTextBoxColumn7.HeaderText = "进口温度";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "ElectronicPrice";
-            this.dataGridViewTextBoxColumn8.HeaderText = "电价";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Power";
-            this.dataGridViewTextBoxColumn9.HeaderText = "能耗";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "TotalPrice";
-            this.Column1.HeaderText = "电费";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.btnShowOptim);
@@ -1727,110 +1615,6 @@
             this.label42.Size = new System.Drawing.Size(467, 29);
             this.label42.TabIndex = 2;
             this.label42.Text = "Enerefsys系统全年逐时优化结果";
-            // 
-            // rowUnitView1
-            // 
-            this.rowUnitView1.AllowUserToAddRows = false;
-            this.rowUnitView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rowUnitView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rowUnitView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Day,
-            this.Time,
-            this.Temperature,
-            this.EngineType,
-            this.EngineValue,
-            this.EngineLoadRatio,
-            this.Flow,
-            this.SystemMinPower,
-            this.Id,
-            this.TotalPrice});
-            this.rowUnitView1.Location = new System.Drawing.Point(1, 69);
-            this.rowUnitView1.Name = "rowUnitView1";
-            this.rowUnitView1.ReadOnly = true;
-            this.rowUnitView1.RowHeadersVisible = false;
-            this.rowUnitView1.RowTemplate.Height = 23;
-            this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView1.Size = new System.Drawing.Size(1217, 393);
-            this.rowUnitView1.TabIndex = 3;
-            // 
-            // Day
-            // 
-            this.Day.DataPropertyName = "Month";
-            this.Day.HeaderText = "月";
-            this.Day.Name = "Day";
-            this.Day.ReadOnly = true;
-            this.Day.Width = 50;
-            // 
-            // Time
-            // 
-            this.Time.DataPropertyName = "Day";
-            this.Time.HeaderText = "日";
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            this.Time.Width = 50;
-            // 
-            // Temperature
-            // 
-            this.Temperature.DataPropertyName = "Hour";
-            this.Temperature.HeaderText = "时";
-            this.Temperature.Name = "Temperature";
-            this.Temperature.ReadOnly = true;
-            this.Temperature.Width = 50;
-            // 
-            // EngineType
-            // 
-            this.EngineType.DataPropertyName = "DryTemperature";
-            this.EngineType.HeaderText = "干球温度";
-            this.EngineType.Name = "EngineType";
-            this.EngineType.ReadOnly = true;
-            this.EngineType.Width = 150;
-            // 
-            // EngineValue
-            // 
-            this.EngineValue.DataPropertyName = "WetTemperature";
-            this.EngineValue.HeaderText = "湿球温度";
-            this.EngineValue.Name = "EngineValue";
-            this.EngineValue.ReadOnly = true;
-            this.EngineValue.Width = 150;
-            // 
-            // EngineLoadRatio
-            // 
-            this.EngineLoadRatio.DataPropertyName = "Load";
-            this.EngineLoadRatio.HeaderText = "冷负荷";
-            this.EngineLoadRatio.Name = "EngineLoadRatio";
-            this.EngineLoadRatio.ReadOnly = true;
-            this.EngineLoadRatio.Width = 150;
-            // 
-            // Flow
-            // 
-            this.Flow.DataPropertyName = "EnterTemperature";
-            this.Flow.HeaderText = "冷却水进口温度";
-            this.Flow.Name = "Flow";
-            this.Flow.ReadOnly = true;
-            this.Flow.Width = 150;
-            // 
-            // SystemMinPower
-            // 
-            this.SystemMinPower.DataPropertyName = "Power";
-            this.SystemMinPower.HeaderText = "能耗";
-            this.SystemMinPower.Name = "SystemMinPower";
-            this.SystemMinPower.ReadOnly = true;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "ElectronicPrice";
-            this.Id.HeaderText = "电价";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "电费";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
             // 
             // tabPage6
             // 
@@ -2012,7 +1796,6 @@
             this.tabPage7.Controls.Add(this.comboBox_Day);
             this.tabPage7.Controls.Add(this.comboBox_Month);
             this.tabPage7.Controls.Add(this.btnCal);
-            this.tabPage7.Controls.Add(this.panel7);
             this.tabPage7.Controls.Add(this.btnViewReport);
             this.tabPage7.Controls.Add(this.reportViewer1);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
@@ -2279,39 +2062,6 @@
             this.btnCal.UseVisualStyleBackColor = true;
             this.btnCal.Click += new System.EventHandler(this.btnCal_Click);
             // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.pictureBox13);
-            this.panel7.Controls.Add(this.pictureBox14);
-            this.panel7.Location = new System.Drawing.Point(939, 62);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(279, 525);
-            this.panel7.TabIndex = 105;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(13, 271);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(254, 223);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 1;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(254, 242);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 0;
-            this.pictureBox14.TabStop = false;
-            // 
             // btnViewReport
             // 
             this.btnViewReport.Location = new System.Drawing.Point(1114, 15);
@@ -2329,7 +2079,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.Location = new System.Drawing.Point(3, 62);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(920, 560);
+            this.reportViewer1.Size = new System.Drawing.Size(1215, 560);
             this.reportViewer1.TabIndex = 0;
             // 
             // menuStrip1
@@ -2449,6 +2199,215 @@
             this.skinEngine1.SerialNumber = "";
             this.skinEngine1.SkinFile = null;
             // 
+            // rowUnitView2
+            // 
+            this.rowUnitView2.AllowUserToAddRows = false;
+            this.rowUnitView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rowUnitView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rowUnitView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.Column1});
+            this.rowUnitView2.Location = new System.Drawing.Point(3, 81);
+            this.rowUnitView2.Name = "rowUnitView2";
+            this.rowUnitView2.ReadOnly = true;
+            this.rowUnitView2.RowHeadersVisible = false;
+            this.rowUnitView2.RowTemplate.Height = 23;
+            this.rowUnitView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.rowUnitView2.Size = new System.Drawing.Size(1215, 414);
+            this.rowUnitView2.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Month";
+            this.dataGridViewTextBoxColumn1.HeaderText = "月";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Day";
+            this.dataGridViewTextBoxColumn2.HeaderText = "日";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Hour";
+            this.dataGridViewTextBoxColumn3.HeaderText = "时";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DryTemperature";
+            this.dataGridViewTextBoxColumn4.HeaderText = "干球温度";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "WetTemperature";
+            this.dataGridViewTextBoxColumn5.HeaderText = "湿球温度";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Load";
+            this.dataGridViewTextBoxColumn6.HeaderText = "冷负荷";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "EnterTemperature";
+            this.dataGridViewTextBoxColumn7.HeaderText = "进口温度";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ElectronicPrice";
+            this.dataGridViewTextBoxColumn8.HeaderText = "电价";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Power";
+            this.dataGridViewTextBoxColumn9.HeaderText = "能耗";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TotalPrice";
+            this.Column1.HeaderText = "电费";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // rowUnitView1
+            // 
+            this.rowUnitView1.AllowUserToAddRows = false;
+            this.rowUnitView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rowUnitView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rowUnitView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Day,
+            this.Time,
+            this.Temperature,
+            this.EngineType,
+            this.EngineValue,
+            this.EngineLoadRatio,
+            this.Flow,
+            this.SystemMinPower,
+            this.Id,
+            this.TotalPrice});
+            this.rowUnitView1.Location = new System.Drawing.Point(1, 69);
+            this.rowUnitView1.Name = "rowUnitView1";
+            this.rowUnitView1.ReadOnly = true;
+            this.rowUnitView1.RowHeadersVisible = false;
+            this.rowUnitView1.RowTemplate.Height = 23;
+            this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.rowUnitView1.Size = new System.Drawing.Size(1217, 393);
+            this.rowUnitView1.TabIndex = 3;
+            // 
+            // Day
+            // 
+            this.Day.DataPropertyName = "Month";
+            this.Day.HeaderText = "月";
+            this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
+            this.Day.Width = 50;
+            // 
+            // Time
+            // 
+            this.Time.DataPropertyName = "Day";
+            this.Time.HeaderText = "日";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            this.Time.Width = 50;
+            // 
+            // Temperature
+            // 
+            this.Temperature.DataPropertyName = "Hour";
+            this.Temperature.HeaderText = "时";
+            this.Temperature.Name = "Temperature";
+            this.Temperature.ReadOnly = true;
+            this.Temperature.Width = 50;
+            // 
+            // EngineType
+            // 
+            this.EngineType.DataPropertyName = "DryTemperature";
+            this.EngineType.HeaderText = "干球温度";
+            this.EngineType.Name = "EngineType";
+            this.EngineType.ReadOnly = true;
+            this.EngineType.Width = 150;
+            // 
+            // EngineValue
+            // 
+            this.EngineValue.DataPropertyName = "WetTemperature";
+            this.EngineValue.HeaderText = "湿球温度";
+            this.EngineValue.Name = "EngineValue";
+            this.EngineValue.ReadOnly = true;
+            this.EngineValue.Width = 150;
+            // 
+            // EngineLoadRatio
+            // 
+            this.EngineLoadRatio.DataPropertyName = "Load";
+            this.EngineLoadRatio.HeaderText = "冷负荷";
+            this.EngineLoadRatio.Name = "EngineLoadRatio";
+            this.EngineLoadRatio.ReadOnly = true;
+            this.EngineLoadRatio.Width = 150;
+            // 
+            // Flow
+            // 
+            this.Flow.DataPropertyName = "EnterTemperature";
+            this.Flow.HeaderText = "冷却水进口温度";
+            this.Flow.Name = "Flow";
+            this.Flow.ReadOnly = true;
+            this.Flow.Width = 150;
+            // 
+            // SystemMinPower
+            // 
+            this.SystemMinPower.DataPropertyName = "Power";
+            this.SystemMinPower.HeaderText = "能耗";
+            this.SystemMinPower.Name = "SystemMinPower";
+            this.SystemMinPower.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "ElectronicPrice";
+            this.Id.HeaderText = "电价";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.HeaderText = "电费";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            // 
             // Enerefsys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2482,7 +2441,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -2500,21 +2458,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2645,9 +2600,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.Label completed;
         private System.Windows.Forms.TextBox textBox_TemperRange;
         private System.Windows.Forms.Label label34;
@@ -2732,6 +2684,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private Sunisoft.IrisSkin.SkinEngine skinEngine1;
-        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }
