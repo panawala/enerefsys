@@ -1009,6 +1009,9 @@ namespace Enerefsys
 
         private void showMessage()
         {
+            addStrToBox("在室外温度为" + textBox_Temperature.Text+"摄氏度，", textBox_Message);
+            addStrToBox("系统负荷为" + textBox_Load.Text + "kw的工况下，", textBox_Message);
+            addStrToBox("经过Enerefsys计算得出的最优算法控制如下：", textBox_Message);
             if (!IsBoard)
             {
                 addStrToBox("主机组合如下：", textBox_Message);
@@ -3457,12 +3460,52 @@ namespace Enerefsys
             rowUnitView1.DataSource = resultSet;
         }
 
+        /// <summary>
+        /// 汇报计算情况的工作者线程
+        /// </summary>
+        BackgroundWorker workerCal = new BackgroundWorker();
+
+
+
         private void btnNormalCal_Click(object sender, EventArgs e)
+        {
+
+            var standardLoads = RunManager.getAllStandardLoads();
+            
+            progressBar1.Maximum = standardLoads.Count;
+
+            workerCal.WorkerReportsProgress = true;
+
+            //正式做事情的地方
+            workerCal.DoWork += new DoWorkEventHandler(workerCal_DoWork);
+
+            //任务完称时要做的，比如提示等等
+            workerCal.ProgressChanged += new ProgressChangedEventHandler(workerCal_ProgressChanged);
+
+            workerCal.RunWorkerCompleted += new RunWorkerCompletedEventHandler(workerCal_RunWorkerCompleted);
+
+            workerCal.RunWorkerAsync();
+        }
+
+        void workerCal_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("计算完成！");
+        }
+
+        void workerCal_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.progressBar1.Value = e.ProgressPercentage;
+            //将异步任务进度的百分比赋给进度条
+        }
+
+        void workerCal_DoWork(object sender, DoWorkEventArgs e)
         {
             var standardLoads = RunManager.getAllStandardLoads();
             RunManager.deleteallNormalRunResults();
+            int i = 0;
             foreach (var standardLoad in standardLoads)
             {
+                i++;
                 if (standardLoad.Load <= 0)
                 {
                     RunManager.InsertIntoNormalRunResult(standardLoad, 0, 0);
@@ -3524,6 +3567,11 @@ namespace Enerefsys
                 minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
 
                 RunManager.InsertIntoNormalRunResult(standardLoad, minResult, minResult * standardLoad.ElectronicPrice);
+
+                
+                //工作者回发报告进度信息
+                workerCal.ReportProgress(i);
+                label60.Text = i.ToString() + "/" + standardLoads.Count;
             }
         }
 

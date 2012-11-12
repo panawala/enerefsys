@@ -38,12 +38,16 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="BVPF">
       <HintPath>..\DbLib\BVPF.dll</HintPath>
     </Reference>
     <Reference Include="BVQF">
       <HintPath>..\DbLib\BVQF.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="Fit">
       <HintPath>..\DbLib\Fit.dll</HintPath>
     </Reference>
@@ -274,6 +278,10 @@
     <None Include="Resources\Calmness.ssk" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataContext\DataContext.csproj">
+      <Project>{5C6451FA-D225-41FF-A8F1-CAE6E4620A5B}</Project>
+      <Name>DataContext</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EnerefsysBLL\EnerefsysBLL.csproj">
       <Project>{37F131F7-1416-43C2-81D7-CB918812FCDC}</Project>
       <Name>EnerefsysBLL</Name>

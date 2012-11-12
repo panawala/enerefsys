@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSub = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxKvalue = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -41,15 +44,16 @@
             this.EnterTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElectronicPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StandardLoadID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBoxKvalue = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSub = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.btnSub);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxKvalue);
@@ -63,6 +67,33 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "设计日逐时电价表";
+            // 
+            // btnSub
+            // 
+            this.btnSub.Location = new System.Drawing.Point(123, 20);
+            this.btnSub.Name = "btnSub";
+            this.btnSub.Size = new System.Drawing.Size(75, 23);
+            this.btnSub.TabIndex = 11;
+            this.btnSub.Text = "确定";
+            this.btnSub.UseVisualStyleBackColor = true;
+            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "K值=";
+            // 
+            // textBoxKvalue
+            // 
+            this.textBoxKvalue.Location = new System.Drawing.Point(44, 22);
+            this.textBoxKvalue.Name = "textBoxKvalue";
+            this.textBoxKvalue.Size = new System.Drawing.Size(73, 21);
+            this.textBoxKvalue.TabIndex = 9;
+            this.textBoxKvalue.Text = "3.8";
             // 
             // button3
             // 
@@ -175,32 +206,20 @@
             this.StandardLoadID.ReadOnly = true;
             this.StandardLoadID.Visible = false;
             // 
-            // textBoxKvalue
+            // progressBar1
             // 
-            this.textBoxKvalue.Location = new System.Drawing.Point(202, 22);
-            this.textBoxKvalue.Name = "textBoxKvalue";
-            this.textBoxKvalue.Size = new System.Drawing.Size(100, 21);
-            this.textBoxKvalue.TabIndex = 9;
-            this.textBoxKvalue.Text = "3.8";
+            this.progressBar1.Location = new System.Drawing.Point(228, 20);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(316, 23);
+            this.progressBar1.TabIndex = 12;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "K值=";
-            // 
-            // btnSub
-            // 
-            this.btnSub.Location = new System.Drawing.Point(318, 20);
-            this.btnSub.Name = "btnSub";
-            this.btnSub.Size = new System.Drawing.Size(75, 23);
-            this.btnSub.TabIndex = 11;
-            this.btnSub.Text = "确定";
-            this.btnSub.UseVisualStyleBackColor = true;
-            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(551, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 12);
+            this.label2.TabIndex = 13;
             // 
             // ElectricPriceTable
             // 
@@ -236,6 +255,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxKvalue;
         private System.Windows.Forms.Button btnSub;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label2;
 
     }
 }
