@@ -11,6 +11,8 @@ using System.Web.UI.WebControls;
 using EnerefsysBLL.EntityData;
 using EnerefsysBLL.Manager;
 using System.Data.OleDb;
+using DataContext;
+using EnerefsysDAL.Model;
 
 
 
@@ -48,6 +50,11 @@ namespace Enerefsys
         //    dataGridView1.DataSource = RunManager.getAllStandardLoads();
         //}
 
+
+        BackgroundWorker workerImport = new BackgroundWorker();
+
+        string filePath = string.Empty;
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -57,16 +64,84 @@ namespace Enerefsys
                 return;
             }
 
-            string filePath = openFileDialog.FileName;
+            filePath = openFileDialog.FileName;
             DataTable dt = new DataTable();
             dt = CallExcel_UnitModel(filePath);
             RunManager.deleteAll();
-            if (RunManager.InsertFromExcel(dt) > 1)
-            {
-                MessageBox.Show("数据导入成功!");
-                dataGridView1.DataSource = RunManager.getAllStandardLoads();
-            }
+
+
+            progressBar1.Maximum = dt.Rows.Count;
+
+            workerImport.WorkerReportsProgress = true;
+
+            //正式做事情的地方
+            workerImport.DoWork += new DoWorkEventHandler(workerImport_DoWork);
+            //任务完称时要做的，比如提示等等
+            workerImport.ProgressChanged += new ProgressChangedEventHandler(workerImport_ProgressChanged);
+
+            workerImport.RunWorkerCompleted += new RunWorkerCompletedEventHandler(workerImport_RunWorkerCompleted);
+
+            workerImport.RunWorkerAsync();
+
+
+            //if (RunManager.InsertFromExcel(dt) > 1)
+            //{
+            //    MessageBox.Show("数据导入成功!");
+            //    dataGridView1.DataSource = RunManager.getAllStandardLoads();
+            //}
         }
+
+        void workerImport_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("数据导入成功!");
+            dataGridView1.DataSource = RunManager.getAllStandardLoads();
+        }
+
+        void workerImport_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.progressBar1.Value = e.ProgressPercentage;
+            //将异步任务进度的百分比赋给进度条
+        }
+
+        void workerImport_DoWork(object sender, DoWorkEventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = CallExcel_UnitModel(filePath);
+            using (var context = new EnerefsysContext())
+            {
+                try
+                {
+                    int i=0;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        var standardLoad = new StandardLoad
+                        {
+                            Day = Convert.ToInt32(dataRow["Day"].ToString()),
+                            Month = Convert.ToInt32(dataRow["Month"].ToString()),
+                            Hour = Convert.ToInt32(dataRow["Hour"].ToString()),
+                            DryTemperature = Convert.ToDouble(dataRow["DryTemperature"].ToString()),
+                            WetTemperature = Convert.ToDouble(dataRow["WetTemperature"].ToString()),
+                            Load = Convert.ToDouble(dataRow["Load"].ToString()),
+                            EnterTemperature = Convert.ToDouble(dataRow["EnterTemperature"].ToString()),
+                            ElectronicPrice = Convert.ToDouble(dataRow["ElectronicPrice"].ToString())
+                        };
+                        context.StandardLoads.Add(standardLoad);
+                        i++;
+                        workerImport.ReportProgress(i);
+
+                        label2.Text = i.ToString() + "/" + dt.Rows.Count;
+
+                    }
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    return ;
+                }
+            }
+         
+        }
+   
         private DataTable CallExcel_UnitModel(string filepath)
         {
             try

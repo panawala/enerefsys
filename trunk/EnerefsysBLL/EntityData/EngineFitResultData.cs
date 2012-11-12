@@ -226,19 +226,45 @@ namespace EnerefsysBLL.EntityData
             {
                 if (bound)
                 {
-                    // 得到大于指定温度的最低温度
-                    double Temperature = (from c in db.EngineFitResults
-                                          where c.Temperature > temperature && c.Type == type
-                                          select c.Temperature).Min();
+                    double Temperature = 0d;
+                    var minTemp = from c in db.EngineFitResults
+                                  where c.Temperature > temperature && c.Type == type
+                                  select c.Temperature;
+                    if (minTemp != null && minTemp.Count() != 0)
+                    {
+                        // 得到大于指定温度的最低温度
+                        Temperature = minTemp.Min();
+                    }
+                    //如果数据库中不存在比当前温度更低的温度，则取其中最大的温度
+                    else
+                    {
+                        Temperature = (from c in db.EngineFitResults
+                                  where c.Type == type
+                                  select c.Temperature).Max();
+                    }
+
                     return Convert.ToInt32(Temperature);
                 }
                 else
-                {
-                    // 得到小于指定温度的最高温度
-                    double Temperature = (from c in db.EngineFitResults
-                                          where c.Temperature < temperature && c.Type == type
-                                          select c.Temperature)
-                                          .Max();
+                {                 
+                    double Temperature = 0d;
+
+                    var maxTemp = from c in db.EngineFitResults
+                                  where c.Temperature < temperature && c.Type == type
+                                  select c.Temperature;
+                    if (maxTemp != null && maxTemp.Count() != 0)
+                    {
+                        // 得到小于指定温度的最高温度
+                        Temperature = maxTemp.Max();
+                    }
+                    //如果数据库中不存在比当前温度更低的温度，则取其中的最低温度。
+                    else
+                    {
+                        Temperature = (from c in db.EngineFitResults
+                                       where c.Type == type
+                                       select c.Temperature).Min();
+                    }
+
                     return Convert.ToInt32(Temperature);
                 }
 

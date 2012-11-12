@@ -149,6 +149,8 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label60 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnNormalShow = new System.Windows.Forms.Button();
             this.btnNormalCal = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -1487,6 +1489,8 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.label60);
+            this.tabPage8.Controls.Add(this.progressBar1);
             this.tabPage8.Controls.Add(this.btnNormalShow);
             this.tabPage8.Controls.Add(this.btnNormalCal);
             this.tabPage8.Controls.Add(this.button7);
@@ -1500,9 +1504,24 @@
             this.tabPage8.Text = "常规运行结果";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(777, 34);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(0, 12);
+            this.label60.TabIndex = 10;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(839, 29);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(379, 23);
+            this.progressBar1.TabIndex = 9;
+            // 
             // btnNormalShow
             // 
-            this.btnNormalShow.Location = new System.Drawing.Point(710, 29);
+            this.btnNormalShow.Location = new System.Drawing.Point(606, 29);
             this.btnNormalShow.Name = "btnNormalShow";
             this.btnNormalShow.Size = new System.Drawing.Size(75, 23);
             this.btnNormalShow.TabIndex = 8;
@@ -1512,7 +1531,7 @@
             // 
             // btnNormalCal
             // 
-            this.btnNormalCal.Location = new System.Drawing.Point(604, 29);
+            this.btnNormalCal.Location = new System.Drawing.Point(696, 29);
             this.btnNormalCal.Name = "btnNormalCal";
             this.btnNormalCal.Size = new System.Drawing.Size(75, 23);
             this.btnNormalCal.TabIndex = 7;
@@ -1931,7 +1950,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(161, 21);
+            this.label52.Location = new System.Drawing.Point(196, 22);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(17, 12);
             this.label52.TabIndex = 112;
@@ -1940,7 +1959,7 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(80, 22);
+            this.label51.Location = new System.Drawing.Point(128, 23);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(17, 12);
             this.label51.TabIndex = 111;
@@ -1949,7 +1968,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(18, 23);
+            this.label41.Location = new System.Drawing.Point(57, 22);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(17, 12);
             this.label41.TabIndex = 110;
@@ -1984,7 +2003,7 @@
             "21",
             "22",
             "23"});
-            this.comboBox_Hour.Location = new System.Drawing.Point(184, 18);
+            this.comboBox_Hour.Location = new System.Drawing.Point(151, 20);
             this.comboBox_Hour.Name = "comboBox_Hour";
             this.comboBox_Hour.Size = new System.Drawing.Size(39, 20);
             this.comboBox_Hour.TabIndex = 109;
@@ -2025,7 +2044,7 @@
             "29",
             "30",
             "31"});
-            this.comboBox_Day.Location = new System.Drawing.Point(103, 18);
+            this.comboBox_Day.Location = new System.Drawing.Point(80, 21);
             this.comboBox_Day.Name = "comboBox_Day";
             this.comboBox_Day.Size = new System.Drawing.Size(42, 20);
             this.comboBox_Day.TabIndex = 108;
@@ -2047,7 +2066,7 @@
             "10",
             "11",
             "12"});
-            this.comboBox_Month.Location = new System.Drawing.Point(41, 18);
+            this.comboBox_Month.Location = new System.Drawing.Point(18, 21);
             this.comboBox_Month.Name = "comboBox_Month";
             this.comboBox_Month.Size = new System.Drawing.Size(33, 20);
             this.comboBox_Month.TabIndex = 107;
@@ -2684,5 +2703,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private Sunisoft.IrisSkin.SkinEngine skinEngine1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label60;
     }
 }
