@@ -213,16 +213,27 @@ namespace Enerefsys
         //动态显示冷冻机
         private void set_Freezer_Panel(List<SubFreezer> subFreezer_list)
         {
+            int i = 1;
             foreach (SubFreezer sub_freezer in subFreezer_list)
             {
                 SubFreezer temp_SubFreezer = (SubFreezer)sub_freezer;
                 freezer_Panel.Controls.Add(temp_SubFreezer.freazer);
+                temp_SubFreezer.type_box.Name = "type_box" + i;
                 freezer_Panel.Controls.Add(temp_SubFreezer.type_box);
+
+                temp_SubFreezer.cooling_comboBox.Name = "cooling_comboBox" + i;
                 freezer_Panel.Controls.Add(temp_SubFreezer.cooling_comboBox);
+
+                temp_SubFreezer.brand_comboBox.Name = "brand_comboBox" + i;
                 freezer_Panel.Controls.Add(temp_SubFreezer.brand_comboBox);
+
+                temp_SubFreezer.model_box.Name = "model_box" + i;
                 freezer_Panel.Controls.Add(temp_SubFreezer.model_box);
+
+                temp_SubFreezer.amount_textBox.Name = "amount_textbox" + i;
                 freezer_Panel.Controls.Add(temp_SubFreezer.amount_textBox);
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
+                i++;
             }
         }
         //清除panel中冷冻机组件
@@ -340,10 +351,15 @@ namespace Enerefsys
                 SubBoarder temp_SubBoarder = (SubBoarder)sub_boarder;
                 boarder_Panel.Controls.Add(temp_SubBoarder.boarder);
                 boarder_Panel.Controls.Add(temp_SubBoarder.addition);
+                temp_SubBoarder.type_box.Name = "board_type_box";
                 boarder_Panel.Controls.Add(temp_SubBoarder.type_box);
+                temp_SubBoarder.cooling_comboBox.Name = "board_comboBox";
                 boarder_Panel.Controls.Add(temp_SubBoarder.cooling_comboBox);
+                temp_SubBoarder.brand_comboBox.Name = "board_brand_comboBox";
                 boarder_Panel.Controls.Add(temp_SubBoarder.brand_comboBox);
+                temp_SubBoarder.model_box.Name = "board_model_box";
                 boarder_Panel.Controls.Add(temp_SubBoarder.model_box);
+                temp_SubBoarder.amount_textBox.Name = "board_amount_box";
                 boarder_Panel.Controls.Add(temp_SubBoarder.amount_textBox);
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
             }
@@ -603,11 +619,23 @@ namespace Enerefsys
                     waterPump_SubFreezer.freazerAndcooler.Text = "冷却水泵" + j;
                 }
                 tempPanel.Controls.Add(waterPump_SubFreezer.freazerAndcooler);
+
+                waterPump_SubFreezer.brand_comboBox.Name = "brand_comboBox" + j;
                 tempPanel.Controls.Add(waterPump_SubFreezer.brand_comboBox);
+
+                waterPump_SubFreezer.flow_textBox.Name = "flow_comboBox" + j;
                 tempPanel.Controls.Add(waterPump_SubFreezer.flow_textBox);
+
+                waterPump_SubFreezer.lift_textBox.Name = "lift_comboBox" + j;
                 tempPanel.Controls.Add(waterPump_SubFreezer.lift_textBox);
+
+                waterPump_SubFreezer.power_textBox.Name = "power_comboBox" + j;
                 tempPanel.Controls.Add(waterPump_SubFreezer.power_textBox);
+
+                waterPump_SubFreezer.model_textBox.Name = "model_comboBox" + j;
                 tempPanel.Controls.Add(waterPump_SubFreezer.model_textBox);
+
+                waterPump_SubFreezer.amount_textBox.Name = "type_comboBox" + j;
                 tempPanel.Controls.Add(waterPump_SubFreezer.amount_textBox);
 
                 //if(j<4&&tempPanel.Name.Equals("freezingPanel"))
@@ -629,20 +657,32 @@ namespace Enerefsys
             foreach (WaterFreezer sub_freezer in subFreezer_list)
             {
                 j++;
-                WaterFreezer temp_SubFreezer = (WaterFreezer)sub_freezer;
+                WaterFreezer waterPump_SubFreezer = (WaterFreezer)sub_freezer;
                 if (tempPanel.Name.Equals("freezingPanel"))
-                    temp_SubFreezer.freazerAndcooler.Text = "冷冻水泵" + j;
+                    waterPump_SubFreezer.freazerAndcooler.Text = "冷冻水泵" + j;
                 else
                 {
-                    temp_SubFreezer.freazerAndcooler.Text = "冷却水泵" + j;
+                    waterPump_SubFreezer.freazerAndcooler.Text = "冷却水泵" + j;
                 }
-                tempPanel.Controls.Add(temp_SubFreezer.freazerAndcooler);
-                tempPanel.Controls.Add(temp_SubFreezer.brand_comboBox);
-                tempPanel.Controls.Add(temp_SubFreezer.flow_textBox);
-                tempPanel.Controls.Add(temp_SubFreezer.lift_textBox);
-                tempPanel.Controls.Add(temp_SubFreezer.power_textBox);
-                tempPanel.Controls.Add(temp_SubFreezer.model_textBox);
-                tempPanel.Controls.Add(temp_SubFreezer.amount_textBox);
+                tempPanel.Controls.Add(waterPump_SubFreezer.freazerAndcooler);
+
+                waterPump_SubFreezer.brand_comboBox.Name = "brand_comboBox" + j;
+                tempPanel.Controls.Add(waterPump_SubFreezer.brand_comboBox);
+
+                waterPump_SubFreezer.flow_textBox.Name = "flow_comboBox" + j;
+                tempPanel.Controls.Add(waterPump_SubFreezer.flow_textBox);
+
+                waterPump_SubFreezer.lift_textBox.Name = "lift_comboBox" + j;
+                tempPanel.Controls.Add(waterPump_SubFreezer.lift_textBox);
+
+                waterPump_SubFreezer.power_textBox.Name = "power_comboBox" + j;
+                tempPanel.Controls.Add(waterPump_SubFreezer.power_textBox);
+
+                waterPump_SubFreezer.model_textBox.Name = "model_comboBox" + j;
+                tempPanel.Controls.Add(waterPump_SubFreezer.model_textBox);
+
+                waterPump_SubFreezer.amount_textBox.Name = "type_comboBox" + j;
+                tempPanel.Controls.Add(waterPump_SubFreezer.amount_textBox);
 
                 //if (j < 4 && tempPanel.Name.Equals("freezingPanel"))
                 //    tempPanel.Controls.Add(temp_SubFreezer.performance_data_button);
@@ -1034,6 +1074,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
+                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
             else
             {
@@ -1054,6 +1096,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
+                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
             
         }
@@ -1153,6 +1197,10 @@ namespace Enerefsys
         /// 板换数量
         /// </summary>
         private int BoardCount = 0;
+        double threeOption = 0d;
+        double a = 0d;
+        double b = 0d;
+        double c = 0d;
         //在一定温度下得到一个主机组合的最低能耗，及对应的流量
         private SoluteResult getMinByConsist(List<MachineEntity> mes, double temperature, double load)
         {
@@ -1160,10 +1208,10 @@ namespace Enerefsys
             //主机功率的计算公式
             /***********************************************************************************/
            
-                double threeOption = 0d;
-                double a = 0d;
-                double b = 0d;
-                double c = 0d;
+                threeOption = 0d;
+                a = 0d;
+                b = 0d;
+                c = 0d;
                 int engineCount = 0;
 
                 double tempthreeoption = 0d;
@@ -1572,6 +1620,7 @@ namespace Enerefsys
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 openProject(openFileDialog.FileName);
+                isFlag = true;
             }
         }
 
@@ -1637,6 +1686,7 @@ namespace Enerefsys
                 type_box.Name = "freezer_type_box" + i;
                 type_box.Items.Add("CSD");
                 type_box.Items.Add("VSD");
+                type_box.SelectedItem = "VSD";
                 type_box.DropDownStyle = ComboBoxStyle.DropDownList;
                 cooling_comboBox.Name = "freezer_cooling_comboBox" + i;
                 brand_comboBox.Name = "freezer_brand_comboBox" + i;
@@ -2135,7 +2185,7 @@ namespace Enerefsys
                 tbx_T2.Visible = false;
             }
 
-            void type_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+            public void type_comboBox_SelectedIndexChanged(object sender, EventArgs e)
             {
                 if (type_comboBox.SelectedIndex == 0)
                 {
@@ -2270,6 +2320,8 @@ namespace Enerefsys
             }
         }
 
+        
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -2344,6 +2396,13 @@ namespace Enerefsys
             /**********************************************************************************************/
             XmlHelper.Insert(xml, "/Project", "FreezeConfiguration", "", "");
             XmlHelper.Insert(xml, "/Project/FreezeConfiguration", "FreezerCount", "", freezerNum.Text);
+            //此处如果板换点过，设置为1，未点设置为0
+            if (checkBoxBoard.Checked)
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration", "BoardCount", "", "1");
+            else
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration", "BoardCount", "", "0");
+
+
             //冷冻机动态获取控件，已经成功
             for (int i = 0; i < Convert.ToInt32(freezerNum.Text); i++)
             {
@@ -2360,13 +2419,33 @@ namespace Enerefsys
                 string strModel_box = "model_box" + (i + 1);
                 TextBox temp_model_box = (TextBox)GetControl(strModel_box, freezer_Panel);
                 XmlHelper.Insert(xml, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]", "Model", "", temp_model_box.Text);
-                string strIs_Frequency_Conversion_checkBox = "is_Frequency_Conversion_checkBox" + (i + 1);
-                CheckBox temp_is_Frequency_Conversion_checkBox = (CheckBox)GetControl(strIs_Frequency_Conversion_checkBox, freezer_Panel);
+                string strIs_Frequency_Conversion_checkBox = "amount_textbox" + (i + 1);
+                TextBox temp_is_Frequency_Conversion_checkBox = (TextBox)GetControl(strIs_Frequency_Conversion_checkBox, freezer_Panel);
                 XmlHelper.Insert(xml, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]", "Frequency", "", temp_is_Frequency_Conversion_checkBox.Text);
                 string strPerformance_data_box = "performance_data_box" + (i + 1);
                 //ComboBox temp_performance_data_box = (ComboBox)GetControl(strPerformance_data_box, freezer_Panel);
                 //MessageBox.Show(temp_performance_data_box.Name);
             }
+            if (checkBoxBoard.Checked)
+            {
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration", "Board", "", "");
+                ComboBox temp_type_box = (ComboBox)GetControl("board_type_box", boarder_Panel);
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration/Board", "BoardTemperature", "", temp_type_box.Text);
+
+                TextBox temp_Cooling_comboBox = (TextBox)GetControl("board_comboBox", boarder_Panel);
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration/Board", "BoardPower", "", temp_Cooling_comboBox.Text);
+
+                ComboBox brand_comboBox = (ComboBox)GetControl("board_brand_comboBox", boarder_Panel);
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration/Board", "BoardBrand", "", brand_comboBox.Text);
+
+                TextBox temp_model_box = (TextBox)GetControl("board_model_box", boarder_Panel);
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration/Board", "BoardModel", "", temp_model_box.Text);
+
+                TextBox temp_is_Frequency_Conversion_checkBox = (TextBox)GetControl("board_amount_box", boarder_Panel);
+                XmlHelper.Insert(xml, "/Project/FreezeConfiguration/Board", "BoardNo", "", temp_is_Frequency_Conversion_checkBox.Text);
+                
+            }
+
             /*XmlHelper.Insert(xml, "/Project", "FreezeConfiguration", "", "");
             for (int i = 0; i < Convert.ToInt32(freezerNum.Text); i++)
             {
@@ -2395,30 +2474,26 @@ namespace Enerefsys
 
 
                 string strflow_comboBox = "flow_comboBox" + (i + 1);
-                ComboBox temp_flow_comboBox = (ComboBox)GetControl(strflow_comboBox, freezingPanel);
+                TextBox temp_flow_comboBox = (TextBox)GetControl(strflow_comboBox, freezingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Flow", "", temp_flow_comboBox.Text);
 
                 string strlift_comboBox = "lift_comboBox" + (i + 1);
-                ComboBox temp_lift_comboBox = (ComboBox)GetControl(strlift_comboBox, freezingPanel);
+                TextBox temp_lift_comboBox = (TextBox)GetControl(strlift_comboBox, freezingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Distance", "", temp_lift_comboBox.Text);
 
                 string strpower_comboBox = "power_comboBox" + (i + 1);
-                ComboBox temp_power_comboBox = (ComboBox)GetControl(strpower_comboBox, freezingPanel);
+                TextBox temp_power_comboBox = (TextBox)GetControl(strpower_comboBox, freezingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Power", "", temp_power_comboBox.Text);
 
                 string strmodel_comboBox = "model_comboBox" + (i + 1);
-                ComboBox temp_model_comboBox = (ComboBox)GetControl(strmodel_comboBox, freezingPanel);
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Model", "", temp_model_comboBox.Text);
+                TextBox temp_model_comboBox = (TextBox)GetControl(strmodel_comboBox, freezingPanel);
+                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Type", "", temp_model_comboBox.Text);
 
 
                 string strtype_comboBox = "type_comboBox" + (i + 1);
-                ComboBox temp_type_comboBox = (ComboBox)GetControl(strtype_comboBox, freezingPanel);
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Type", "", temp_type_comboBox.Text);
+                TextBox temp_type_comboBox = (TextBox)GetControl(strtype_comboBox, freezingPanel);
+                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Count", "", temp_type_comboBox.Text);
 
-
-                string stris_Frequency_Conversion_checkBox = "is_Frequency_Conversion_checkBox" + (i + 1);
-                CheckBox temp_is_Frequency_Conversion_checkBox = (CheckBox)GetControl(stris_Frequency_Conversion_checkBox, freezingPanel);
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Frequency", "", temp_brand_comboBox.Text);
             }
 
             for (int i = 0; i < Convert.ToInt32(coolingNum.Text); i++)
@@ -2430,64 +2505,74 @@ namespace Enerefsys
 
 
                 string strflow_comboBox = "flow_comboBox" + (i + 1);
-                ComboBox temp_flow_comboBox = (ComboBox)GetControl(strflow_comboBox, coolingPanel);
+                TextBox temp_flow_comboBox = (TextBox)GetControl(strflow_comboBox, coolingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Flow", "", temp_flow_comboBox.Text);
 
                 string strlift_comboBox = "lift_comboBox" + (i + 1);
-                ComboBox temp_lift_comboBox = (ComboBox)GetControl(strlift_comboBox, coolingPanel);
+                TextBox temp_lift_comboBox = (TextBox)GetControl(strlift_comboBox, coolingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Distance", "", temp_lift_comboBox.Text);
 
                 string strpower_comboBox = "power_comboBox" + (i + 1);
-                ComboBox temp_power_comboBox = (ComboBox)GetControl(strpower_comboBox, coolingPanel);
+                TextBox temp_power_comboBox = (TextBox)GetControl(strpower_comboBox, coolingPanel);
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Power", "", temp_power_comboBox.Text);
 
                 string strmodel_comboBox = "model_comboBox" + (i + 1);
-                ComboBox temp_model_comboBox = (ComboBox)GetControl(strmodel_comboBox, coolingPanel);
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Model", "", temp_model_comboBox.Text);
+                TextBox temp_model_comboBox = (TextBox)GetControl(strmodel_comboBox, coolingPanel);
+                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Type", "", temp_model_comboBox.Text);
 
 
                 string strtype_comboBox = "type_comboBox" + (i + 1);
-                ComboBox temp_type_comboBox = (ComboBox)GetControl(strtype_comboBox, coolingPanel);
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Type", "", temp_type_comboBox.Text);
-
-
-                string stris_Frequency_Conversion_checkBox = "is_Frequency_Conversion_checkBox" + (i + 1);
-                CheckBox temp_is_Frequency_Conversion_checkBox = (CheckBox)GetControl(stris_Frequency_Conversion_checkBox, coolingPanel);
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Frequency", "", temp_brand_comboBox.Text);
+                TextBox temp_type_comboBox = (TextBox)GetControl(strtype_comboBox, coolingPanel);
+                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Count", "", temp_type_comboBox.Text);
             }
 
-            /*XmlHelper.Insert(xml, "/Project", "PumpConfiguration", "", "");
-            XmlHelper.Insert(xml, "/Project/PumpConfiguration", "FreezePumpCount", "", Convert.ToInt32(freezingNum.Text));
-            XmlHelper.Insert(xml, "/Project/PumpConfiguration", "CoolingPumpCount", "", Convert.ToInt32(coolingNum.Text));
-            for (int i = 0; i < Convert.ToInt32(freezingNum.Text); i++)
-            {
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration", "FreezePump", "id", i.ToString());
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Brand", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Flow", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Distance", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Power", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Model", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Type", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]", "Frequency", "", "this is type");
-            }
-            for (int i = 0; i < Convert.ToInt32(coolingNum.Text); i++)
-            {
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration", "CoolingPump", "id", i.ToString());
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Brand", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Flow", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Distance", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Power", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Model", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Type", "", "this is type");
-                XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Frequency", "", "this is type");
-            }*/
+          
 
             /**********************************************************************************************/
             //插入冷却配置
             /**********************************************************************************************/
             XmlHelper.Insert(xml, "/Project", "CoolingConfiguration", "", "");
             XmlHelper.Insert(xml, "/Project/CoolingConfiguration", "CoolingTower", "", "");
-            //XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Flow", "", coolTower_tb1.Text);
+
+
+            TextBox deng_brand_textbox = (TextBox)GetControl("deng_brand_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Brand", "", deng_brand_textbox.Text);
+
+            ComboBox deng_type_combox = (ComboBox)GetControl("deng_type_combobox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Type", "", deng_type_combox.Text);
+
+            TextBox deng_throughput_textbox = (TextBox)GetControl("deng_throughput_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Flow", "", deng_throughput_textbox.Text);
+
+            TextBox deng_temperature_textbox = (TextBox)GetControl("deng_temperature_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Temperature", "", deng_temperature_textbox.Text);
+
+            TextBox deng_power_textbox = (TextBox)GetControl("deng_power_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Power", "", deng_power_textbox.Text);
+
+            TextBox deng_amount_textbox = (TextBox)GetControl("deng_amount_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Count", "", deng_amount_textbox.Text);
+
+
+            TextBox deng_t1_textbox = (TextBox)GetControl("deng_t1_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "TF", "", deng_t1_textbox.Text);
+
+            TextBox deng_t2_textbox = (TextBox)GetControl("deng_t2_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "TS", "", deng_t2_textbox.Text);
+
+
+            TextBox deng_tfs_kw_textbox = (TextBox)GetControl("deng_tfs_kw_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "PFS", "", deng_tfs_kw_textbox.Text);
+
+            TextBox deng_ts_textbox = (TextBox)GetControl("deng_ts_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "PS", "", deng_ts_textbox.Text);
+
+            TextBox deng_tfs_textbox = (TextBox)GetControl("deng_tfs_textbox", coolingtowerpanel);
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "PowerTFS", "", deng_tfs_textbox.Text);
+
+            XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "PowerTS", "", deng_ts_textbox.Text);
+            
+
             //XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Frequency", "", coolTower_cb.Text);
 
             /**********************************************************************************************/
@@ -2559,27 +2644,54 @@ namespace Enerefsys
             freezerNum.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezerCount", "");
             freezerNum_TextChanged(null, null);
 
+            string boardCount = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezerCount", "");
+            if (boardCount == "1")
+                checkBoxBoard.Checked = true;
+            else
+                checkBoxBoard.Checked = false;
+            checkBoxBoard_CheckedChanged(null, null);
+
             for (int i = 0; i < Convert.ToInt32(freezerNum.Text); i++)
             {
                 string strTypeBox = "type_box" + (i + 1);
                 ComboBox temp_type_box = (ComboBox)GetControl(strTypeBox, freezer_Panel);
                 temp_type_box.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Type", "");
+                
                 string strCooling_comboBox = "cooling_comboBox" + (i + 1);
                 TextBox temp_Cooling_comboBox = (TextBox)GetControl(strCooling_comboBox, freezer_Panel);
                 temp_Cooling_comboBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/FreezePower", "");
+                
                 string strBrand_comboBox = "brand_comboBox" + (i + 1);
                 ComboBox brand_comboBox = (ComboBox)GetControl(strBrand_comboBox, freezer_Panel);
                 brand_comboBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Brand", "");
+                
                 string strModel_box = "model_box" + (i + 1);
                 TextBox temp_model_box = (TextBox)GetControl(strModel_box, freezer_Panel);
                 temp_model_box.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Model", "");
-                string strIs_Frequency_Conversion_checkBox = "is_Frequency_Conversion_checkBox" + (i + 1);
-                CheckBox temp_is_Frequency_Conversion_checkBox = (CheckBox)GetControl(strIs_Frequency_Conversion_checkBox, freezer_Panel);
-                temp_is_Frequency_Conversion_checkBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Frequency", "");
-                string strPerformance_data_box = "performance_data_box" + (i + 1);
-                ComboBox temp_performance_data_box = (ComboBox)GetControl(strPerformance_data_box, freezer_Panel); ;
+                
+                string strIs_Frequency_Conversion_checkBox = "amount_textbox" + (i + 1);
+                TextBox temp_is_Frequency_Conversion_checkBox = (TextBox)GetControl(strIs_Frequency_Conversion_checkBox, freezer_Panel);
+                temp_is_Frequency_Conversion_checkBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Frequency", "");  
             }
 
+            if (checkBoxBoard.Checked)
+            {
+                XmlHelper.Read(path, "/Project/FreezeConfiguration/Board", "");
+                ComboBox temp_type_box = (ComboBox)GetControl("board_type_box", boarder_Panel);
+                temp_type_box.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardTemperature", "");
+
+                TextBox temp_Cooling_comboBox = (TextBox)GetControl("board_comboBox", boarder_Panel);
+                temp_Cooling_comboBox.Text=XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardPower", "");
+
+                ComboBox brand_comboBox = (ComboBox)GetControl("board_brand_comboBox", boarder_Panel);
+                brand_comboBox.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardBrand", "");
+
+                TextBox temp_model_box = (TextBox)GetControl("board_model_box", boarder_Panel);
+                temp_model_box.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardModel", "");
+
+                TextBox temp_is_Frequency_Conversion_checkBox = (TextBox)GetControl("board_amount_box", boarder_Panel);
+                temp_is_Frequency_Conversion_checkBox.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardNo", "");
+            }
 
 
             freezingNum.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePumpCount", "");
@@ -2594,71 +2706,98 @@ namespace Enerefsys
 
 
                 string strflow_comboBox = "flow_comboBox" + (i + 1);
-                ComboBox temp_flow_comboBox = (ComboBox)GetControl(strflow_comboBox, freezingPanel);
+                TextBox temp_flow_comboBox = (TextBox)GetControl(strflow_comboBox, freezingPanel);
                 temp_flow_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Flow", "");
 
                 string strlift_comboBox = "lift_comboBox" + (i + 1);
-                ComboBox temp_lift_comboBox = (ComboBox)GetControl(strlift_comboBox, freezingPanel);
+                TextBox temp_lift_comboBox = (TextBox)GetControl(strlift_comboBox, freezingPanel);
                 temp_lift_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Distance", "");
 
                 string strpower_comboBox = "power_comboBox" + (i + 1);
-                ComboBox temp_power_comboBox = (ComboBox)GetControl(strpower_comboBox, freezingPanel);
+                TextBox temp_power_comboBox = (TextBox)GetControl(strpower_comboBox, freezingPanel);
                 temp_power_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Power", "");
 
                 string strmodel_comboBox = "model_comboBox" + (i + 1);
-                ComboBox temp_model_comboBox = (ComboBox)GetControl(strmodel_comboBox, freezingPanel);
-                temp_model_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Model", "");
+                TextBox temp_model_comboBox = (TextBox)GetControl(strmodel_comboBox, freezingPanel);
+                temp_model_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Type", "");
 
 
                 string strtype_comboBox = "type_comboBox" + (i + 1);
-                ComboBox temp_type_comboBox = (ComboBox)GetControl(strtype_comboBox, freezingPanel);
-                temp_type_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Type", "");
+                TextBox temp_type_comboBox = (TextBox)GetControl(strtype_comboBox, freezingPanel);
+                temp_type_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Count", "");
 
-
-                string stris_Frequency_Conversion_checkBox = "is_Frequency_Conversion_checkBox" + (i + 1);
-                CheckBox temp_is_Frequency_Conversion_checkBox = (CheckBox)GetControl(stris_Frequency_Conversion_checkBox, freezingPanel);
-                temp_brand_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Frequency", "");
             }
             for (int i = 0; i < Convert.ToInt32(coolingNum.Text); i++)
             {
                 string strbrand_comboBox = "brand_comboBox" + (i + 1);
                 ComboBox temp_brand_comboBox = (ComboBox)GetControl(strbrand_comboBox, coolingPanel);
-                temp_brand_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Brand", "");
+                temp_brand_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]/Brand", "");
 
 
                 string strflow_comboBox = "flow_comboBox" + (i + 1);
-                ComboBox temp_flow_comboBox = (ComboBox)GetControl(strflow_comboBox, coolingPanel);
-                temp_flow_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Flow", "");
+                TextBox temp_flow_comboBox = (TextBox)GetControl(strflow_comboBox, coolingPanel);
+                temp_flow_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]/Flow", "");
 
                 string strlift_comboBox = "lift_comboBox" + (i + 1);
-                ComboBox temp_lift_comboBox = (ComboBox)GetControl(strlift_comboBox, coolingPanel);
-                temp_lift_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Distance", "");
+                TextBox temp_lift_comboBox = (TextBox)GetControl(strlift_comboBox, coolingPanel);
+                temp_lift_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]/Distance", "");
 
                 string strpower_comboBox = "power_comboBox" + (i + 1);
-                ComboBox temp_power_comboBox = (ComboBox)GetControl(strpower_comboBox, coolingPanel);
-                temp_power_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Power", "");
+                TextBox temp_power_comboBox = (TextBox)GetControl(strpower_comboBox, coolingPanel);
+                temp_power_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]/Power", "");
 
                 string strmodel_comboBox = "model_comboBox" + (i + 1);
-                ComboBox temp_model_comboBox = (ComboBox)GetControl(strmodel_comboBox, coolingPanel);
-                temp_model_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Model", "");
+                TextBox temp_model_comboBox = (TextBox)GetControl(strmodel_comboBox, coolingPanel);
+                temp_model_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]/Type", "");
 
 
                 string strtype_comboBox = "type_comboBox" + (i + 1);
-                ComboBox temp_type_comboBox = (ComboBox)GetControl(strtype_comboBox, coolingPanel);
-                temp_type_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Type", "");
+                TextBox temp_type_comboBox = (TextBox)GetControl(strtype_comboBox, coolingPanel);
+                temp_type_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]/Count", "");
 
 
-                string stris_Frequency_Conversion_checkBox = "is_Frequency_Conversion_checkBox" + (i + 1);
-                CheckBox temp_is_Frequency_Conversion_checkBox = (CheckBox)GetControl(stris_Frequency_Conversion_checkBox, coolingPanel);
-                temp_brand_comboBox.Text = XmlHelper.Read(path, "/Project/PumpConfiguration/FreezePump[@id=" + i.ToString() + "]/Frequency", "");
             }
 
 
             /**********************************************************************************************/
             //插入冷却配置
             /**********************************************************************************************/
-            //coolTower_tb1.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Flow", "");
-            //coolTower_cb.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Frequency", "");
+            tabPage4_Enter(null, null);
+            
+            ComboBox deng_type_combox = (ComboBox)GetControl("deng_type_combobox", coolingtowerpanel);
+            deng_type_combox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Type", "");
+            temp_CoolingTower.type_comboBox_SelectedIndexChanged(null, null);
+
+            TextBox deng_brand_textbox = (TextBox)GetControl("deng_brand_textbox", coolingtowerpanel);
+            deng_brand_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Brand", "");
+
+            TextBox deng_throughput_textbox = (TextBox)GetControl("deng_throughput_textbox", coolingtowerpanel);
+            deng_throughput_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Flow", "");
+            TextBox deng_temperature_textbox = (TextBox)GetControl("deng_temperature_textbox", coolingtowerpanel);
+            deng_temperature_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Temperature", "");
+
+            TextBox deng_power_textbox = (TextBox)GetControl("deng_power_textbox", coolingtowerpanel);
+            deng_power_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Power", "");
+
+            TextBox deng_amount_textbox = (TextBox)GetControl("deng_amount_textbox", coolingtowerpanel);
+            deng_amount_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Count", "");
+
+            TextBox deng_t1_textbox = (TextBox)GetControl("deng_t1_textbox", coolingtowerpanel);
+            deng_t1_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/TF", "");
+
+            TextBox deng_t2_textbox = (TextBox)GetControl("deng_t2_textbox", coolingtowerpanel);
+            deng_t2_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/TS", "");
+
+            TextBox deng_tfs_kw_textbox = (TextBox)GetControl("deng_tfs_kw_textbox", coolingtowerpanel);
+            deng_tfs_kw_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/PFS", "");
+
+            TextBox deng_ts_textbox = (TextBox)GetControl("deng_ts_textbox", coolingtowerpanel);
+            deng_ts_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/PS", "");
+
+            TextBox deng_tfs_textbox = (TextBox)GetControl("deng_tfs_textbox", coolingtowerpanel);
+            deng_tfs_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/PowerTFS", "");
+            deng_tfs_textbox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/PowerTS", "");
+
 
             /**********************************************************************************************/
             //插入结果配置
@@ -2810,6 +2949,7 @@ namespace Enerefsys
             }
             catch (Exception ee)
             {
+                MessageBox.Show(ee.Message);
             }
 
         }
@@ -3178,27 +3318,32 @@ namespace Enerefsys
             }
         }
 
+        bool isFlag = false;
+
         private void tabPage4_Enter(object sender, EventArgs e)
         {
-            int coolingtowerCount = 0;
-            reponseCount += 1;
-            if (reponseCount == 1 || labelFlag == 1)
-                appear_Label(label_list);
-            labelFlag = 0;
-            clear_CoolingTowerPanel();
-            try
+            if (!isFlag)
             {
-                coolingtowerCount = 1;
-                labelFlag += 1;
-                conceal_Label(label_list);
-                create_CoolingTower_Num(coolingtowerCount);
-                set_CoolingTower_Panel(CoolingTower_list);
-            }
-            catch (Exception ex)
-            {
-                Console.Write("" + ex.Message);
-                MessageBox.Show("请输入正确的数据类型！");
-                return;
+                int coolingtowerCount = 0;
+                reponseCount += 1;
+                if (reponseCount == 1 || labelFlag == 1)
+                    appear_Label(label_list);
+                labelFlag = 0;
+                clear_CoolingTowerPanel();
+                try
+                {
+                    coolingtowerCount = 1;
+                    labelFlag += 1;
+                    conceal_Label(label_list);
+                    create_CoolingTower_Num(coolingtowerCount);
+                    set_CoolingTower_Panel(CoolingTower_list);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write("" + ex.Message);
+                    MessageBox.Show("请输入正确的数据类型！");
+                    return;
+                }
             }
         }
         private void clear_CoolingTowerPanel()
@@ -3214,19 +3359,36 @@ namespace Enerefsys
                 CoolingTower_list.Add(new CoolingTower(i));
             }
         }
+        CoolingTower temp_CoolingTower = new CoolingTower(1);
         //动态显示冷却塔
         private void set_CoolingTower_Panel(List<CoolingTower> CoolingTower_list)
         {
             foreach (CoolingTower myCoolingTower in CoolingTower_list)
             {
-                CoolingTower temp_CoolingTower = (CoolingTower)myCoolingTower;
+                //此处修改
+                temp_CoolingTower = (CoolingTower)myCoolingTower;
+
+                temp_CoolingTower.amount_textBox.Name = "deng_amount_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.amount_textBox);
+
+                temp_CoolingTower.brand_textBox.Name = "deng_brand_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.brand_textBox);
+
+                
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.LBCoolingTower);
+
+                temp_CoolingTower.power_textBox.Name = "deng_power_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.power_textBox);
+
+                temp_CoolingTower.temperature_textBox.Name = "deng_temperature_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.temperature_textBox);
+
+                temp_CoolingTower.throughput_textBox.Name = "deng_throughput_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.throughput_textBox);
+
+                temp_CoolingTower.type_comboBox.Name = "deng_type_combobox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.type_comboBox);
+
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.lb1);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.lb2);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.lb3);
@@ -3238,12 +3400,21 @@ namespace Enerefsys
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.lb_Unit_KW_B);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.lb_Unit_KW_C);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_HZ_A);
+
+                temp_CoolingTower.tbx_HZ_B.Name = "deng_tfs_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_HZ_B);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_HZ_C);
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_KW_A);
+
+                temp_CoolingTower.tbx_KW_B.Name = "deng_tfs_kw_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_KW_B);
+
+                temp_CoolingTower.tbx_KW_C.Name = "deng_ts_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_KW_C);
+
+                temp_CoolingTower.tbx_T1.Name = "deng_t1_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_T1);
+                temp_CoolingTower.tbx_T2.Name = "deng_t2_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.tbx_T2);
                 //freezer_Panel.Controls.Add(temp_SubFreezer.performance_data_box);
             }
