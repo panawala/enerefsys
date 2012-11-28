@@ -218,6 +218,7 @@
             this.帮助文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
+            this.label61 = new System.Windows.Forms.Label();
             this.rowUnitView2 = new MultiHeaderDataGridView.RowUnitView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -291,26 +292,33 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.ItemSize = new System.Drawing.Size(64, 80);
             this.tabControl1.Location = new System.Drawing.Point(5, 25);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1231, 651);
+            this.tabControl1.Size = new System.Drawing.Size(1231, 627);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
+            this.tabControl1.Resize += new System.EventHandler(this.tabControl1_Resize);
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 84);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage1.Size = new System.Drawing.Size(1223, 539);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "环境变量";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -321,7 +329,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(820, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 528);
+            this.panel1.Size = new System.Drawing.Size(331, 466);
             this.panel1.TabIndex = 12;
             // 
             // pictureBox2
@@ -331,7 +339,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(64, 255);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(251, 251);
+            this.pictureBox2.Size = new System.Drawing.Size(251, 189);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -343,7 +351,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(64, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 232);
+            this.pictureBox1.Size = new System.Drawing.Size(251, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -517,7 +525,7 @@
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label19);
-            this.groupBox6.Location = new System.Drawing.Point(111, 289);
+            this.groupBox6.Location = new System.Drawing.Point(111, 227);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(357, 271);
             this.groupBox6.TabIndex = 10;
@@ -602,7 +610,7 @@
             this.groupBox7.Controls.Add(this.label22);
             this.groupBox7.Location = new System.Drawing.Point(472, 390);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(344, 170);
+            this.groupBox7.Size = new System.Drawing.Size(344, 108);
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "室外环境";
@@ -885,6 +893,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage2.Controls.Add(this.checkBoxBoard);
             this.tabPage2.Controls.Add(this.boarder_Panel);
             this.tabPage2.Controls.Add(this.completed);
@@ -902,13 +911,12 @@
             this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.freezerNum);
             this.tabPage2.Controls.Add(this.freezerMachine_Label);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 84);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage2.Size = new System.Drawing.Size(1223, 539);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "冷冻机配置";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Text = "冷水机组";
             // 
             // checkBoxBoard
             // 
@@ -947,7 +955,7 @@
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Location = new System.Drawing.Point(938, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 586);
+            this.panel2.Size = new System.Drawing.Size(249, 1004);
             this.panel2.TabIndex = 72;
             // 
             // pictureBox4
@@ -955,9 +963,9 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 282);
+            this.pictureBox4.Location = new System.Drawing.Point(-18, 282);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(264, 288);
+            this.pictureBox4.Size = new System.Drawing.Size(264, 706);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
@@ -967,9 +975,9 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox3.Location = new System.Drawing.Point(-18, 14);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(264, 253);
+            this.pictureBox3.Size = new System.Drawing.Size(264, 671);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -1093,6 +1101,7 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.completedPump);
             this.tabPage3.Controls.Add(this.panel3);
@@ -1115,12 +1124,11 @@
             this.tabPage3.Controls.Add(this.label39);
             this.tabPage3.Controls.Add(this.coolingPanel);
             this.tabPage3.Controls.Add(this.freezingPanel);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 84);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage3.Size = new System.Drawing.Size(1223, 539);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "水泵配置";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Text = "水泵";
             // 
             // dataGridView2
             // 
@@ -1130,7 +1138,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(37, 365);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(801, 238);
+            this.dataGridView2.Size = new System.Drawing.Size(699, 238);
             this.dataGridView2.TabIndex = 105;
             // 
             // completedPump
@@ -1147,9 +1155,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.pictureBox6);
             this.panel3.Controls.Add(this.pictureBox5);
-            this.panel3.Location = new System.Drawing.Point(870, 35);
+            this.panel3.Location = new System.Drawing.Point(768, 35);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(348, 568);
+            this.panel3.Size = new System.Drawing.Size(348, 842);
             this.panel3.TabIndex = 103;
             // 
             // pictureBox6
@@ -1159,7 +1167,7 @@
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(23, 301);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(313, 254);
+            this.pictureBox6.Size = new System.Drawing.Size(313, 528);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
@@ -1171,7 +1179,7 @@
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(23, 10);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(313, 285);
+            this.pictureBox5.Size = new System.Drawing.Size(313, 559);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
@@ -1179,7 +1187,7 @@
             // progressBarPump
             // 
             this.progressBarPump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarPump.Location = new System.Drawing.Point(791, 3);
+            this.progressBarPump.Location = new System.Drawing.Point(689, 3);
             this.progressBarPump.Name = "progressBarPump";
             this.progressBarPump.Size = new System.Drawing.Size(339, 23);
             this.progressBarPump.TabIndex = 102;
@@ -1187,7 +1195,7 @@
             // btnLoadDataPump
             // 
             this.btnLoadDataPump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadDataPump.Location = new System.Drawing.Point(693, 3);
+            this.btnLoadDataPump.Location = new System.Drawing.Point(591, 3);
             this.btnLoadDataPump.Name = "btnLoadDataPump";
             this.btnLoadDataPump.Size = new System.Drawing.Size(92, 23);
             this.btnLoadDataPump.TabIndex = 101;
@@ -1198,7 +1206,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmit.Location = new System.Drawing.Point(763, 336);
+            this.btnSubmit.Location = new System.Drawing.Point(661, 336);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 100;
@@ -1339,7 +1347,7 @@
             this.coolingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.coolingPanel.Location = new System.Drawing.Point(37, 201);
             this.coolingPanel.Name = "coolingPanel";
-            this.coolingPanel.Size = new System.Drawing.Size(801, 129);
+            this.coolingPanel.Size = new System.Drawing.Size(699, 129);
             this.coolingPanel.TabIndex = 95;
             // 
             // freezingPanel
@@ -1350,11 +1358,12 @@
             this.freezingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.freezingPanel.Location = new System.Drawing.Point(37, 60);
             this.freezingPanel.Name = "freezingPanel";
-            this.freezingPanel.Size = new System.Drawing.Size(801, 129);
+            this.freezingPanel.Size = new System.Drawing.Size(699, 129);
             this.freezingPanel.TabIndex = 96;
             // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.label50);
@@ -1365,21 +1374,22 @@
             this.tabPage4.Controls.Add(this.label29);
             this.tabPage4.Controls.Add(this.coolingtowerpanel);
             this.tabPage4.Controls.Add(this.panel4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 84);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage4.Size = new System.Drawing.Size(1223, 539);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "冷却塔配置";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Text = "冷却塔";
             this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
             // 
             // dataGridView3
             // 
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(62, 300);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(792, 275);
+            this.dataGridView3.Size = new System.Drawing.Size(792, 226);
             this.dataGridView3.TabIndex = 113;
             // 
             // button8
@@ -1462,7 +1472,7 @@
             this.panel4.Controls.Add(this.pictureBox8);
             this.panel4.Location = new System.Drawing.Point(883, 50);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(279, 525);
+            this.panel4.Size = new System.Drawing.Size(279, 463);
             this.panel4.TabIndex = 104;
             // 
             // pictureBox7
@@ -1471,7 +1481,7 @@
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(13, 271);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(254, 223);
+            this.pictureBox7.Size = new System.Drawing.Size(254, 189);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 1;
             this.pictureBox7.TabStop = false;
@@ -1489,6 +1499,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage8.Controls.Add(this.label60);
             this.tabPage8.Controls.Add(this.progressBar1);
             this.tabPage8.Controls.Add(this.btnNormalShow);
@@ -1497,12 +1508,11 @@
             this.tabPage8.Controls.Add(this.button6);
             this.tabPage8.Controls.Add(this.label28);
             this.tabPage8.Controls.Add(this.rowUnitView2);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 84);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage8.Size = new System.Drawing.Size(1223, 539);
             this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "常规运行结果";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.tabPage8.Text = "常规";
             // 
             // label60
             // 
@@ -1541,7 +1551,8 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1104, 570);
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Location = new System.Drawing.Point(1104, 470);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(94, 23);
             this.button7.TabIndex = 6;
@@ -1551,7 +1562,8 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(35, 570);
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button6.Location = new System.Drawing.Point(35, 470);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 5;
@@ -1572,18 +1584,19 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.AutoScroll = true;
+            this.tabPage5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage5.Controls.Add(this.btnShowOptim);
             this.tabPage5.Controls.Add(this.pictureBox9);
             this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.button4);
             this.tabPage5.Controls.Add(this.label42);
             this.tabPage5.Controls.Add(this.rowUnitView1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 84);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage5.Size = new System.Drawing.Size(1223, 539);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "优化结果";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Text = "优化";
             // 
             // btnShowOptim
             // 
@@ -1597,8 +1610,9 @@
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(1019, 513);
+            this.pictureBox9.Location = new System.Drawing.Point(962, 419);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(199, 107);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1607,7 +1621,8 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(871, 575);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(799, 494);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(103, 23);
             this.button5.TabIndex = 5;
@@ -1616,7 +1631,8 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(20, 566);
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Location = new System.Drawing.Point(28, 494);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 23);
             this.button4.TabIndex = 4;
@@ -1637,6 +1653,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage6.Controls.Add(this.btnClear);
             this.tabPage6.Controls.Add(this.textBox_CoolingPower);
             this.tabPage6.Controls.Add(this.label46);
@@ -1651,12 +1668,11 @@
             this.tabPage6.Controls.Add(this.textBox_Temperature);
             this.tabPage6.Controls.Add(this.label44);
             this.tabPage6.Controls.Add(this.pictureBox_Result);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 84);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage6.Size = new System.Drawing.Size(1223, 539);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "计算结果";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Text = "计算";
             // 
             // btnClear
             // 
@@ -1729,6 +1745,8 @@
             // 
             // textBox_Message
             // 
+            this.textBox_Message.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox_Message.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox_Message.Font = new System.Drawing.Font("YouYuan", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_Message.ForeColor = System.Drawing.Color.Black;
@@ -1736,7 +1754,7 @@
             this.textBox_Message.Multiline = true;
             this.textBox_Message.Name = "textBox_Message";
             this.textBox_Message.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_Message.Size = new System.Drawing.Size(588, 488);
+            this.textBox_Message.Size = new System.Drawing.Size(588, 415);
             this.textBox_Message.TabIndex = 17;
             // 
             // btnShow
@@ -1775,7 +1793,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(87, 36);
+            this.label44.Location = new System.Drawing.Point(69, 37);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(77, 12);
             this.label44.TabIndex = 11;
@@ -1783,9 +1801,11 @@
             // 
             // pictureBox_Result
             // 
+            this.pictureBox_Result.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_Result.Location = new System.Drawing.Point(656, 105);
             this.pictureBox_Result.Name = "pictureBox_Result";
-            this.pictureBox_Result.Size = new System.Drawing.Size(546, 479);
+            this.pictureBox_Result.Size = new System.Drawing.Size(546, 415);
             this.pictureBox_Result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_Result.TabIndex = 15;
             this.pictureBox_Result.TabStop = false;
@@ -1793,6 +1813,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage7.Controls.Add(this.btnSearch);
             this.tabPage7.Controls.Add(this.textBox_TotalPrice);
             this.tabPage7.Controls.Add(this.label59);
@@ -1817,12 +1838,11 @@
             this.tabPage7.Controls.Add(this.btnCal);
             this.tabPage7.Controls.Add(this.btnViewReport);
             this.tabPage7.Controls.Add(this.reportViewer1);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 84);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1223, 625);
+            this.tabPage7.Size = new System.Drawing.Size(1223, 539);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "报表";
-            this.tabPage7.UseVisualStyleBackColor = true;
             this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
             // 
             // btnSearch
@@ -2098,7 +2118,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.Location = new System.Drawing.Point(3, 62);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1215, 560);
+            this.reportViewer1.Size = new System.Drawing.Size(1215, 474);
             this.reportViewer1.TabIndex = 0;
             // 
             // menuStrip1
@@ -2120,36 +2140,42 @@
             // 
             // 文件ToolStripMenuItem
             // 
+            this.文件ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.文件ToolStripMenuItem.Text = "文件";
             // 
             // 编辑ToolStripMenuItem
             // 
+            this.编辑ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
             this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.编辑ToolStripMenuItem.Text = "编辑";
             // 
             // 视图ToolStripMenuItem
             // 
+            this.视图ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.视图ToolStripMenuItem.Name = "视图ToolStripMenuItem";
             this.视图ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.视图ToolStripMenuItem.Text = "视图";
             // 
             // 表单ToolStripMenuItem
             // 
+            this.表单ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.表单ToolStripMenuItem.Name = "表单ToolStripMenuItem";
             this.表单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.表单ToolStripMenuItem.Text = "表单";
             // 
             // 工具ToolStripMenuItem
             // 
+            this.工具ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
             this.工具ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.工具ToolStripMenuItem.Text = "工具";
             // 
             // 窗口ToolStripMenuItem
             // 
+            this.窗口ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.窗口ToolStripMenuItem.Name = "窗口ToolStripMenuItem";
             this.窗口ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.窗口ToolStripMenuItem.Text = "窗口";
@@ -2161,6 +2187,7 @@
             this.openExistingProjectToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.projectToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F);
+            this.projectToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.projectToolStripMenuItem.Text = "项目";
@@ -2191,6 +2218,7 @@
             this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.出品介绍ToolStripMenuItem,
             this.帮助文档ToolStripMenuItem});
+            this.帮助ToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
             this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Text = "帮助";
@@ -2218,6 +2246,17 @@
             this.skinEngine1.SerialNumber = "";
             this.skinEngine1.SkinFile = null;
             // 
+            // label61
+            // 
+            this.label61.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label61.AutoSize = true;
+            this.label61.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label61.Location = new System.Drawing.Point(10, 658);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(461, 12);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "上海能誉科技发展有限公司版权所有  2012 Enercomn , Inc.  All Rights Reserved.";
+            // 
             // rowUnitView2
             // 
             this.rowUnitView2.AllowUserToAddRows = false;
@@ -2242,7 +2281,7 @@
             this.rowUnitView2.RowHeadersVisible = false;
             this.rowUnitView2.RowTemplate.Height = 23;
             this.rowUnitView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView2.Size = new System.Drawing.Size(1215, 414);
+            this.rowUnitView2.Size = new System.Drawing.Size(1215, 352);
             this.rowUnitView2.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -2347,7 +2386,7 @@
             this.rowUnitView1.RowHeadersVisible = false;
             this.rowUnitView1.RowTemplate.Height = 23;
             this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView1.Size = new System.Drawing.Size(1217, 393);
+            this.rowUnitView1.Size = new System.Drawing.Size(1217, 331);
             this.rowUnitView1.TabIndex = 3;
             // 
             // Day
@@ -2431,9 +2470,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(1239, 679);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.label61);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.tabControl1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Enerefsys";
             this.Text = "上海能誉科技发展有限公司-能耗管理软件";
@@ -2705,5 +2746,6 @@
         private Sunisoft.IrisSkin.SkinEngine skinEngine1;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
     }
 }
