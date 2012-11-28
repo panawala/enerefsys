@@ -103,6 +103,7 @@
     <Compile Include="CoolTower.Designer.cs">
       <DependentUpon>CoolTower.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomProfessionalRenderer.cs" />
     <Compile Include="Description.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +162,7 @@
     <Compile Include="EngineWinFormEventArgs.cs" />
     <Compile Include="ProjectManager.cs" />
     <Compile Include="PumpWinFormEventArgs.cs" />
+    <Compile Include="RedTextRenderer.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +346,15 @@
     <Content Include="Resources\N2.jpg" />
     <Content Include="Resources\result.jpg" />
     <Content Include="Resources\uninstall.ico" />
+    <Content Include="Resources\youhua.jpg" />
+    <Content Include="Resources\lengqueta.jpg" />
+    <Content Include="Resources\lengshuijizu.jpg" />
+    <Content Include="Resources\changgui.jpg" />
+    <Content Include="Resources\baobiao.jpg" />
+    <Content Include="Resources\shuibeng.jpg" />
+    <Content Include="Resources\huanjingbianliang.jpg" />
+    <Content Include="Resources\beijing.png" />
+    <Content Include="Resources\jisuan.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

@@ -14,7 +14,9 @@ using EnerefsysBLL.Entity;
 using EnerefsysBLL.EntityData;
 using System.Reflection;
 
-using Excel = Microsoft.Office.Interop.Excel; 
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+using System.Drawing.Drawing2D; 
 
 namespace Enerefsys
 {
@@ -27,7 +29,7 @@ namespace Enerefsys
             System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
             System.IO.DirectoryInfo root = directory.Parent.Parent;
 
-            this.skinEngine1.SkinFile = root.FullName + "/Resources/Calmness.ssk";
+            //this.skinEngine1.SkinFile = root.FullName + "/Resources/Calmness.ssk";
             //冷冻机;
             init_label_list();
             conceal_Label(label_list);
@@ -325,7 +327,7 @@ namespace Enerefsys
             create_Boarder_Num(boarderCount);
             set_Boarder_Panel(subBoarder_list);
         }
-       
+
 
         private void clear_Panel2()
         {
@@ -904,7 +906,7 @@ namespace Enerefsys
 
         public double TemperRange { get; set; }
         //冷却类型
-        public string CoolingType= "一对一";
+        public string CoolingType = "一对一";
         //冷冻类型
         public string FreezeType = "一对一";
         //分别保存当前最佳组合，当前最优结果，和当前每台主机的负荷率
@@ -1025,7 +1027,7 @@ namespace Enerefsys
             System.IO.DirectoryInfo root = directory.Parent.Parent;
 
             //pictureBox_Result.ImageLocation = root.FullName + "/Resources/result.jpg";
-            pictureBox_Result.ImageLocation = root.FullName + "/Resources/" +picName;
+            pictureBox_Result.ImageLocation = root.FullName + "/Resources/" + picName;
 
 
 
@@ -1049,7 +1051,7 @@ namespace Enerefsys
 
         private void showMessage()
         {
-            addStrToBox("在室外温度为" + textBox_Temperature.Text+"摄氏度，", textBox_Message);
+            addStrToBox("在室外温度为" + textBox_Temperature.Text + "摄氏度，", textBox_Message);
             addStrToBox("系统负荷为" + textBox_Load.Text + "kw的工况下，", textBox_Message);
             addStrToBox("经过Enerefsys计算得出的最优算法控制如下：", textBox_Message);
             if (!IsBoard)
@@ -1083,8 +1085,8 @@ namespace Enerefsys
                 addStrToBox("--------", textBox_Message);
                 int load = Convert.ToInt32(textBox_Load.Text);
                 percentValue = load / (BoardCount * boardValue);
-                addStrToBox("共需要" + BoardCount + "种板换，每种板换为"+boardValue+"KW * " + String.Format("{0:F}", percentValue * 100) + "%", textBox_Message);
-                
+                addStrToBox("共需要" + BoardCount + "种板换，每种板换为" + boardValue + "KW * " + String.Format("{0:F}", percentValue * 100) + "%", textBox_Message);
+
                 addStrToBox("--------", textBox_Message);
                 string minPowerStr = "系统最低功率为：" + String.Format("{0:F}", minResult) + "KW.";
                 addStrToBox(minPowerStr, textBox_Message);
@@ -1099,7 +1101,7 @@ namespace Enerefsys
                 addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
                     String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
-            
+
         }
         private void addStrToBox(string str, TextBox rtbox)
         {
@@ -1207,52 +1209,52 @@ namespace Enerefsys
             /***********************************************************************************/
             //主机功率的计算公式
             /***********************************************************************************/
-           
-                threeOption = 0d;
-                a = 0d;
-                b = 0d;
-                c = 0d;
-                int engineCount = 0;
 
-                double tempthreeoption = 0d;
-                double tempa = 0d;
-                double tempb = 0d;
-                double tempc = 0d;
+            threeOption = 0d;
+            a = 0d;
+            b = 0d;
+            c = 0d;
+            int engineCount = 0;
 
-                if (!IsBoard)
+            double tempthreeoption = 0d;
+            double tempa = 0d;
+            double tempb = 0d;
+            double tempc = 0d;
+
+            if (!IsBoard)
+            {
+                double sumLoad2 = 0;
+                foreach (var me in mes)
                 {
-                    double sumLoad2 = 0;
-                    foreach (var me in mes)
-                    {
-                        sumLoad2 += me.Value;
-                    }
-                    //求得每台主机的负荷率，每台主机运行的负荷除以总负荷相等
-                    double percentValue1 = load / sumLoad2;
-
-                    foreach (var me in mes)
-                    {
-                        //得到每台特定类型的主机在一定温度，一定负荷下的关于流量的二次项系数
-                        List<double> results = getFormulaByEntity(me.Type, me.Value * percentValue1, temperature);
-                        //threeOption += results[0];
-                        //a += results[1];
-                        //b += results[2];
-                        //c += results[3];
-                        a += results[0];
-                        b += results[1];
-                        c += results[2];
-                    }
-                    tempthreeoption = threeOption;
-                    tempa = a;
-                    tempb = b;
-                    tempc = c;
-
-                    //string pumpType = PumpType.Text;
-                    engineCount = mes.Count;
+                    sumLoad2 += me.Value;
                 }
-            
+                //求得每台主机的负荷率，每台主机运行的负荷除以总负荷相等
+                double percentValue1 = load / sumLoad2;
+
+                foreach (var me in mes)
+                {
+                    //得到每台特定类型的主机在一定温度，一定负荷下的关于流量的二次项系数
+                    List<double> results = getFormulaByEntity(me.Type, me.Value * percentValue1, temperature);
+                    //threeOption += results[0];
+                    //a += results[1];
+                    //b += results[2];
+                    //c += results[3];
+                    a += results[0];
+                    b += results[1];
+                    c += results[2];
+                }
+                tempthreeoption = threeOption;
+                tempa = a;
+                tempb = b;
+                tempc = c;
+
+                //string pumpType = PumpType.Text;
+                engineCount = mes.Count;
+            }
+
 
             //如果使用板换，去除主机,主机数量当成板换数量
-            
+
             if (IsBoard)
             {
                 tempthreeoption = 0d;
@@ -1342,7 +1344,7 @@ namespace Enerefsys
             if (IsSwap)
                 load = load - swapCount * swapPower;
 
- 
+
 
             /*****************************************************************************/
             //如果是常规算法。则机器按照从vsd到csd的顺序，按照从大到小的顺序选择主机
@@ -1383,7 +1385,7 @@ namespace Enerefsys
                 //冷冻水泵
                 List<double> doubleParamsFreeze = PumpManager.GetParamsByType("2");
                 freezePumpPower += doubleParamsFreeze[0] * 125 * 125 * 125 * engineCount * engineCount * engineCount
-                    + doubleParamsFreeze[1] * 125 * 125 * engineCount*engineCount
+                    + doubleParamsFreeze[1] * 125 * 125 * engineCount * engineCount
                     + doubleParamsFreeze[2] * 125 * engineCount
                     + doubleParamsFreeze[3] * engineCount;
 
@@ -1540,48 +1542,48 @@ namespace Enerefsys
             }
             else
             {
-                    //以上得到一个组合，接下来对其求最小值
-                    SoluteResult sr = getMinByConsist(null, temperature, load);
-                    /***********************************************************************************/
-                    //冷冻水泵的计算公式
-                    /***********************************************************************************/
-                    freezePumpPower = 0;
-                    if (FreezeType.Equals("一对一"))
+                //以上得到一个组合，接下来对其求最小值
+                SoluteResult sr = getMinByConsist(null, temperature, load);
+                /***********************************************************************************/
+                //冷冻水泵的计算公式
+                /***********************************************************************************/
+                freezePumpPower = 0;
+                if (FreezeType.Equals("一对一"))
+                {
+                    //从数据库得到二次项系数
+                    //一对一：一台水泵对应一台主机
+                    List<double> doubleParams = PumpManager.GetParamsByType("2");
+                    fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
+                    //如果是满足板换条件
+                    if (IsBoard)
                     {
-                        //从数据库得到二次项系数
-                        //一对一：一台水泵对应一台主机
-                        List<double> doubleParams = PumpManager.GetParamsByType("2");
-                        fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
-                        //如果是满足板换条件
-                        if (IsBoard)
-                        {
-                            double curflow = load * 3.6 / (4.187 * TemperRange);
-                            if (curflow < fullFlow * 0.3)
-                                curflow = fullFlow * 0.3;
-                            double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
-                            curPower = curPower * BoardCount;
-                            freezePumpPower += curPower;
-                        }
+                        double curflow = load * 3.6 / (4.187 * TemperRange);
+                        if (curflow < fullFlow * 0.3)
+                            curflow = fullFlow * 0.3;
+                        double curPower = doubleParams[0] * curflow * curflow * curflow + doubleParams[1] * curflow * curflow + doubleParams[2] * curflow + doubleParams[3];
+                        curPower = curPower * BoardCount;
+                        freezePumpPower += curPower;
                     }
-                    
-                    //得到最终结果,并且加上冷却塔功率
-                    //double coolingPower = 0;
-                    sr = new SoluteResult(sr.Result + freezePumpPower + coolingPower, sr.Solute);
+                }
 
-                    /***********************************************************************************/
-                    //判断某个组合的的最小功率是不是在所有组合中最小
-                    /***********************************************************************************/
-                    if (sr.Result < minResult)
-                    {
-                        //如果是最小的，则将最小值赋值为当前组合的最小值
-                        minResult = sr.Result;
-                        //保存取得最小能耗时的流量
-                        minSolute = sr.Solute;
-                        //此处保存最小的主机组合
-                        //meMin = machineResult;
-                    }
-     
-          
+                //得到最终结果,并且加上冷却塔功率
+                //double coolingPower = 0;
+                sr = new SoluteResult(sr.Result + freezePumpPower + coolingPower, sr.Solute);
+
+                /***********************************************************************************/
+                //判断某个组合的的最小功率是不是在所有组合中最小
+                /***********************************************************************************/
+                if (sr.Result < minResult)
+                {
+                    //如果是最小的，则将最小值赋值为当前组合的最小值
+                    minResult = sr.Result;
+                    //保存取得最小能耗时的流量
+                    minSolute = sr.Solute;
+                    //此处保存最小的主机组合
+                    //meMin = machineResult;
+                }
+
+
                 //循环结束得到最小的主机组合，及最小值
 
 
@@ -1594,9 +1596,9 @@ namespace Enerefsys
                 //percentValue = load / sumLoad1;
 
 
- 
+
             }
-            
+
         }
 
 
@@ -2307,7 +2309,7 @@ namespace Enerefsys
                 lb_Unit_KW_A.Location = new Point(580, 60 + (i - 1) * 35);
 
                 lb4.Location = new Point(265, 100 + (i - 1) * 35);
-                tbx_HZ_B.Location = new Point(400,97 + (i - 1) * 35);
+                tbx_HZ_B.Location = new Point(400, 97 + (i - 1) * 35);
                 lb_Unit_HZ_B.Location = new Point(450, 100 + (i - 1) * 35);
                 tbx_KW_B.Location = new Point(550, 97 + (i - 1) * 35);
                 lb_Unit_KW_B.Location = new Point(580, 100 + (i - 1) * 35);
@@ -2320,7 +2322,7 @@ namespace Enerefsys
             }
         }
 
-        
+
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2443,7 +2445,7 @@ namespace Enerefsys
 
                 TextBox temp_is_Frequency_Conversion_checkBox = (TextBox)GetControl("board_amount_box", boarder_Panel);
                 XmlHelper.Insert(xml, "/Project/FreezeConfiguration/Board", "BoardNo", "", temp_is_Frequency_Conversion_checkBox.Text);
-                
+
             }
 
             /*XmlHelper.Insert(xml, "/Project", "FreezeConfiguration", "", "");
@@ -2526,7 +2528,7 @@ namespace Enerefsys
                 XmlHelper.Insert(xml, "/Project/PumpConfiguration/CoolingPump[@id=" + i.ToString() + "]", "Count", "", temp_type_comboBox.Text);
             }
 
-          
+
 
             /**********************************************************************************************/
             //插入冷却配置
@@ -2571,7 +2573,7 @@ namespace Enerefsys
             XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "PowerTFS", "", deng_tfs_textbox.Text);
 
             XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "PowerTS", "", deng_ts_textbox.Text);
-            
+
 
             //XmlHelper.Insert(xml, "/Project/CoolingConfiguration/CoolingTower", "Frequency", "", coolTower_cb.Text);
 
@@ -2656,41 +2658,41 @@ namespace Enerefsys
                 string strTypeBox = "type_box" + (i + 1);
                 ComboBox temp_type_box = (ComboBox)GetControl(strTypeBox, freezer_Panel);
                 temp_type_box.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Type", "");
-                
+
                 string strCooling_comboBox = "cooling_comboBox" + (i + 1);
                 TextBox temp_Cooling_comboBox = (TextBox)GetControl(strCooling_comboBox, freezer_Panel);
                 temp_Cooling_comboBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/FreezePower", "");
-                
+
                 string strBrand_comboBox = "brand_comboBox" + (i + 1);
                 ComboBox brand_comboBox = (ComboBox)GetControl(strBrand_comboBox, freezer_Panel);
                 brand_comboBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Brand", "");
-                
+
                 string strModel_box = "model_box" + (i + 1);
                 TextBox temp_model_box = (TextBox)GetControl(strModel_box, freezer_Panel);
                 temp_model_box.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Model", "");
-                
+
                 string strIs_Frequency_Conversion_checkBox = "amount_textbox" + (i + 1);
                 TextBox temp_is_Frequency_Conversion_checkBox = (TextBox)GetControl(strIs_Frequency_Conversion_checkBox, freezer_Panel);
-                temp_is_Frequency_Conversion_checkBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Frequency", "");  
+                temp_is_Frequency_Conversion_checkBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/FreezeMachine[@id=" + i.ToString() + "]/Frequency", "");
             }
 
             if (checkBoxBoard.Checked)
             {
                 XmlHelper.Read(path, "/Project/FreezeConfiguration/Board", "");
                 ComboBox temp_type_box = (ComboBox)GetControl("board_type_box", boarder_Panel);
-                temp_type_box.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardTemperature", "");
+                temp_type_box.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardTemperature", "");
 
                 TextBox temp_Cooling_comboBox = (TextBox)GetControl("board_comboBox", boarder_Panel);
-                temp_Cooling_comboBox.Text=XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardPower", "");
+                temp_Cooling_comboBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardPower", "");
 
                 ComboBox brand_comboBox = (ComboBox)GetControl("board_brand_comboBox", boarder_Panel);
-                brand_comboBox.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardBrand", "");
+                brand_comboBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardBrand", "");
 
                 TextBox temp_model_box = (TextBox)GetControl("board_model_box", boarder_Panel);
-                temp_model_box.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardModel", "");
+                temp_model_box.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardModel", "");
 
                 TextBox temp_is_Frequency_Conversion_checkBox = (TextBox)GetControl("board_amount_box", boarder_Panel);
-                temp_is_Frequency_Conversion_checkBox.Text= XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardNo", "");
+                temp_is_Frequency_Conversion_checkBox.Text = XmlHelper.Read(path, "/Project/FreezeConfiguration/Board/BoardNo", "");
             }
 
 
@@ -2763,7 +2765,7 @@ namespace Enerefsys
             //插入冷却配置
             /**********************************************************************************************/
             tabPage4_Enter(null, null);
-            
+
             ComboBox deng_type_combox = (ComboBox)GetControl("deng_type_combobox", coolingtowerpanel);
             deng_type_combox.Text = XmlHelper.Read(path, "/Project/CoolingConfiguration/CoolingTower/Type", "");
             temp_CoolingTower.type_comboBox_SelectedIndexChanged(null, null);
@@ -2823,9 +2825,13 @@ namespace Enerefsys
 
         private void Enerefsys_Load(object sender, EventArgs e)
         {
-           
+
             this.reportViewer1.RefreshReport();
             fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
+
+            menuStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode;
+            menuStrip1.Renderer = new CustomProfessionalRenderer(Color.Gray);
+
         }
 
         private void btnViewReport_Click(object sender, EventArgs e)
@@ -3256,7 +3262,7 @@ namespace Enerefsys
                         break;
                 }
             }
-            
+
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
@@ -3374,7 +3380,7 @@ namespace Enerefsys
                 temp_CoolingTower.brand_textBox.Name = "deng_brand_textbox";
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.brand_textBox);
 
-                
+
                 coolingtowerpanel.Controls.Add(temp_CoolingTower.LBCoolingTower);
 
                 temp_CoolingTower.power_textBox.Name = "deng_power_textbox";
@@ -3420,10 +3426,10 @@ namespace Enerefsys
             }
         }
         public string strCoolingTowerStyle;
-        public int iCoolingTowerT1=0;
-        public int iCoolingTowerT2=0;
-        public int iCoolingTowerKW=0;
-        public int iCoolingTowerHZ1=0;
+        public int iCoolingTowerT1 = 0;
+        public int iCoolingTowerT2 = 0;
+        public int iCoolingTowerKW = 0;
+        public int iCoolingTowerHZ1 = 0;
         public int iCoolingTowerHZ2 = 0;
         public int iCoolingTowerHZ3 = 0;
         public int iCoolingTowerKW1 = 0;
@@ -3642,7 +3648,7 @@ namespace Enerefsys
         {
 
             var standardLoads = RunManager.getAllStandardLoads();
-            
+
             progressBar1.Maximum = standardLoads.Count;
 
             workerCal.WorkerReportsProgress = true;
@@ -3739,7 +3745,7 @@ namespace Enerefsys
 
                 RunManager.InsertIntoNormalRunResult(standardLoad, minResult, minResult * standardLoad.ElectronicPrice);
 
-                
+
                 //工作者回发报告进度信息
                 workerCal.ReportProgress(i);
                 label60.Text = i.ToString() + "/" + standardLoads.Count;
@@ -3911,27 +3917,83 @@ namespace Enerefsys
         {
             DataGridViewToExcel(rowUnitView2);
         }
- 
 
+        private bool isFirst = true;
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
 
+            try
+            {
+                System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+                System.IO.DirectoryInfo root = directory.Parent.Parent;
 
+                //this.skinEngine1.SkinFile = root.FullName + "/Resources/Calmness.ssk";
+                string imagePath = root.FullName + "/Resources/huanjingbianliang.jpg";
+                //tabPage标签图片
+                switch (e.Index)
+                {
+                    case 0:
+                        imagePath = root.FullName + "/Resources/huanjingbianliang.jpg";
+                        break;
+                    case 1:
+                        imagePath = root.FullName + "/Resources/lengshuijizu.jpg";
+                        break;
+                    case 2:
+                        imagePath = root.FullName + "/Resources/shuibeng.jpg";
+                        break;
+                    case 3:
+                        imagePath = root.FullName + "/Resources/lengqueta.jpg";
+                        break;
+                    case 4:
+                        imagePath = root.FullName + "/Resources/changgui.jpg";
+                        break;
+                    case 5:
+                        imagePath = root.FullName + "/Resources/youhua.jpg";
+                        break;
+                    case 6:
+                        imagePath = root.FullName + "/Resources/jisuan.jpg";
+                        break;
+                    case 7:
+                        imagePath = root.FullName + "/Resources/baobiao.jpg";
+                        break;
 
+                }
 
+                Bitmap image = new Bitmap(imagePath);
+                if (isFirst)
+                {
+                    Bitmap backimage = new Bitmap(root.FullName + "/Resources/beijing.png");
+                    e.Graphics.DrawImage(backimage, 0, 0, tabControl1.Width, tabControl1.Height);
+                    isFirst = false;
+                }
 
+                //e.Graphics.DrawImage(backimage, 0, 0, tabControl1.Width, tabControl1.Height); 
 
+                Rectangle myTabRect = this.tabControl1.GetTabRect(e.Index);
 
+                ////=============================================
+                //使用图片
+                Bitmap bt = new Bitmap(image);
+                Point p5 = new Point(myTabRect.X, myTabRect.Y);
+                e.Graphics.DrawImage(bt, p5);
+                //先添加TabPage属性   
+                //新建一个StringFormat对象，用于对标签文字的布局设置 
 
+                //StringFormat StrFormat = new StringFormat();
+                //StrFormat.Alignment = StringAlignment.Center;// 设置文字水平方向居中     
+                //StrFormat.LineAlignment = StringAlignment.Far;
 
+                //e.Graphics.DrawString(tabControl1.TabPages[e.Index].Text, this.Font, SystemBrushes.ControlText, myTabRect, StrFormat);
+                e.Graphics.Dispose();
+            }
+            catch (Exception)
+            { }
+        }
 
-
-
-
-
-
-
-
-
-
+        private void tabControl1_Resize(object sender, EventArgs e)
+        {
+            isFirst = true;
+        }
 
 
 
