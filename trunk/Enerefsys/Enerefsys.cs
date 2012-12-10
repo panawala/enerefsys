@@ -16,7 +16,8 @@ using System.Reflection;
 
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
-using System.Drawing.Drawing2D; 
+using System.Drawing.Drawing2D;
+using Enerefsys.Properties; 
 
 namespace Enerefsys
 {
@@ -2832,6 +2833,19 @@ namespace Enerefsys
             menuStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode;
             menuStrip1.Renderer = new CustomProfessionalRenderer(Color.Gray);
 
+
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang2.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+
         }
 
         private void btnViewReport_Click(object sender, EventArgs e)
@@ -3994,6 +4008,166 @@ namespace Enerefsys
         {
             isFirst = true;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang2.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+
+        }
+
+        private void btnTab2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang1.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu2.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+        }
+
+        private void btnTab3_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 2;
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang1.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng2.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+        }
+
+        private void btnTab4_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 3;
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang1.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta2.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+        }
+
+        private void btnTab5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang1.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo2.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+        }
+
+        private void btnTab6_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 5;
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang1.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua2.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+        }
+
+        private void btnTab7_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 6;
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang1.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan2.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao1.jpg");
+        }
+
+        private void btnTab8_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 7;
+            System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(Application.StartupPath);
+            System.IO.DirectoryInfo root = directory.Parent.Parent;
+
+            btnTab1.BackgroundImage = Image.FromFile(root.FullName + "/Resources/huanjingbianliang1.jpg");
+            btnTab2.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengshuijizu1.jpg");
+            btnTab3.BackgroundImage = Image.FromFile(root.FullName + "/Resources/shuibeng1.jpg");
+            btnTab4.BackgroundImage = Image.FromFile(root.FullName + "/Resources/lengqueta1.jpg");
+            btnTab5.BackgroundImage = Image.FromFile(root.FullName + "/Resources/changguijieguo1.jpg");
+            btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
+            btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
+            btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao2.jpg");
+        }
+
+
+
+
+
+        /// <summary>
+        /// 添加按钮上鼠标 移入、移出、按下、弹起 事件
+        /// </summary>
+        /// <param name="btn">操作的按钮</param>
+        //private void AddBtnEvent(Button btn)
+        //{
+        //    btn.MouseEnter += delegate(object sender, EventArgs e)
+        //    {
+        //        ((Button)sender).BackgroundImage = Resources.btnMove;
+        //    };
+        //    btn.MouseLeave += delegate(object sender, EventArgs e)
+        //    {
+        //        ((Button)sender).BackgroundImage = Resources.btnNormal;
+        //    };
+        //    btn.MouseDown += delegate(object sender, MouseEventArgs e)
+        //    {
+        //        ((Button)sender).BackgroundImage = Resources.btnClick;
+        //    };
+        //    btn.MouseUp += delegate(object sender, MouseEventArgs e)
+        //    {
+        //        ((Button)sender).BackgroundImage = Resources;
+        //    };
+        //}
+
 
 
 
