@@ -32,9 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Enerefsys));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -94,9 +91,6 @@
             this.checkBoxBoard = new System.Windows.Forms.CheckBox();
             this.boarder_Panel = new System.Windows.Forms.Panel();
             this.completed = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.btnLoadEngineData = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
@@ -113,9 +107,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.completedPump = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.progressBarPump = new System.Windows.Forms.ProgressBar();
             this.btnLoadDataPump = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -145,9 +136,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.coolingtowerpanel = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label60 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -156,12 +144,33 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
+            this.rowUnitView2 = new MultiHeaderDataGridView.RowUnitView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.btnShowOptim = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label42 = new System.Windows.Forms.Label();
+            this.rowUnitView1 = new MultiHeaderDataGridView.RowUnitView();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.btnClear = new System.Windows.Forms.Button();
             this.textBox_CoolingPower = new System.Windows.Forms.TextBox();
@@ -176,7 +185,6 @@
             this.label43 = new System.Windows.Forms.Label();
             this.textBox_Temperature = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.pictureBox_Result = new System.Windows.Forms.PictureBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.btnSearch = new System.Windows.Forms.Button();
             this.textBox_TotalPrice = new System.Windows.Forms.TextBox();
@@ -202,6 +210,18 @@
             this.btnCal = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
+            this.label61 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnTab8 = new System.Windows.Forms.Button();
+            this.btnTab7 = new System.Windows.Forms.Button();
+            this.btnTab6 = new System.Windows.Forms.Button();
+            this.btnTab5 = new System.Windows.Forms.Button();
+            this.btnTab4 = new System.Windows.Forms.Button();
+            this.btnTab3 = new System.Windows.Forms.Button();
+            this.btnTab2 = new System.Windows.Forms.Button();
+            this.btnTab1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,36 +236,18 @@
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出品介绍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
-            this.label61 = new System.Windows.Forms.Label();
-            this.rowUnitView2 = new MultiHeaderDataGridView.RowUnitView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rowUnitView1 = new MultiHeaderDataGridView.RowUnitView();
-            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EngineLoadRatio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Flow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SystemMinPower = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Result = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -254,29 +256,29 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.tabPage8.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).BeginInit();
-            this.tabPage7.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).BeginInit();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -293,12 +295,12 @@
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.ItemSize = new System.Drawing.Size(64, 80);
-            this.tabControl1.Location = new System.Drawing.Point(5, 25);
+            this.tabControl1.ItemSize = new System.Drawing.Size(64, 10);
+            this.tabControl1.Location = new System.Drawing.Point(5, 96);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1231, 627);
+            this.tabControl1.Size = new System.Drawing.Size(1231, 560);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
@@ -308,53 +310,18 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 84);
+            this.tabPage1.Location = new System.Drawing.Point(4, 14);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage1.Size = new System.Drawing.Size(1223, 542);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "环境变量";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(820, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 466);
-            this.panel1.TabIndex = 12;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(64, 255);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(251, 189);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(64, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -525,9 +492,9 @@
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.label19);
-            this.groupBox6.Location = new System.Drawing.Point(111, 227);
+            this.groupBox6.Location = new System.Drawing.Point(111, 287);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(357, 271);
+            this.groupBox6.Size = new System.Drawing.Size(357, 214);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "适用电价";
@@ -536,7 +503,7 @@
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(25, 210);
+            this.button2.Location = new System.Drawing.Point(25, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(260, 39);
             this.button2.TabIndex = 6;
@@ -610,7 +577,7 @@
             this.groupBox7.Controls.Add(this.label22);
             this.groupBox7.Location = new System.Drawing.Point(472, 390);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(344, 108);
+            this.groupBox7.Size = new System.Drawing.Size(344, 111);
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "室外环境";
@@ -692,8 +659,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
@@ -894,10 +861,11 @@
             // 
             this.tabPage2.AutoScroll = true;
             this.tabPage2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabPage2.Controls.Add(this.pictureBox3);
+            this.tabPage2.Controls.Add(this.pictureBox4);
             this.tabPage2.Controls.Add(this.checkBoxBoard);
             this.tabPage2.Controls.Add(this.boarder_Panel);
             this.tabPage2.Controls.Add(this.completed);
-            this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.progressBar);
             this.tabPage2.Controls.Add(this.btnLoadEngineData);
             this.tabPage2.Controls.Add(this.btn_ok);
@@ -911,10 +879,10 @@
             this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.freezerNum);
             this.tabPage2.Controls.Add(this.freezerMachine_Label);
-            this.tabPage2.Location = new System.Drawing.Point(4, 84);
+            this.tabPage2.Location = new System.Drawing.Point(4, 14);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage2.Size = new System.Drawing.Size(1223, 542);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "冷水机组";
             // 
@@ -933,9 +901,9 @@
             // 
             this.boarder_Panel.AutoScroll = true;
             this.boarder_Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.boarder_Panel.Location = new System.Drawing.Point(7, 268);
+            this.boarder_Panel.Location = new System.Drawing.Point(19, 197);
             this.boarder_Panel.Name = "boarder_Panel";
-            this.boarder_Panel.Size = new System.Drawing.Size(925, 47);
+            this.boarder_Panel.Size = new System.Drawing.Size(870, 118);
             this.boarder_Panel.TabIndex = 78;
             // 
             // completed
@@ -946,52 +914,18 @@
             this.completed.Size = new System.Drawing.Size(0, 12);
             this.completed.TabIndex = 74;
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Location = new System.Drawing.Point(938, 36);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(249, 1004);
-            this.panel2.TabIndex = 72;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(-18, 282);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(264, 706);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-18, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(264, 671);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(743, 7);
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar.Location = new System.Drawing.Point(870, 9);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(474, 23);
+            this.progressBar.Size = new System.Drawing.Size(313, 23);
             this.progressBar.TabIndex = 71;
             // 
             // btnLoadEngineData
             // 
-            this.btnLoadEngineData.Location = new System.Drawing.Point(638, 8);
+            this.btnLoadEngineData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLoadEngineData.Location = new System.Drawing.Point(741, 9);
             this.btnLoadEngineData.Name = "btnLoadEngineData";
             this.btnLoadEngineData.Size = new System.Drawing.Size(99, 23);
             this.btnLoadEngineData.TabIndex = 70;
@@ -1001,7 +935,7 @@
             // 
             // btn_ok
             // 
-            this.btn_ok.Location = new System.Drawing.Point(857, 318);
+            this.btn_ok.Location = new System.Drawing.Point(814, 318);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(75, 23);
             this.btn_ok.TabIndex = 69;
@@ -1022,9 +956,9 @@
             // 
             this.freezer_Panel.AutoScroll = true;
             this.freezer_Panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.freezer_Panel.Location = new System.Drawing.Point(7, 51);
+            this.freezer_Panel.Location = new System.Drawing.Point(19, 51);
             this.freezer_Panel.Name = "freezer_Panel";
-            this.freezer_Panel.Size = new System.Drawing.Size(925, 211);
+            this.freezer_Panel.Size = new System.Drawing.Size(870, 140);
             this.freezer_Panel.TabIndex = 62;
             // 
             // model_Label
@@ -1065,11 +999,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 347);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 347);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(936, 275);
+            this.dataGridView1.Size = new System.Drawing.Size(870, 180);
             this.dataGridView1.TabIndex = 55;
             // 
             // label30
@@ -1102,9 +1038,10 @@
             // 
             this.tabPage3.AutoScroll = true;
             this.tabPage3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabPage3.Controls.Add(this.pictureBox5);
+            this.tabPage3.Controls.Add(this.pictureBox6);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.completedPump);
-            this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Controls.Add(this.progressBarPump);
             this.tabPage3.Controls.Add(this.btnLoadDataPump);
             this.tabPage3.Controls.Add(this.btnSubmit);
@@ -1124,21 +1061,21 @@
             this.tabPage3.Controls.Add(this.label39);
             this.tabPage3.Controls.Add(this.coolingPanel);
             this.tabPage3.Controls.Add(this.freezingPanel);
-            this.tabPage3.Location = new System.Drawing.Point(4, 84);
+            this.tabPage3.Location = new System.Drawing.Point(4, 14);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage3.Size = new System.Drawing.Size(1223, 542);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "水泵";
             // 
             // dataGridView2
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(37, 365);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(699, 238);
+            this.dataGridView2.Size = new System.Drawing.Size(804, 159);
             this.dataGridView2.TabIndex = 105;
             // 
             // completedPump
@@ -1149,53 +1086,18 @@
             this.completedPump.Size = new System.Drawing.Size(0, 12);
             this.completedPump.TabIndex = 104;
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.pictureBox6);
-            this.panel3.Controls.Add(this.pictureBox5);
-            this.panel3.Location = new System.Drawing.Point(768, 35);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(348, 842);
-            this.panel3.TabIndex = 103;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(23, 301);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(313, 528);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(23, 10);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(313, 559);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            // 
             // progressBarPump
             // 
             this.progressBarPump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarPump.Location = new System.Drawing.Point(689, 3);
+            this.progressBarPump.Location = new System.Drawing.Point(853, 11);
             this.progressBarPump.Name = "progressBarPump";
-            this.progressBarPump.Size = new System.Drawing.Size(339, 23);
+            this.progressBarPump.Size = new System.Drawing.Size(313, 23);
             this.progressBarPump.TabIndex = 102;
             // 
             // btnLoadDataPump
             // 
             this.btnLoadDataPump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoadDataPump.Location = new System.Drawing.Point(591, 3);
+            this.btnLoadDataPump.Location = new System.Drawing.Point(739, 11);
             this.btnLoadDataPump.Name = "btnLoadDataPump";
             this.btnLoadDataPump.Size = new System.Drawing.Size(92, 23);
             this.btnLoadDataPump.TabIndex = 101;
@@ -1205,8 +1107,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmit.Location = new System.Drawing.Point(661, 336);
+            this.btnSubmit.Location = new System.Drawing.Point(766, 336);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 100;
@@ -1217,7 +1118,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(468, 9);
+            this.label31.Location = new System.Drawing.Point(468, 18);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(65, 12);
             this.label31.TabIndex = 99;
@@ -1227,7 +1128,7 @@
             // comboBox_PumpType
             // 
             this.comboBox_PumpType.FormattingEnabled = true;
-            this.comboBox_PumpType.Location = new System.Drawing.Point(539, 6);
+            this.comboBox_PumpType.Location = new System.Drawing.Point(539, 14);
             this.comboBox_PumpType.Name = "comboBox_PumpType";
             this.comboBox_PumpType.Size = new System.Drawing.Size(121, 20);
             this.comboBox_PumpType.TabIndex = 98;
@@ -1236,7 +1137,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(382, 8);
+            this.label32.Location = new System.Drawing.Point(416, 18);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(17, 12);
             this.label32.TabIndex = 94;
@@ -1245,7 +1146,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(177, 8);
+            this.label33.Location = new System.Drawing.Point(210, 18);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(17, 12);
             this.label33.TabIndex = 93;
@@ -1253,7 +1154,7 @@
             // 
             // coolingNum
             // 
-            this.coolingNum.Location = new System.Drawing.Point(259, 6);
+            this.coolingNum.Location = new System.Drawing.Point(293, 15);
             this.coolingNum.Name = "coolingNum";
             this.coolingNum.Size = new System.Drawing.Size(117, 21);
             this.coolingNum.TabIndex = 92;
@@ -1261,7 +1162,7 @@
             // 
             // freezingNum
             // 
-            this.freezingNum.Location = new System.Drawing.Point(62, 5);
+            this.freezingNum.Location = new System.Drawing.Point(96, 15);
             this.freezingNum.Name = "freezingNum";
             this.freezingNum.Size = new System.Drawing.Size(108, 21);
             this.freezingNum.TabIndex = 91;
@@ -1270,7 +1171,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(770, 45);
+            this.label35.Location = new System.Drawing.Point(770, 59);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(29, 12);
             this.label35.TabIndex = 89;
@@ -1279,7 +1180,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(663, 45);
+            this.label36.Location = new System.Drawing.Point(663, 58);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(29, 12);
             this.label36.TabIndex = 88;
@@ -1288,7 +1189,7 @@
             // power_Label
             // 
             this.power_Label.AutoSize = true;
-            this.power_Label.Location = new System.Drawing.Point(537, 45);
+            this.power_Label.Location = new System.Drawing.Point(537, 58);
             this.power_Label.Name = "power_Label";
             this.power_Label.Size = new System.Drawing.Size(29, 12);
             this.power_Label.TabIndex = 87;
@@ -1297,7 +1198,7 @@
             // lift_Label
             // 
             this.lift_Label.AutoSize = true;
-            this.lift_Label.Location = new System.Drawing.Point(412, 45);
+            this.lift_Label.Location = new System.Drawing.Point(412, 57);
             this.lift_Label.Name = "lift_Label";
             this.lift_Label.Size = new System.Drawing.Size(29, 12);
             this.lift_Label.TabIndex = 86;
@@ -1306,7 +1207,7 @@
             // flow_Label
             // 
             this.flow_Label.AutoSize = true;
-            this.flow_Label.Location = new System.Drawing.Point(285, 45);
+            this.flow_Label.Location = new System.Drawing.Point(285, 57);
             this.flow_Label.Name = "flow_Label";
             this.flow_Label.Size = new System.Drawing.Size(29, 12);
             this.flow_Label.TabIndex = 85;
@@ -1315,7 +1216,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(165, 45);
+            this.label37.Location = new System.Drawing.Point(165, 56);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(29, 12);
             this.label37.TabIndex = 84;
@@ -1324,7 +1225,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(200, 9);
+            this.label38.Location = new System.Drawing.Point(234, 17);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(53, 12);
             this.label38.TabIndex = 81;
@@ -1333,7 +1234,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(3, 8);
+            this.label39.Location = new System.Drawing.Point(37, 17);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(53, 12);
             this.label39.TabIndex = 80;
@@ -1341,29 +1242,27 @@
             // 
             // coolingPanel
             // 
-            this.coolingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.coolingPanel.AutoScroll = true;
             this.coolingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.coolingPanel.Location = new System.Drawing.Point(37, 201);
             this.coolingPanel.Name = "coolingPanel";
-            this.coolingPanel.Size = new System.Drawing.Size(699, 129);
+            this.coolingPanel.Size = new System.Drawing.Size(804, 129);
             this.coolingPanel.TabIndex = 95;
             // 
             // freezingPanel
             // 
-            this.freezingPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.freezingPanel.AutoScroll = true;
             this.freezingPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.freezingPanel.Location = new System.Drawing.Point(37, 60);
+            this.freezingPanel.Location = new System.Drawing.Point(37, 74);
             this.freezingPanel.Name = "freezingPanel";
-            this.freezingPanel.Size = new System.Drawing.Size(699, 129);
+            this.freezingPanel.Size = new System.Drawing.Size(804, 121);
             this.freezingPanel.TabIndex = 96;
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabPage4.Controls.Add(this.pictureBox8);
+            this.tabPage4.Controls.Add(this.pictureBox7);
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.label50);
@@ -1373,10 +1272,9 @@
             this.tabPage4.Controls.Add(this.label40);
             this.tabPage4.Controls.Add(this.label29);
             this.tabPage4.Controls.Add(this.coolingtowerpanel);
-            this.tabPage4.Controls.Add(this.panel4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 84);
+            this.tabPage4.Location = new System.Drawing.Point(4, 14);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage4.Size = new System.Drawing.Size(1223, 542);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "冷却塔";
             this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
@@ -1464,39 +1362,6 @@
             this.coolingtowerpanel.Size = new System.Drawing.Size(792, 191);
             this.coolingtowerpanel.TabIndex = 105;
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.pictureBox7);
-            this.panel4.Controls.Add(this.pictureBox8);
-            this.panel4.Location = new System.Drawing.Point(883, 50);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(279, 463);
-            this.panel4.TabIndex = 104;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(13, 271);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(254, 189);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 1;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(254, 242);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            // 
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -1508,9 +1373,9 @@
             this.tabPage8.Controls.Add(this.button6);
             this.tabPage8.Controls.Add(this.label28);
             this.tabPage8.Controls.Add(this.rowUnitView2);
-            this.tabPage8.Location = new System.Drawing.Point(4, 84);
+            this.tabPage8.Location = new System.Drawing.Point(4, 14);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage8.Size = new System.Drawing.Size(1223, 542);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "常规";
             // 
@@ -1582,19 +1447,124 @@
             this.label28.TabIndex = 3;
             this.label28.Text = "Enerefsys系统逐时优化结果";
             // 
+            // rowUnitView2
+            // 
+            this.rowUnitView2.AllowUserToAddRows = false;
+            this.rowUnitView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rowUnitView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rowUnitView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.Column1});
+            this.rowUnitView2.Location = new System.Drawing.Point(3, 81);
+            this.rowUnitView2.Name = "rowUnitView2";
+            this.rowUnitView2.ReadOnly = true;
+            this.rowUnitView2.RowHeadersVisible = false;
+            this.rowUnitView2.RowTemplate.Height = 23;
+            this.rowUnitView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.rowUnitView2.Size = new System.Drawing.Size(1215, 352);
+            this.rowUnitView2.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Month";
+            this.dataGridViewTextBoxColumn1.HeaderText = "月";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Day";
+            this.dataGridViewTextBoxColumn2.HeaderText = "日";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Hour";
+            this.dataGridViewTextBoxColumn3.HeaderText = "时";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DryTemperature";
+            this.dataGridViewTextBoxColumn4.HeaderText = "干球温度";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "WetTemperature";
+            this.dataGridViewTextBoxColumn5.HeaderText = "湿球温度";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Load";
+            this.dataGridViewTextBoxColumn6.HeaderText = "冷负荷";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "EnterTemperature";
+            this.dataGridViewTextBoxColumn7.HeaderText = "进口温度";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ElectronicPrice";
+            this.dataGridViewTextBoxColumn8.HeaderText = "电价";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Power";
+            this.dataGridViewTextBoxColumn9.HeaderText = "能耗";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TotalPrice";
+            this.Column1.HeaderText = "电费";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // tabPage5
             // 
             this.tabPage5.AutoScroll = true;
             this.tabPage5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabPage5.Controls.Add(this.btnShowOptim);
-            this.tabPage5.Controls.Add(this.pictureBox9);
             this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.button4);
             this.tabPage5.Controls.Add(this.label42);
             this.tabPage5.Controls.Add(this.rowUnitView1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 84);
+            this.tabPage5.Controls.Add(this.pictureBox9);
+            this.tabPage5.Location = new System.Drawing.Point(4, 14);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage5.Size = new System.Drawing.Size(1223, 542);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "优化";
             // 
@@ -1607,17 +1577,6 @@
             this.btnShowOptim.Text = "显示";
             this.btnShowOptim.UseVisualStyleBackColor = true;
             this.btnShowOptim.Click += new System.EventHandler(this.btnShowOptim_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(962, 419);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(199, 107);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 6;
-            this.pictureBox9.TabStop = false;
             // 
             // button5
             // 
@@ -1651,6 +1610,110 @@
             this.label42.TabIndex = 2;
             this.label42.Text = "Enerefsys系统全年逐时优化结果";
             // 
+            // rowUnitView1
+            // 
+            this.rowUnitView1.AllowUserToAddRows = false;
+            this.rowUnitView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rowUnitView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rowUnitView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Day,
+            this.Time,
+            this.Temperature,
+            this.EngineType,
+            this.EngineValue,
+            this.EngineLoadRatio,
+            this.Flow,
+            this.SystemMinPower,
+            this.Id,
+            this.TotalPrice});
+            this.rowUnitView1.Location = new System.Drawing.Point(1, 69);
+            this.rowUnitView1.Name = "rowUnitView1";
+            this.rowUnitView1.ReadOnly = true;
+            this.rowUnitView1.RowHeadersVisible = false;
+            this.rowUnitView1.RowTemplate.Height = 23;
+            this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.rowUnitView1.Size = new System.Drawing.Size(1217, 331);
+            this.rowUnitView1.TabIndex = 3;
+            // 
+            // Day
+            // 
+            this.Day.DataPropertyName = "Month";
+            this.Day.HeaderText = "月";
+            this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
+            this.Day.Width = 50;
+            // 
+            // Time
+            // 
+            this.Time.DataPropertyName = "Day";
+            this.Time.HeaderText = "日";
+            this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
+            this.Time.Width = 50;
+            // 
+            // Temperature
+            // 
+            this.Temperature.DataPropertyName = "Hour";
+            this.Temperature.HeaderText = "时";
+            this.Temperature.Name = "Temperature";
+            this.Temperature.ReadOnly = true;
+            this.Temperature.Width = 50;
+            // 
+            // EngineType
+            // 
+            this.EngineType.DataPropertyName = "DryTemperature";
+            this.EngineType.HeaderText = "干球温度";
+            this.EngineType.Name = "EngineType";
+            this.EngineType.ReadOnly = true;
+            this.EngineType.Width = 150;
+            // 
+            // EngineValue
+            // 
+            this.EngineValue.DataPropertyName = "WetTemperature";
+            this.EngineValue.HeaderText = "湿球温度";
+            this.EngineValue.Name = "EngineValue";
+            this.EngineValue.ReadOnly = true;
+            this.EngineValue.Width = 150;
+            // 
+            // EngineLoadRatio
+            // 
+            this.EngineLoadRatio.DataPropertyName = "Load";
+            this.EngineLoadRatio.HeaderText = "冷负荷";
+            this.EngineLoadRatio.Name = "EngineLoadRatio";
+            this.EngineLoadRatio.ReadOnly = true;
+            this.EngineLoadRatio.Width = 150;
+            // 
+            // Flow
+            // 
+            this.Flow.DataPropertyName = "EnterTemperature";
+            this.Flow.HeaderText = "冷却水进口温度";
+            this.Flow.Name = "Flow";
+            this.Flow.ReadOnly = true;
+            this.Flow.Width = 150;
+            // 
+            // SystemMinPower
+            // 
+            this.SystemMinPower.DataPropertyName = "Power";
+            this.SystemMinPower.HeaderText = "能耗";
+            this.SystemMinPower.Name = "SystemMinPower";
+            this.SystemMinPower.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "ElectronicPrice";
+            this.Id.HeaderText = "电价";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.DataPropertyName = "TotalPrice";
+            this.TotalPrice.HeaderText = "电费";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -1668,9 +1731,9 @@
             this.tabPage6.Controls.Add(this.textBox_Temperature);
             this.tabPage6.Controls.Add(this.label44);
             this.tabPage6.Controls.Add(this.pictureBox_Result);
-            this.tabPage6.Location = new System.Drawing.Point(4, 84);
+            this.tabPage6.Location = new System.Drawing.Point(4, 14);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage6.Size = new System.Drawing.Size(1223, 542);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "计算";
             // 
@@ -1799,18 +1862,6 @@
             this.label44.TabIndex = 11;
             this.label44.Text = "室外湿球温度";
             // 
-            // pictureBox_Result
-            // 
-            this.pictureBox_Result.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_Result.Location = new System.Drawing.Point(656, 105);
-            this.pictureBox_Result.Name = "pictureBox_Result";
-            this.pictureBox_Result.Size = new System.Drawing.Size(546, 415);
-            this.pictureBox_Result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Result.TabIndex = 15;
-            this.pictureBox_Result.TabStop = false;
-            this.pictureBox_Result.Click += new System.EventHandler(this.pictureBox_Result_Click);
-            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -1838,16 +1889,16 @@
             this.tabPage7.Controls.Add(this.btnCal);
             this.tabPage7.Controls.Add(this.btnViewReport);
             this.tabPage7.Controls.Add(this.reportViewer1);
-            this.tabPage7.Location = new System.Drawing.Point(4, 84);
+            this.tabPage7.Location = new System.Drawing.Point(4, 14);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1223, 539);
+            this.tabPage7.Size = new System.Drawing.Size(1223, 542);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "报表";
             this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(917, 15);
+            this.btnSearch.Location = new System.Drawing.Point(917, 18);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 127;
@@ -1857,7 +1908,7 @@
             // 
             // textBox_TotalPrice
             // 
-            this.textBox_TotalPrice.Location = new System.Drawing.Point(840, 17);
+            this.textBox_TotalPrice.Location = new System.Drawing.Point(839, 20);
             this.textBox_TotalPrice.Name = "textBox_TotalPrice";
             this.textBox_TotalPrice.Size = new System.Drawing.Size(59, 21);
             this.textBox_TotalPrice.TabIndex = 126;
@@ -1865,7 +1916,7 @@
             // label59
             // 
             this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(804, 23);
+            this.label59.Location = new System.Drawing.Point(804, 24);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(29, 12);
             this.label59.TabIndex = 125;
@@ -1873,7 +1924,7 @@
             // 
             // textBox_Price
             // 
-            this.textBox_Price.Location = new System.Drawing.Point(759, 18);
+            this.textBox_Price.Location = new System.Drawing.Point(758, 21);
             this.textBox_Price.Name = "textBox_Price";
             this.textBox_Price.Size = new System.Drawing.Size(39, 21);
             this.textBox_Price.TabIndex = 124;
@@ -1889,7 +1940,7 @@
             // 
             // textBox_Power
             // 
-            this.textBox_Power.Location = new System.Drawing.Point(679, 18);
+            this.textBox_Power.Location = new System.Drawing.Point(677, 21);
             this.textBox_Power.Name = "textBox_Power";
             this.textBox_Power.Size = new System.Drawing.Size(37, 21);
             this.textBox_Power.TabIndex = 122;
@@ -1897,7 +1948,7 @@
             // label57
             // 
             this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(642, 22);
+            this.label57.Location = new System.Drawing.Point(642, 25);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(29, 12);
             this.label57.TabIndex = 121;
@@ -1905,7 +1956,7 @@
             // 
             // textBox_EnterTemper
             // 
-            this.textBox_EnterTemper.Location = new System.Drawing.Point(600, 17);
+            this.textBox_EnterTemper.Location = new System.Drawing.Point(600, 21);
             this.textBox_EnterTemper.Name = "textBox_EnterTemper";
             this.textBox_EnterTemper.Size = new System.Drawing.Size(36, 21);
             this.textBox_EnterTemper.TabIndex = 120;
@@ -1913,7 +1964,7 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(553, 21);
+            this.label56.Location = new System.Drawing.Point(553, 26);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(41, 12);
             this.label56.TabIndex = 119;
@@ -1921,7 +1972,7 @@
             // 
             // textBox_CoolLoad
             // 
-            this.textBox_CoolLoad.Location = new System.Drawing.Point(506, 18);
+            this.textBox_CoolLoad.Location = new System.Drawing.Point(506, 21);
             this.textBox_CoolLoad.Name = "textBox_CoolLoad";
             this.textBox_CoolLoad.Size = new System.Drawing.Size(41, 21);
             this.textBox_CoolLoad.TabIndex = 118;
@@ -1929,7 +1980,7 @@
             // label55
             // 
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(459, 21);
+            this.label55.Location = new System.Drawing.Point(460, 25);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(41, 12);
             this.label55.TabIndex = 117;
@@ -1937,14 +1988,14 @@
             // 
             // textBox_Wet
             // 
-            this.textBox_Wet.Location = new System.Drawing.Point(408, 18);
+            this.textBox_Wet.Location = new System.Drawing.Point(408, 20);
             this.textBox_Wet.Name = "textBox_Wet";
             this.textBox_Wet.Size = new System.Drawing.Size(44, 21);
             this.textBox_Wet.TabIndex = 116;
             // 
             // textBox_Dry
             // 
-            this.textBox_Dry.Location = new System.Drawing.Point(298, 17);
+            this.textBox_Dry.Location = new System.Drawing.Point(299, 20);
             this.textBox_Dry.Name = "textBox_Dry";
             this.textBox_Dry.Size = new System.Drawing.Size(44, 21);
             this.textBox_Dry.TabIndex = 115;
@@ -2023,9 +2074,9 @@
             "21",
             "22",
             "23"});
-            this.comboBox_Hour.Location = new System.Drawing.Point(151, 20);
+            this.comboBox_Hour.Location = new System.Drawing.Point(157, 21);
             this.comboBox_Hour.Name = "comboBox_Hour";
-            this.comboBox_Hour.Size = new System.Drawing.Size(39, 20);
+            this.comboBox_Hour.Size = new System.Drawing.Size(33, 20);
             this.comboBox_Hour.TabIndex = 109;
             // 
             // comboBox_Day
@@ -2064,9 +2115,9 @@
             "29",
             "30",
             "31"});
-            this.comboBox_Day.Location = new System.Drawing.Point(80, 21);
+            this.comboBox_Day.Location = new System.Drawing.Point(89, 20);
             this.comboBox_Day.Name = "comboBox_Day";
-            this.comboBox_Day.Size = new System.Drawing.Size(42, 20);
+            this.comboBox_Day.Size = new System.Drawing.Size(33, 20);
             this.comboBox_Day.TabIndex = 108;
             // 
             // comboBox_Month
@@ -2093,7 +2144,7 @@
             // 
             // btnCal
             // 
-            this.btnCal.Location = new System.Drawing.Point(1017, 15);
+            this.btnCal.Location = new System.Drawing.Point(1017, 17);
             this.btnCal.Name = "btnCal";
             this.btnCal.Size = new System.Drawing.Size(75, 23);
             this.btnCal.TabIndex = 106;
@@ -2103,7 +2154,7 @@
             // 
             // btnViewReport
             // 
-            this.btnViewReport.Location = new System.Drawing.Point(1114, 15);
+            this.btnViewReport.Location = new System.Drawing.Point(1114, 17);
             this.btnViewReport.Name = "btnViewReport";
             this.btnViewReport.Size = new System.Drawing.Size(75, 23);
             this.btnViewReport.TabIndex = 1;
@@ -2121,8 +2172,140 @@
             this.reportViewer1.Size = new System.Drawing.Size(1215, 474);
             this.reportViewer1.TabIndex = 0;
             // 
+            // skinEngine1
+            // 
+            this.skinEngine1.@__DrawButtonFocusRectangle = true;
+            this.skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
+            this.skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
+            this.skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.skinEngine1.SerialNumber = "";
+            this.skinEngine1.SkinFile = null;
+            // 
+            // label61
+            // 
+            this.label61.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label61.AutoSize = true;
+            this.label61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(254)))));
+            this.label61.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label61.Location = new System.Drawing.Point(6, 661);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(461, 12);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "上海能誉科技发展有限公司版权所有  2012 Enercomn , Inc.  All Rights Reserved.";
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(254)))));
+            this.panel5.Controls.Add(this.btnTab8);
+            this.panel5.Controls.Add(this.btnTab7);
+            this.panel5.Controls.Add(this.btnTab6);
+            this.panel5.Controls.Add(this.btnTab5);
+            this.panel5.Controls.Add(this.btnTab4);
+            this.panel5.Controls.Add(this.btnTab3);
+            this.panel5.Controls.Add(this.btnTab2);
+            this.panel5.Controls.Add(this.btnTab1);
+            this.panel5.Location = new System.Drawing.Point(0, 29);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1236, 81);
+            this.panel5.TabIndex = 3;
+            // 
+            // btnTab8
+            // 
+            this.btnTab8.FlatAppearance.BorderSize = 0;
+            this.btnTab8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab8.Location = new System.Drawing.Point(658, 3);
+            this.btnTab8.Name = "btnTab8";
+            this.btnTab8.Size = new System.Drawing.Size(64, 80);
+            this.btnTab8.TabIndex = 7;
+            this.btnTab8.UseVisualStyleBackColor = true;
+            this.btnTab8.Click += new System.EventHandler(this.btnTab8_Click);
+            // 
+            // btnTab7
+            // 
+            this.btnTab7.FlatAppearance.BorderSize = 0;
+            this.btnTab7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab7.Location = new System.Drawing.Point(565, 3);
+            this.btnTab7.Name = "btnTab7";
+            this.btnTab7.Size = new System.Drawing.Size(64, 80);
+            this.btnTab7.TabIndex = 6;
+            this.btnTab7.UseVisualStyleBackColor = true;
+            this.btnTab7.Click += new System.EventHandler(this.btnTab7_Click);
+            // 
+            // btnTab6
+            // 
+            this.btnTab6.FlatAppearance.BorderSize = 0;
+            this.btnTab6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab6.Location = new System.Drawing.Point(471, 3);
+            this.btnTab6.Name = "btnTab6";
+            this.btnTab6.Size = new System.Drawing.Size(64, 80);
+            this.btnTab6.TabIndex = 5;
+            this.btnTab6.UseVisualStyleBackColor = true;
+            this.btnTab6.Click += new System.EventHandler(this.btnTab6_Click);
+            // 
+            // btnTab5
+            // 
+            this.btnTab5.FlatAppearance.BorderSize = 0;
+            this.btnTab5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab5.Location = new System.Drawing.Point(380, 3);
+            this.btnTab5.Name = "btnTab5";
+            this.btnTab5.Size = new System.Drawing.Size(64, 80);
+            this.btnTab5.TabIndex = 4;
+            this.btnTab5.UseVisualStyleBackColor = true;
+            this.btnTab5.Click += new System.EventHandler(this.btnTab5_Click);
+            // 
+            // btnTab4
+            // 
+            this.btnTab4.FlatAppearance.BorderSize = 0;
+            this.btnTab4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab4.Location = new System.Drawing.Point(284, 3);
+            this.btnTab4.Name = "btnTab4";
+            this.btnTab4.Size = new System.Drawing.Size(64, 80);
+            this.btnTab4.TabIndex = 3;
+            this.btnTab4.UseVisualStyleBackColor = true;
+            this.btnTab4.Click += new System.EventHandler(this.btnTab4_Click);
+            // 
+            // btnTab3
+            // 
+            this.btnTab3.FlatAppearance.BorderSize = 0;
+            this.btnTab3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab3.Location = new System.Drawing.Point(192, 3);
+            this.btnTab3.Name = "btnTab3";
+            this.btnTab3.Size = new System.Drawing.Size(64, 80);
+            this.btnTab3.TabIndex = 2;
+            this.btnTab3.UseVisualStyleBackColor = true;
+            this.btnTab3.Click += new System.EventHandler(this.btnTab3_Click);
+            // 
+            // btnTab2
+            // 
+            this.btnTab2.FlatAppearance.BorderSize = 0;
+            this.btnTab2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab2.Location = new System.Drawing.Point(98, 3);
+            this.btnTab2.Name = "btnTab2";
+            this.btnTab2.Size = new System.Drawing.Size(64, 80);
+            this.btnTab2.TabIndex = 1;
+            this.btnTab2.UseVisualStyleBackColor = true;
+            this.btnTab2.Click += new System.EventHandler(this.btnTab2_Click);
+            // 
+            // btnTab1
+            // 
+            this.btnTab1.BackgroundImage = global::Enerefsys.Properties.Resources.huanjingbianliang;
+            this.btnTab1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTab1.FlatAppearance.BorderSize = 0;
+            this.btnTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTab1.Location = new System.Drawing.Point(8, 3);
+            this.btnTab1.Margin = new System.Windows.Forms.Padding(0);
+            this.btnTab1.Name = "btnTab1";
+            this.btnTab1.Size = new System.Drawing.Size(64, 80);
+            this.btnTab1.TabIndex = 0;
+            this.btnTab1.UseVisualStyleBackColor = true;
+            this.btnTab1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.BackgroundImage = global::Enerefsys.Properties.Resources.beijing;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
             this.编辑ToolStripMenuItem,
@@ -2237,253 +2420,138 @@
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
             // 
-            // skinEngine1
+            // pictureBox2
             // 
-            this.skinEngine1.@__DrawButtonFocusRectangle = true;
-            this.skinEngine1.DisabledButtonTextColor = System.Drawing.Color.Gray;
-            this.skinEngine1.DisabledMenuFontColor = System.Drawing.SystemColors.GrayText;
-            this.skinEngine1.InactiveCaptionColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.skinEngine1.SerialNumber = "";
-            this.skinEngine1.SkinFile = null;
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(879, 272);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(280, 238);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
-            // label61
+            // pictureBox1
             // 
-            this.label61.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label61.AutoSize = true;
-            this.label61.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label61.Location = new System.Drawing.Point(10, 658);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(461, 12);
-            this.label61.TabIndex = 2;
-            this.label61.Text = "上海能誉科技发展有限公司版权所有  2012 Enercomn , Inc.  All Rights Reserved.";
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(879, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(280, 229);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // rowUnitView2
+            // pictureBox3
             // 
-            this.rowUnitView2.AllowUserToAddRows = false;
-            this.rowUnitView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rowUnitView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rowUnitView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.Column1});
-            this.rowUnitView2.Location = new System.Drawing.Point(3, 81);
-            this.rowUnitView2.Name = "rowUnitView2";
-            this.rowUnitView2.ReadOnly = true;
-            this.rowUnitView2.RowHeadersVisible = false;
-            this.rowUnitView2.RowTemplate.Height = 23;
-            this.rowUnitView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView2.Size = new System.Drawing.Size(1215, 352);
-            this.rowUnitView2.TabIndex = 4;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(920, 51);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(263, 230);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn1
+            // pictureBox4
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Month";
-            this.dataGridViewTextBoxColumn1.HeaderText = "月";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Day";
-            this.dataGridViewTextBoxColumn2.HeaderText = "日";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Hour";
-            this.dataGridViewTextBoxColumn3.HeaderText = "时";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DryTemperature";
-            this.dataGridViewTextBoxColumn4.HeaderText = "干球温度";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "WetTemperature";
-            this.dataGridViewTextBoxColumn5.HeaderText = "湿球温度";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Load";
-            this.dataGridViewTextBoxColumn6.HeaderText = "冷负荷";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "EnterTemperature";
-            this.dataGridViewTextBoxColumn7.HeaderText = "进口温度";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "ElectronicPrice";
-            this.dataGridViewTextBoxColumn8.HeaderText = "电价";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Power";
-            this.dataGridViewTextBoxColumn9.HeaderText = "能耗";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "TotalPrice";
-            this.Column1.HeaderText = "电费";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // rowUnitView1
-            // 
-            this.rowUnitView1.AllowUserToAddRows = false;
-            this.rowUnitView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rowUnitView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rowUnitView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Day,
-            this.Time,
-            this.Temperature,
-            this.EngineType,
-            this.EngineValue,
-            this.EngineLoadRatio,
-            this.Flow,
-            this.SystemMinPower,
-            this.Id,
-            this.TotalPrice});
-            this.rowUnitView1.Location = new System.Drawing.Point(1, 69);
-            this.rowUnitView1.Name = "rowUnitView1";
-            this.rowUnitView1.ReadOnly = true;
-            this.rowUnitView1.RowHeadersVisible = false;
-            this.rowUnitView1.RowTemplate.Height = 23;
-            this.rowUnitView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.rowUnitView1.Size = new System.Drawing.Size(1217, 331);
-            this.rowUnitView1.TabIndex = 3;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(920, 301);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(263, 235);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
-            // Day
+            // pictureBox5
             // 
-            this.Day.DataPropertyName = "Month";
-            this.Day.HeaderText = "月";
-            this.Day.Name = "Day";
-            this.Day.ReadOnly = true;
-            this.Day.Width = 50;
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(869, 56);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(297, 227);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
             // 
-            // Time
+            // pictureBox6
             // 
-            this.Time.DataPropertyName = "Day";
-            this.Time.HeaderText = "日";
-            this.Time.Name = "Time";
-            this.Time.ReadOnly = true;
-            this.Time.Width = 50;
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(869, 307);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(297, 217);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
             // 
-            // Temperature
+            // pictureBox8
             // 
-            this.Temperature.DataPropertyName = "Hour";
-            this.Temperature.HeaderText = "时";
-            this.Temperature.Name = "Temperature";
-            this.Temperature.ReadOnly = true;
-            this.Temperature.Width = 50;
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(919, 38);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(254, 242);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
             // 
-            // EngineType
+            // pictureBox7
             // 
-            this.EngineType.DataPropertyName = "DryTemperature";
-            this.EngineType.HeaderText = "干球温度";
-            this.EngineType.Name = "EngineType";
-            this.EngineType.ReadOnly = true;
-            this.EngineType.Width = 150;
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(919, 300);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(254, 226);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 1;
+            this.pictureBox7.TabStop = false;
             // 
-            // EngineValue
+            // pictureBox9
             // 
-            this.EngineValue.DataPropertyName = "WetTemperature";
-            this.EngineValue.HeaderText = "湿球温度";
-            this.EngineValue.Name = "EngineValue";
-            this.EngineValue.ReadOnly = true;
-            this.EngineValue.Width = 150;
+            this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(962, 419);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(199, 107);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
             // 
-            // EngineLoadRatio
+            // pictureBox_Result
             // 
-            this.EngineLoadRatio.DataPropertyName = "Load";
-            this.EngineLoadRatio.HeaderText = "冷负荷";
-            this.EngineLoadRatio.Name = "EngineLoadRatio";
-            this.EngineLoadRatio.ReadOnly = true;
-            this.EngineLoadRatio.Width = 150;
-            // 
-            // Flow
-            // 
-            this.Flow.DataPropertyName = "EnterTemperature";
-            this.Flow.HeaderText = "冷却水进口温度";
-            this.Flow.Name = "Flow";
-            this.Flow.ReadOnly = true;
-            this.Flow.Width = 150;
-            // 
-            // SystemMinPower
-            // 
-            this.SystemMinPower.DataPropertyName = "Power";
-            this.SystemMinPower.HeaderText = "能耗";
-            this.SystemMinPower.Name = "SystemMinPower";
-            this.SystemMinPower.ReadOnly = true;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "ElectronicPrice";
-            this.Id.HeaderText = "电价";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "电费";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
+            this.pictureBox_Result.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_Result.Location = new System.Drawing.Point(656, 105);
+            this.pictureBox_Result.Name = "pictureBox_Result";
+            this.pictureBox_Result.Size = new System.Drawing.Size(546, 415);
+            this.pictureBox_Result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Result.TabIndex = 15;
+            this.pictureBox_Result.TabStop = false;
+            this.pictureBox_Result.Click += new System.EventHandler(this.pictureBox_Result_Click);
             // 
             // Enerefsys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(254)))));
             this.ClientSize = new System.Drawing.Size(1239, 679);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.label61);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tabControl1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Enerefsys";
-            this.Text = "上海能誉科技发展有限公司-能耗管理软件";
+            this.Text = "Enerefsys®能耗分析决策软件";
             this.Load += new System.EventHandler(this.Enerefsys_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -2500,36 +2568,36 @@
             this.groupBox3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rowUnitView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2647,17 +2715,11 @@
         private System.Windows.Forms.TabPage tabPage7;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button btnViewReport;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label completed;
@@ -2747,5 +2809,16 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnTab1;
+        private System.Windows.Forms.Button btnTab8;
+        private System.Windows.Forms.Button btnTab7;
+        private System.Windows.Forms.Button btnTab6;
+        private System.Windows.Forms.Button btnTab5;
+        private System.Windows.Forms.Button btnTab4;
+        private System.Windows.Forms.Button btnTab3;
+        private System.Windows.Forms.Button btnTab2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
