@@ -1077,8 +1077,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
-                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
-                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
+               // addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+               //     String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
             else
             {
@@ -1099,8 +1099,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
-                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
-                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
+                //addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+                 //   String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
 
         }
@@ -3094,9 +3094,12 @@ namespace Enerefsys
                 String s22 = dir + @"/newImages/2/2.jpg";
                 String s23 = dir + @"/newImages/2/3.jpg";
                 String s24 = dir + @"/newImages/2/e_1.jpg";
-                String s25 = dir + @"/newImages/2/2.jpg";
+                String s25 = dir + @"/newImages/2/4.jpg";
+                String s26 = dir + @"/newImages/2/5.jpg";
 
-
+                String s41 = dir + @"/newImages/4/1.jpg";
+                String s42 = dir + @"/newImages/4/2.jpg";
+                String s43 = dir + @"/newImages/4/3.jpg";
 
 
                 if (count == 6)
@@ -3105,14 +3108,16 @@ namespace Enerefsys
                 {
                     case 1:
                         {
+
+                            
+
                             Stream stream1 = File.Open(s1, FileMode.Open);
                             pictureBox1.Image = Image.FromStream(stream1);
                             stream1.Close();
                             Stream stream2 = File.Open(s2, FileMode.Open);
                             pictureBox2.Image = Image.FromStream(stream2);
                             stream2.Close();
-                            //pictureBox1.Image = Image.FromFile(s1);
-                            //pictureBox2.Image = Image.FromFile(s2);
+   
 
                             Stream stream3 = File.Open(s21, FileMode.Open);
                             pictureBox3.Image = Image.FromStream(stream3);
@@ -3121,9 +3126,6 @@ namespace Enerefsys
                             pictureBox4.Image = Image.FromStream(stream4);
                             stream4.Close();
 
-                            //pictureBox3.Image = Image.FromFile(s21);
-                            //pictureBox4.Image = Image.FromFile(s22);
-
                             Stream stream5 = File.Open(s31, FileMode.Open);
                             pictureBox5.Image = Image.FromStream(stream5);
                             stream5.Close();
@@ -3131,21 +3133,20 @@ namespace Enerefsys
                             pictureBox6.Image = Image.FromStream(stream6);
                             stream6.Close();
 
-                            //pictureBox5.Image = Image.FromFile(s31);
-                            //pictureBox6.Image = Image.FromFile(s32);
+
+                            Stream stream7 = File.Open(s41, FileMode.Open);
+                            pictureBox7.Image = Image.FromStream(stream7);
+                            stream7.Close();
+                            Stream stream8 = File.Open(s42, FileMode.Open);
+                            pictureBox8.Image = Image.FromStream(stream8);
+                            stream8.Close();
+
 
                             count++;
                         }
                         break;
                     case 2:
-                        //pictureBox1.Image = Image.FromFile(s3);
-                        //pictureBox2.Image = Image.FromFile(s4);
-
-                        //pictureBox3.Image = Image.FromFile(s23);
-                        //pictureBox4.Image = Image.FromFile(s24);
-
-                        //pictureBox5.Image = Image.FromFile(s33);
-                        //pictureBox6.Image = Image.FromFile(s34);
+                     
                         {
 
                             Stream stream1 = File.Open(s3, FileMode.Open);
@@ -3170,6 +3171,14 @@ namespace Enerefsys
                             pictureBox6.Image = Image.FromStream(stream6);
                             stream6.Close();
 
+
+                            Stream stream7 = File.Open(s42, FileMode.Open);
+                            pictureBox7.Image = Image.FromStream(stream7);
+                            stream7.Close();
+                            Stream stream8 = File.Open(s43, FileMode.Open);
+                            pictureBox8.Image = Image.FromStream(stream8);
+                            stream8.Close();
+
                             count++;
                         }
                         break;
@@ -3190,7 +3199,7 @@ namespace Enerefsys
                             pictureBox2.Image = Image.FromStream(stream2);
                             stream2.Close();
 
-                            Stream stream3 = File.Open(s21, FileMode.Open);
+                            Stream stream3 = File.Open(s26, FileMode.Open);
                             pictureBox3.Image = Image.FromStream(stream3);
                             stream3.Close();
                             Stream stream4 = File.Open(s25, FileMode.Open);
@@ -3204,6 +3213,17 @@ namespace Enerefsys
                             Stream stream6 = File.Open(s35, FileMode.Open);
                             pictureBox6.Image = Image.FromStream(stream6);
                             stream6.Close();
+
+
+
+                            Stream stream7 = File.Open(s43, FileMode.Open);
+                            pictureBox7.Image = Image.FromStream(stream7);
+                            stream7.Close();
+                            Stream stream8 = File.Open(s41, FileMode.Open);
+                            pictureBox8.Image = Image.FromStream(stream8);
+                            stream8.Close();
+
+
                             count++;
                         }
 
@@ -3225,7 +3245,7 @@ namespace Enerefsys
                             pictureBox2.Image = Image.FromStream(stream2);
                             stream2.Close();
 
-                            Stream stream3 = File.Open(s22, FileMode.Open);
+                            Stream stream3 = File.Open(s25, FileMode.Open);
                             pictureBox3.Image = Image.FromStream(stream3);
                             stream3.Close();
                             Stream stream4 = File.Open(s21, FileMode.Open);
@@ -3238,6 +3258,16 @@ namespace Enerefsys
                             Stream stream6 = File.Open(s31, FileMode.Open);
                             pictureBox6.Image = Image.FromStream(stream6);
                             stream6.Close();
+
+
+
+                            Stream stream7 = File.Open(s42, FileMode.Open);
+                            pictureBox7.Image = Image.FromStream(stream7);
+                            stream7.Close();
+                            Stream stream8 = File.Open(s43, FileMode.Open);
+                            pictureBox8.Image = Image.FromStream(stream8);
+                            stream8.Close();
+
                             count++;
                         }
                         break;
@@ -3258,7 +3288,7 @@ namespace Enerefsys
                             pictureBox2.Image = Image.FromStream(stream2);
                             stream2.Close();
 
-                            Stream stream3 = File.Open(s24, FileMode.Open);
+                            Stream stream3 = File.Open(s22, FileMode.Open);
                             pictureBox3.Image = Image.FromStream(stream3);
                             stream3.Close();
                             Stream stream4 = File.Open(s25, FileMode.Open);
@@ -3271,6 +3301,15 @@ namespace Enerefsys
                             Stream stream6 = File.Open(s35, FileMode.Open);
                             pictureBox6.Image = Image.FromStream(stream6);
                             stream6.Close();
+
+                            Stream stream7 = File.Open(s43, FileMode.Open);
+                            pictureBox7.Image = Image.FromStream(stream7);
+                            stream7.Close();
+                            Stream stream8 = File.Open(s41, FileMode.Open);
+                            pictureBox8.Image = Image.FromStream(stream8);
+                            stream8.Close();
+
+
                             count++;
                         }
                         break;
