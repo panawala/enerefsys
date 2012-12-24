@@ -316,6 +316,8 @@
     <Content Include="newImages\2\1.jpg" />
     <Content Include="newImages\2\2.jpg" />
     <Content Include="newImages\2\3.jpg" />
+    <Content Include="newImages\2\4.jpg" />
+    <Content Include="newImages\2\5.jpg" />
     <Content Include="newImages\2\e_1.jpg" />
     <Content Include="newImages\3\0.jpg" />
     <Content Include="newImages\3\1.jpg" />
@@ -324,6 +326,7 @@
     <Content Include="newImages\3\a.jpg" />
     <Content Include="newImages\4\1.jpg" />
     <Content Include="newImages\4\2.jpg" />
+    <Content Include="newImages\4\3.jpg" />
     <Content Include="Resources\10.jpg" />
     <Content Include="Resources\11.jpg" />
     <Content Include="Resources\12.jpg" />
@@ -351,6 +354,8 @@
     <Content Include="Resources\lengshuijizu1.jpg" />
     <Content Include="Resources\lengshuijizu2.jpg" />
     <Content Include="Resources\logo.jpg" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\Logo.ico" />
     <Content Include="Resources\N0.jpg" />
     <Content Include="Resources\N1.jpg" />
     <Content Include="Resources\N2.jpg" />
