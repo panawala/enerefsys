@@ -15,7 +15,13 @@ namespace Enerefsys
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            int days = (System.DateTime.Now - Convert.ToDateTime("2013-01-10")).Days;
+            if (days > 0)
+                System.Environment.Exit(0);
+
             Application.Run(new Enerefsys());
+
            
             //Application.Run(new ReportForm());
             //Application.Run(new SystemRealTime());

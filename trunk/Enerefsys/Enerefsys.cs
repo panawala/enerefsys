@@ -1077,8 +1077,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
-               // addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
-               //     String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
+                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
             else
             {
@@ -1099,8 +1099,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
-                //addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
-                 //   String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
+                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
 
         }
@@ -3694,7 +3694,7 @@ namespace Enerefsys
         /// 汇报计算情况的工作者线程
         /// </summary>
         BackgroundWorker workerCal = new BackgroundWorker();
-
+        BackgroundWorker workerCalOptim = new BackgroundWorker();
 
 
         private void btnNormalCal_Click(object sender, EventArgs e)
@@ -4177,6 +4177,115 @@ namespace Enerefsys
             btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
             btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
             btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao2.jpg");
+        }
+
+        //优化计算
+        private void btnCalOptim_Click(object sender, EventArgs e)
+        {
+            var standardLoads = RunManager.getAllStandardLoads();
+
+            progressBar2.Maximum = standardLoads.Count;
+
+            workerCalOptim.WorkerReportsProgress = true;
+
+            //正式做事情的地方
+            workerCalOptim.DoWork += new DoWorkEventHandler(workerCalOptim_DoWork);
+
+            //任务完称时要做的，比如提示等等
+            workerCalOptim.ProgressChanged += new ProgressChangedEventHandler(workerCalOptim_ProgressChanged);
+
+            workerCalOptim.RunWorkerCompleted += new RunWorkerCompletedEventHandler(workerCalOptim_RunWorkerCompleted);
+
+            workerCalOptim.RunWorkerAsync();
+        }
+
+        void workerCalOptim_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("计算完成！");
+        }
+
+        void workerCalOptim_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.progressBar2.Value = e.ProgressPercentage;
+            //将异步任务进度的百分比赋给进度条
+        }
+
+        void workerCalOptim_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var standardLoads = RunManager.getAllStandardLoads();
+            RunManager.deleteallRunResults();
+            int i = 0;
+            foreach (var standardLoad in standardLoads)
+            {
+                i++;
+                if (standardLoad.Load <= 0)
+                {
+                    RunManager.InsertIntoRunResult(standardLoad, 0, 0);
+                    continue;
+                }
+
+                meMin.Clear();
+                minResult = double.MaxValue;
+                minSolute = double.MaxValue;
+                percentValue = 0;
+                IsNormal = false;
+                IsSwap = false;
+                FreezeType = "一对一";
+                CoolingType = "一对一";
+                //温差设置为5度
+                TemperRange = 5;
+
+                double temperature = standardLoad.WetTemperature + Kvalue;
+                if (temperature < downTemperature)
+                    IsBoard = true;
+                else
+                    IsBoard = false;
+
+
+                string type = strCoolingTowerStyle;
+                if (type.Equals("常规"))
+                {
+                    coolingPower = iCoolingTowerKW;
+                }
+                else if (type.Equals("高低速"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+                else if (type.Equals("变频"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+
+                //coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
+                GetOptimizationResult(meList, standardLoad.Load, standardLoad.WetTemperature + Kvalue);
+
+
+                //如果是板换，则散热塔的功率等于板换数量
+                if (IsBoard)
+                    coolingPower = coolingPower * BoardCount;
+                else
+                {
+                    coolingPower = coolingPower * meMin.Count;
+                }
+
+                minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
+
+                //插入到优化结果列表中
+                RunManager.InsertIntoRunResult(standardLoad, minResult, minResult * standardLoad.ElectronicPrice);
+
+
+                //工作者回发报告进度信息
+                workerCal.ReportProgress(i);
+                label62.Text = i.ToString() + "/" + standardLoads.Count;
+            }
         }
 
 

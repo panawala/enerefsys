@@ -164,6 +164,9 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label62 = new System.Windows.Forms.Label();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.btnCalOptim = new System.Windows.Forms.Button();
             this.btnShowOptim = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -224,6 +227,7 @@
             this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
             this.label61 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.btnTab8 = new System.Windows.Forms.Button();
             this.btnTab7 = new System.Windows.Forms.Button();
             this.btnTab6 = new System.Windows.Forms.Button();
@@ -246,7 +250,6 @@
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出品介绍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -279,8 +282,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Result)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1484,6 +1487,8 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.Location = new System.Drawing.Point(839, 29);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(379, 23);
@@ -1540,7 +1545,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(405, 29);
             this.label28.TabIndex = 3;
-            this.label28.Text = "Enerefsys系统逐时优化结果";
+            this.label28.Text = "Enerefsys系统逐时常规结果";
             // 
             // rowUnitView2
             // 
@@ -1651,6 +1656,9 @@
             // 
             this.tabPage5.AutoScroll = true;
             this.tabPage5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tabPage5.Controls.Add(this.label62);
+            this.tabPage5.Controls.Add(this.progressBar2);
+            this.tabPage5.Controls.Add(this.btnCalOptim);
             this.tabPage5.Controls.Add(this.btnShowOptim);
             this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.button4);
@@ -1663,9 +1671,36 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "优化";
             // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(769, 27);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(0, 12);
+            this.label62.TabIndex = 10;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar2.Location = new System.Drawing.Point(850, 22);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(368, 23);
+            this.progressBar2.TabIndex = 9;
+            // 
+            // btnCalOptim
+            // 
+            this.btnCalOptim.Location = new System.Drawing.Point(688, 22);
+            this.btnCalOptim.Name = "btnCalOptim";
+            this.btnCalOptim.Size = new System.Drawing.Size(75, 23);
+            this.btnCalOptim.TabIndex = 8;
+            this.btnCalOptim.Text = "计算";
+            this.btnCalOptim.UseVisualStyleBackColor = true;
+            this.btnCalOptim.Click += new System.EventHandler(this.btnCalOptim_Click);
+            // 
             // btnShowOptim
             // 
-            this.btnShowOptim.Location = new System.Drawing.Point(692, 22);
+            this.btnShowOptim.Location = new System.Drawing.Point(607, 22);
             this.btnShowOptim.Name = "btnShowOptim";
             this.btnShowOptim.Size = new System.Drawing.Size(75, 23);
             this.btnShowOptim.TabIndex = 7;
@@ -1699,7 +1734,7 @@
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("YouYuan", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label42.ForeColor = System.Drawing.Color.Blue;
-            this.label42.Location = new System.Drawing.Point(180, 22);
+            this.label42.Location = new System.Drawing.Point(84, 16);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(467, 29);
             this.label42.TabIndex = 2;
@@ -2330,6 +2365,18 @@
             this.panel5.Size = new System.Drawing.Size(1236, 81);
             this.panel5.TabIndex = 3;
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.InitialImage")));
+            this.pictureBox10.Location = new System.Drawing.Point(955, 0);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(263, 61);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 8;
+            this.pictureBox10.TabStop = false;
+            // 
             // btnTab8
             // 
             this.btnTab8.FlatAppearance.BorderSize = 0;
@@ -2538,18 +2585,6 @@
             this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             this.帮助文档ToolStripMenuItem.Click += new System.EventHandler(this.帮助文档ToolStripMenuItem_Click);
             // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.InitialImage")));
-            this.pictureBox10.Location = new System.Drawing.Point(955, 0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(263, 61);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 8;
-            this.pictureBox10.TabStop = false;
-            // 
             // Enerefsys
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2610,9 +2645,9 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2836,5 +2871,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Button btnCalOptim;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.Label label62;
     }
 }
