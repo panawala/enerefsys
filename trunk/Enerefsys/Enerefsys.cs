@@ -2826,7 +2826,7 @@ namespace Enerefsys
 
         private void Enerefsys_Load(object sender, EventArgs e)
         {
-
+            Control.CheckForIllegalCrossThreadCalls = false;
             this.reportViewer1.RefreshReport();
             fullFlow = Convert.ToInt32(PumpInfoData.getFlow("2"));
 
@@ -4283,7 +4283,7 @@ namespace Enerefsys
 
 
                 //工作者回发报告进度信息
-                workerCal.ReportProgress(i);
+                workerCalOptim.ReportProgress(i);
                 label62.Text = i.ToString() + "/" + standardLoads.Count;
             }
         }
