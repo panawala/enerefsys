@@ -2859,7 +2859,7 @@ namespace Enerefsys
             this.reportViewer1.RefreshReport();
         }
 
-
+        string workerFileName = string.Empty;
         private void btnLoadEngineData_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -2877,39 +2877,136 @@ namespace Enerefsys
                 progressBar.Maximum = sheetsCount;
                 progressBar.Value = 0;
 
-                EngineParam ep = new EngineParam(progressBar, "vsd", openFileDialog.FileName);
+               // EngineParam ep = new EngineParam(progressBar, "vsd", openFileDialog.FileName);
 
-                DealData(ep);
-            }
-        }
+                //DealData(ep);
 
+                workerFileName = openFileDialog.FileName;
+                mWorker.WorkerReportsProgress = true;
+                mWorker.WorkerSupportsCancellation = true;
 
-        private void DealData(EngineParam engineParam)
-        {
-            BackgroundWorker mWorker = new BackgroundWorker();
-            mWorker.WorkerReportsProgress = true;
-            mWorker.WorkerSupportsCancellation = true;
-            if (engineParam.ProgressBar == progressBar)
-            {
                 mWorker.DoWork += new DoWorkEventHandler(mWorker_DoWork);
                 mWorker.ProgressChanged += new ProgressChangedEventHandler(mWorker_ProgressChanged);
                 mWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(mWorker_RunWorkerCompleted);
-                mWorker.RunWorkerAsync(engineParam);
+                mWorker.RunWorkerAsync();
                 completed.Text = "处理中...";
+
+
+
             }
-            else if (engineParam.ProgressBar == progressBarPump)
+        }
+        BackgroundWorker mWorker = new BackgroundWorker();
+
+        //private void DealData(EngineParam engineParam)
+        //{
+        //    BackgroundWorker mWorker = new BackgroundWorker();
+        //    mWorker.WorkerReportsProgress = true;
+        //    mWorker.WorkerSupportsCancellation = true;
+        //    if (engineParam.ProgressBar == progressBar)
+        //    {
+        //        mWorker.DoWork += new DoWorkEventHandler(mWorker_DoWork);
+        //        mWorker.ProgressChanged += new ProgressChangedEventHandler(mWorker_ProgressChanged);
+        //        mWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(mWorker_RunWorkerCompleted);
+        //        mWorker.RunWorkerAsync(engineParam);
+        //        completed.Text = "处理中...";
+        //    }
+        //    else if (engineParam.ProgressBar == progressBarPump)
+        //    {
+        //        mWorker.DoWork += new DoWorkEventHandler(mWorker_DoWorkPump);
+        //        mWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(worker_ProgressChangedPump);
+        //        mWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(worker_RunWorkerCompletedPump);
+        //        mWorker.RunWorkerAsync(engineParam);
+        //        completedPump.Text = "处理中...";
+        //    }
+
+
+        //}
+
+
+        void mWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            completed.Text = "处理完毕";
+        }
+
+        void mWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage;
+            completed.Text = progressBar.Value + "/" + progressBar.Maximum;
+        }
+        
+        void mWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //BackgroundWorker worker = (BackgroundWorker)sender;
+            //EngineParam ep = (EngineParam)e.Argument;
+            //string fileName = ep.FileName;
+            //ProgressBar progressBar = ep.ProgressBar;
+            //string engineType = ep.EngineType;
+            string engineType = "vsd";
+
+            //得到excel中的所有sheet名字，然后循环得到数据模拟表达式
+            //List<string> sheets = Utility.GetSheetNames(workerFileName);
+            List<string> sheets = Utility.GetSheetNames(workerFileName);
+            //删除所有数据
+            int rc = EngineManager.DeleteByType(engineType);
+
+            int iStep = 0;
+            foreach (var sheet in sheets)
             {
-                mWorker.DoWork += new DoWorkEventHandler(mWorker_DoWorkPump);
-                mWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(worker_ProgressChangedPump);
-                mWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(worker_RunWorkerCompletedPump);
-                mWorker.RunWorkerAsync(engineParam);
-                completedPump.Text = "处理中...";
+                //Fit.Test test = new Fit.Test();
+                //BVPF.BVPF test = new BVPF.BVPF();
+                BVQF.BVQF test = new BVQF.BVQF();
+                //MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.MultiPolyfit(fileName, sheet);
+                //MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.BiVariablePolyFit(fileName, sheet);
+                //MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.BiVariableQuandricsFit(fileName, sheet);
+                MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.BiVariableQuandricsFit(workerFileName, sheet);
+                MathWorks.MATLAB.NET.Arrays.MWNumericArray mmArray = mArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
+                Array array = mmArray.ToArray();
+                //int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(0, 1), array.GetValue(0, 2), array.GetValue(0, 3), array.GetValue(0, 4), array.GetValue(0, 5), array.GetValue(0, 6), sheet, engineType);
+                int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(1, 0), array.GetValue(2, 0), array.GetValue(3, 0), array.GetValue(4, 0), array.GetValue(5, 0), sheet, engineType);
+                if (ret == 1)
+                {
+                    iStep++;
+                    //worker.ReportProgress(iStep);
+                    mWorker.ReportProgress(iStep);
+                }
             }
+        }
 
+        BackgroundWorker mWorkerPump = new BackgroundWorker();
+        private void btnLoadDataPump_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel|*.xls|Excel|*.xlsx|所有文件|*.*";
+            openFileDialog.RestoreDirectory = true;
+            openFileDialog.FilterIndex = 1;
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //得到excel中的所有sheet名字，然后循环得到数据模拟表达式
+                List<string> sheets = Utility.GetSheetNames(openFileDialog.FileName);
+
+                int sheetsCount = sheets.Count();
+                progressBarPump.Maximum = sheetsCount;
+                progressBarPump.Value = 0;
+                //EngineParam ep = new EngineParam(progressBarPump, "", openFileDialog.FileName);
+
+                //DealData(ep);
+
+                workerPumpFileName = openFileDialog.FileName;
+                mWorkerPump.WorkerReportsProgress = true;
+                mWorkerPump.WorkerSupportsCancellation = true;
+
+                mWorkerPump.DoWork += new DoWorkEventHandler(mWorker_DoWorkPump);
+                mWorkerPump.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(worker_ProgressChangedPump);
+                mWorkerPump.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(worker_RunWorkerCompletedPump);
+                mWorkerPump.RunWorkerAsync();
+                completedPump.Text = "处理中...";
+
+            }
         }
 
 
+        string workerPumpFileName = string.Empty;
 
         void worker_RunWorkerCompletedPump(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -2926,12 +3023,14 @@ namespace Enerefsys
         {
             try
             {
-                BackgroundWorker worker = (BackgroundWorker)sender;
-                EngineParam ep = (EngineParam)e.Argument;
-                string fileName = ep.FileName;
+                //BackgroundWorker worker = (BackgroundWorker)sender;
+                //EngineParam ep = (EngineParam)e.Argument;
+                //string fileName = ep.FileName;
+
 
                 //得到excel中的所有sheet名字，然后循环得到数据模拟表达式,sheet名代表水泵类型
-                List<string> sheets = Utility.GetSheetNames(fileName);
+                //List<string> sheets = Utility.GetSheetNames(fileName);
+                List<string> sheets = Utility.GetSheetNames(workerPumpFileName);
                 PumpManager.DeletePump();
 
                 int iStep = 0;
@@ -2940,7 +3039,8 @@ namespace Enerefsys
                     Fit.Test test = new Fit.Test();
 
                     //根据dll得到excel中的数据，并插入数据库
-                    MathWorks.MATLAB.NET.Arrays.MWArray mwArray = test.GetFND(fileName, sheet);
+                    //MathWorks.MATLAB.NET.Arrays.MWArray mwArray = test.GetFND(fileName, sheet);
+                    MathWorks.MATLAB.NET.Arrays.MWArray mwArray = test.GetFND(workerPumpFileName, sheet);
                     MathWorks.MATLAB.NET.Arrays.MWNumericArray mmwArray = mwArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
                     Array warray = mmwArray.ToArray();
                     double[,] cc = (double[,])warray;
@@ -2956,14 +3056,15 @@ namespace Enerefsys
                     }
                     SVPF.SVPF svpf = new SVPF.SVPF();
                     //根据dll得到拟合出来的二次项系数
-                    MathWorks.MATLAB.NET.Arrays.MWArray mArray = svpf.SingleVariablePolyFit(fileName, sheet);
+                    //MathWorks.MATLAB.NET.Arrays.MWArray mArray = svpf.SingleVariablePolyFit(fileName, sheet);
+                    MathWorks.MATLAB.NET.Arrays.MWArray mArray = svpf.SingleVariablePolyFit(workerPumpFileName, sheet);
                     MathWorks.MATLAB.NET.Arrays.MWNumericArray mmArray = mArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
                     Array array = mmArray.ToArray();
                     int ret = PumpManager.Insert((array.GetValue(0, 0)), array.GetValue(0, 1), array.GetValue(0, 2), array.GetValue(0, 3), sheet);
                     if (ret == 1)
                     {
                         iStep++;
-                        worker.ReportProgress(iStep);
+                        mWorkerPump.ReportProgress(iStep);
                     }
                 }
             }
@@ -2976,71 +3077,7 @@ namespace Enerefsys
 
 
 
-        void mWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            completed.Text = "处理完毕";
-        }
 
-        void mWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progressBar.Value = e.ProgressPercentage;
-            completed.Text = progressBar.Value + "/" + progressBar.Maximum;
-        }
-
-        void mWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            BackgroundWorker worker = (BackgroundWorker)sender;
-            EngineParam ep = (EngineParam)e.Argument;
-            string fileName = ep.FileName;
-            ProgressBar progressBar = ep.ProgressBar;
-            string engineType = ep.EngineType;
-
-            //得到excel中的所有sheet名字，然后循环得到数据模拟表达式
-            List<string> sheets = Utility.GetSheetNames(fileName);
-            //删除所有数据
-            int rc = EngineManager.DeleteByType(engineType);
-
-            int iStep = 0;
-            foreach (var sheet in sheets)
-            {
-                //Fit.Test test = new Fit.Test();
-                //BVPF.BVPF test = new BVPF.BVPF();
-                BVQF.BVQF test = new BVQF.BVQF();
-                //MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.MultiPolyfit(fileName, sheet);
-                //MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.BiVariablePolyFit(fileName, sheet);
-                MathWorks.MATLAB.NET.Arrays.MWArray mArray = test.BiVariableQuandricsFit(fileName, sheet);
-                MathWorks.MATLAB.NET.Arrays.MWNumericArray mmArray = mArray as MathWorks.MATLAB.NET.Arrays.MWNumericArray;
-                Array array = mmArray.ToArray();
-                //int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(0, 1), array.GetValue(0, 2), array.GetValue(0, 3), array.GetValue(0, 4), array.GetValue(0, 5), array.GetValue(0, 6), sheet, engineType);
-                int ret = EngineManager.Insert((array.GetValue(0, 0)), array.GetValue(1, 0), array.GetValue(2, 0), array.GetValue(3, 0), array.GetValue(4, 0), array.GetValue(5, 0), sheet, engineType);
-                if (ret == 1)
-                {
-                    iStep++;
-                    worker.ReportProgress(iStep);
-                }
-            }
-        }
-
-        private void btnLoadDataPump_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel|*.xls|Excel|*.xlsx|所有文件|*.*";
-            openFileDialog.RestoreDirectory = true;
-            openFileDialog.FilterIndex = 1;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                //得到excel中的所有sheet名字，然后循环得到数据模拟表达式
-                List<string> sheets = Utility.GetSheetNames(openFileDialog.FileName);
-
-                int sheetsCount = sheets.Count();
-                progressBarPump.Maximum = sheetsCount;
-                progressBarPump.Value = 0;
-                EngineParam ep = new EngineParam(progressBarPump, "", openFileDialog.FileName);
-
-                DealData(ep);
-            }
-        }
 
         //String s1 = @"../../newImages/1/1.jpg";
         //String s2 = @"../../newImages/1/2.jpg";
@@ -3739,6 +3776,8 @@ namespace Enerefsys
                 if (standardLoad.Load <= 0)
                 {
                     RunManager.InsertIntoNormalRunResult(standardLoad, 0, 0);
+                    workerCal.ReportProgress(i);
+                    label60.Text = i.ToString() + "/" + standardLoads.Count;
                     continue;
                 }
 
@@ -3811,6 +3850,122 @@ namespace Enerefsys
             rowUnitView2.AutoGenerateColumns = false;
             rowUnitView2.DataSource = resultSet;
         }
+
+
+        //优化计算
+        private void btnCalOptim_Click(object sender, EventArgs e)
+        {
+            var standardLoads = RunManager.getAllStandardLoads();
+
+            progressBar2.Maximum = standardLoads.Count;
+
+            workerCalOptim.WorkerReportsProgress = true;
+
+            //正式做事情的地方
+            workerCalOptim.DoWork += new DoWorkEventHandler(workerCalOptim_DoWork);
+
+            //任务完称时要做的，比如提示等等
+            workerCalOptim.ProgressChanged += new ProgressChangedEventHandler(workerCalOptim_ProgressChanged);
+
+            workerCalOptim.RunWorkerCompleted += new RunWorkerCompletedEventHandler(workerCalOptim_RunWorkerCompleted);
+
+            workerCalOptim.RunWorkerAsync();
+        }
+
+        void workerCalOptim_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("计算完成！");
+        }
+
+        void workerCalOptim_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.progressBar2.Value = e.ProgressPercentage;
+            //将异步任务进度的百分比赋给进度条
+        }
+
+        void workerCalOptim_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var standardLoads = RunManager.getAllStandardLoads();
+            RunManager.deleteallRunResults();
+            int i = 0;
+            foreach (var standardLoad in standardLoads)
+            {
+                i++;
+                if (standardLoad.Load <= 0)
+                {
+                    RunManager.InsertIntoRunResult(standardLoad, 0, 0);
+                    workerCalOptim.ReportProgress(i);
+                    label62.Text = i.ToString() + "/" + standardLoads.Count;
+                    continue;
+                }
+
+                meMin.Clear();
+                minResult = double.MaxValue;
+                minSolute = double.MaxValue;
+                percentValue = 0;
+                IsNormal = false;
+                IsSwap = false;
+                FreezeType = "一对一";
+                CoolingType = "一对一";
+                //温差设置为5度
+                TemperRange = 5;
+
+                double temperature = standardLoad.WetTemperature + Kvalue;
+                if (temperature < downTemperature)
+                    IsBoard = true;
+                else
+                    IsBoard = false;
+
+
+                string type = strCoolingTowerStyle;
+                if (type.Equals("常规"))
+                {
+                    coolingPower = iCoolingTowerKW;
+                }
+                else if (type.Equals("高低速"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+                else if (type.Equals("变频"))
+                {
+                    coolingPower = iCoolingTowerKW2;
+                    if (iCoolingTowerT1 > temperature)
+                        coolingPower = 0;
+                    if (iCoolingTowerT2 < temperature)
+                        coolingPower = iCoolingTowerKW3;
+                }
+
+                //coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
+                GetOptimizationResult(meList, standardLoad.Load, standardLoad.WetTemperature + Kvalue);
+
+
+                //如果是板换，则散热塔的功率等于板换数量
+                if (IsBoard)
+                    coolingPower = coolingPower * BoardCount;
+                else
+                {
+                    coolingPower = coolingPower * meMin.Count;
+                }
+
+                minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
+
+                //插入到优化结果列表中
+                RunManager.InsertIntoRunResult(standardLoad, minResult, minResult * standardLoad.ElectronicPrice);
+
+
+                //工作者回发报告进度信息
+                workerCalOptim.ReportProgress(i);
+                label62.Text = i.ToString() + "/" + standardLoads.Count;
+            }
+        }
+
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -4179,115 +4334,7 @@ namespace Enerefsys
             btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao2.jpg");
         }
 
-        //优化计算
-        private void btnCalOptim_Click(object sender, EventArgs e)
-        {
-            var standardLoads = RunManager.getAllStandardLoads();
-
-            progressBar2.Maximum = standardLoads.Count;
-
-            workerCalOptim.WorkerReportsProgress = true;
-
-            //正式做事情的地方
-            workerCalOptim.DoWork += new DoWorkEventHandler(workerCalOptim_DoWork);
-
-            //任务完称时要做的，比如提示等等
-            workerCalOptim.ProgressChanged += new ProgressChangedEventHandler(workerCalOptim_ProgressChanged);
-
-            workerCalOptim.RunWorkerCompleted += new RunWorkerCompletedEventHandler(workerCalOptim_RunWorkerCompleted);
-
-            workerCalOptim.RunWorkerAsync();
-        }
-
-        void workerCalOptim_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            MessageBox.Show("计算完成！");
-        }
-
-        void workerCalOptim_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            this.progressBar2.Value = e.ProgressPercentage;
-            //将异步任务进度的百分比赋给进度条
-        }
-
-        void workerCalOptim_DoWork(object sender, DoWorkEventArgs e)
-        {
-            var standardLoads = RunManager.getAllStandardLoads();
-            RunManager.deleteallRunResults();
-            int i = 0;
-            foreach (var standardLoad in standardLoads)
-            {
-                i++;
-                if (standardLoad.Load <= 0)
-                {
-                    RunManager.InsertIntoRunResult(standardLoad, 0, 0);
-                    continue;
-                }
-
-                meMin.Clear();
-                minResult = double.MaxValue;
-                minSolute = double.MaxValue;
-                percentValue = 0;
-                IsNormal = false;
-                IsSwap = false;
-                FreezeType = "一对一";
-                CoolingType = "一对一";
-                //温差设置为5度
-                TemperRange = 5;
-
-                double temperature = standardLoad.WetTemperature + Kvalue;
-                if (temperature < downTemperature)
-                    IsBoard = true;
-                else
-                    IsBoard = false;
-
-
-                string type = strCoolingTowerStyle;
-                if (type.Equals("常规"))
-                {
-                    coolingPower = iCoolingTowerKW;
-                }
-                else if (type.Equals("高低速"))
-                {
-                    coolingPower = iCoolingTowerKW2;
-                    if (iCoolingTowerT1 > temperature)
-                        coolingPower = 0;
-                    if (iCoolingTowerT2 < temperature)
-                        coolingPower = iCoolingTowerKW3;
-                }
-                else if (type.Equals("变频"))
-                {
-                    coolingPower = iCoolingTowerKW2;
-                    if (iCoolingTowerT1 > temperature)
-                        coolingPower = 0;
-                    if (iCoolingTowerT2 < temperature)
-                        coolingPower = iCoolingTowerKW3;
-                }
-
-                //coolingPower = Convert.ToInt32(textBox_CoolingPower.Text.ToString());
-                GetOptimizationResult(meList, standardLoad.Load, standardLoad.WetTemperature + Kvalue);
-
-
-                //如果是板换，则散热塔的功率等于板换数量
-                if (IsBoard)
-                    coolingPower = coolingPower * BoardCount;
-                else
-                {
-                    coolingPower = coolingPower * meMin.Count;
-                }
-
-                minResult = enginePower + freezePumpPower + lengquePower + coolingPower;
-
-                //插入到优化结果列表中
-                RunManager.InsertIntoRunResult(standardLoad, minResult, minResult * standardLoad.ElectronicPrice);
-
-
-                //工作者回发报告进度信息
-                workerCalOptim.ReportProgress(i);
-                label62.Text = i.ToString() + "/" + standardLoads.Count;
-            }
-        }
-
+       
 
 
 
