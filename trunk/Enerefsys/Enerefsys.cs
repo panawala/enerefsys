@@ -1110,6 +1110,12 @@ namespace Enerefsys
             rtbox.Text += "\r\n";
         }
 
+        /// <summary>
+        /// 根据当前的配置的主机列表，当前设定的总负荷，当前设定的温度
+        /// </summary>
+        /// <param name="machineList"></param>
+        /// <param name="load"></param>
+        /// <param name="temperature"></param>
         private void GetOptimizationResult(List<MachineEntity> machineList, double load, double temperature)
         {
             DealWithCalculate(temperature, load, machineList);
