@@ -60,6 +60,20 @@ namespace Enerefsys.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _2013 {
+            get {
+                object obj = ResourceManager.GetObject("2013", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap acpe {
+            get {
+                object obj = ResourceManager.GetObject("acpe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap beijing {
             get {
                 object obj = ResourceManager.GetObject("beijing", resourceCulture);

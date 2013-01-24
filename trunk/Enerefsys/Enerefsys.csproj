@@ -206,6 +206,9 @@
     <EmbeddedResource Include="Description.resx">
       <DependentUpon>Description.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Description_ACPE.resx">
+      <DependentUpon>Description_ACPE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Enerefsys.resx">
       <DependentUpon>Enerefsys.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -342,6 +345,7 @@
     <Content Include="Resources\50.jpg" />
     <Content Include="Resources\51.jpg" />
     <Content Include="Resources\52.jpg" />
+    <Content Include="Resources\acpe.png" />
     <Content Include="Resources\baobiao1.jpg" />
     <Content Include="Resources\baobiao2.jpg" />
     <Content Include="Resources\changguijieguo1.jpg" />
@@ -376,6 +380,7 @@
     <Content Include="Resources\youhua2.jpg" />
     <Content Include="Resources\lengqueta1.jpg" />
     <Content Include="Resources\lengqueta2.jpg" />
+    <Content Include="Resources\2013.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
