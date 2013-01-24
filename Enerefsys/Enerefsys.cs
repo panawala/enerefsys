@@ -32,8 +32,8 @@ namespace Enerefsys
 
             //this.skinEngine1.SkinFile = root.FullName + "/Resources/Calmness.ssk";
             //冷冻机;
-            init_label_list();
-            conceal_Label(label_list);
+            //init_label_list();
+            //conceal_Label(label_list);
             reponseCount = 0;
             Freezer_Load(null, null);
 
@@ -141,8 +141,8 @@ namespace Enerefsys
         {
             int freezerCount = 0;
             reponseCount += 1;
-            if (reponseCount == 1 || labelFlag == 1)
-                appear_Label(label_list);
+            //if (reponseCount == 1 || labelFlag == 1)
+            //    appear_Label(label_list);
             labelFlag = 0;
             clear_Panel();
             try
@@ -154,7 +154,7 @@ namespace Enerefsys
                 else if (!checkBoxBoard.Checked)
                 {
                     labelFlag += 1;
-                    conceal_Label(label_list);
+                    //conceal_Label(label_list);
                     create_Freezer_Num(freezerCount);
                     set_Freezer_Panel(subFreezer_list);
                     return;
@@ -170,21 +170,21 @@ namespace Enerefsys
             set_Freezer_Panel(subFreezer_list);
         }
         //隐藏标签
-        private void conceal_Label(List<Label> label_list)
-        {
-            foreach (Label label in label_list)
-            {
-                label.Visible = false;
-            }
-        }
+        //private void conceal_Label(List<Label> label_list)
+        //{
+        //    foreach (Label label in label_list)
+        //    {
+        //        label.Visible = false;
+        //    }
+        //}
         //显示标签
-        private void appear_Label(List<Label> label_list)
-        {
-            foreach (Label label in label_list)
-            {
-                label.Visible = true;
-            }
-        }
+        //private void appear_Label(List<Label> label_list)
+        //{
+        //    foreach (Label label in label_list)
+        //    {
+        //        label.Visible = true;
+        //    }
+        //}
         //向列表中添加标签
         //private List<Label> add_Label_List(Label type_Label, Label cooling_Capacity_Label, Label brand_Label, Label model_Label, Label is_Frequency_Conversion_Label, Label performance_Data_Label)
         private List<Label> add_Label_List(Label type_Label, Label cooling_Capacity_Label, Label brand_Label, Label model_Label, Label amount_Label)
@@ -298,8 +298,8 @@ namespace Enerefsys
         {
             int boarderCount = 0;
             reponseCount += 1;
-            if (reponseCount == 1 || labelFlag == 1)
-                appear_Label(label_list);
+            //if (reponseCount == 1 || labelFlag == 1)
+            //    appear_Label(label_list);
             labelFlag = 0;
             clear_Panel2();
             IsBoard = false;
@@ -313,7 +313,7 @@ namespace Enerefsys
                 else if (null == freezerNum.Text.ToString().Trim() || "" == freezerNum.Text.ToString().Trim())
                 {
                     labelFlag += 1;
-                    conceal_Label(label_list);
+                    //conceal_Label(label_list);
                     create_Boarder_Num(boarderCount);
                     set_Boarder_Panel(subBoarder_list);
                     return;
@@ -557,18 +557,18 @@ namespace Enerefsys
         //隐藏标签
         private void waterPump_conceal_Label(List<Label> label_list)
         {
-            foreach (Label label in label_list)
-            {
-                label.Visible = false;
-            }
+            //foreach (Label label in label_list)
+            //{
+            //    label.Visible = false;
+            //}
         }
         //显示标签
         private void waterPump_appear_Label(List<Label> label_list)
         {
-            foreach (Label label in label_list)
-            {
-                label.Visible = true;
-            }
+            //foreach (Label label in label_list)
+            //{
+            //    label.Visible = true;
+            //}
         }
         //向列表中添加标签
         //private List<Label> add_Label_List(Label brand_Label,Label flow_label, Label lift_Label, Label power_Label, Label model_Label, Label is_Frequency_Conversion_Label, Label performance_Data_Label)
@@ -1077,8 +1077,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
-                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
-                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
+                //addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+                //    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
             else
             {
@@ -1099,8 +1099,8 @@ namespace Enerefsys
                 addStrToBox("冷却水泵能耗为：" + String.Format("{0:F}", lengquePower) + "KW.", textBox_Message);
 
                 addStrToBox("冷却塔能耗为：" + String.Format("{0:F}", coolingPower) + "KW.", textBox_Message);
-                addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
-                    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
+                //addStrToBox("最小流量公式为：W(x)=" + String.Format("{0:F}", threeOption) + "x^3+" +
+                //    String.Format("{0:F}", a) + "x^2+" + String.Format("{0:F}", b) + "x+" + String.Format("{0:F}", c) + ".", textBox_Message);
             }
 
         }
@@ -3428,15 +3428,15 @@ namespace Enerefsys
             {
                 int coolingtowerCount = 0;
                 reponseCount += 1;
-                if (reponseCount == 1 || labelFlag == 1)
-                    appear_Label(label_list);
+                //if (reponseCount == 1 || labelFlag == 1)
+                //    appear_Label(label_list);
                 labelFlag = 0;
                 clear_CoolingTowerPanel();
                 try
                 {
                     coolingtowerCount = 1;
                     labelFlag += 1;
-                    conceal_Label(label_list);
+                    //conceal_Label(label_list);
                     create_CoolingTower_Num(coolingtowerCount);
                     set_CoolingTower_Panel(CoolingTower_list);
                 }
@@ -4338,6 +4338,14 @@ namespace Enerefsys
             btnTab6.BackgroundImage = Image.FromFile(root.FullName + "/Resources/youhua1.jpg");
             btnTab7.BackgroundImage = Image.FromFile(root.FullName + "/Resources/jisuan1.jpg");
             btnTab8.BackgroundImage = Image.FromFile(root.FullName + "/Resources/baobiao2.jpg");
+        }
+
+        private void Enerefsys_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("确定要退出Enerefsys系统吗？", "退出系统", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
 
        

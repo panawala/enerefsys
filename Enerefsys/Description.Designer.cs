@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Description));
             this.SuspendLayout();
             // 
             // Description
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Enerefsys.Properties.Resources.logo;
-            this.ClientSize = new System.Drawing.Size(785, 334);
+            this.BackgroundImage = global::Enerefsys.Properties.Resources._2013;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(551, 245);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Description";
-            this.Text = "Description";
+            this.Text = "出品介绍";
             this.ResumeLayout(false);
 
         }

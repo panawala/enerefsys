@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ElectricPriceTable));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnSub = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxKvalue = new System.Windows.Forms.TextBox();
@@ -44,8 +52,6 @@
             this.EnterTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ElectronicPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StandardLoadID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +73,21 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "设计日逐时电价表";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(551, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 12);
+            this.label2.TabIndex = 13;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(228, 20);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(316, 23);
+            this.progressBar1.TabIndex = 12;
             // 
             // btnSub
             // 
@@ -166,6 +187,9 @@
             // DryTemperature
             // 
             this.DryTemperature.DataPropertyName = "DryTemperature";
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.DryTemperature.DefaultCellStyle = dataGridViewCellStyle6;
             this.DryTemperature.HeaderText = "干球温度（℃）";
             this.DryTemperature.Name = "DryTemperature";
             this.DryTemperature.ReadOnly = true;
@@ -173,6 +197,9 @@
             // WetTemperature
             // 
             this.WetTemperature.DataPropertyName = "WetTemperature";
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = "0";
+            this.WetTemperature.DefaultCellStyle = dataGridViewCellStyle7;
             this.WetTemperature.HeaderText = "湿球温度（℃）";
             this.WetTemperature.Name = "WetTemperature";
             this.WetTemperature.ReadOnly = true;
@@ -180,6 +207,9 @@
             // RealLoad
             // 
             this.RealLoad.DataPropertyName = "Load";
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = "0";
+            this.RealLoad.DefaultCellStyle = dataGridViewCellStyle8;
             this.RealLoad.HeaderText = "冷负荷(KW)";
             this.RealLoad.Name = "RealLoad";
             this.RealLoad.ReadOnly = true;
@@ -187,6 +217,9 @@
             // EnterTemperature
             // 
             this.EnterTemperature.DataPropertyName = "EnterTemperature";
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = "0";
+            this.EnterTemperature.DefaultCellStyle = dataGridViewCellStyle9;
             this.EnterTemperature.HeaderText = "冷却水进口温度（℃）";
             this.EnterTemperature.Name = "EnterTemperature";
             this.EnterTemperature.ReadOnly = true;
@@ -194,6 +227,9 @@
             // ElectronicPrice
             // 
             this.ElectronicPrice.DataPropertyName = "ElectronicPrice";
+            dataGridViewCellStyle10.Format = "N2";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.ElectronicPrice.DefaultCellStyle = dataGridViewCellStyle10;
             this.ElectronicPrice.HeaderText = "电价（元/KW）";
             this.ElectronicPrice.Name = "ElectronicPrice";
             this.ElectronicPrice.ReadOnly = true;
@@ -206,27 +242,13 @@
             this.StandardLoadID.ReadOnly = true;
             this.StandardLoadID.Visible = false;
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(228, 20);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(316, 23);
-            this.progressBar1.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(551, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 12);
-            this.label2.TabIndex = 13;
-            // 
             // ElectricPriceTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 501);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ElectricPriceTable";
             this.Text = "逐时负荷";
             this.Load += new System.EventHandler(this.ElectricPriceTable_Load);
@@ -241,6 +263,13 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxKvalue;
+        private System.Windows.Forms.Button btnSub;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Month;
         private System.Windows.Forms.DataGridViewTextBoxColumn Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn Hour;
@@ -250,13 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EnterTemperature;
         private System.Windows.Forms.DataGridViewTextBoxColumn ElectronicPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn StandardLoadID;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxKvalue;
-        private System.Windows.Forms.Button btnSub;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label2;
 
     }
 }

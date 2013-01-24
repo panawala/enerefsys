@@ -514,7 +514,7 @@
                             <TextRun>
                               <Value>=Fields!DryTemperature.Value</Value>
                               <Style>
-                                <Format>0.0000</Format>
+                                <Format>0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -546,7 +546,7 @@
                             <TextRun>
                               <Value>=Fields!WetTemperature.Value</Value>
                               <Style>
-                                <Format>0.0000</Format>
+                                <Format>0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -578,7 +578,7 @@
                             <TextRun>
                               <Value>=Fields!Load.Value</Value>
                               <Style>
-                                <Format>0.0000</Format>
+                                <Format>0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -609,7 +609,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!EnterTemperature.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00;(0.00)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -640,7 +642,7 @@
                             <TextRun>
                               <Value>=Fields!Power.Value</Value>
                               <Style>
-                                <Format>0.0000</Format>
+                                <Format>0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -672,7 +674,7 @@
                             <TextRun>
                               <Value>=Fields!ElectronicPrice.Value</Value>
                               <Style>
-                                <Format>0.0000</Format>
+                                <Format>0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -704,7 +706,7 @@
                             <TextRun>
                               <Value>=Fields!TotalPrice.Value</Value>
                               <Style>
-                                <Format>0.0000</Format>
+                                <Format>0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -815,7 +817,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>系统总能耗</Value>
+                  <Value>全年系统总能耗</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -826,7 +828,7 @@
           <Top>1.51702cm</Top>
           <Left>15.4432cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>2.8616cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -847,7 +849,7 @@
                 <TextRun>
                   <Value>=Sum(Fields!Power.Value, "DS_Result")</Value>
                   <Style>
-                    <Format>0.0000</Format>
+                    <Format>0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -856,7 +858,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox31</rd:DefaultName>
           <Top>1.51702cm</Top>
-          <Left>18.08431cm</Left>
+          <Left>18.48118cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>2</ZIndex>
@@ -877,7 +879,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>系统总能效</Value>
+                  <Value>全年系统总能效</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -888,7 +890,7 @@
           <Top>2.55799cm</Top>
           <Left>15.4432cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>2.8616cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -918,7 +920,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox35</rd:DefaultName>
           <Top>2.55799cm</Top>
-          <Left>18.11959cm</Left>
+          <Left>18.48118cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>4</ZIndex>
@@ -939,7 +941,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>系统总负荷</Value>
+                  <Value>全年系统总负荷</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -948,9 +950,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>1.51702cm</Top>
-          <Left>10.03214cm</Left>
+          <Left>9.79402cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>2.73812cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -971,7 +973,7 @@
                 <TextRun>
                   <Value>=Sum(Fields!Load.Value, "DS_Result")</Value>
                   <Style>
-                    <Format>0.0000</Format>
+                    <Format>0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1001,7 +1003,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>系统总电费</Value>
+                  <Value>全年系统总电费</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -1010,9 +1012,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
           <Top>2.55799cm</Top>
-          <Left>10.03214cm</Left>
+          <Left>9.79402cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>2.73812cm</Width>
           <ZIndex>7</ZIndex>
           <Style>
             <Border>
@@ -1033,7 +1035,7 @@
                 <TextRun>
                   <Value>=Sum(Fields!TotalPrice.Value, "DS_Result")</Value>
                   <Style>
-                    <Format>0.0000</Format>
+                    <Format>0.00</Format>
                   </Style>
                 </TextRun>
               </TextRuns>
